@@ -17,17 +17,20 @@ RUN mkdir /home/$user/ -p
 #COPY ./installEclipse.sh /home/$user/installEclipse.sh
 #RUN chmod a+x /home/$user/installEclipse.sh
 #RUN /home/$user/installEclipse.sh
-COPY /eclipse /home/$user/eclipse/
-RUN chown $user:$user /home/$user/eclipse -R
+#COPY /eclipse /home/$user/eclipse/
+RUN chown $user:$user /home/$user -R
+
+RUN wget -O - http://saimei.acc.umu.se/mirror/eclipse.org/oomph/epp/neon/R2a/\
+eclipse-inst-linux64.tar.gz | tar zxf - -C f/home/$user
 
 
-COPY ./setupEclipse.sh /home/$user/
-RUN chown $user:$user /home/$user/setupEclipse.sh
-RUN chmod a+x /home/$user/setupEclipse.sh
+#COPY ./setupEclipse.sh /home/$user/
+#RUN chown $user:$user /home/$user/setupEclipse.sh
+#RUN chmod a+x /home/$user/setupEclipse.sh
 
-COPY ./setupProjects.sh /home/$user/
-RUN chown $user:$user /home/$user/setupProjects.sh
-RUN chmod a+x /home/$user/setupProjects.sh
+#COPY ./setupProjects.sh /home/$user/
+#RUN chown $user:$user /home/$user/setupProjects.sh
+#RUN chmod a+x /home/$user/setupProjects.sh
 
 
 USER $user
@@ -38,14 +41,14 @@ USER $user
 #export USER="$(id -un)"
 #export USER=$user
 
-RUN /home/$user/setupEclipse.sh
+#RUN /home/$user/setupEclipse.sh
 
-RUN sed -i '1i -pluginCustomization' /home/$user/eclipse/eclipse.ini 
-RUN sed -i '2i /home/'$user'/eclipse/plugin_customization.ini' /home/$user/eclipse/eclipse.ini
-COPY ./plugin_customization.ini /home/$user/eclipse/plugin_customization.ini
+#RUN sed -i '1i -pluginCustomization' /home/$user/eclipse/eclipse.ini 
+#RUN sed -i '2i /home/'$user'/eclipse/plugin_customization.ini' /home/$user/eclipse/eclipse.ini
+#COPY ./plugin_customization.ini /home/$user/eclipse/plugin_customization.ini
 
-RUN mkdir /home/$user/workspace
-RUN /home/$user/setupProjects.sh
+#RUN mkdir /home/$user/workspace
+#RUN /home/$user/setupProjects.sh
 
 
 #COPY ./init.sh /

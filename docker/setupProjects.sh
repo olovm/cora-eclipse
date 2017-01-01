@@ -20,6 +20,8 @@ addRepro() {
 }
 
 
+addRepro "cora-eclipse"
+
 addRepro "cora-parent"
 
 addRepro "cora-json"
