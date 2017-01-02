@@ -439,7 +439,8 @@
       xsi:type="setup:VariableTask"
       id="workspace.location.rule"
       name="Workspace location rule"
-      value="${@id.location}"/>
+      value="{@id.location}"
+      defaultValue="{@id.location}"/>
   <stream name="master"
       label="Master">
     <setupTask
