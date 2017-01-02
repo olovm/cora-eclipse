@@ -25,6 +25,10 @@ RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
 
 RUN wget -O - http://saimei.acc.umu.se/mirror/eclipse.org/oomph/epp/neon/R2a/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
+RUN wget https://github.com/olovm/cora-eclipse/raw/master/docker/entrypoint.sh -P /home/$user/
+RUN chmod a+x /home/$user/entrypoint.sh
+RUN chown $user:$user /home/$user -R
+
 #git clone https://github.com/olovm/cora-eclipse.git /home/$user/workspace/cora-eclipse
 #RUN git clone https://github.com/olovm/cora-eclipse.git /home/$user/workspace/cora-eclipse
 
