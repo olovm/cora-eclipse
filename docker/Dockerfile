@@ -9,20 +9,24 @@ RUN dnf install -y \
   git
  
 ARG user
-RUN echo 'user set to: ' 
-RUN echo $user
-RUN useradd $user
 
-RUN mkdir /home/$user/ -p
+RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
+
+#RUN echo 'user set to: ' 
+#RUN echo $user
+#RUN useradd $user
+
+#RUN mkdir /home/$user/ -p
 #COPY ./installEclipse.sh /home/$user/installEclipse.sh
 #RUN chmod a+x /home/$user/installEclipse.sh
 #RUN /home/$user/installEclipse.sh
 #COPY /eclipse /home/$user/eclipse/
-RUN chown $user:$user /home/$user -R
+#RUN chown $user:$user /home/$user -R
 
-RUN wget -O - http://saimei.acc.umu.se/mirror/eclipse.org/oomph/epp/neon/R2a/\
-eclipse-inst-linux64.tar.gz | tar zxf - -C f/home/$user
+RUN wget -O - http://saimei.acc.umu.se/mirror/eclipse.org/oomph/epp/neon/R2a/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
+#git clone https://github.com/olovm/cora-eclipse.git /home/$user/workspace/cora-eclipse
+#RUN git clone https://github.com/olovm/cora-eclipse.git /home/$user/workspace/cora-eclipse
 
 #COPY ./setupEclipse.sh /home/$user/
 #RUN chown $user:$user /home/$user/setupEclipse.sh
