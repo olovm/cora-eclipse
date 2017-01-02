@@ -435,12 +435,6 @@
           value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;org.eclipse.ui.commands>&#xA;&lt;keyBinding commandId=&quot;org.eclipse.m2e.actions.LifeCycleInstall.run&quot; contextId=&quot;org.eclipse.core.runtime.xml&quot; keyConfigurationId=&quot;org.eclipse.ui.defaultAcceleratorConfiguration&quot; keySequence=&quot;ALT+CTRL+I&quot;/>&#xA;&lt;/org.eclipse.ui.commands>"/>
     </setupTask>
   </setupTask>
-  <setupTask
-      xsi:type="setup:VariableTask"
-      id="workspace.location.rule"
-      name="Workspace location rule"
-      value="{@id.location}"
-      defaultValue="{@id.location}"/>
   <stream name="master"
       label="Master">
     <setupTask
