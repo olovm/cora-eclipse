@@ -628,7 +628,7 @@
           pattern=".*docker.*"/>
     </workingSet>
     <workingSet
-        name="tier1">
+        name="cora-tier1">
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-json"/>
@@ -638,6 +638,43 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-userpicker"/>
+    </workingSet>
+    <workingSet
+        name="cora-tier2">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-beefeater"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-bookkeeper"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-gatekeeper"/>
+    </workingSet>
+    <workingSet
+        name="cora-tier3">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-spider"/>
+    </workingSet>
+    <workingSet
+        name="cora-tier4">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-therest"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-gatekeeperclient"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-basicstorage"/>
+    </workingSet>
+    <workingSet
+        name="cora-tier5"
+        id="">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-systemone"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
