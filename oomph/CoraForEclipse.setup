@@ -620,6 +620,25 @@
             project="EclipseForCora"/>
       </predicate>
     </workingSet>
+    <workingSet
+        name="cora-docker"
+        id="">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern=".*docker.*"/>
+    </workingSet>
+    <workingSet
+        name="tier1">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-json"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-httphandler"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-userpicker"/>
+    </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
   <setupTask
