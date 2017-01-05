@@ -28,11 +28,10 @@ RUN wget -O - http://saimei.acc.umu.se/mirror/eclipse.org/oomph/epp/neon/R2a/ecl
 #RUN wget https://github.com/olovm/cora-eclipse/raw/master/docker/entrypoint.sh -P /home/$user/
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
-RUN chown $user:$user /home/$user -R
-
 
 RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.9/bin/apache-tomcat-8.5.9.tar.gz  | tar zxf - -C /home/$user
 
+RUN chown $user:$user /home/$user -R
 
 
 #git clone https://github.com/olovm/cora-eclipse.git /home/$user/workspace/cora-eclipse

@@ -6,4 +6,4 @@ chmod +x ~/workspace/cora-eclipse/docker/setupProjects.sh
 
 ~/workspace/cora-eclipse/docker/setupProjects.sh
 
-~/eclipse-installer/eclipse-inst
+SWT_GTK3=0  ~/eclipse-installer/eclipse-inst
