@@ -29,7 +29,7 @@ RUN wget -O - http://saimei.acc.umu.se/mirror/eclipse.org/oomph/epp/neon/R2a/ecl
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
 
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.9/bin/apache-tomcat-8.5.9.tar.gz  | tar zxf - -C /home/$user
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.9/bin/apache-tomcat-8.5.9.tar.gz  | tar zxf - -C /opt/
 
 RUN chown $user:$user /home/$user -R
 

@@ -710,7 +710,7 @@
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.jst.server.tomcat.core/locationorg.eclipse.jst.server.tomcat.runtime.85"
-          value="/home/olov/apache-tomcat-8.5.9/"/>
+          value="/opt/apache-tomcat-8.5.9"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
