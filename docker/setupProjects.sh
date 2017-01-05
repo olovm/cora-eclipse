@@ -42,6 +42,8 @@ addRepro "cora-jsclient"
 
 addRepro "cora-basicstorage"
 addRepro "cora-metacreator"
+
 addRepro "cora-docker-therest"
 addRepro "cora-docker-gatekeeper"
+addRepro "cora-docker-fitnesse"
 

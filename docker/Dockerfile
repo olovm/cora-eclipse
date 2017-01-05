@@ -30,6 +30,11 @@ COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
 RUN chown $user:$user /home/$user -R
 
+
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.9/bin/apache-tomcat-8.5.9.tar.gz  | tar zxf - -C /home/$user
+
+
+
 #git clone https://github.com/olovm/cora-eclipse.git /home/$user/workspace/cora-eclipse
 #RUN git clone https://github.com/olovm/cora-eclipse.git /home/$user/workspace/cora-eclipse
 
@@ -63,4 +68,12 @@ USER $user
 #COPY ./init.sh /
 #RUN chmod a+x init.sh
 #CMD [ "/init.sh" ]
-CMD /home/$user/eclipse/eclipse
+CMD SWT_GTK3=0 /home/$user/eclipse/eclipse
+
+#built by: docker build --build-arg user=olov -t fedora25test .
+#run with: docker run -ti     --privileged     -e DISPLAY=$DISPLAY       
+# -v /tmp/.X11-unix:/tmp/.X11-unix 
+#-v /mnt/depot/eclipseForCora/workspace:/home/olov/workspace 
+#-v /mnt/depot/eclipseForCora/eclipse:/home/olov/eclipse 
+#-v /mnt/depot/eclipseP2:/home/olov/eclipsep2 
+#--env user=olov    fedora25test bash
