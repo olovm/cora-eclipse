@@ -26,24 +26,26 @@ addRepro "cora-parent"
 
 addRepro "cora-json"
 addRepro "cora-httphandler"
+addRepro "cora-userpicker"
 
-addRepro "cora-bookkeeper"
 addRepro "cora-beefeater"
+addRepro "cora-bookkeeper"
+addRepro "cora-gatekeeper"
+
+addRepro "cora-spider"
+
+
+addRepro "cora-basicstorage"
+addRepro "cora-gatekeeperclient"
+addRepro "cora-therest"
+
+addRepro "cora-metacreator"
+addRepro "cora-systemone"
+
+addRepro "cora-jsclient"
 
 addRepro "cora-fitnesse"
 
-addRepro "cora-gatekeeperclient"
-addRepro "cora-therest"
-addRepro "cora-systemone"
-addRepro "cora-gatekeeper"
-addRepro "cora-userpicker"
-addRepro "cora-spider"
-addRepro "cora-jsclient"
-
-addRepro "cora-basicstorage"
-addRepro "cora-metacreator"
-
-addRepro "cora-docker-therest"
 addRepro "cora-docker-gatekeeper"
+addRepro "cora-docker-therest"
 addRepro "cora-docker-fitnesse"
-
