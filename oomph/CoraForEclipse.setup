@@ -234,7 +234,7 @@
       <setupTask
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.bookkeeper"
-          location="${workspace.location}/cora-bokkeeper"
+          location="${workspace.location}/cora-bookkeeper"
           remoteURI="https://github.com/olovm/cora-bookkeeper"
           pushURI="">
         <annotation
