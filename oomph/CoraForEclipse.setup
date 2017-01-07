@@ -1080,6 +1080,11 @@
         encoding="UTF-8">
       <description>tomcat server integration</description>
     </setupTask>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${git.clone.coraeclipse.location}/oomph/Tomcat v8.5 Server at localhost-config"/>
+    </setupTask>
   </setupTask>
   <stream name="master"
       label="Master">
