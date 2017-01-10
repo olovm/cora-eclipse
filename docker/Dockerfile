@@ -41,5 +41,5 @@ CMD SWT_GTK3=0 /home/$user/eclipse/eclipse
 #-v /mnt/depot/eclipseForCora/workspace:/home/olov/workspace 
 #-v /mnt/depot/eclipseForCora/eclipse:/home/olov/eclipse 
 #-v /mnt/depot/eclipseP2:/home/olov/.p2 
-#-v /mnt/depot/eclipseForCora/m2:/home/olov/.m2 --env user=olov -p 8080:8080 eclipseForCora1 bash
+#-v /mnt/depot/eclipseForCora/m2:/home/olov/.m2 --env user=olov -p 8080:8080 -p 9876:9876 eclipseForCora1 bash
 
