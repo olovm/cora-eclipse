@@ -27,6 +27,7 @@ RUN chown $user:$user /home/$user -R
 RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.9/bin/apache-tomcat-8.5.9.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
+RUN npm install -g karma-cli
 
 USER $user
 
