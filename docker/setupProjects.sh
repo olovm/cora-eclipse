@@ -1,12 +1,15 @@
 #! /bin/bash
 
 if [ -z ${USER+x} ]; then 
-echo "USER is unset"; 
+	echo "USER is unset"; 
 else 
-echo "USER is set to '$USER'"; 
-user=$USER
-export user
+	echo "USER is set to '$USER'"; 
+	user=$USER
+	export user
 fi
+
+#prevent git asking for username password if repo is missing
+export GIT_ASKPASS="/bin/true"
 
 
 addRepro() {
