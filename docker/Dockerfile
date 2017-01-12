@@ -31,7 +31,13 @@ RUN npm install -g karma-cli
 
 USER $user
 
-CMD SWT_GTK3=0 /home/$user/eclipse/eclipse
+RUN export SWT_GTK3=0
+ 
+#CMD SWT_GTK3=0 /home/$user/eclipse/eclipse
+#CMD  /home/$user/eclipse/eclipse
+CMD  /home/$user/entrypoint.sh
+
+
 
 #built by: 
 #docker build --build-arg user=olov -t eclipseForCora1 .
