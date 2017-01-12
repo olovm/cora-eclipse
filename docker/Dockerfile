@@ -40,7 +40,7 @@ CMD  /home/$user/entrypoint.sh
 
 
 #built by: 
-#docker build --build-arg user=olov -t eclipseForCora1 .
+#docker build --build-arg user=olov -t eclipseforcora1 .
 
 #run with: 
 #docker run -ti --privileged -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix 
@@ -48,5 +48,5 @@ CMD  /home/$user/entrypoint.sh
 #-v /mnt/depot/eclipseForCora/eclipse:/home/olov/eclipse 
 #-v /mnt/depot/eclipseP2:/home/olov/.p2 
 #-v /mnt/depot/eclipseForCora/m2:/home/olov/.m2 --env user=olov -p 8080:8080 -p 9876:9876 
-#--name eclipseForCora1 eclipseForCora1 bash
+#--name eclipseForCora1 eclipseforcora1 bash
 

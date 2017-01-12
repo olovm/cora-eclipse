@@ -13,10 +13,9 @@ firstRun(){
 	~/eclipse-installer/eclipse-inst
 }
 
-export SWT_GTK3=0
 
 if [ ! -d ~/workspace/cora-jsclient ]; then
   	firstRun
 else
-	~/eclipse/eclipseforcora/eclipse
+	SWT_GTK3=0 ~/eclipse/eclipseforcora/eclipse
 fi
