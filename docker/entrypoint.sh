@@ -15,7 +15,7 @@ firstRun(){
 
 export SWT_GTK3=0
 
-if [ ! -d "~/workspace/cora-jsclient" ]; then
+if [ ! -d ~/workspace/cora-jsclient ]; then
   	firstRun
 else
 	~/eclipse/eclipseforcora/eclipse
