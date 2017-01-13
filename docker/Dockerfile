@@ -31,7 +31,7 @@ RUN npm install -g karma-cli
 
 USER $user
 
-RUN export SWT_GTK3=0
+#RUN export SWT_GTK3=0
  
 #CMD SWT_GTK3=0 /home/$user/eclipse/eclipse
 #CMD  /home/$user/eclipse/eclipse
