@@ -18,6 +18,7 @@ addRepro() {
 	git clone https://github.com/olovm/$name.git
 	cd /home/$user/workspace/$name
 	git remote add github-lsu https://github.com/lsu-ub-uu/$name.git
+	git remote add github-maddekenn https://github.com/maddekenn/$name.git
 	git fetch --all
 	cd /home/$user/workspace
 }
