@@ -37,6 +37,7 @@ addRepro "cora-bookkeeper"
 addRepro "cora-gatekeeper"
 
 addRepro "cora-spider"
+addRepro "cora-gatekeepertokenprovider"
 
 
 addRepro "cora-basicstorage"

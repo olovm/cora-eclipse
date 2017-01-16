@@ -10,7 +10,7 @@ cleanInstall() {
 TIER0="cora-parent"
 TIER1="cora-json cora-httphandler cora-userpicker "
 TIER2="cora-beefeater cora-bookkeeper cora-gatekeeper "
-TIER3="cora-spider "
+TIER3="cora-spider cora-gatekeepertokenprovider"
 TIER4="cora-basicstorage cora-gatekeeperclient cora-therest "
 TIER5="cora-metacreator cora-systemone "
 #TIER6="cora-jsclient cora-fitnesse "
