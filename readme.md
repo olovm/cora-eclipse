@@ -12,10 +12,10 @@ this will take some time as it downloads quite a few things
 
 ##First run installing eclipse
 Run:
-`xhost + && docker run --rm -ti --privileged -e DISPLAY=$DISPLAY `
-`-v /tmp/.X11-unix:/tmp/.X11-unix `
-`-v /mnt/depot/eclipseForCora/workspace:/home/olov/workspace `
-` -v /mnt/depot/eclipseForCora/eclipse:/home/olov/eclipse `
-`-v /mnt/depot/eclipseP2:/home/olov/.p2 `
-`-v /mnt/depot/eclipseForCora/m2:/home/olov/.m2 `
-`--env user=olov -p 8080:8080 -p 9876:9876 eclipseforcora1`
+xhost + && docker run --rm -ti --privileged -e DISPLAY=$DISPLAY \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+-v /mnt/depot/eclipseForCora/workspace:/home/olov/workspace \
+-v /mnt/depot/eclipseForCora/eclipse:/home/olov/eclipse \
+-v /mnt/depot/eclipseP2:/home/olov/.p2 \
+-v /mnt/depot/eclipseForCora/m2:/home/olov/.m2 \
+--env user=olov -p 8080:8080 -p 9876:9876 -p 8090:8090 --name eclipseforcora1 eclipseforcora1
