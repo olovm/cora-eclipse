@@ -25,8 +25,8 @@
     <!--
     <Manager pathname="" />
     -->
-    	<Parameter name="userPickerFactoryClassName" 
-    	value="se.uu.ub.cora.systemone.authentication.UserPickerFactoryImp"/>  
+    	<Parameter name="userPickerProviderClassName" 
+    	value="se.uu.ub.cora.systemone.authentication.UserPickerProviderImp"/>  
     	<Parameter name="dependencyProviderClassName" 
     	value="se.uu.ub.cora.systemone.SystemOneDependencyProvider"/>  
     	<Parameter name="storageOnDiskBasePath" 
