@@ -29,9 +29,6 @@ RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
 
-RUN mkdir /tmp/recordStorageOnDiskTemp/ -p
-RUN chown $user:$user /tmp/recordStorageOnDiskTemp/ 
-
 USER $user
 
 #RUN export SWT_GTK3=0
