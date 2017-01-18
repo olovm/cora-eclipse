@@ -26,30 +26,38 @@ addRepro() {
 
 addRepro "cora-eclipse"
 
+#TIER0
 addRepro "cora-parent"
 
+#TIER1
 addRepro "cora-json"
 addRepro "cora-httphandler"
 addRepro "cora-userpicker"
 
+#TIER2
 addRepro "cora-beefeater"
 addRepro "cora-bookkeeper"
 addRepro "cora-gatekeeper"
 
+#TIER3
 addRepro "cora-spider"
 addRepro "cora-gatekeepertokenprovider"
 
 
+#TIER4
 addRepro "cora-basicstorage"
 addRepro "cora-gatekeeperclient"
 addRepro "cora-therest"
+addRepro "cora-apptokenverifier"
 
+#TIER5
 addRepro "cora-metacreator"
 addRepro "cora-systemone"
 
+#TIER6
 addRepro "cora-jsclient"
-
 addRepro "cora-fitnesse"
+
 
 addRepro "cora-docker-gatekeeper"
 addRepro "cora-docker-therest"

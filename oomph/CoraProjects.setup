@@ -449,6 +449,43 @@
         <description>${scope.project.label}</description>
       </setupTask>
     </setupTask>
+    
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-apptokenverifier">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.apptokenverifier.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.apptokenverifier"
+          location="${workspace.location}/cora-apptokenverifier"
+          remoteURI="https://github.com/olovm/cora-apptokenverifier">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    
+    
+    
+    
     <setupTask
         xsi:type="setup:CompoundTask"
         name="cora-metacreator">
@@ -727,6 +764,9 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-basicstorage"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-apptokenverifier"/>
     </workingSet>
     <workingSet
         name="cora-tier5"
@@ -734,6 +774,19 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-systemone"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-metacreator"/>
+    </workingSet>
+    <workingSet
+        name="cora-tier6"
+        id="">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-fitnesse"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-jsclient"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
