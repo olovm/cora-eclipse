@@ -2,7 +2,7 @@
 
 cleanInstall() {
 	local name=$1
-	echo cleaning and installing $name.....
+	echo **************************** cleaning and installing $name  ****************************
 	cd ~/workspace/$name/
 	mvn clean install
 }
