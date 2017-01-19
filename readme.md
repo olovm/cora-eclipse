@@ -1,21 +1,45 @@
 #cora-eclipse
-Cora-eclipse is a project to enable easy setup of an Eclipse install for Cora development, using Eclipse and Docker.
+Cora-eclipse is a project to enable easy setup of an Eclipse install for Cora development, using Eclipse and Docker.</br>
+I am running this on linux so, change as needed for other platforms.
 
 ##Getting started
 1. Make sure you have git and docker set up on your local machine
 2. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
 
 ##Build docker image
-Run:
- `docker build --build-arg user=yourUserName -t eclipseforcora1 cora-eclipse/docker/`
+Replace `yourUserName` with with your desired username.
+Run:</br>
+ `docker build --build-arg user=yourUserName -t eclipseforcora1 cora-eclipse/docker/`</br>
 this will take some time as it downloads quite a few things
 
+##Create directories on host 
+To get persistent storage in the container, create the following directories:</br>
+1. workspace (for your eclipse workspace)
+2. eclipse (for your eclipse installation)
+3. eclipseP2 (for files shared between multiple installations of eclipse)
+4. m2 (for maven files)
+
+
 ##First run installing eclipse
-Run:
-xhost + && docker run --rm -ti --privileged -e DISPLAY=$DISPLAY \
--v /tmp/.X11-unix:/tmp/.X11-unix \
--v /mnt/depot/eclipseForCora/workspace:/home/olov/workspace \
--v /mnt/depot/eclipseForCora/eclipse:/home/olov/eclipse \
--v /mnt/depot/eclipseP2:/home/olov/.p2 \
--v /mnt/depot/eclipseForCora/m2:/home/olov/.m2 \
---env user=olov -p 8080:8080 -p 9876:9876 -p 8090:8090 --name eclipseforcora1 eclipseforcora1
+I am using path `/mnt/depot/eclipseForCora` replace that with where you created your directories above.
+Replace `yourUserName` with with your desired username (must be the same as you used when building the image)
+Run:</br>
+`docker run --rm -ti --privileged -e DISPLAY=$DISPLAY 
+-v /tmp/.X11-unix:/tmp/.X11-unix 
+-v /mnt/depot/eclipseForCora/workspace:/home/yourUserName/workspace 
+-v /mnt/depot/eclipseForCora/eclipse:/home/yourUserName/eclipse 
+-v /mnt/depot/eclipseP2:/home/yourUserName/.p2 
+-v /mnt/depot/eclipseForCora/m2:/home/yourUserName/.m2 
+--env user=yourUserName -p 8080:8080 -p 9876:9876 -p 8090:8090 --name eclipseforcora1 eclipseforcora1`
+
+###Eclipse installation
+When the container starts for the first time will it runthe installation part of entrypoint.sh. This will
+clone all Cora repositories, add other remotes to all of them, install needed npm karma in cora-jsclient and
+start the eclipse installer (oomph). </br>
+There are a few things that needs to be choosen in the installer. 
+1. You need to use the advanced mode and
+browse for setup files for eclipse and cora, they are called EclipseForCora.setup and CoraProjects.setup, and
+can be found in /home/yourUserName/workspace/cora-eclipse/eclipse. 
+2. Use absolute path for your eclipse installation, set it to /home/yourUserName/eclipse
+3. Use absolute path for your workspace, set it to /home/yourUserName/workspace
+This should get you through the installer and will eventually start eclipse and do a first run to setup eclipse. 
