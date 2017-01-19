@@ -13,7 +13,8 @@ Run:</br>
 this will take some time as it downloads quite a few things
 
 ##Create directories on host 
-To get persistent storage in the container, create the following directories:</br>
+To get persistent storage in the container, create the following directories
+
 1. workspace (for your eclipse workspace)
 2. eclipse (for your eclipse installation)
 3. eclipseP2 (for files shared between multiple installations of eclipse)
@@ -22,7 +23,7 @@ To get persistent storage in the container, create the following directories:</b
 
 ##First run installing eclipse
 I am using path `/mnt/depot/eclipseForCora` replace that with where you created your directories above.
-Replace `yourUserName` with with your desired username (must be the same as you used when building the image)
+Replace `yourUserName` with with your desired username (must be the same as you used when building the image)</br>
 Run:</br>
 `docker run --rm -ti --privileged -e DISPLAY=$DISPLAY 
 -v /tmp/.X11-unix:/tmp/.X11-unix 
@@ -37,6 +38,7 @@ When the container starts for the first time will it runthe installation part of
 clone all Cora repositories, add other remotes to all of them, install needed npm karma in cora-jsclient and
 start the eclipse installer (oomph). </br>
 There are a few things that needs to be choosen in the installer. 
+
 1. You need to use the advanced mode and
 browse for setup files for eclipse and cora, they are called EclipseForCora.setup and CoraProjects.setup, and
 can be found in /home/yourUserName/workspace/cora-eclipse/eclipse. 
