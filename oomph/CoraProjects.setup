@@ -449,7 +449,6 @@
         <description>${scope.project.label}</description>
       </setupTask>
     </setupTask>
-    
     <setupTask
         xsi:type="setup:CompoundTask"
         name="cora-apptokenverifier">
@@ -482,10 +481,6 @@
         <description>${scope.project.label}</description>
       </setupTask>
     </setupTask>
-    
-    
-    
-    
     <setupTask
         xsi:type="setup:CompoundTask"
         name="cora-metacreator">
@@ -1091,6 +1086,10 @@
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.jdt.ui/sp_cleanup.use_this_for_non_static_method_access_only_if_necessary"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.ui/escapeStrings"
           value="true"/>
     </setupTask>
     <setupTask
