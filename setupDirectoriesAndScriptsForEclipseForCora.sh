@@ -4,6 +4,7 @@
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname $SCRIPT)
 PARENTDIR="$(dirname "$BASEDIR")"
+INSTALLDIR=$PARENTDIR/eclipseForCora
 TOPDIR="$(dirname "$PARENTDIR")"
 
 echo script: $SCRIPT
@@ -17,14 +18,13 @@ createDirectories(){
   	mkdir $PARENTDIR/eclipseP2
 }
 changeAndCopyScripts(){
-	BASEDIRASSTRING=$(echo $BASEDIR)
 	
 	cp $BASEDIR/startEclipseForCora.sh $PARENTDIR/eclipseForCora/
-	sed -i "s|INSTALLDIR|$BASEDIRASSTRING|g" $PARENTDIR/eclipseForCora/startEclipseForCora.sh
+	sed -i "s|INSTALLDIR|$INSTALLDIR|g" $PARENTDIR/eclipseForCora/startEclipseForCora.sh
 	sed -i "s|TOPDIR|$TOPDIR|g" $PARENTDIR/eclipseForCora/startEclipseForCora.sh
 	
 	cp $BASEDIR/buildEclipseForCora.sh $PARENTDIR/eclipseForCora/
-	sed -i "s|INSTALLDIR|$BASEDIRASSTRING|g" $PARENTDIR/eclipseForCora/buildEclipseForCora.sh
+	sed -i "s|INSTALLDIR|$INSTALLDIR|g" $PARENTDIR/eclipseForCora/buildEclipseForCora.sh
 	
 	
 }
