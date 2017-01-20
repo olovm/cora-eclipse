@@ -13,6 +13,7 @@ echo parentdir: $PARENTDIR
 
 createDirectories(){
   	mkdir $PARENTDIR/eclipseForCora
+  	mkdir $PARENTDIR/eclipseForCora/eclipse
   	mkdir $PARENTDIR/eclipseForCora/workspace
  	mkdir $PARENTDIR/eclipseForCora/m2
   	mkdir $PARENTDIR/eclipseP2
