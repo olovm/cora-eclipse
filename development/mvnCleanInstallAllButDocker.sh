@@ -29,9 +29,7 @@ ALL=$TIER0" "$TIER1" "$TIER2" "$TIER3" "$TIER4" "$TIER5" "$TIER6
 
 #echo $ALL
 
-#for PROJECT in $ALL
-for PROJECT in $TIER1
-do
+for PROJECT in $ALL; do
 	cleanInstall $PROJECT
 done
 
