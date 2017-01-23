@@ -1,10 +1,19 @@
 #! /bin/bash
-
+COLLECTEDERRORS=""
 cleanInstall() {
 	local name=$1
-	echo **************************** cleaning and installing $name  ****************************
+	echo "################### cleaning and installing $name  ###################"
 	cd ~/workspace/$name/
 	mvn clean install
+	
+	if [ $? -eq 0 ]
+	then
+		echo "################### done $name  ###################"
+	else
+		echo "################### failed $name  ###################">&2
+		#exit 1
+		COLLECTEDERRORS+=$name" "
+	fi
 }
 
 TIER0="cora-parent"
@@ -20,8 +29,14 @@ ALL=$TIER0" "$TIER1" "$TIER2" "$TIER3" "$TIER4" "$TIER5" "$TIER6
 
 #echo $ALL
 
-for PROJECT in $ALL
+#for PROJECT in $ALL
+for PROJECT in $TIER1
 do
 	cleanInstall $PROJECT
 done
 
+if [ -n "$COLLECTEDERRORS" ]; then
+	echo "Failed: "$COLLECTEDERRORS>&2
+else
+	echo "All OK!"
+fi
