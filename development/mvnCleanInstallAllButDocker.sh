@@ -1,5 +1,7 @@
 #! /bin/bash
+
 COLLECTEDERRORS=""
+
 cleanInstall() {
 	local name=$1
 	echo "################### cleaning and installing $name  ###################"
@@ -16,14 +18,14 @@ cleanInstall() {
 	fi
 }
 
-#import projects
+#import projectListing
 .  ~/workspace/cora-eclipse/development/projectListing.sh
 
 
 #echo $ALL
 
-#for PROJECT in $ALL; do
-for PROJECT in $TIER1; do
+for PROJECT in $ALL_JAVA; do
+#for PROJECT in $TIER1; do
 	cleanInstall $PROJECT
 done
 

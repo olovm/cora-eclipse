@@ -1,12 +1,19 @@
 #! /bin/bash
 
 TIER0="cora-parent"
-TIER1="cora-json cora-httphandler cora-userpicker "
+TIER1="cora-json cora-httphandler cora-userpicker cora-apptokenstorage"
 TIER2="cora-beefeater cora-bookkeeper cora-gatekeeper "
 TIER3="cora-spider cora-gatekeepertokenprovider"
 TIER4="cora-basicstorage cora-gatekeeperclient cora-therest cora-apptokenverifier "
 TIER5="cora-metacreator cora-systemone "
 #TIER6="cora-jsclient cora-fitnesse "
+TIER6_JS="cora-jsclient  "
 TIER6="cora-fitnesse "
 
-ALL=$TIER0" "$TIER1" "$TIER2" "$TIER3" "$TIER4" "$TIER5" "$TIER6
+
+TIER_DOCKER="cora-docker-gatekeeper cora-docker-apptokenverifier "
+TIER_DOCKER+="cora-docker-therest cora-docker-fitnesse "
+
+ALL_JAVA=$TIER0" "$TIER1" "$TIER2" "$TIER3" "$TIER4" "$TIER5" "$TIER6
+
+ALL=$ALL_JAVA" "$TIER6_JS" "$TIER_DOCKER

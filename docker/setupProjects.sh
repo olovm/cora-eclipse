@@ -27,42 +27,49 @@ setBasePathToPointToBasicStorageWorkspaceDirectory(){
 	sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "/home/$user/workspace/cora-eclipse/oomph/Servers/Tomcat v8.5 Server at localhost-config/context.xml"
 }
 
-addRepro "cora-eclipse"
+#import projectListing
+.  ~/workspace/cora-eclipse/development/projectListing.sh
+
+for PROJECT in $ALL; do
+	addRepro $PROJECT
+done
+
+#addRepro "cora-eclipse"
 setBasePathToPointToBasicStorageWorkspaceDirectory
 
 #TIER0
-addRepro "cora-parent"
+#addRepro "cora-parent"
 
 #TIER1
-addRepro "cora-json"
-addRepro "cora-httphandler"
-addRepro "cora-userpicker"
+#addRepro "cora-json"
+#addRepro "cora-httphandler"
+#addRepro "cora-userpicker"
 
 #TIER2
-addRepro "cora-beefeater"
-addRepro "cora-bookkeeper"
-addRepro "cora-gatekeeper"
+#addRepro "cora-beefeater"
+#addRepro "cora-bookkeeper"
+#addRepro "cora-gatekeeper"
 
 #TIER3
-addRepro "cora-spider"
-addRepro "cora-gatekeepertokenprovider"
+#addRepro "cora-spider"
+#addRepro "cora-gatekeepertokenprovider"
 
 
 #TIER4
-addRepro "cora-basicstorage"
-addRepro "cora-gatekeeperclient"
-addRepro "cora-therest"
-addRepro "cora-apptokenverifier"
+#addRepro "cora-basicstorage"
+#addRepro "cora-gatekeeperclient"
+#addRepro "cora-therest"
+#addRepro "cora-apptokenverifier"
 
 #TIER5
-addRepro "cora-metacreator"
-addRepro "cora-systemone"
+#addRepro "cora-metacreator"
+#addRepro "cora-systemone"
 
 #TIER6
-addRepro "cora-jsclient"
-addRepro "cora-fitnesse"
+#addRepro "cora-jsclient"
+#addRepro "cora-fitnesse"
 
 
-addRepro "cora-docker-gatekeeper"
-addRepro "cora-docker-therest"
-addRepro "cora-docker-fitnesse"
+#addRepro "cora-docker-gatekeeper"
+#addRepro "cora-docker-therest"
+#addRepro "cora-docker-fitnesse"
