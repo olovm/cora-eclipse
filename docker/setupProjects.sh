@@ -23,8 +23,12 @@ addRepro() {
 	cd /home/$user/workspace
 }
 
+setBasePathToPointToBasicStorageWorkspaceDirectory(){
+	sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "/home/$user/workspace/cora-eclipse/oomph/Servers/Tomcat v8.5 Server at localhost-config/context.xml"
+}
 
 addRepro "cora-eclipse"
+setBasePathToPointToBasicStorageWorkspaceDirectory
 
 #TIER0
 addRepro "cora-parent"

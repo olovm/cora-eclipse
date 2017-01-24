@@ -30,7 +30,7 @@
     	<Parameter name="dependencyProviderClassName" 
     	value="se.uu.ub.cora.systemone.SystemOneDependencyProvider"/>  
     	<Parameter name="storageOnDiskBasePath" 
-    	value="/home/olov/workspace/cora-basicstorage/files/"/>  
+    	value="WORKSPACEDIR/cora-basicstorage/files/"/>  
 <!--     	value="/mnt/data/basicstorage/"/>   -->
     	<Parameter name="gatekeeperURL" 
     	value="http://localhost:8080/gatekeeper/"/>  
