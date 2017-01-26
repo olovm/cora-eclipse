@@ -25,13 +25,21 @@
     <!--
     <Manager pathname="" />
     -->
-    	<Parameter name="userPickerProviderClassName" 
-    	value="se.uu.ub.cora.systemone.authentication.UserPickerProviderImp"/>  
-    	<Parameter name="dependencyProviderClassName" 
-    	value="se.uu.ub.cora.systemone.SystemOneDependencyProvider"/>  
-    	<Parameter name="storageOnDiskBasePath" 
-    	value="WORKSPACEDIR/cora-basicstorage/files/"/>  
-<!--     	value="/mnt/data/basicstorage/"/>   -->
-    	<Parameter name="gatekeeperURL" 
-    	value="http://localhost:8080/gatekeeper/"/>  
+	<Parameter name="userPickerProviderClassName"
+		value="se.uu.ub.cora.systemone.authentication.UserPickerProviderImp"
+		override="false" />
+	
+	<Parameter name="appTokenStorageClassName" value="se.uu.ub.cora.storage.AppTokenStorageImp"
+		override="false" />
+	<Parameter name="gatekeeperURL" value="http://localhost:8080/gatekeeper/"
+		override="false" />
+		
+	<Parameter name="dependencyProviderClassName"
+		value="se.uu.ub.cora.systemone.SystemOneDependencyProvider" override="false" />
+	<Parameter name="gatekeeperURL" value="http://localhost:8080/gatekeeper/"
+		override="false" />
+<!-- value="WORKSPACE DIR/cora-basicstorage/files/"/> -->
+	<Parameter name="storageOnDiskBasePath" value="WORKSPACEDIR/cora-basicstorage/files/"
+		override="false" />	  
+
 </Context>
