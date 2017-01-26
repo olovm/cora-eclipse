@@ -130,7 +130,7 @@ addOtherRemotes(){
 	local projectName=$1
 	for otherRepoName in $otherRepos; do
 		#echo "git remote add github-$otherRepoName https://github.com/$otherRepoName/$projectName.git"
-		git remote add "github-$otherRepoName https://github.com/$otherRepoName/$projectName.git"
+		git remote add github-$otherRepoName https://github.com/$otherRepoName/$projectName.git
 	done
 }
 	
