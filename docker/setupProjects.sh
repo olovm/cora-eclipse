@@ -20,15 +20,16 @@ preventGitAskingForUsernameAndPasswordIfRepoIsMissing() {
 
 addOtherRemotes(){
 	local repositoryName=$1
-	for otherRepo in $otherRepos; do
-		git remote add github-$otherRepo https://github.com/$otherRepo/$repositoryName.git
+	for otherRepoName in $otherRepos; do
+		git remote add github-$otherRepo https://github.com/$otherRepoName/$repositoryName.git
 	done
 }
 
 cloneRepoAndAddRemotes() {
 	local repositoryName=$1
 	cd /home/$user/workspace
-	git clone https://github.com/olovm/$repositoryName.git
+	#git clone https://github.com/olovm/$repositoryName.git
+	git clone $originRepo$repositoryName.git
 	cd /home/$user/workspace/$repositoryName
 	#git remote add github-lsu https://github.com/lsu-ub-uu/$repositoryName.git
 	#git remote add github-maddekenn https://github.com/maddekenn/$repositoryName.git
