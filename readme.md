@@ -13,8 +13,9 @@ Run:</br>
 this will take some time as it downloads quite a few things
 
 ##Create directories on host 
-To get persistent storage in the container, create the following directories
-
+To get persistent storage in the container, create the following directories</br>
+` ./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh`</br>
+or:</br>
 1. workspace (for your eclipse workspace)
 2. eclipse (for your eclipse installation)
 3. eclipseP2 (for files shared between multiple installations of eclipse)
@@ -24,6 +25,9 @@ To get persistent storage in the container, create the following directories
 ##First run installing eclipse
 I am using path `/mnt/depot/eclipseForCora` replace that with where you created your directories above.
 Replace `yourUserName` with with your desired username (must be the same as you used when building the image)</br>
+</br>
+` ./cora-eclipse/startEclipseForCora.sh yourUserName`</br>
+or:</br>
 Run:</br>
 `docker run --rm -ti --privileged -e DISPLAY=$DISPLAY 
 -v /tmp/.X11-unix:/tmp/.X11-unix 
