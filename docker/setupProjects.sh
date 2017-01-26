@@ -21,7 +21,8 @@ preventGitAskingForUsernameAndPasswordIfRepoIsMissing() {
 addOtherRemotes(){
 	local repositoryName=$1
 	for otherRepoName in $otherRepos; do
-		git remote add github-$otherRepo https://github.com/$otherRepoName/$repositoryName.git
+		echo "github-$otherRepo https://github.com/$otherRepoName/$repositoryName.git"
+		git remote add "github-$otherRepo https://github.com/$otherRepoName/$repositoryName.git"
 	done
 }
 
