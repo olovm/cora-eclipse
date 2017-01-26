@@ -26,7 +26,7 @@ or:</br>
 I am using path `/mnt/depot/eclipseForCora` replace that with where you created your directories above.
 Replace `yourUserName` with with your desired username (must be the same as you used when building the image)</br>
 </br>
-` ./cora-eclipse/startEclipseForCora.sh yourUserName`</br>
+` ./eclipseForCora/startEclipseForCora.sh yourUserName`</br>
 or:</br>
 Run:</br>
 `docker run --rm -ti --privileged -e DISPLAY=$DISPLAY 
