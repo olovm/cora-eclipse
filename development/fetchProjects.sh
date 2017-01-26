@@ -1,7 +1,8 @@
 #! /bin/bash
 
 #prevent git asking for username password if repo is missing
-export GIT_ASKPASS="/bin/true"
+#export GIT_ASKPASS="/bin/true"
+GIT_TERMINAL_PROMPT=0
 
 fetchAll() {
 	local dir=$1

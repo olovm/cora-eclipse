@@ -1,52 +1,22 @@
 #! /bin/bash
 
-if [ -z ${USER+x} ]; then 
-	echo "USER is unset"; 
-else 
-	echo "USER is set to '$USER'"; 
-	user=$USER
-	export user
-fi
-
-importProjectListing() {
-	#import projectListing
-	.  ~/workspace/cora-eclipse/development/projectListing.sh
+start(){
+	setUser;
+	chooseRepo;
+	importProjectListing;
+	preventGitAskingForUsernameAndPasswordIfRepoIsMissing;
+	addAllRepositories;
+	setBasePathToPointToBasicStorageWorkspaceDirectoryInTomcatContextXml;
 }
 
-preventGitAskingForUsernameAndPasswordIfRepoIsMissing() {
-	#prevent git asking for username password if repo is missing
-	export GIT_ASKPASS="/bin/true"
-}
-
-addOtherRemotes(){
-	local repositoryName=$1
-	for otherRepoName in $otherRepos; do
-		echo "github-$otherRepo https://github.com/$otherRepoName/$repositoryName.git"
-		git remote add "github-$otherRepo https://github.com/$otherRepoName/$repositoryName.git"
-	done
-}
-
-cloneRepoAndAddRemotes() {
-	local repositoryName=$1
-	cd /home/$user/workspace
-	#git clone https://github.com/olovm/$repositoryName.git
-	git clone $originRepo$repositoryName.git
-	cd /home/$user/workspace/$repositoryName
-	#git remote add github-lsu https://github.com/lsu-ub-uu/$repositoryName.git
-	#git remote add github-maddekenn https://github.com/maddekenn/$repositoryName.git
-	addOtherRemotes $repositoryName
-	git fetch --all
-	cd /home/$user/workspace
-}
-
-addAllRepositories() {
-	for PROJECT in $ALL; do
-		cloneRepoAndAddRemotes $PROJECT
-	done
-}
-
-setBasePathToPointToBasicStorageWorkspaceDirectoryInTomcatContextXml(){
-	sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "/home/$user/workspace/cora-eclipse/oomph/Servers/Tomcat v8.5 Server at localhost-config/context.xml"
+setUser(){
+	if [ -z ${USER+x} ]; then 
+		echo "USER is unset"; 
+	else 
+		echo "USER is set to '$USER'"; 
+		user=$USER
+		export user
+	fi
 }
 
 chooseRepo(){
@@ -84,9 +54,89 @@ chooseRepo(){
 	echo "Others remotes will be: $otherRepos"
 }
 
+importProjectListing() {
+	#import projectListing
+	.  ~/workspace/cora-eclipse/development/projectListing.sh
+}
+
+preventGitAskingForUsernameAndPasswordIfRepoIsMissing() {
+	#prevent git asking for username password if repo is missing
+	#export GIT_ASKPASS="/bin/true"
+	GIT_TERMINAL_PROMPT=0
+}
+
+addAllRepositories() {
+	for PROJECT in $ALL; do
+		cloneRepoAndAddRemotes $PROJECT
+	done
+}
+
+cloneRepoAndAddRemotes() {
+	local projectName=$1
+	
+	setWorkingRepositoryAndProjectNameAsTemp
+	echo "tempRepository:$tempRepository"
+	echo "tempProjectName:$tempProjectName"
+	
+	cd /home/$user/workspace
+	#echo "git clone $tempRepository$tempProjectName.git $projectName"
+	git clone $tempRepository$tempProjectName.git $projectName
+	cd /home/$user/workspace/$projectName
+	addOtherRemotes $projectName
+	git fetch --all
+	cd /home/$user/workspace
+}
+
+setWorkingRepositoryAndProjectNameAsTemp(){
+	tempProjectName=$projectName
+	tempRepository=$originRepo
+
+	if ! checkIfTempUrlExists; then 
+		echo "- WARN - Chosen origin not found ($tempRepository$tempProjectName)"
+		tryWithProjectNameWithoutCora
+	fi
+}
+
+checkIfTempUrlExists(){
+	local status=$(lookupUrl $tempRepository$tempProjectName)
+	if [  $status -eq 200 ]; then 
+		return 0
+	fi
+	false
+}
+
+lookupUrl(){
+	local url=$1
+	status=$(curl -s --head -w %{http_code} $url --connect-timeout 3 -o /dev/null)
+	echo $status
+}
+
+tryWithProjectNameWithoutCora(){
+	echo "Trying project name without cora..."
+	tempProjectName=${projectName:5}
+
+	if ! checkIfTempUrlExists; then 
+		useLsuAsOrigin
+	fi
+}
+
+useLsuAsOrigin(){
+	echo "- WARN - Falling back to using lsu as origin";
+	tempProjectName=$projectName
+	tempRepository="https://github.com/lsu-ub-uu/"
+}
+
+addOtherRemotes(){
+	local projectName=$1
+	for otherRepoName in $otherRepos; do
+		#echo "git remote add github-$otherRepoName https://github.com/$otherRepoName/$projectName.git"
+		git remote add "github-$otherRepoName https://github.com/$otherRepoName/$projectName.git"
+	done
+}
+	
+setBasePathToPointToBasicStorageWorkspaceDirectoryInTomcatContextXml(){
+	sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "/home/$user/workspace/cora-eclipse/oomph/Servers/Tomcat v8.5 Server at localhost-config/context.xml"
+}
+
 # ################# calls start here #######################################
-chooseRepo
-importProjectListing
-preventGitAskingForUsernameAndPasswordIfRepoIsMissing
-addAllRepositories
-setBasePathToPointToBasicStorageWorkspaceDirectoryInTomcatContextXml
+start
