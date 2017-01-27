@@ -1,5 +1,7 @@
 #! /bin/bash
 
+workspaceDir=$1
+
 start(){
 	setUser;
 	chooseRepo;
@@ -78,13 +80,16 @@ cloneRepoAndAddRemotes() {
 	echo "tempRepository:$tempRepository"
 	echo "tempProjectName:$tempProjectName"
 	
-	cd /home/$user/workspace
+	#cd /home/$user/workspace
+	cd $workspaceDir
 	#echo "git clone $tempRepository$tempProjectName.git $projectName"
 	git clone $tempRepository$tempProjectName.git $projectName
-	cd /home/$user/workspace/$projectName
+	#cd /home/$user/workspace/$projectName
+	cd $workspaceDir/$projectName
 	addOtherRemotes $projectName
 	git fetch --all
-	cd /home/$user/workspace
+	#cd /home/$user/workspace
+	cd $workspaceDir
 }
 
 setWorkingRepositoryAndProjectNameAsTemp(){
@@ -135,8 +140,13 @@ addOtherRemotes(){
 }
 	
 setBasePathToPointToBasicStorageWorkspaceDirectoryInTomcatContextXml(){
-	sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "/home/$user/workspace/cora-eclipse/oomph/Servers/Tomcat v8.5 Server at localhost-config/context.xml"
+	#sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "/home/$user/workspace/cora-eclipse/oomph/Servers/Tomcat v8.5 Server at localhost-config/context.xml"
+	sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "$workspaceDir/cora-eclipse/oomph/Servers/Tomcat v8.5 Server at localhost-config/context.xml"
 }
 
 # ################# calls start here #######################################
-start
+if [ ! $workspaceDir ]; then
+  	echo "You must specify the workspace directory.."
+else
+	start
+fi
