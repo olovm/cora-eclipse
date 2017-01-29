@@ -3,7 +3,7 @@
 firstRun(){
 	git clone https://github.com/olovm/cora-eclipse.git ~/workspace/cora-eclipse
 	
-	chmod +x ~/workspace/cora-eclipse/docker/setupProjects.sh
+	chmod +x ~/workspace/cora-eclipse/development/setupProjects.sh
 	~/workspace/cora-eclipse/development/setupProjects.sh "~/workspace"
 	
 	cd ~/workspace/cora-jsclient/
