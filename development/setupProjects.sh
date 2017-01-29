@@ -1,6 +1,8 @@
 #! /bin/bash
 
 workspaceDir=$1
+SCRIPT=$(readlink -f "$0")
+BASEDIR=$(dirname $SCRIPT)
 
 start(){
 	setUser;
@@ -57,7 +59,7 @@ chooseRepo(){
 }
 
 importProjectListing() {
-	.  ./projectListing.sh
+	.  $BASEDIR/projectListing.sh
 }
 
 preventGitAskingForUsernameAndPasswordIfRepoIsMissing() {
