@@ -57,12 +57,10 @@ chooseRepo(){
 }
 
 importProjectListing() {
-	#import projectListing
-	.  ~/workspace/cora-eclipse/development/projectListing.sh
+	.  $workspaceDir/cora-eclipse/development/projectListing.sh
 }
 
 preventGitAskingForUsernameAndPasswordIfRepoIsMissing() {
-	#prevent git asking for username password if repo is missing
 	#export GIT_ASKPASS="/bin/true"
 	export GIT_TERMINAL_PROMPT=0
 }
@@ -80,15 +78,11 @@ cloneRepoAndAddRemotes() {
 	echo "tempRepository:$tempRepository"
 	echo "tempProjectName:$tempProjectName"
 	
-	#cd /home/$user/workspace
 	cd $workspaceDir
-	#echo "git clone $tempRepository$tempProjectName.git $projectName"
 	git clone $tempRepository$tempProjectName.git $projectName
-	#cd /home/$user/workspace/$projectName
 	cd $workspaceDir/$projectName
 	addOtherRemotes $projectName
 	git fetch --all
-	#cd /home/$user/workspace
 	cd $workspaceDir
 }
 
@@ -140,7 +134,6 @@ addOtherRemotes(){
 }
 	
 setBasePathToPointToBasicStorageWorkspaceDirectoryInTomcatContextXml(){
-	#sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "/home/$user/workspace/cora-eclipse/oomph/Servers/Tomcat v8.5 Server at localhost-config/context.xml"
 	sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "$workspaceDir/cora-eclipse/oomph/Servers/Tomcat v8.5 Server at localhost-config/context.xml"
 }
 
