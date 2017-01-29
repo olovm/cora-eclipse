@@ -180,8 +180,6 @@
       <repository
           url="http://download.eclipse.org/releases/neon"/>
       <repository
-          url="http://download.eclipse.org/technology/epp/packages/neon"/>
-      <repository
           url="http://download.eclipse.org/releases/neon/201612211000"/>
     </setupTask>
     <setupTask
