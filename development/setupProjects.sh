@@ -57,7 +57,7 @@ chooseRepo(){
 }
 
 importProjectListing() {
-	.  $workspaceDir/cora-eclipse/development/projectListing.sh
+	.  ./projectListing.sh
 }
 
 preventGitAskingForUsernameAndPasswordIfRepoIsMissing() {

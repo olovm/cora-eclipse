@@ -26,6 +26,9 @@ changeAndCopyScripts(){
 	
 	#cp $BASEDIR/buildEclipseForCora.sh $PARENTDIR/eclipseForCora/
 	#sed -i "s|INSTALLDIR|$INSTALLDIR|g" $PARENTDIR/eclipseForCora/buildEclipseForCora.sh
+	
+	cp $BASEDIR/development/projectListing.sh $PARENTDIR/eclipseForCora/
+	cp $BASEDIR/development/setupProjects.sh $PARENTDIR/eclipseForCora/
 }
 
 if [ ! -d $PARENTDIR/eclipseForCora ]; then
