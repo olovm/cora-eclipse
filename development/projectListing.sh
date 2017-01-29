@@ -1,5 +1,7 @@
 #! /bin/bash
 
+TIER_ECLIPSE="cora-eclipse"
+
 TIER0="cora-parent"
 TIER1="cora-json cora-httphandler cora-userpicker cora-apptokenstorage"
 TIER2="cora-beefeater cora-bookkeeper cora-gatekeeper "
@@ -16,4 +18,4 @@ TIER_DOCKER+="cora-docker-therest cora-docker-fitnesse "
 
 ALL_JAVA=$TIER0" "$TIER1" "$TIER2" "$TIER3" "$TIER4" "$TIER5" "$TIER6
 
-ALL=$ALL_JAVA" "$TIER6_JS" "$TIER_DOCKER
+ALL=$TIER_ECLIPSE$ALL_JAVA" "$TIER6_JS" "$TIER_DOCKER
