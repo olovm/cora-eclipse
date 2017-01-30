@@ -32,7 +32,12 @@ changeAndCopyScripts(){
 	cp $BASEDIR/development/setupProjects.sh $PARENTDIR/eclipseForCora/setupProjects.sh
 }
 
+createGitConfigFile(){
+	touch $PARENTDIR/.gitconfig
+}
+
 if [ ! -d $PARENTDIR/eclipseForCora ]; then
 	createDirectories
 	changeAndCopyScripts
+	createGitConfigFile
 fi
