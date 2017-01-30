@@ -36,7 +36,7 @@ chooseRepo(){
 	        1)
 				echo "You choose: $userchoice 1111"
 	            originRepo="https://github.com/lsu-ub-uu/"
-	            otherRepos="olomv maddekenn"
+	            otherRepos="olovm maddekenn"
 	            ;;
 	        2)
 				echo "You choose: $userchoice 2222"
@@ -46,12 +46,12 @@ chooseRepo(){
 	        3)
 				echo "You choose: $userchoice 3333"
 	            originRepo="https://github.com/maddekenn/"
-	            otherRepos="lsu-ub-uu olomv"
+	            otherRepos="lsu-ub-uu olovm"
 	            ;;
 	        *)
 				echo "You choose: $userchoice other"
 	            originRepo="$userchoice"
-	            otherRepos="lsu-ub-uu olomv maddekenn"
+	            otherRepos="lsu-ub-uu olovm maddekenn"
 	esac
 	
 	echo "Origin choosen as: $originRepo"
