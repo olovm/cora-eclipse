@@ -1141,6 +1141,10 @@
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.jdt.ui/escapeStrings"
           value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.ui/content_assist_favorite_static_members"
+          value="org.testng.Assert.*"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
