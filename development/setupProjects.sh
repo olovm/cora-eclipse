@@ -64,7 +64,7 @@ importProjectListing() {
 
 preventGitAskingForUsernameAndPasswordIfRepoIsMissing() {
 	#export GIT_ASKPASS="/bin/true"
-	export GIT_TERMINAL_PROMPT=0
+	#export GIT_TERMINAL_PROMPT=0
 	unset SSH_ASKPASS
 }
 
