@@ -1,12 +1,12 @@
-#cora-eclipse
+# cora-eclipse
 Cora-eclipse is a project to enable easy setup of an Eclipse install for Cora development, using Eclipse and Docker.</br>
 I am running this on linux so, change as needed for other platforms.
 
-##Getting started
+## Getting started
 1. Make sure you have git and docker set up on your local machine
 2. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
 
-##Build docker image
+## Build docker image
 Replace `yourUserName` with with your desired username.</br>
 Run:</br>
  ./cora-eclipse/buildEclipseForCora.sh yourUserName
@@ -14,7 +14,7 @@ or:</br>
  `docker build --build-arg user=yourUserName -t eclipseforcora2 cora-eclipse/docker/`</br>
 this will take some time as it downloads quite a few things
 
-##Create directories on host 
+## Create directories on host 
 To get persistent storage in the container, create the following directories</br>
 ` ./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh`</br>
 or:</br>
@@ -24,7 +24,7 @@ or:</br>
 4. m2 (for maven files)
 
 
-##First run installing eclipse
+## First run installing eclipse
 I am using path `/mnt/depot/eclipseForCora` replace that with where you created your directories above.
 Replace `yourUserName` with with your desired username (must be the same as you used when building the image)</br>
 </br>
@@ -39,7 +39,7 @@ Run:</br>
 -v /mnt/depot/eclipseForCora/m2:/home/yourUserName/.m2 
 --env user=yourUserName -p 8080:8080 -p 9876:9876 -p 8090:8090 --name eclipseforcora2 eclipseforcora2`
 
-###Eclipse installation
+### Eclipse installation
 When the container starts for the first time will it runthe installation part of entrypoint.sh. This will
 clone all Cora repositories, add other remotes to all of them, install needed npm karma in cora-jsclient and
 start the eclipse installer (oomph). </br>
