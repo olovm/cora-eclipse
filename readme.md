@@ -9,6 +9,8 @@ I am running this on linux so, change as needed for other platforms.
 ##Build docker image
 Replace `yourUserName` with with your desired username.
 Run:</br>
+ ./cora-eclipse/buildEclipseForCora.sh yourUserName
+or:</br>
  `docker build --build-arg user=yourUserName -t eclipseforcora2 cora-eclipse/docker/`</br>
 this will take some time as it downloads quite a few things
 
