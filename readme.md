@@ -7,7 +7,7 @@ I am running this on linux so, change as needed for other platforms.
 2. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
 
 ##Build docker image
-Replace `yourUserName` with with your desired username.
+Replace `yourUserName` with with your desired username.</br>
 Run:</br>
  ./cora-eclipse/buildEclipseForCora.sh yourUserName
 or:</br>
