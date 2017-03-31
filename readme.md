@@ -47,7 +47,12 @@ There are a few things that needs to be choosen in the installer.
 
 1. You need to use the advanced mode and
 browse for setup files for eclipse and cora, they are called EclipseForCora.setup and CoraProjects.setup, and
-can be found in /home/yourUserName/workspace/cora-eclipse/eclipse. 
+can be found in /home/yourUserName/workspace/cora-eclipse/oomph. 
 2. Use absolute path for your eclipse installation, set it to /home/yourUserName/eclipse
 3. Use absolute path for your workspace, set it to /home/yourUserName/workspace
 This should get you through the installer and will eventually start eclipse and do a first run to setup eclipse. 
+
+## Starting server
+Before starting the server go into the launch configuration / classpath and under User Entries add<br>
+cora-basicstorage/target/cora-basicstorage-0.5-SNAPSHOT.jar<br>
+cora-systemone/target/cora-systemone-0.13-SNAPSHOT.jar<br>
