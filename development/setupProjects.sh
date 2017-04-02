@@ -8,7 +8,7 @@ start(){
 	setUser;
 	chooseRepo;
 	importProjectListing;
-	#preventGitAskingForUsernameAndPasswordIfRepoIsMissing;
+	preventGitAskingForUsernameAndPasswordIfRepoIsMissing;
 	addAllRepositories;
 	setBasePathToPointToBasicStorageWorkspaceDirectoryInTomcatContextXml;
 }
