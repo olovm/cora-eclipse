@@ -9,7 +9,7 @@ start(){
 	chooseRepo;
 	importProjectListing;
 #	preventGitAskingForUsernameAndPasswordIfRepoIsMissing;
-	addAllRepositories;
+	changeOriginForAllRepositories;
 	#setBasePathToPointToBasicStorageWorkspaceDirectoryInTomcatContextXml;
 }
 
@@ -68,13 +68,13 @@ preventGitAskingForUsernameAndPasswordIfRepoIsMissing() {
 	unset SSH_ASKPASS
 }
 
-addAllRepositories() {
+changeOriginForAllRepositories() {
 	for PROJECT in $ALL; do
-		cloneRepoAndAddRemotes $PROJECT
+		removeAndSetNewOrigin $PROJECT
 	done
 }
 
-cloneRepoAndAddRemotes() {
+removeAndSetNewOrigin() {
 	local projectName=$1
 	
 	setWorkingRepositoryAndProjectNameAsTemp
@@ -86,9 +86,6 @@ cloneRepoAndAddRemotes() {
 	cd $workspaceDir/$projectName
 	git remote remove origin
 	git remote add origin $tempRepository$tempProjectName.git
-#	git remote add lsu-$otherRepoName  $tempRepository$tempProjectName.git
-#	addOtherRemotes $projectName
-#	git fetch --all
 	cd $workspaceDir
 }
 
@@ -127,25 +124,9 @@ tryWithProjectNameWithoutCora(){
 
 	if ! checkIfTempUrlExists; then 
 		echo ""
-#		useLsuAsOrigin
 	fi
 }
 
-useLsuAsOrigin(){
-	echo "- WARN - Falling back to using lsu as origin";
-	tempProjectName=$projectName
-	tempRepository="https://github.com/lsu-ub-uu/"
-}
-
-addOtherRemotes(){
-	local projectName=$1
-	for otherRepoName in $otherRepos; do
-		#echo "git remote add github-$otherRepoName https://github.com/$otherRepoName/$projectName.git"
-		git remote remove origin
-		git remote add origin https://github.com/$otherRepoName/$projectName.git
-	done
-}
-	
 setBasePathToPointToBasicStorageWorkspaceDirectoryInTomcatContextXml(){
 	sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "$workspaceDir/cora-eclipse/oomph/Servers/Tomcat v8.5 Server at localhost-config/context.xml"
 }
