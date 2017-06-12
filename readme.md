@@ -11,7 +11,7 @@ Replace `yourUserName` with with your desired username.</br>
 Run:</br>
 `./cora-eclipse/buildEclipseForCora.sh yourUserName`
 or:</br>
- `docker build --build-arg user=yourUserName -t eclipseforcora2 cora-eclipse/docker/`</br>
+ `docker build --build-arg user=yourUserName -t eclipseforcora3 cora-eclipse/docker/`</br>
 this will take some time as it downloads quite a few things
 
 ## Create directories on host 
@@ -37,7 +37,7 @@ Run:</br>
 -v /mnt/depot/eclipseForCora/eclipse:/home/yourUserName/eclipse 
 -v /mnt/depot/eclipseP2:/home/yourUserName/.p2 
 -v /mnt/depot/eclipseForCora/m2:/home/yourUserName/.m2 
---env user=yourUserName -p 8080:8080 -p 9876:9876 -p 8090:8090 --name eclipseforcora2 eclipseforcora2`
+--env user=yourUserName -p 8080:8080 -p 9876:9876 -p 8090:8090 --name eclipseforcora3 eclipseforcora3`
 
 ### Eclipse installation
 When the container starts for the first time will it runthe installation part of entrypoint.sh. This will

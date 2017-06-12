@@ -24,7 +24,8 @@ RUN chmod a+x /home/$user/entrypoint.sh
 RUN chown $user:$user /home/$user -R
 
 
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.13/bin/apache-tomcat-8.5.13.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.15/bin/apache-tomcat-8.5.15.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - http://apache.mirrors.spacedump.net/lucene/solr/6.6.0/solr-6.6.0.tgz   | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
@@ -40,7 +41,7 @@ CMD  /home/$user/entrypoint.sh
 
 
 #built by: 
-#docker build --build-arg user=olov -t eclipseforcora2 .
+#docker build --build-arg user=olov -t eclipseforcora3 .
 
 #run with: 
 #docker run -ti --privileged -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix 
