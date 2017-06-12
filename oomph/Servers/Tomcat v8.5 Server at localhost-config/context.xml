@@ -36,10 +36,10 @@
 		
 	<Parameter name="dependencyProviderClassName"
 		value="se.uu.ub.cora.systemone.SystemOneDependencyProvider" override="false" />
-	<Parameter name="gatekeeperURL" value="http://localhost:8080/gatekeeper/"
-		override="false" />
-<!-- value="WORKSPACE DIR/cora-basicstorage/files/"/> -->
+
 	<Parameter name="storageOnDiskBasePath" value="WORKSPACEDIR/cora-basicstorage/files/"
 		override="false" />	  
+	<Parameter name="solrURL" value="http://localhost:8983/solr/coracore"
+		override="false" />
 
 </Context>
