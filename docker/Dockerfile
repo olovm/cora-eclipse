@@ -3,6 +3,7 @@ FROM fedora:25
 RUN dnf clean all && \
   dnf install -y \
   wget \
+  lsof \
   tar \
   less \
   java-1.8.0-openjdk* \
