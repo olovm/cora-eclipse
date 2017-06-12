@@ -14,7 +14,7 @@ TIER6="cora-fitnesse "
 
 
 TIER_DOCKER="cora-docker-gatekeeper cora-docker-apptokenverifier "
-TIER_DOCKER+="cora-docker-therest cora-docker-fitnesse "
+TIER_DOCKER+="cora-docker-solr cora-docker-therest cora-docker-fitnesse "
 
 ALL_JAVA=$TIER0" "$TIER1" "$TIER2" "$TIER3" "$TIER4" "$TIER5" "$TIER6
 
