@@ -49,7 +49,8 @@ There are a few things that needs to be choosen in the installer.
 browse for setup files for eclipse and cora, they are called EclipseForCora.setup and CoraProjects.setup, and
 can be found in /home/yourUserName/workspace/cora-eclipse/oomph. 
 2. Use absolute path for your eclipse installation, set it to /home/yourUserName/eclipse
-3. Use absolute path for your workspace, set it to /home/yourUserName/workspace
+3. Fill in path for Installation location, set it to /home/yourUserName/eclipse
+4. Use absolute path for your workspace, set it to /home/yourUserName/workspace
 This should get you through the installer and will eventually start eclipse and do a first run to setup eclipse. 
 
 ## Starting server
