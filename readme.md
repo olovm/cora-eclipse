@@ -12,7 +12,11 @@ Run:</br>
 `./cora-eclipse/buildEclipseForCora.sh yourUserName`
 or:</br>
  `docker build --build-arg user=yourUserName -t eclipseforcora3 cora-eclipse/docker/`</br>
+or: if you want an updated FROM</br>
+ `docker build --pull --build-arg user=yourUserName -t eclipseforcora3 cora-eclipse/docker/`</br>
 this will take some time as it downloads quite a few things
+
+
 
 ## Create directories on host 
 To get persistent storage in the container, create the following directories</br>
