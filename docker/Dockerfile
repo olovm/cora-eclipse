@@ -17,8 +17,7 @@ ARG user
 
 RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
 
-#RUN wget -O - http://saimei.acc.umu.se/mirror/eclipse.org/oomph/epp/neon/R3/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
-RUN wget -O - https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz&r=1 | tar zxf - -C /home/$user
+RUN wget -O - http://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
