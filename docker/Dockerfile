@@ -17,7 +17,8 @@ ARG user
 
 RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
 
-RUN wget -O - http://saimei.acc.umu.se/mirror/eclipse.org/oomph/epp/neon/R3/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
+#RUN wget -O - http://saimei.acc.umu.se/mirror/eclipse.org/oomph/epp/neon/R3/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
+RUN wget -O - https://www.eclipse.org/downloads/download.php?file=/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz&r=1 | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
@@ -25,7 +26,7 @@ RUN chmod a+x /home/$user/entrypoint.sh
 RUN chown $user:$user /home/$user -R
 
 
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.15/bin/apache-tomcat-8.5.15.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.16/bin/apache-tomcat-8.5.16.tar.gz  | tar zxf - -C /opt/
 RUN wget -O - http://apache.mirrors.spacedump.net/lucene/solr/6.6.0/solr-6.6.0.tgz   | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
