@@ -376,8 +376,6 @@
         xsi:type="setup.p2:P2Task"
         label="Extra plugins for Cora Development">
       <requirement
-          name="com.mountainminds.eclemma.feature.feature.group"/>
-      <requirement
           name="org.sonarlint.eclipse.feature.feature.group"/>
       <requirement
           name="org.sonarlint.eclipse.jdt.feature.feature.group"/>
@@ -387,8 +385,6 @@
           name="org.testng.eclipse.maven.feature.feature.group"/>
       <requirement
           name="edu.umd.cs.findbugs.plugin.eclipse.feature.group"/>
-      <repository
-          url="http://update.eclemma.org"/>
       <repository
           url="http://eclipse.sonarlint.org"/>
       <repository
