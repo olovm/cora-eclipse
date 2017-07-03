@@ -231,24 +231,18 @@
     </setupTask>
     <setupTask
         xsi:type="setup.p2:P2Task"
-        label="Eclipse IDE for Java EE Developers (Neon)">
-      <requirement
-          name="org.eclipse.platform.ide"/>
-      <requirement
-          name="org.eclipse.platform.feature.group"/>
-      <requirement
-          name="org.eclipse.rcp.feature.group"/>
-      <requirement
-          name="epp.package.jee"/>
+        label="Eclipse IDE for Java EE Developers (Oxygen)">
       <requirement
           name="epp.package.jee"
-          versionRange="[4.6.0,4.7.0)"/>
+          versionRange="[4.7.0,4.8.0)"/>
       <requirement
           name="org.eclipse.platform.feature.group"
-          versionRange="[4.6.0,4.7.0)"/>
+          versionRange="[4.7.0,4.8.0)"/>
       <requirement
           name="org.eclipse.rcp.feature.group"
-          versionRange="[4.6.0,4.7.0)"/>
+          versionRange="[4.7.0,4.8.0)"/>
+      <requirement
+          name="org.eclipse.buildship.feature.group"/>
       <requirement
           name="org.eclipse.cft.server.core.feature.feature.group"/>
       <requirement
@@ -271,6 +265,8 @@
           name="org.eclipse.datatools.sqldevtools.feature.feature.group"/>
       <requirement
           name="org.eclipse.datatools.sqltools.doc.user.feature.group"/>
+      <requirement
+          name="org.eclipse.eclemma.feature.feature.group"/>
       <requirement
           name="org.eclipse.egit.feature.group"/>
       <requirement
@@ -368,9 +364,9 @@
       <requirement
           name="org.eclipse.wst.xsl.feature.feature.group"/>
       <repository
-          url="http://download.eclipse.org/releases/oxygen"/>
-      <repository
           url="http://download.eclipse.org/technology/epp/packages/oxygen"/>
+      <repository
+          url="http://download.eclipse.org/releases/oxygen/201706281000"/>
     </setupTask>
     <setupTask
         xsi:type="setup.p2:P2Task"
