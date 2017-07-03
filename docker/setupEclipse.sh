@@ -28,7 +28,7 @@ echo "user: '$user'"
 -application org.eclipse.equinox.p2.director \
 -noSplash \
 -repository \
-http://download.eclipse.org/eclipse/updates/4.6,\
+http://download.eclipse.org/eclipse/updates/4.7,\
 http://eclipse.sonarlint.org,\
 http://update.eclemma.org,\
 http://beust.com/eclipse,\
