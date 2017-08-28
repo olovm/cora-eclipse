@@ -25,7 +25,7 @@ RUN chmod a+x /home/$user/entrypoint.sh
 RUN chown $user:$user /home/$user -R
 
 
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.16/bin/apache-tomcat-8.5.16.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.20/bin/apache-tomcat-8.5.20.tar.gz  | tar zxf - -C /opt/
 RUN wget -O - http://apache.mirrors.spacedump.net/lucene/solr/6.6.0/solr-6.6.0.tgz   | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
