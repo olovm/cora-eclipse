@@ -1,4 +1,4 @@
-FROM fedora:25
+FROM fedora:26
 
 RUN dnf clean all && \
   dnf install -y \
