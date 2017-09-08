@@ -15,5 +15,6 @@ else
 	-v INSTALLDIR/m2:/home/$USER/.m2 \
 	-v PARENTDIR/eclipseP2:/home/$USER/.p2 \
 	-v PARENTDIR/.gitconfig:/home/$USER/.gitconfig \
+	-v PARENTDIR/solr:/opt/solr-6.6.0/server/solr \
 	--env user=$USER -p 8080:8080 -p 9876:9876 -p 8090:8090 -p 8983:8983 --name eclipseforcoraoxogen1 eclipseforcoraoxygen1 $2
 fi
