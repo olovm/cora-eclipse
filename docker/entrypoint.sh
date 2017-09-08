@@ -1,7 +1,8 @@
 #! /bin/bash
 
 firstRun(){
-	cp -r /opt/solrCopy /opt/solr-6.6.0/server/solr
+	cp -r /opt/solrCopy/ /opt/solr-6.6.0/server/solr
+	
 	git clone https://github.com/olovm/cora-eclipse.git ~/workspace/cora-eclipse
 	
 	chmod +x ~/workspace/cora-eclipse/development/setupProjects.sh
