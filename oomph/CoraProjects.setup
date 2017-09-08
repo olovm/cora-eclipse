@@ -817,6 +817,23 @@
         <description>${scope.project.label}</description>
       </setupTask>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-searchstorage">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.corasearchstorage"
+          location="${workspace.location}/cora-searchstorage"
+          remoteURI="https://github.com/olovm/cora-searchstorage">
+        <description></description>
+      </setupTask>
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.corasearchstorage.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
@@ -841,6 +858,9 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-apptokenstorage"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-searchstorage"/>
     </workingSet>
     <workingSet
         name="cora-tier2">
