@@ -2,6 +2,7 @@
 
 firstRun(){
 	cp -r /opt/solrCopy/* /opt/solr-6.6.0/server/solr
+	cp -r /opt/pgsqlCopy/* /var/lib/pgsql/data
 	
 	git clone https://github.com/olovm/cora-eclipse.git ~/workspace/cora-eclipse
 	

@@ -10,10 +10,18 @@ RUN dnf clean all && \
   maven \
   git \ 
   node \
-  npm && \
+  npm \
+  postgresql-server \
+  postgresql-contrib && \
   dnf clean all
  
 ARG user
+
+RUN systemctl enable postgresql
+RUN postgresql-setup --initdb --unit postgresql
+RUN systemctl start postgresql
+RUN cp -r  /var/lib/pgsql/data /opt/pgsqlCopy
+
 
 RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
 
