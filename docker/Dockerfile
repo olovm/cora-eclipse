@@ -11,6 +11,7 @@ RUN dnf clean all && \
   git \ 
   node \
   npm \
+  postgresql \
   postgresql-server \
   postgresql-contrib && \
   dnf clean all
