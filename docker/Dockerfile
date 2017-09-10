@@ -23,7 +23,7 @@ ARG user
 RUN touch /var/lib/pgsql/data/
 RUN systemctl enable postgresql
 #RUN postgresql-setup initdb
-RUN postgresql-setup --initdb --unit postgresql --pgdata=/var/lib/pgsql/data
+RUN postgresql-setup --initdb --unit postgresql --new-systemd-unit --datadir=/var/lib/pgsql/data --port 5432
 RUN systemctl start postgresql
 RUN cp -r  /var/lib/pgsql/data /opt/pgsqlCopy
 
