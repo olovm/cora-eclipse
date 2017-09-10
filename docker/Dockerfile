@@ -18,6 +18,7 @@ RUN dnf clean all && \
  
 ARG user
 
+ENV PGDATA=/var/lib/pgsql/data
 RUN touch /var/lib/pgsql/data/
 RUN systemctl enable postgresql
 RUN postgresql-setup --initdb --unit postgresql
