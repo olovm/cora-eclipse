@@ -18,11 +18,12 @@ RUN dnf clean all && \
  
 ARG user
 
-ENV PGDATA=/var/lib/pgsql/data
+#ENV 
+RUN export PGDATA=/var/lib/pgsql/data
 RUN touch /var/lib/pgsql/data/
 RUN systemctl enable postgresql
-RUN postgresql-setup initdb
-#RUN postgresql-setup --initdb --unit postgresql
+#RUN postgresql-setup initdb
+RUN postgresql-setup --initdb --unit postgresql
 RUN systemctl start postgresql
 RUN cp -r  /var/lib/pgsql/data /opt/pgsqlCopy
 
