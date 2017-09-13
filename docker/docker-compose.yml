@@ -3,7 +3,7 @@ services:
   #db:
     #image: postgres
   eclipse:
-    build: .
+    build: . --build-arg user=olov 
     #image: eclipseforcoraoxogen1
     command: docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
