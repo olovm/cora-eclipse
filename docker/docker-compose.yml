@@ -3,17 +3,18 @@ services:
   #db:
     #image: postgres
   eclipse:
-    #build: .
+    build: .
+    #image: eclipseforcoraoxogen1
     command: docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
-        -v /mnt/depot/eclipseOxygen0_1/eclipseForCora/workspace:/home/$USER/workspace \
-        -v /mnt/depot/eclipseOxygen0_1/eclipseForCora/eclipse:/home/$USER/eclipse \
-        -v /mnt/depot/eclipseOxygen0_1/eclipseForCora/.eclipse:/home/$USER/.eclipse \
-        -v /mnt/depot/eclipseOxygen0_1/eclipseForCora/m2:/home/$USER/.m2 \
-        -v /mnt/depot/eclipseOxygen0_1/eclipseP2:/home/$USER/.p2 \
-        -v /mnt/depot/eclipseOxygen0_1/.gitconfig:/home/$USER/.gitconfig \
-        --env user=$USER -p 8080:8080 -p 9876:9876 -p 8090:8090 -p 8983:8983 --name eclipseforcoraoxogen1 eclipseforcoraoxygen1 $2
-    '
+        -v /mnt/depot/eclipseOxygen0_1/eclipseForCora/workspace:/home/olov/workspace \
+        -v /mnt/depot/eclipseOxygen0_1/eclipseForCora/eclipse:/home/olov/eclipse \
+        -v /mnt/depot/eclipseOxygen0_1/eclipseForCora/.eclipse:/home/olov/.eclipse \
+        -v /mnt/depot/eclipseOxygen0_1/eclipseForCora/m2:/home/olov/.m2 \
+        -v /mnt/depot/eclipseOxygen0_1/eclipseP2:/home/olov/.p2 \
+        -v /mnt/depot/eclipseOxygen0_1/.gitconfig:/home/olov/.gitconfig \
+        --env user=olov -p 8080:8080 -p 9876:9876 -p 8090:8090 -p 8983:8983 --name eclipseforcoraoxogen1 eclipseforcoraoxygen1 
+        
     #volumes:
      # - .:/myapp
     #ports:
