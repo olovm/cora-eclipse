@@ -43,7 +43,7 @@ RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.20/bin/ap
 RUN wget -O - http://apache.mirrors.spacedump.net/lucene/solr/6.6.1/solr-6.6.1.tgz   | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
-RUN cp -r /opt/solr-6.6.0/server/solr /opt/solrCopy
+RUN cp -r /opt/solr-6.6.1/server/solr /opt/solrCopy
 
 RUN npm install -g karma-cli
 
