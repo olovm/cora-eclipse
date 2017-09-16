@@ -17,6 +17,6 @@ docker-compose run -e DISPLAY=$DISPLAY\
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
  -v PARENTDIR/solr:/opt/solr-6.6.0/server/solr\
- -e user=$USER -p 8080:8080 -p 9876:9876 -p 8090:8090 -p 8983:8983\
+ -e user=$USER -p 8080:8080 -p 9876:9876 -p 8090:8090 -p 8983:8983 -p 5432:5432\
  eclipseoxygen0 $2
 fi
