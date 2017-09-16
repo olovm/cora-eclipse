@@ -2,7 +2,7 @@ version: '3'
 services:
   #db:
     #image: postgres
-  eclipse:
+  eclipseOxygen0:
     build:
             context: . #current dir as build context
             args:
