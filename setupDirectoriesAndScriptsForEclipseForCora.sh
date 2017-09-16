@@ -31,6 +31,10 @@ changeAndCopyScripts(){
 	
 	cp $BASEDIR/development/projectListing.sh $PARENTDIR/eclipseForCora/projectListing.sh
 	cp $BASEDIR/development/setupProjects.sh $PARENTDIR/eclipseForCora/setupProjects.sh
+	
+	cp $BASEDIR/docker/docker-compose.yml $PARENTDIR/eclipseForCora/
+	cp $BASEDIR/docker/Dockerfile $PARENTDIR/eclipseForCora/
+	cp $BASEDIR/docker/entrypoint.sh $PARENTDIR/eclipseForCora/
 }
 
 createGitConfigFile(){
