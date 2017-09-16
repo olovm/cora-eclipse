@@ -10,10 +10,7 @@ RUN dnf clean all && \
   maven \
   git \ 
   node \
-  npm \
-  postgresql \
-  postgresql-server \
-  postgresql-contrib && \
+  npm && \
   dnf clean all
  
 ARG user
