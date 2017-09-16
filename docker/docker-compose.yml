@@ -2,7 +2,7 @@ version: '3'
 services:
   #db:
     #image: postgres
-  postgres:
+  db:
         image: postgres
         environment:
             POSTGRES_PASSWORD: example
@@ -11,6 +11,8 @@ services:
             context: . #current dir as build context
             args:
                user: olov 
+    links:
+        - db
     environment:
             - user=olov   
     privileged: true           
