@@ -1,14 +1,14 @@
 version: '3'
 services:
-  #db:
-    #image: postgres
   db:
         image: postgres
         environment:
             POSTGRES_USER: docker
             POSTGRES_PASSWORD: docker
             POSTGRES_DB: docker
-  eclipseoxygen0:
+        ports:
+    	   - 5432:5432       
+    eclipseoxygen0:
     build:
             context: . #current dir as build context
             args:
@@ -17,21 +17,9 @@ services:
         - db
     environment:
             - user=olov   
-    privileged: true           
-    #image: eclipseforcoraoxogen1
- #   command: docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
-  #      -v /tmp/.X11-unix:/tmp/.X11-unix \
-   #     -v /mnt/depot/eclipseOxygen0_1/eclipseForCora/workspace:/home/olov/workspace \
-    #    -v /mnt/depot/eclipseOxygen0_1/eclipseForCora/eclipse:/home/olov/eclipse \
-     #   -v /mnt/depot/eclipseOxygen0_1/eclipseForCora/.eclipse:/home/olov/.eclipse \
-      #  -v /mnt/depot/eclipseOxygen0_1/eclipseForCora/m2:/home/olov/.m2 \
-       # -v /mnt/depot/eclipseOxygen0_1/eclipseP2:/home/olov/.p2 \
-        #-v /mnt/depot/eclipseOxygen0_1/.gitconfig:/home/olov/.gitconfig \
-       # --env user=olov -p 8080:8080 -p 9876:9876 -p 8090:8090 -p 8983:8983 -p 5432:5432 --name eclipseforcoraoxogen1 eclipseforcoraoxygen1 
-        
-    #volumes:
-     # - .:/myapp
-    #ports:
-     # - "3000:3000"
-    #depends_on:
-    #  - db
+    privileged: true
+    ports:
+    	- 8080:8080
+    	- 9876:9876
+    	- 8090:8090
+    	- 8983:8983

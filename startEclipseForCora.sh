@@ -3,11 +3,11 @@
 USER=$1
 BASEDIR=$(dirname $BASH_SOURCE)
 
-
 if [ ! $USER ]; then
-  	echo "You must specify the userName used when starting eclipseforcoraoxygen1"
+  	echo "You must specify the userName used when starting eclipseforcoraoxygen"
 else
 	#docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
+cd eclipseForCora
 docker-compose run -e DISPLAY=$DISPLAY\
  -v /tmp/.X11-unix:/tmp/.X11-unix\
  -v INSTALLDIR/workspace:/home/$USER/workspace\
@@ -17,6 +17,9 @@ docker-compose run -e DISPLAY=$DISPLAY\
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
  -v PARENTDIR/solr:/opt/solr-6.6.0/server/solr\
- -e user=$USER -p 8080:8080 -p 9876:9876 -p 8090:8090 -p 8983:8983 -p 5432:5432\
- eclipseoxygen0 $2
+ -e user=$USER\
+ --service-ports eclipseoxygen0 $2
+ cd ../
+ docker-compose down
 fi
+#  -p 8080:8080 -p 9876:9876 -p 8090:8090 -p 8983:8983 -p 5432:5432\
