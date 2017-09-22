@@ -42,4 +42,9 @@
 	<Parameter name="solrURL" value="http://localhost:8983/solr/coracore"
 		override="false" />
 
+<Resource name="jdbc/postgres" auth="Container"
+          type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
+          url="jdbc:postgresql://127.0.0.1:5432/docker"
+          username="docker" password="docker" maxTotal="20" maxIdle="10"
+maxWaitMillis="-1"/>
 </Context>

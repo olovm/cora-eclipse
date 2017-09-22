@@ -1,25 +1,27 @@
 version: '3'
+
 services:
-  db:
+
+    db:
         image: postgres
         environment:
             POSTGRES_USER: docker
             POSTGRES_PASSWORD: docker
             POSTGRES_DB: docker
         ports:
-    	   - 5432:5432       
+            - 5432:5432
     eclipseoxygen0:
-    build:
+      build:
             context: . #current dir as build context
             args:
                user: olov 
-    links:
-        - db
-    environment:
-            - user=olov   
-    privileged: true
-    ports:
-    	- 8080:8080
-    	- 9876:9876
-    	- 8090:8090
-    	- 8983:8983
+      links:
+       - db
+      environment:
+       - user=olov
+      privileged: true
+      ports:
+       - 8080:8080
+       - 9876:9876
+       - 8090:8090
+       - 8983:8983
