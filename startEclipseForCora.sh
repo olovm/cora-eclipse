@@ -16,7 +16,7 @@ docker-compose run -e DISPLAY=$DISPLAY\
  -v INSTALLDIR/m2:/home/$USER/.m2\
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
- -v PARENTDIR/solr:/opt/solr-6.6.1/server/solr\
+ -v PARENTDIR/solr:/opt/solr-6.6.2/server/solr\
  -e user=$USER\
  --service-ports eclipseoxygen0 $2
  cd ../
