@@ -37,6 +37,10 @@
 	<Parameter name="dependencyProviderClassName"
 		value="se.uu.ub.cora.systemone.SystemOneDependencyProvider" override="false" />
 
+<!-- 	<Parameter name="storageOnDiskClassName" value="se.uu.ub.cora.storage.RecordStorageOnDisk" -->
+<!-- 		override="false" />	   -->
+	<Parameter name="storageOnDiskClassName" value="se.uu.ub.cora.storage.RecordStorageInMemoryReadFromDisk"
+		override="false" />	  
 	<Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/cora-basicstorage/files/"
 		override="false" />	  
 	<Parameter name="solrURL" value="http://localhost:8983/solr/coracore"
