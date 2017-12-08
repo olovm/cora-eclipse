@@ -19,7 +19,14 @@ services:
        - db
       environment:
        - user=olov
+       - DISPLAY=:0
+       - QT_X11_NO_MITSHM=1
+      ipc: host
+      volumes:
+       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       privileged: true
+      tty: true
+      stdin_open: true
       ports:
        - 8080:8080
        - 9876:9876
