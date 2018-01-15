@@ -13,10 +13,12 @@ TIER5="cora-metacreator cora-systemone "
 TIER6_JS="cora-jsclient  "
 TIER6="cora-fitnesse "
 
+TIER_ALVIN="alvin-cora "
+
 
 TIER_DOCKER="cora-docker-gatekeeper cora-docker-apptokenverifier cora-docker-idplogin "
 TIER_DOCKER+="cora-docker-solr cora-docker-therest cora-docker-fitnesse "
 
-ALL_JAVA=$TIER0" "$TIER1" "$TIER2" "$TIER3" "$TIER4" "$TIER5" "$TIER6
+ALL_JAVA=$TIER0" "$TIER1" "$TIER2" "$TIER3" "$TIER4" "$TIER5" "$TIER6" "$TIER_ALVIN
 
 ALL=$TIER_ECLIPSE" "$ALL_JAVA" "$TIER6_JS" "$TIER_DOCKER
