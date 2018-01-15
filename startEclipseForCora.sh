@@ -19,7 +19,7 @@ docker-compose run -e DISPLAY=$DISPLAY\
  -v PARENTDIR/solr:/opt/solr-6.6.2/server/solr\
  -e user=$USER\
  --service-ports eclipseoxygen2 $2
- cd ../
  docker-compose down
+ cd ../
 fi
 #  -p 8080:8080 -p 9876:9876 -p 8090:8090 -p 8983:8983 -p 5432:5432\
