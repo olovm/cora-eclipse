@@ -18,7 +18,7 @@ docker-compose run -e DISPLAY=$DISPLAY\
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
  -v PARENTDIR/solr:/opt/solr-6.6.2/server/solr\
  -e user=$USER\
- --service-ports eclipseoxygen0 $2
+ --service-ports eclipseoxygen2 $2
  cd ../
  docker-compose down
 fi
