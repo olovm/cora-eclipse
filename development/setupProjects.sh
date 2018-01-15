@@ -120,12 +120,22 @@ tryWithProjectNameWithoutCora(){
 	if ! checkIfTempUrlExists; then 
 		useLsuAsOrigin
 	fi
+	
+	if ! checkIfTempUrlExists; then 
+		useOlovmAsOrigin
+	fi
 }
 
 useLsuAsOrigin(){
 	echo "- WARN - Falling back to using lsu as origin";
 	tempProjectName=$projectName
 	tempRepository="https://github.com/lsu-ub-uu/"
+}
+
+useOlovmAsOrigin(){
+	echo "- WARN - Falling back to using olovm as origin";
+	tempProjectName=$projectName
+	tempRepository="https://github.com/olovm/"
 }
 
 addOtherRemotes(){
