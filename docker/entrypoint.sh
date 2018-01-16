@@ -10,7 +10,7 @@ firstRun(){
 	~/workspace/cora-eclipse/development/setupProjects.sh ~/workspace
 	
 	cd ~/workspace/cora-jsclient/
-	npm install karma karma-chrome-launcher karma-firefox-launcher karma-qunit karma-coverage karma-html-reporter qunitjs --save-dev
+	npm install karma@latest karma-chrome-launcher@latest karma-firefox-launcher@latest karma-qunit@latest karma-coverage@latest karma-html-reporter@latest qunitjs@latest --save-dev
 
 	runInstaller	
 }
