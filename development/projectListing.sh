@@ -1,6 +1,6 @@
 #! /bin/bash
 
-TIER_ECLIPSE="cora-eclipse"
+ECLIPSE="cora-eclipse"
 
 TIER0="cora-parent"
 TIER1="cora-json cora-httphandler cora-userpicker cora-apptokenstorage cora-searchstorage"
@@ -9,16 +9,20 @@ TIER3="cora-spider cora-gatekeepertokenprovider"
 TIER4="cora-basicstorage cora-sqlstorage cora-gatekeeperclient cora-therest cora-apptokenverifier "
 TIER4+="cora-idplogin cora-solrsearch"
 TIER5="cora-metacreator cora-systemone "
-#TIER6="cora-jsclient cora-fitnesse "
-TIER6_JS="cora-jsclient  "
 TIER6="cora-fitnesse "
 
-TIER_ALVIN="alvin-cora "
+TIER6_JS="cora-jsclient  "
+
+CORA_DOCKER="cora-docker-gatekeeper cora-docker-apptokenverifier cora-docker-idplogin "
+CORA_DOCKER+="cora-docker-solr cora-docker-therest cora-docker-fitnesse cora-docker-fedora "
 
 
-TIER_DOCKER="cora-docker-gatekeeper cora-docker-apptokenverifier cora-docker-idplogin "
-TIER_DOCKER+="cora-docker-solr cora-docker-therest cora-docker-fitnesse "
+ALVIN="alvin-cora "
+ALVIN_DOCKER="alvin-docker-cora alvin-docker-gatekeeper "
 
-ALL_JAVA=$TIER0" "$TIER1" "$TIER2" "$TIER3" "$TIER4" "$TIER5" "$TIER6" "$TIER_ALVIN
+DIVA="diva-cora "
+DIVA_DOCKER="diva-docker-cora diva-docker-gatekeeper "
 
-ALL=$TIER_ECLIPSE" "$ALL_JAVA" "$TIER6_JS" "$TIER_DOCKER
+ALL_JAVA=$TIER0" "$TIER1" "$TIER2" "$TIER3" "$TIER4" "$TIER5" "$TIER6" "$ALVIN" "$DIVA
+
+ALL=$ECLIPSE" "$ALL_JAVA" "$TIER6_JS" "$CORA_DOCKER" "$ALVIN_DOCKER" "$DIVA_DOCKER
