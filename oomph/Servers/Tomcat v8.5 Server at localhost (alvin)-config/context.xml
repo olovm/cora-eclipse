@@ -26,7 +26,7 @@
     <Manager pathname="" />
     -->
     <Parameter name="userPickerProviderClassName"
-		value="se.uu.ub.cora.systemone.authentication.UserPickerProviderImp"
+		value="se.uu.ub.cora.alvin.authentication.UserPickerProviderImp"
 		override="false" />
 	
 	<Parameter name="appTokenStorageClassName" value="se.uu.ub.cora.storage.AppTokenStorageImp"
