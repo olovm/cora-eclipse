@@ -15,6 +15,7 @@ TIER6_JS="cora-jsclient  "
 
 CORA_DOCKER="cora-docker-gatekeeper cora-docker-apptokenverifier cora-docker-idplogin "
 CORA_DOCKER+="cora-docker-solr cora-docker-therest cora-docker-fitnesse cora-docker-fedora "
+CORA_DOCKER+="cora-docker-jsclient "
 
 
 ALVIN="alvin-cora alvin-cora-fitnesse "
