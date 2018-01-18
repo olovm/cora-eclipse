@@ -7,5 +7,5 @@ if [ ! $USER ]; then
 else
 	./cora-eclipse/buildEclipseForCora.sh $USER
 	./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh
-	../eclipseForCora/startEclipseForCora.sh $USER
+	./eclipseForCora/startEclipseForCora.sh $USER
 fi
