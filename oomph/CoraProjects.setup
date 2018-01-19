@@ -3,6 +3,7 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
     xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
     xmlns:launching="http://www.eclipse.org/oomph/setup/launching/1.0"
     xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
@@ -11,7 +12,7 @@
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/launching/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Launching.ecore http://www.eclipse.org/oomph/setup/maven/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Maven.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/launching/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Launching.ecore http://www.eclipse.org/oomph/setup/maven/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Maven.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
     name="coraprojects"
     label="Cora projects">
   <setupTask
@@ -43,6 +44,42 @@
   <setupTask
       xsi:type="setup.p2:P2Task">
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="Projects">
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-eclipse">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.coraeclipse"
+          location="${workspace.location}/cora-eclipse"
+          remoteURI="https://github.com/olovm/cora-eclipse"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.coraeclipse.location}"/>
+      </setupTask>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
@@ -560,12 +597,12 @@
     <description>launch external script mvnCleanInstallAllButDocker.sh </description>
   </setupTask>
   <setupTask
-      xsi:type="projects:ProjectsImportTask">
+      xsi:type="maven:MavenImportTask">
     <sourceLocator
         rootFolder="${workspace.location}"/>
   </setupTask>
   <setupTask
-      xsi:type="maven:MavenImportTask">
+      xsi:type="projects:ProjectsImportTask">
     <sourceLocator
         rootFolder="${workspace.location}"/>
   </setupTask>
