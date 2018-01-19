@@ -1093,18 +1093,18 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="alvin-fitnesseintegration">
+        name="cora-fitnesseintegration">
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.alvin.fitnesseintegration.location}"
+            rootFolder="${git.clone.cora.fitnesseintegration.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.alvin.fitnesseintegration"
-          location="${workspace.location}/alvin-fitnesseintegration"
-          remoteURI="https://github.com/olovm/alvin-fitnesseintegration">
+          id="git.clone.cora.fitnesseintegration"
+          location="${workspace.location}/cora-fitnesseintegration"
+          remoteURI="https://github.com/olovm/cora-fitnesseintegration">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
