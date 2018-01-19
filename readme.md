@@ -6,7 +6,7 @@ I am running this on linux so, change as needed for other platforms.
 1. Make sure you have git and docker set up on your local machine
 2. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
 
-##RunAll
+## RunAll
 There is a script that can run all of the stuff below.. </br>
 Replace `yourUserName` with with your desired username.</br>
 Run:</br>
