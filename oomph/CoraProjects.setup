@@ -1875,6 +1875,88 @@
       launcher="mvnCleanInstallAllButDocker">
     <description>launch external script mvnCleanInstallAllButDocker.sh </description>
   </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="tomcat server alvin">
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.jst.server.tomcat.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jst.server.tomcat.core/locationorg.eclipse.jst.server.tomcat.runtime.85"
+          value="/opt/apache-tomcat-8.5.24"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.wst.server.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.server.core/runtimes"
+          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;runtimes>&#xA;  &lt;runtime id=&quot;Apache Tomcat v8.5&quot; location=&quot;/opt/apache-tomcat-8.5.24&quot; name=&quot;Apache Tomcat v8.5&quot; runtime-type-id=&quot;org.eclipse.jst.server.tomcat.runtime.85&quot; timestamp=&quot;0&quot;/>&#xA;&lt;/runtimes>&#xA;"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.wst.server.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.server.ui/create-server"
+          value="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${git.clone.coraeclipse.location}/oomph/Servers"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:ResourceCreationTask"
+        id="serveralvin.xml"
+        content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;servers>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v8.5 Server at localhost-alvin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v8.5 Server at localhost alvin&quot; name=&quot;Tomcat v8.5 Server at localhost alvin&quot; runtime-id=&quot;Apache Tomcat v8.5&quot; server-type=&quot;org.eclipse.jst.server.tomcat.85&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.85&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;1&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-gatekeeper::org.eclipse.jst.jee.server:cora-gatekeeper::jst.web::3.0&quot; value1=&quot;cora-therest::org.eclipse.jst.jee.server:cora-therest::jst.web::3.0&quot; value2=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;&lt;/servers>&#xA;"
+        targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.wst.server.core/servers.xml"
+        encoding="UTF-8">
+      <description>tomcat server integration</description>
+    </setupTask>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="tomcat server diva">
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.jst.server.tomcat.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jst.server.tomcat.core/locationorg.eclipse.jst.server.tomcat.runtime.85"
+          value="/opt/apache-tomcat-8.5.24"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.wst.server.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.server.core/runtimes"
+          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;runtimes>&#xA;  &lt;runtime id=&quot;Apache Tomcat v8.5&quot; location=&quot;/opt/apache-tomcat-8.5.24&quot; name=&quot;Apache Tomcat v8.5&quot; runtime-type-id=&quot;org.eclipse.jst.server.tomcat.runtime.85&quot; timestamp=&quot;0&quot;/>&#xA;&lt;/runtimes>&#xA;"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.wst.server.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.server.ui/create-server"
+          value="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${git.clone.coraeclipse.location}/oomph/Servers"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:ResourceCreationTask"
+        id="serverdiva.xml"
+        content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;servers>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v8.5 Server at localhost-diva-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v8.5 Server at localhost diva&quot; name=&quot;Tomcat v8.5 Server at localhost diva&quot; runtime-id=&quot;Apache Tomcat v8.5&quot; server-type=&quot;org.eclipse.jst.server.tomcat.85&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.85&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;1&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-gatekeeper::org.eclipse.jst.jee.server:cora-gatekeeper::jst.web::3.0&quot; value1=&quot;cora-therest::org.eclipse.jst.jee.server:cora-therest::jst.web::3.0&quot; value2=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;&lt;/servers>&#xA;"
+        targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.wst.server.core/servers.xml"
+        encoding="UTF-8">
+      <description>tomcat server integration</description>
+    </setupTask>
+  </setupTask>
   <stream name="master"
       label="Master">
     <setupTask
