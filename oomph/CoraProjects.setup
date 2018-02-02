@@ -1485,6 +1485,9 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-gatekeeper"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-fitnesseintegration"/>
     </workingSet>
     <workingSet
         name="cora-tier3">
@@ -1494,6 +1497,9 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-gatekeepertokenprovider"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-fitnesse"/>
     </workingSet>
     <workingSet
         name="cora-tier4">
@@ -1532,9 +1538,6 @@
     <workingSet
         name="cora-tier6"
         id="">
-      <predicate
-          xsi:type="predicates:NamePredicate"
-          pattern="cora-fitnesse"/>
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-jsclient"/>
