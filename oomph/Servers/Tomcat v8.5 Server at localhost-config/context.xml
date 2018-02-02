@@ -31,6 +31,8 @@
 	
 	<Parameter name="appTokenStorageClassName" value="se.uu.ub.cora.storage.AppTokenStorageImp"
 		override="false" />
+		<Parameter name="apptokenVerifierPublicPathToSystem" value="/apptokenverifier/rest/"
+		override="false" />
 	<Parameter name="gatekeeperURL" value="http://localhost:8080/gatekeeper/"
 		override="false" />
 		
@@ -44,6 +46,11 @@
 	<Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/cora-basicstorage/files/"
 		override="false" />	  
 	<Parameter name="solrURL" value="http://localhost:8983/solr/coracore"
+		override="false" />
+	
+	<Parameter name="theRestPublicPathToSystem" value="/therest/rest/"
+		override="false" />
+	<Parameter name="idpLoginPublicPathToSystem" value="/idplogin/rest/"
 		override="false" />
 
 <Resource name="jdbc/postgres" auth="Container"

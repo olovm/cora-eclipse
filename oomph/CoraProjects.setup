@@ -627,6 +627,70 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-fitnesseintegration">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.fitnesseintegration.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.fitnesseintegration"
+          location="${workspace.location}/cora-fitnesseintegration"
+          remoteURI="https://github.com/olovm/cora-fitnesseintegration">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-docker-jsclient">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.docker.jsclient.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.docker.jsclient"
+          location="${workspace.location}/cora-docker-jsclient"
+          remoteURI="https://github.com/olovm/cora-docker-jsclient">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-docker-gatekeeper">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -735,6 +799,72 @@
           id="git.clone.cora.docker.apptokenverifier"
           location="${workspace.location}/cora-docker-apptokenverifier"
           remoteURI="https://github.com/olovm/cora-docker-apptokenverifier">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-docker-fedora">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.docker.fedora.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.docker.fedora"
+          location="${workspace.location}/cora-docker-fedora"
+          remoteURI="https://github.com/olovm/cora-docker-fedora"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-docker-postgresql">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.docker.postgresql.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.docker.postgresql"
+          location="${workspace.location}/cora-docker-postgresql"
+          remoteURI="https://github.com/olovm/cora-docker-postgresql"
+          pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
@@ -1093,82 +1223,18 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="cora-fitnesseintegration">
+        name="alvin-cora-docker-fedora">
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.cora.fitnesseintegration.location}"
+            rootFolder="${git.clone.alvin.cora.docker.fedora.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.cora.fitnesseintegration"
-          location="${workspace.location}/cora-fitnesseintegration"
-          remoteURI="https://github.com/olovm/cora-fitnesseintegration">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="cora-docker-fedora">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.cora.docker.fedora.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.cora.docker.fedora"
-          location="${workspace.location}/cora-docker-fedora"
-          remoteURI="https://github.com/olovm/cora-docker-fedora">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="cora-docker-jsclient">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.cora.docker.jsclient.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.cora.docker.jsclient"
-          location="${workspace.location}/cora-docker-jsclient"
-          remoteURI="https://github.com/olovm/cora-docker-jsclient">
+          id="git.clone.alvin.cora.docker.fedora"
+          location="${workspace.location}/alvin-cora-docker-fedora"
+          remoteURI="https://github.com/olovm/alvin-cora-docker-fedora">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
@@ -1347,6 +1413,39 @@
         <description>${scope.project.label}</description>
       </setupTask>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="diva-cora-docker-fedora">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.diva.cora.docker.fedora.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.diva.cora.docker.fedora"
+          location="${workspace.location}/diva-cora-docker-fedora"
+          remoteURI="https://github.com/olovm/diva-cora-docker-fedora"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
@@ -1435,7 +1534,7 @@
           pattern="cora-jsclient"/>
     </workingSet>
     <workingSet
-        name="alvin">
+        name="Alvin">
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern=".*alvin.*"/>
@@ -1858,7 +1957,7 @@
     <setupTask
         xsi:type="setup:ResourceCreationTask"
         id="server.xml"
-        content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;servers>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v8.5 Server at localhost-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v8.5 Server at localhost&quot; name=&quot;Tomcat v8.5 Server at localhost&quot; runtime-id=&quot;Apache Tomcat v8.5&quot; server-type=&quot;org.eclipse.jst.server.tomcat.85&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.85&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;1&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-gatekeeper::org.eclipse.jst.jee.server:cora-gatekeeper::jst.web::3.0&quot; value1=&quot;cora-therest::org.eclipse.jst.jee.server:cora-therest::jst.web::3.0&quot; value2=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;&lt;/servers>&#xA;"
+        content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;servers>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v8.5 Server at localhost-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v8.5 Server at localhost&quot; name=&quot;Tomcat v8.5 Server at localhost&quot; runtime-id=&quot;Apache Tomcat v8.5&quot; server-type=&quot;org.eclipse.jst.server.tomcat.85&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.85&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-gatekeeper::org.eclipse.jst.jee.server:cora-gatekeeper::jst.web::3.0&quot; value1=&quot;cora-therest::org.eclipse.jst.jee.server:cora-therest::jst.web::3.0&quot; value2=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot; value3=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v8.5 Server at localhost-alvin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v8.5 Server at localhost (alvin)&quot; name=&quot;Tomcat v8.5 Server at localhost (alvin)&quot; runtime-id=&quot;Apache Tomcat v8.5&quot; server-type=&quot;org.eclipse.jst.server.tomcat.85&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.85&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;9&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot; value1=&quot;cora-gatekeeper::org.eclipse.jst.jee.server:cora-gatekeeper::jst.web::3.0&quot; value2=&quot;cora-therest::org.eclipse.jst.jee.server:cora-therest::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;&lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v8.5 Server at localhost-diva-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v8.5 Server at localhost (diva)&quot; name=&quot;Tomcat v8.5 Server at localhost (diva)&quot; runtime-id=&quot;Apache Tomcat v8.5&quot; server-type=&quot;org.eclipse.jst.server.tomcat.85&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.85&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;9&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot; value1=&quot;cora-gatekeeper::org.eclipse.jst.jee.server:cora-gatekeeper::jst.web::3.0&quot; value2=&quot;cora-therest::org.eclipse.jst.jee.server:cora-therest::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;&lt;/servers>"
         targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.wst.server.core/servers.xml"
         encoding="UTF-8">
       <description>tomcat server integration</description>
@@ -1874,88 +1973,6 @@
       id="mvnCleanInstallAllButDocker"
       launcher="mvnCleanInstallAllButDocker">
     <description>launch external script mvnCleanInstallAllButDocker.sh </description>
-  </setupTask>
-  <setupTask
-      xsi:type="setup:CompoundTask"
-      name="tomcat server alvin">
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.jst.server.tomcat.core">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jst.server.tomcat.core/locationorg.eclipse.jst.server.tomcat.runtime.85"
-          value="/opt/apache-tomcat-8.5.24"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.wst.server.core">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.wst.server.core/runtimes"
-          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;runtimes>&#xA;  &lt;runtime id=&quot;Apache Tomcat v8.5&quot; location=&quot;/opt/apache-tomcat-8.5.24&quot; name=&quot;Apache Tomcat v8.5&quot; runtime-type-id=&quot;org.eclipse.jst.server.tomcat.runtime.85&quot; timestamp=&quot;0&quot;/>&#xA;&lt;/runtimes>&#xA;"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.wst.server.ui">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.wst.server.ui/create-server"
-          value="true"/>
-    </setupTask>
-    <setupTask
-        xsi:type="projects:ProjectsImportTask">
-      <sourceLocator
-          rootFolder="${git.clone.coraeclipse.location}/oomph/Servers"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:ResourceCreationTask"
-        id="serveralvin.xml"
-        content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;servers>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v8.5 Server at localhost-alvin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v8.5 Server at localhost alvin&quot; name=&quot;Tomcat v8.5 Server at localhost alvin&quot; runtime-id=&quot;Apache Tomcat v8.5&quot; server-type=&quot;org.eclipse.jst.server.tomcat.85&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.85&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;1&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-gatekeeper::org.eclipse.jst.jee.server:cora-gatekeeper::jst.web::3.0&quot; value1=&quot;cora-therest::org.eclipse.jst.jee.server:cora-therest::jst.web::3.0&quot; value2=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;&lt;/servers>&#xA;"
-        targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.wst.server.core/servers.xml"
-        encoding="UTF-8">
-      <description>tomcat server integration</description>
-    </setupTask>
-  </setupTask>
-  <setupTask
-      xsi:type="setup:CompoundTask"
-      name="tomcat server diva">
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.jst.server.tomcat.core">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jst.server.tomcat.core/locationorg.eclipse.jst.server.tomcat.runtime.85"
-          value="/opt/apache-tomcat-8.5.24"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.wst.server.core">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.wst.server.core/runtimes"
-          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;runtimes>&#xA;  &lt;runtime id=&quot;Apache Tomcat v8.5&quot; location=&quot;/opt/apache-tomcat-8.5.24&quot; name=&quot;Apache Tomcat v8.5&quot; runtime-type-id=&quot;org.eclipse.jst.server.tomcat.runtime.85&quot; timestamp=&quot;0&quot;/>&#xA;&lt;/runtimes>&#xA;"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.wst.server.ui">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.wst.server.ui/create-server"
-          value="true"/>
-    </setupTask>
-    <setupTask
-        xsi:type="projects:ProjectsImportTask">
-      <sourceLocator
-          rootFolder="${git.clone.coraeclipse.location}/oomph/Servers"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:ResourceCreationTask"
-        id="serverdiva.xml"
-        content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;servers>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v8.5 Server at localhost-diva-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v8.5 Server at localhost diva&quot; name=&quot;Tomcat v8.5 Server at localhost diva&quot; runtime-id=&quot;Apache Tomcat v8.5&quot; server-type=&quot;org.eclipse.jst.server.tomcat.85&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.85&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;1&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-gatekeeper::org.eclipse.jst.jee.server:cora-gatekeeper::jst.web::3.0&quot; value1=&quot;cora-therest::org.eclipse.jst.jee.server:cora-therest::jst.web::3.0&quot; value2=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;&lt;/servers>&#xA;"
-        targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.wst.server.core/servers.xml"
-        encoding="UTF-8">
-      <description>tomcat server integration</description>
-    </setupTask>
   </setupTask>
   <stream name="master"
       label="Master">

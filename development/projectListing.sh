@@ -15,14 +15,16 @@ TIER6_JS="cora-jsclient  "
 
 CORA_DOCKER="cora-docker-gatekeeper cora-docker-apptokenverifier cora-docker-idplogin "
 CORA_DOCKER+="cora-docker-solr cora-docker-therest cora-docker-fitnesse cora-docker-fedora "
-CORA_DOCKER+="cora-docker-jsclient "
+CORA_DOCKER+="cora-docker-jsclient cora-docker-postgresql "
 
 
 ALVIN="alvin-cora alvin-cora-fitnesse "
 ALVIN_DOCKER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse "
+ALVIN_DOCKER+="alvin-cora-docker-fedora  "
 
 DIVA="diva-cora diva-cora-fitnesse "
 DIVA_DOCKER="diva-docker-cora diva-docker-gatekeeper diva-cora-docker-fitnesse "
+DIVA_DOCKER+="diva-cora-docker-fedora "
 
 ALL_JAVA=$TIER0" "$TIER1" "$TIER2" "$TIER3" "$TIER4" "$TIER5" "$TIER6" "$ALVIN" "$DIVA
 
