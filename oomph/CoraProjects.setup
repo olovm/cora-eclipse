@@ -1508,10 +1508,16 @@
           pattern="cora-basicstorage"/>
       <predicate
           xsi:type="predicates:NamePredicate"
-          pattern="cora-apptokenverifier"/>
+          pattern="cora-sqlstorage"/>
       <predicate
           xsi:type="predicates:NamePredicate"
-          pattern="cora-sqlstorage"/>
+          pattern="cora-idplogin"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-solrsearch"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-metacreator"/>
     </workingSet>
     <workingSet
         name="cora-tier5"
@@ -1521,7 +1527,7 @@
           pattern="cora-systemone"/>
       <predicate
           xsi:type="predicates:NamePredicate"
-          pattern="cora-metacreator"/>
+          pattern="cora-apptokenverifier"/>
     </workingSet>
     <workingSet
         name="cora-tier6"
