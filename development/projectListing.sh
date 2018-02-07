@@ -18,7 +18,7 @@ CORA_DOCKER+="cora-docker-solr cora-docker-therest cora-docker-fitnesse cora-doc
 CORA_DOCKER+="cora-docker-jsclient cora-docker-postgresql "
 
 
-ALVIN="alvin-cora alvin-cora-fitnesse "
+ALVIN="alvin-cora alvin-cora-fitnesse alvin-mixedstorage alvin-tocorastorage "
 ALVIN_DOCKER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse "
 ALVIN_DOCKER+="alvin-cora-docker-fedora  "
 
