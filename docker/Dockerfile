@@ -39,5 +39,6 @@ USER $user
  
 #CMD SWT_GTK3=0 /home/$user/eclipse/eclipse
 #CMD  /home/$user/eclipse/eclipse
-CMD  /home/$user/entrypoint.sh
+#CMD  /home/$user/entrypoint.sh
+CMD  /home/$user/entrypointDocker.sh
 
