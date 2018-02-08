@@ -6,7 +6,7 @@
 
 DOCKER_SOCKET=/var/run/docker.sock
 DOCKER_GROUP=docker
-REGULAR_USER=ubuntu
+REGULAR_USER=olov
 
 if [ -S ${DOCKER_SOCKET} ]; then
     DOCKER_GID=$(stat -c '%g' ${DOCKER_SOCKET})
