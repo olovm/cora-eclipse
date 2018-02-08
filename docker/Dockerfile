@@ -22,16 +22,19 @@ RUN wget -O - http://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/oxygen/R/eclips
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
 
+COPY ./entrypointDocker.sh /home/$user/
+RUN chmod a+x /home/$user/entrypointDocker.sh
+
 RUN chown $user:$user /home/$user -R
 
 
-RUN wget -O - http://apache.mirrors.spacedump.net/lucene/solr/6.6.2/solr-6.6.2.tgz   | tar zxf - -C /opt/
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.24/bin/apache-tomcat-8.5.24.tar.gz  | tar zxf - -C /opt/
-RUN chown $user:$user /opt/ -R
+#RUN wget -O - http://apache.mirrors.spacedump.net/lucene/solr/6.6.2/solr-6.6.2.tgz   | tar zxf - -C /opt/
+#RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.24/bin/apache-tomcat-8.5.24.tar.gz  | tar zxf - -C /opt/
+#RUN chown $user:$user /opt/ -R
 
-RUN cp -r /opt/solr-6.6.2/server/solr /opt/solrCopy
+#RUN cp -r /opt/solr-6.6.2/server/solr /opt/solrCopy
 
-RUN npm install -g karma-cli
+#RUN npm install -g karma-cli
 
 USER $user
 

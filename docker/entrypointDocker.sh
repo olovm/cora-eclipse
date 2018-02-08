@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#! /bin/bash
 # from: http://vitorbaptista.com/how-to-access-hosts-docker-socket-without-root
 # Based on https://github.com/jenkinsci/docker/issues/196#issuecomment-179486312
 
