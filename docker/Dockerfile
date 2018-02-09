@@ -14,7 +14,8 @@ RUN dnf clean all && \
   npm && \
   dnf clean all
  
-ARG user dockergroupid
+ARG user
+ARG dockergroupid
 
 #RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
 RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
