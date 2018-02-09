@@ -8,7 +8,8 @@ if [ ! $USER ]; then
 else
 	#docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
 cd eclipseForCora
-docker-compose run -e DISPLAY=$DISPLAY\
+#docker-compose run -e DISPLAY=$DISPLAY\
+docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
  -v /var/run/docker.sock:/var/run/docker.sock\
  -v /tmp/.X11-unix:/tmp/.X11-unix\
  -v INSTALLDIR/workspace:/home/$USER/workspace\
@@ -19,8 +20,9 @@ docker-compose run -e DISPLAY=$DISPLAY\
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
  -v PARENTDIR/solr:/opt/solr-6.6.2/server/solr\
  -e user=$USER\
- --service-ports eclipseforcoraoxygen2 $2
- docker-compose down
+ eclipseforcoraoxygen2 $2
+ #--service-ports eclipseforcoraoxygen2 $2
+ #docker-compose down
  cd ../
 fi
 #  -p 8080:8080 -p 9876:9876 -p 8090:8090 -p 8983:8983 -p 5432:5432\
