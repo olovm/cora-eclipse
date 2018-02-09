@@ -21,7 +21,7 @@ ARG dockergroupid
 RUN groupadd -r $user -g1000  && groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u 1000 -g $user -G docker -m -s /bin/bash $user
 
 
-RUN wget -O - http://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
+#RUN wget -O - http://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
