@@ -18,7 +18,7 @@ ARG user
 ARG dockergroupid
 
 #RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
-RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u 1000 -g docker -m -s /bin/bash $user
+RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u 1000 -g $user,docker -m -s /bin/bash $user
 
 
 RUN wget -O - http://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
@@ -33,7 +33,7 @@ RUN chown $user:$user /home/$user -R
 
 
 #RUN wget -O - http://apache.mirrors.spacedump.net/lucene/solr/6.6.2/solr-6.6.2.tgz   | tar zxf - -C /opt/
-#RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.24/bin/apache-tomcat-8.5.24.tar.gz  | tar zxf - -C /opt/
+#RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.27/bin/apache-tomcat-8.5.24.tar.gz  | tar zxf - -C /opt/
 #RUN chown $user:$user /opt/ -R
 
 #RUN cp -r /opt/solr-6.6.2/server/solr /opt/solrCopy
