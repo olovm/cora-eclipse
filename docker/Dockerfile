@@ -6,6 +6,7 @@ RUN dnf clean all && \
   lsof \
   tar \
   less \
+  docker \
   java-1.8.0-openjdk* \
   maven \
   git \ 
