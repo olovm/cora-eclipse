@@ -15,4 +15,5 @@ if [ -S ${DOCKER_SOCKET} ]; then
 fi
 
 # Change to regular user and run the rest of the entry point
-su ${REGULAR_USER} -c "/usr/bin/env bash entrypoint.sh ${@}"
+#su ${REGULAR_USER} -c "/usr/bin/env bash entrypoint.sh ${@}"
+su ${REGULAR_USER} -c "/usr/bin/env bash ${@}"

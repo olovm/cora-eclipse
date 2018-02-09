@@ -20,11 +20,10 @@ runInstaller(){
 	~/eclipse-installer/eclipse-inst
 }
 
-#if [ ! -d ~/workspace/cora-jsclient ]; then
- # 	firstRun
-#elif [ ! -d ~/eclipse/eclipseforcora ]; then
-#	runInstaller
-#else
-#	SWT_GTK3=0 ~/eclipse/eclipseforcora/eclipse
-#fi
-bash.sh
+if [ ! -d ~/workspace/cora-jsclient ]; then
+  	firstRun
+elif [ ! -d ~/eclipse/eclipseforcora ]; then
+	runInstaller
+else
+	SWT_GTK3=0 ~/eclipse/eclipseforcora/eclipse
+fi
