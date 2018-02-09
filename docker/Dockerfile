@@ -18,7 +18,7 @@ ARG user
 ARG dockergroupid
 
 #RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
-RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u 1000 -G $dockergroupid -m -s /bin/bash $user
+RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u 1000 -g $user -G docker -m -s /bin/bash $user
 
 
 RUN wget -O - http://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
