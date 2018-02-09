@@ -2010,7 +2010,7 @@
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.jst.server.tomcat.core/locationorg.eclipse.jst.server.tomcat.runtime.85"
-          value="/opt/apache-tomcat-8.5.24"/>
+          value="/opt/apache-tomcat-8.5.27"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
