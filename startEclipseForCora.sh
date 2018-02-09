@@ -20,6 +20,8 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
  -v PARENTDIR/solr:/opt/solr-6.6.2/server/solr\
  -e user=$USER\
+ -p 8080:8080 -p 9876:9876 -p 8090:8090 -p 8983:8983 -p 5432:5432\
+ --name eclipseforcoraoxygen2\
  eclipseforcoraoxygen2 $2
  #--service-ports eclipseforcoraoxygen2 $2
  #docker-compose down
