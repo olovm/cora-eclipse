@@ -4,11 +4,14 @@
 
 # This only works if the docker group does not already exist
 
+echo "in entrypointDocker.sh"
+
 DOCKER_SOCKET=/var/run/docker.sock
 DOCKER_GROUP=docker
 REGULAR_USER=olov
 
 if [ -S ${DOCKER_SOCKET} ]; then
+    echo "createing group docker"
     DOCKER_GID=$(stat -c '%g' ${DOCKER_SOCKET})
     groupadd -for -g ${DOCKER_GID} ${DOCKER_GROUP}
     usermod -aG ${DOCKER_GROUP} ${REGULAR_USER}

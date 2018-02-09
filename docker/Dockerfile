@@ -20,8 +20,8 @@ RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
 
 RUN wget -O - http://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
-COPY ./entrypoint.sh /home/$user/
-RUN chmod a+x /home/$user/entrypoint.sh
+#COPY ./entrypoint.sh /home/$user/
+#RUN chmod a+x /home/$user/entrypoint.sh
 
 COPY ./entrypointDocker.sh /home/$user/
 RUN chmod a+x /home/$user/entrypointDocker.sh
