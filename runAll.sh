@@ -10,7 +10,7 @@ elif [ ! $DOCKERGROUPID ] && [ ! -d ./eclipseForCora ]; then
 else
 	if [ ! -d ./eclipseForCora ]; then
 		./cora-eclipse/buildEclipseForCora.sh $USER $DOCKERGROUPID
+		./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh
 	fi
-	./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh
 	./eclipseForCora/startEclipseForCora.sh $USER
 fi
