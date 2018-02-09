@@ -190,6 +190,8 @@
       <requirement
           name="org.sonarlint.eclipse.feature.feature.group"
           versionRange="[3.2.0,4.0.0)"/>
+      <requirement
+          name="org.eclipse.linuxtools.docker.feature.feature.group"/>
       <repository
           url="http://eclipse.sonarlint.org"/>
       <repository
