@@ -14,9 +14,11 @@ RUN dnf clean all && \
   npm && \
   dnf clean all
  
-ARG user
+ARG user dockergroupid
 
-RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
+#RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
+RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
+
 
 RUN wget -O - http://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
@@ -43,6 +45,6 @@ USER $user
  
 #CMD SWT_GTK3=0 /home/$user/eclipse/eclipse
 #CMD  /home/$user/eclipse/eclipse
-#CMD  /home/$user/entrypoint.sh
-CMD  /home/$user/entrypointDocker.sh
+CMD  /home/$user/entrypoint.sh
+#CMD  /home/$user/entrypointDocker.sh
 
