@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.linuxtools.docker.ui.runDockerImageLaunchConfigurationType">
+<booleanAttribute key="allocatePseudoTTY" value="false"/>
+<booleanAttribute key="autoRemove" value="true"/>
+<listAttribute key="binds"/>
+<stringAttribute key="command" value="solr-create -c coracore"/>
+<stringAttribute key="connectionName" value="unix:///var/run/docker.sock"/>
+<stringAttribute key="containerName" value="cora-solr"/>
+<stringAttribute key="cpuPriority" value="1024"/>
+<stringAttribute key="creationDate" value="2018-02-12 14:55:49"/>
+<booleanAttribute key="enableLimits" value="false"/>
+<stringAttribute key="entryPoint" value=""/>
+<listAttribute key="envVariables"/>
+<stringAttribute key="imageId" value="sha256:eeb952da4378cb7156e708790f731e041b2c536f1b495dd24ac78c5e2f10a042"/>
+<stringAttribute key="imageName" value="cora-docker-solr:latest"/>
+<booleanAttribute key="interactive" value="false"/>
+<mapAttribute key="labels"/>
+<listAttribute key="links"/>
+<stringAttribute key="memoryLimit" value="512"/>
+<stringAttribute key="networkMode" value="eclipseForCoraNet"/>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+<booleanAttribute key="privileged" value="false"/>
+<booleanAttribute key="publishAllPorts" value="false"/>
+<listAttribute key="publishedPorts">
+<listEntry value="8983/tcp::8983"/>
+</listAttribute>
+<booleanAttribute key="readonly" value="false"/>
+<listAttribute key="volumes"/>
+<listAttribute key="volumesFrom"/>
+</launchConfiguration>

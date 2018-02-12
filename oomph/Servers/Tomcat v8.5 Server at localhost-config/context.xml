@@ -45,7 +45,7 @@
 		override="false" />	  
 	<Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/cora-basicstorage/files/"
 		override="false" />	  
-	<Parameter name="solrURL" value="http://localhost:8983/solr/coracore"
+	<Parameter name="solrURL" value="http://cora-solr:8983/solr/coracore"
 		override="false" />
 	
 	<Parameter name="theRestPublicPathToSystem" value="/therest/rest/"

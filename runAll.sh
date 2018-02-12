@@ -11,6 +11,7 @@ else
 	if [ ! -d ./eclipseForCora ]; then
 		./cora-eclipse/buildEclipseForCora.sh $USER $DOCKERGROUPID
 		./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh
+		docker network create eclipseForCoraNet
 	fi
 	./eclipseForCora/startEclipseForCora.sh $USER
 fi
