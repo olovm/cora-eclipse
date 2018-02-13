@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.linuxtools.docker.ui.runDockerImageLaunchConfigurationType">
+<booleanAttribute key="allocatePseudoTTY" value="false"/>
+<booleanAttribute key="autoRemove" value="true"/>
+<listAttribute key="binds"/>
+<stringAttribute key="command" value="postgres "/>
+<stringAttribute key="connectionName" value="unix:///var/run/docker.sock"/>
+<stringAttribute key="containerName" value="alvin-docker-postgresql"/>
+<stringAttribute key="cpuPriority" value="1024"/>
+<booleanAttribute key="enableLimits" value="false"/>
+<stringAttribute key="entryPoint" value="docker-entrypoint.sh "/>
+<listAttribute key="envVariables">
+<listEntry value="POSTGRES_DB=fedora38"/>
+<listEntry value="POSTGRES_USER=fedoraAdmin"/>
+<listEntry value="POSTGRES_PASSWORD=fedora"/>
+</listAttribute>
+<stringAttribute key="imageId" value="sha256:98b5c906e550d3100dc2a02735061e8c02c19037d0265c1576ca91d262636471"/>
+<stringAttribute key="imageName" value="cora-docker-postgresql:9.6"/>
+<booleanAttribute key="interactive" value="false"/>
+<mapAttribute key="labels"/>
+<listAttribute key="links"/>
+<stringAttribute key="memoryLimit" value="512"/>
+<stringAttribute key="networkMode" value=""/>
+<booleanAttribute key="privileged" value="false"/>
+<booleanAttribute key="publishAllPorts" value="true"/>
+<listAttribute key="publishedPorts">
+<listEntry value="5432/::5432:false"/>
+</listAttribute>
+<listAttribute key="volumes">
+<listEntry value="/var/lib/postgresql/data:NONE::false"/>
+</listAttribute>
+<listAttribute key="volumesFrom"/>
+</launchConfiguration>

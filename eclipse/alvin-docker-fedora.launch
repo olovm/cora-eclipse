@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.linuxtools.docker.ui.runDockerImageLaunchConfigurationType">
+<booleanAttribute key="allocatePseudoTTY" value="false"/>
+<booleanAttribute key="autoRemove" value="false"/>
+<listAttribute key="binds"/>
+<stringAttribute key="command" value="/home/fedora/checkAndStart.sh "/>
+<stringAttribute key="connectionName" value="unix:///var/run/docker.sock"/>
+<stringAttribute key="containerName" value="alvin-docker-fedora"/>
+<stringAttribute key="cpuPriority" value="1024"/>
+<booleanAttribute key="enableLimits" value="false"/>
+<listAttribute key="envVariables"/>
+<stringAttribute key="imageId" value="sha256:6a2d7fa586dffebcf03042a0b08df5f568b329a2ffd4869ad97890d7d5102c03"/>
+<stringAttribute key="imageName" value="alvin-cora-docker-fedora:3.8.1"/>
+<booleanAttribute key="interactive" value="false"/>
+<mapAttribute key="labels"/>
+<listAttribute key="links"/>
+<stringAttribute key="memoryLimit" value="-1"/>
+<stringAttribute key="networkMode" value=""/>
+<booleanAttribute key="privileged" value="false"/>
+<booleanAttribute key="publishAllPorts" value="true"/>
+<listAttribute key="publishedPorts">
+<listEntry value="61616/::61616:false"/>
+<listEntry value="8088/::8088:false"/>
+<listEntry value="8443/::8443:false"/>
+</listAttribute>
+<listAttribute key="volumes">
+<listEntry value="/home/fedora/fedora38/data:NONE::false"/>
+<listEntry value="/home/fedora/fedora38/server/logs:NONE::false"/>
+<listEntry value="/home/fedora/fedora38/tomcat/logs:NONE::false"/>
+</listAttribute>
+<listAttribute key="volumesFrom"/>
+</launchConfiguration>
