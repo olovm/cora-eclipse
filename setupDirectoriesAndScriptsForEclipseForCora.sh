@@ -18,9 +18,9 @@ createDirectories(){
   	mkdir $PARENTDIR/eclipseForCora/workspace
  	mkdir $PARENTDIR/eclipseForCora/m2
   	mkdir $PARENTDIR/eclipseP2
-  	mkdir $PARENTDIR/systemOne/solr
-  	mkdir $PARENTDIR/alvin/solr
-  	mkdir $PARENTDIR/diva/solr
+  	mkdir $PARENTDIR/systemOne/solr -p
+  	mkdir $PARENTDIR/alvin/solr -p
+  	mkdir $PARENTDIR/diva/solr -p
 }
 	
 changeAndCopyScripts(){
