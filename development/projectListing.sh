@@ -23,7 +23,7 @@ ALVIN="alvin-cora alvin-cora-fitnesse alvin-mixedstorage alvin-tocorastorage "
 ALVIN_DEV_DOCKER="alvin-cora-docker-fedora  alvin-cora-docker-postgresql "
 ALVIN_DOCKER+="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse "
 
-DIVA="diva-cora diva-cora-fitnesse diva-mixedstorage "
+DIVA="diva-cora diva-cora-fitnesse diva-mixedstorage diva-tocorastorage "
 DIVA_DEV_DOCKER="diva-cora-docker-fedora "
 DIVA_DOCKER+="diva-docker-cora diva-docker-gatekeeper diva-cora-docker-fitnesse "
 
