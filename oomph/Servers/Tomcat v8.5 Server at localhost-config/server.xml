@@ -149,10 +149,10 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="cora-gatekeeper" path="/gatekeeper" reloadable="true" source="org.eclipse.jst.jee.server:cora-gatekeeper"/>
-      <Context docBase="cora-therest" path="/therest" reloadable="true" source="org.eclipse.jst.jee.server:cora-therest"/>
-      <Context docBase="cora-apptokenverifier" path="/apptokenverifier" reloadable="true" source="org.eclipse.jst.jee.server:cora-apptokenverifier"/>
-      </Host>
+      
+      
+      
+      <Context docBase="cora-apptokenverifier" path="/apptokenverifier" reloadable="true" source="org.eclipse.jst.jee.server:cora-apptokenverifier"/><Context docBase="cora-gatekeeper" path="/gatekeeper" reloadable="true" source="org.eclipse.jst.jee.server:cora-gatekeeper"/><Context docBase="cora-therest" path="/therest" reloadable="true" source="org.eclipse.jst.jee.server:cora-therest"/></Host>
     </Engine>
   </Service>
 </Server>
