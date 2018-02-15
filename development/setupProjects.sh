@@ -104,14 +104,20 @@ checkIfTempUrlExists(){
 	if [  $status -eq 200 ]; then 
 		return 0
 	fi
+	echo "- WARN - Status for: $tempRepository$tempProjectName: $status"
+	echo "Trying one more time..."
+	
+	local status=$(lookupUrl $tempRepository$tempProjectName)
+	if [  $status -eq 200 ]; then 
+		return 0
+	fi
 	false
 }
 
 lookupUrl(){
 	local url=$1
-	local status=$(curl -s --head -w %{http_code} $url --connect-timeout 5 -o /dev/null)
-	echo "Status for: $url: $status"
-	return $status
+	local status=$(curl -s --head -w %{http_code} $url --connect-timeout 10 -o /dev/null)
+	echo $status
 }
 
 tryWithProjectNameWithoutCora(){
