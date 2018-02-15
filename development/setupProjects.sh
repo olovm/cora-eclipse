@@ -109,8 +109,9 @@ checkIfTempUrlExists(){
 
 lookupUrl(){
 	local url=$1
-	status=$(curl -s --head -w %{http_code} $url --connect-timeout 10 -o /dev/null)
-	echo $status
+	local status=$(curl -s --head -w %{http_code} $url --connect-timeout 5 -o /dev/null)
+	echo "Status for: $url: $status"
+	return status
 }
 
 tryWithProjectNameWithoutCora(){
