@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.linuxtools.docker.ui.runDockerImageLaunchConfigurationType">
+<booleanAttribute key="allocatePseudoTTY" value="false"/>
+<booleanAttribute key="autoRemove" value="true"/>
+<listAttribute key="binds"/>
+<stringAttribute key="command" value="/home/fedora/checkAndStart.sh "/>
+<stringAttribute key="connectionName" value="unix:///var/run/docker.sock"/>
+<stringAttribute key="containerName" value="diva-docker-fedora"/>
+<stringAttribute key="cpuPriority" value="1024"/>
+<booleanAttribute key="enableLimits" value="false"/>
+<listAttribute key="envVariables"/>
+<stringAttribute key="imageId" value="sha256:54084d5aea9ea2e56d9918f8c1e608d11a46b7c8fd506477d8eac45e7e9d460d"/>
+<stringAttribute key="imageName" value="diva-cora-docker-fedora:latest"/>
+<booleanAttribute key="interactive" value="false"/>
+<mapAttribute key="labels"/>
+<listAttribute key="links"/>
+<stringAttribute key="memoryLimit" value="512"/>
+<stringAttribute key="networkMode" value="eclipseForCoraNet"/>
+<booleanAttribute key="privileged" value="false"/>
+<booleanAttribute key="publishAllPorts" value="false"/>
+<listAttribute key="publishedPorts"/>
+<listAttribute key="volumes">
+<listEntry value="/home/fedora/fedora38/data:NONE::false"/>
+<listEntry value="/home/fedora/fedora38/server/logs:NONE::false"/>
+<listEntry value="/home/fedora/fedora38/tomcat/logs:NONE::false"/>
+</listAttribute>
+<listAttribute key="volumesFrom"/>
+</launchConfiguration>
