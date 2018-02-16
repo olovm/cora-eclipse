@@ -38,7 +38,7 @@ RUN chown $user:$user /opt/ -R
 
 #RUN cp -r /opt/solr-6.6.2/server/solr /opt/solrCopy
 
-#RUN npm install -g karma-cli
+RUN npm install -g karma-cli
 
 USER $user
 
