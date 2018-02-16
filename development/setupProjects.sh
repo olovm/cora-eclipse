@@ -124,9 +124,8 @@ tryWithProjectNameWithoutCora(){
 	echo "Trying project name without cora..."
 	if [ ${projectName:0:4} -eq "cora" ]; then
 		tempProjectName=${projectName:5}
-	fi
-
-	if ! checkIfTempUrlExists; then 
+	else
+	#if ! checkIfTempUrlExists; then 
 		useLsuAsOrigin
 	fi
 	
