@@ -122,7 +122,9 @@ lookupUrl(){
 
 tryWithProjectNameWithoutCora(){
 	echo "Trying project name without cora..."
-	tempProjectName=${projectName:5}
+	if[${projectName:0,4} -eq "cora"];then
+		tempProjectName=${projectName:5}
+	fi
 
 	if ! checkIfTempUrlExists; then 
 		useLsuAsOrigin
