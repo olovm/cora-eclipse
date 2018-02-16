@@ -122,7 +122,7 @@ lookupUrl(){
 
 tryWithProjectNameWithoutCora(){
 	echo "Trying project name without cora..."
-	if[${projectName:0,4} -eq "cora"];then
+	if [ ${projectName:0:4} -eq "cora" ]; then
 		tempProjectName=${projectName:5}
 	fi
 
