@@ -14,9 +14,9 @@ TIER6="cora-fitnesseintegration cora-fitnesse "
 TIER6_JS="cora-jsclient  "
 
 CORA_DOCKER="cora-docker-gatekeeper cora-docker-apptokenverifier cora-docker-idplogin "
-CORA_DEV_DOCKER="cora-docker-solr cora-docker-fedora "
+CORA_DEV_DOCKER="cora-docker-solr cora-docker-fedora cora-docker-postgres "
 CORA_DOCKER+="cora-docker-therest cora-docker-fitnesse "
-CORA_DOCKER+="cora-docker-jsclient cora-docker-postgresql "
+CORA_DOCKER+="cora-docker-jsclient "
 
 
 ALVIN="alvin-cora alvin-cora-fitnesse alvin-mixedstorage alvin-tocorastorage "
