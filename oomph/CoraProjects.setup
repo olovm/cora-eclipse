@@ -1607,6 +1607,38 @@
         <description>${scope.project.label}</description>
       </setupTask>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-clientdata">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.clientdata.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.clientdata"
+          location="${workspace.location}/cora-clientdata"
+          remoteURI="https://github.com/olovm/cora-clientdata">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
@@ -1646,9 +1678,6 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-gatekeeper"/>
-      <predicate
-          xsi:type="predicates:NamePredicate"
-          pattern="cora-fitnesseintegration"/>
     </workingSet>
     <workingSet
         name="cora-tier3">
@@ -1658,9 +1687,6 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-gatekeepertokenprovider"/>
-      <predicate
-          xsi:type="predicates:NamePredicate"
-          pattern="cora-fitnesse"/>
     </workingSet>
     <workingSet
         name="cora-tier4">
@@ -1684,6 +1710,9 @@
           pattern="cora-solrsearch"/>
       <predicate
           xsi:type="predicates:NamePredicate"
+          pattern="cora-apptokenverifier"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
           pattern="cora-metacreator"/>
     </workingSet>
     <workingSet
@@ -1691,10 +1720,7 @@
         id="">
       <predicate
           xsi:type="predicates:NamePredicate"
-          pattern="cora-systemone"/>
-      <predicate
-          xsi:type="predicates:NamePredicate"
-          pattern="cora-apptokenverifier"/>
+          pattern="cora-clientdata"/>
     </workingSet>
     <workingSet
         name="cora-tier6"
@@ -1702,6 +1728,15 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-jsclient"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-fitnesseintegration"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-fitnesse"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-systemone"/>
     </workingSet>
     <workingSet
         name="Alvin">
