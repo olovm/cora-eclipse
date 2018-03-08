@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.linuxtools.docker.ui.runDockerImageLaunchConfigurationType">
+<booleanAttribute key="allocatePseudoTTY" value="false"/>
+<booleanAttribute key="autoRemove" value="true"/>
+<listAttribute key="binds"/>
+<stringAttribute key="command" value="postgres "/>
+<stringAttribute key="connectionName" value="unix:///var/run/docker.sock"/>
+<stringAttribute key="containerName" value="alvin-cora-docker-postgresql"/>
+<stringAttribute key="cpuPriority" value="1024"/>
+<booleanAttribute key="enableLimits" value="false"/>
+<stringAttribute key="entryPoint" value="docker-entrypoint.sh "/>
+<listAttribute key="envVariables">
+<listEntry value="POSTGRES_DB=alvin"/>
+<listEntry value="POSTGRES_USER=alvin"/>
+<listEntry value="POSTGRES_PASSWORD=alvin"/>
+</listAttribute>
+<stringAttribute key="imageId" value="sha256:ec8eae6c309f76f0e1a727fb8bb90d20900b42c83f74d987273e5c09d6f677e8"/>
+<stringAttribute key="imageName" value="alvin-cora-docker-postgresql:latest"/>
+<booleanAttribute key="interactive" value="false"/>
+<mapAttribute key="labels"/>
+<listAttribute key="links"/>
+<stringAttribute key="memoryLimit" value="512"/>
+<stringAttribute key="networkMode" value="eclipseForCoraNet"/>
+<booleanAttribute key="privileged" value="false"/>
+<booleanAttribute key="publishAllPorts" value="false"/>
+<listAttribute key="publishedPorts"/>
+<listAttribute key="volumes">
+<listEntry value="/var/lib/postgresql/data:NONE::false"/>
+</listAttribute>
+<listAttribute key="volumesFrom"/>
+</launchConfiguration>
