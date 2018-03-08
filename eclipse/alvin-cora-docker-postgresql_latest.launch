@@ -23,7 +23,9 @@
 <stringAttribute key="networkMode" value="eclipseForCoraNet"/>
 <booleanAttribute key="privileged" value="false"/>
 <booleanAttribute key="publishAllPorts" value="false"/>
-<listAttribute key="publishedPorts"/>
+<listAttribute key="publishedPorts">
+<listEntry value="5432/tcp::5432:true"/>
+</listAttribute>
 <listAttribute key="volumes">
 <listEntry value="/var/lib/postgresql/data:NONE::false"/>
 </listAttribute>
