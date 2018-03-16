@@ -55,4 +55,14 @@
 		override="false" />
 	<Parameter name="fedoraURL" value="http://alvin-docker-fedora:8088/fedora/"
 		override="false" />
+
+	<Parameter name="databaseLookupName" value="java:/comp/env/jdbc/postgres"
+		override="false" />
+
+	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
+		driverClassName="org.postgresql.Driver"
+		url="jdbc:postgresql://alvin-cora-docker-postgresql:5432/alvin"
+		username="alvin" password="alvin" maxTotal="20" maxIdle="10"
+		maxWaitMillis="-1" />
+
 </Context>
