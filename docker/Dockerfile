@@ -1,5 +1,11 @@
 FROM fedora:27
 
+ARG user
+ARG dockergroupid
+
+#RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
+RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u 1000 -U -G docker -m -s /bin/bash $user
+
 RUN dnf clean all && \
   dnf install -y \
   wget \
@@ -13,13 +19,6 @@ RUN dnf clean all && \
   node \
   npm && \
   dnf clean all
- 
-ARG user
-ARG dockergroupid
-
-#RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
-RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u 1000 -U -G docker -m -s /bin/bash $user
-
 
 RUN wget -O - http://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
