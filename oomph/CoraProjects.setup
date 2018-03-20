@@ -1008,8 +1008,8 @@
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.cora.sqlstorage"
-          location="${workspace.location}/cora-sqldatabaes"
+          id="git.clone.cora.sqldatabase"
+          location="${workspace.location}/cora-sqldatabase"
           remoteURI="https://github.com/olovm/cora-sqldatabase">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
