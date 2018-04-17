@@ -32,7 +32,7 @@ RUN chown $user:$user /home/$user -R
 
 
 #RUN wget -O - http://apache.mirrors.spacedump.net/lucene/solr/6.6.2/solr-6.6.2.tgz   | tar zxf - -C /opt/
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.29/bin/apache-tomcat-8.5.29.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.30/bin/apache-tomcat-8.5.30.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 #RUN cp -r /opt/solr-6.6.2/server/solr /opt/solrCopy
