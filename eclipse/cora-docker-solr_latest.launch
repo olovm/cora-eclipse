@@ -9,10 +9,9 @@
 <stringAttribute key="cpuPriority" value="1024"/>
 <stringAttribute key="creationDate" value="2018-02-15 09:55:10"/>
 <booleanAttribute key="enableLimits" value="false"/>
-<stringAttribute key="entryPoint" value=""/>
 <listAttribute key="envVariables"/>
 <stringAttribute key="imageId" value="sha256:eeb952da4378cb7156e708790f731e041b2c536f1b495dd24ac78c5e2f10a042"/>
-<stringAttribute key="imageName" value="cora-docker-solr:latest"/>
+<stringAttribute key="imageName" value="solr:latest"/>
 <booleanAttribute key="interactive" value="false"/>
 <mapAttribute key="labels"/>
 <listAttribute key="links"/>
@@ -24,7 +23,7 @@
 <booleanAttribute key="privileged" value="false"/>
 <booleanAttribute key="publishAllPorts" value="false"/>
 <listAttribute key="publishedPorts">
-<listEntry value="8983/tcp::8983"/>
+<listEntry value="8983/tcp::8983:true"/>
 </listAttribute>
 <booleanAttribute key="readonly" value="false"/>
 <listAttribute key="volumes"/>
