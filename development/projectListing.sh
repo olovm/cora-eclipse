@@ -19,11 +19,11 @@ CORA_DOCKER+="cora-docker-therest cora-docker-fitnesse "
 CORA_DOCKER+="cora-docker-jsclient "
 
 
-ALVIN="alvin-cora alvin-cora-fitnesse alvin-mixedstorage alvin-tocorastorage alvin-tocorautils "
+ALVIN="alvin-cora-fitnesse alvin-mixedstorage alvin-tocorastorage alvin-tocorautils alvin-cora "
 ALVIN_DEV_DOCKER="alvin-cora-docker-fedora  alvin-cora-docker-postgresql "
 ALVIN_DOCKER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse "
 
-DIVA="diva-cora diva-cora-fitnesse diva-mixedstorage diva-tocorastorage "
+DIVA="diva-cora-fitnesse diva-mixedstorage diva-tocorastorage diva-cora "
 DIVA_DEV_DOCKER="diva-cora-docker-fedora "
 DIVA_DOCKER="diva-docker-cora diva-docker-gatekeeper diva-cora-docker-fitnesse "
 
