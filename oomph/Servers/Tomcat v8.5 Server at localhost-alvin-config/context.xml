@@ -32,7 +32,7 @@
 	<Parameter name="dependencyProviderClassName" value="se.uu.ub.cora.alvin.AlvinDependencyProvider"
 		override="false" />
 
-	<!-- <Parameter name="basicstorageClassName" value="se.uu.ub.cora.storage.RecordStorageOnDisk" -->
+	<!-- <Parameter name="basicStorageClassName" value="se.uu.ub.cora.storage.RecordStorageOnDisk" -->
 	<!-- override="false" /> -->
 	<Parameter name="basicStorageClassName"
 		value="se.uu.ub.cora.storage.RecordStorageInMemoryReadFromDisk"
