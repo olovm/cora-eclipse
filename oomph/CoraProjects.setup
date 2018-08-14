@@ -2242,7 +2242,7 @@
         name="org.eclipse.jst.server.tomcat.core">
       <setupTask
           xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jst.server.tomcat.core/locationorg.eclipse.jst.server.tomcat.runtime.9.5"
+          key="/instance/org.eclipse.jst.server.tomcat.core/locationorg.eclipse.jst.server.tomcat.runtime.95"
           value="/opt/apache-tomcat-9.0.10"/>
     </setupTask>
     <setupTask
