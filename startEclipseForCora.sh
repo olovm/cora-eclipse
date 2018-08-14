@@ -4,7 +4,7 @@ USER=$1
 BASEDIR=$(dirname $BASH_SOURCE)
 
 if [ ! $USER ]; then
-  	echo "You must specify the userName used when starting eclipseforcoraoxygen"
+  	echo "You must specify the userName used when starting eclipseforcoraphoton"
 else
 	#docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
 cd eclipseForCora
@@ -22,8 +22,8 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -e user=$USER\
  -p 8080:8080 -p 9876:9876 -p 8090:8090\
  --network=eclipseForCoraNet\
- --name eclipseforcoraoxygen2\
- eclipseforcoraoxygen2 $2
+ --name eclipseforcoraphoton1\
+ eclipseforcoraphoton1 $2
  #--service-ports eclipseforcoraoxygen2 $2
  #docker-compose down
  cd ../
