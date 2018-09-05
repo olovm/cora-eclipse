@@ -1,12 +1,12 @@
 FROM fedora:28
 
 ARG user
-ARG userid2
+ARG userid
 ARG dockergroupid
 
 #RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
 #RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u 1000 -U -G docker -m -s /bin/bash $user
-RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid2 -U -G docker -m -s /bin/bash $user
+RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -U -G docker -m -s /bin/bash $user
 
 RUN dnf clean all && \
   dnf install -y \
