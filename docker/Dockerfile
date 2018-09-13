@@ -1,10 +1,12 @@
 FROM fedora:28
 
 ARG user
+ARG userid
 ARG dockergroupid
 
 #RUN useradd -d "/home/$user" -u 1000 -m -s /bin/bash $user
-RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u 1000 -U -G docker -m -s /bin/bash $user
+#RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u 1000 -U -G docker -m -s /bin/bash $user
+RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -U -G docker -m -s /bin/bash $user
 
 RUN dnf clean all && \
   dnf install -y \
@@ -13,14 +15,14 @@ RUN dnf clean all && \
   tar \
   less \
   docker \
-  java-1.8.0-openjdk* \
+  java-openjdk* \
   maven \
   git \ 
   node \
   npm && \
   dnf clean all
 
-RUN wget -O - http://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/oxygen/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
+RUN wget -O - http://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/photon/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
@@ -32,7 +34,7 @@ RUN chown $user:$user /home/$user -R
 
 
 #RUN wget -O - http://apache.mirrors.spacedump.net/lucene/solr/6.6.2/solr-6.6.2.tgz   | tar zxf - -C /opt/
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.11/bin/apache-tomcat-9.0.11.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 #RUN cp -r /opt/solr-6.6.2/server/solr /opt/solrCopy
