@@ -10,6 +10,7 @@ RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -
 
 RUN dnf clean all && \
   dnf install -y \
+  firefox \
   wget \
   lsof \
   tar \
@@ -22,31 +23,18 @@ RUN dnf clean all && \
   npm && \
   dnf clean all
 
-RUN wget -O - http://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/photon/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
+RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2018-09/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
 
-#COPY ./entrypointDocker.sh /home/$user/
-#RUN chmod a+x /home/$user/entrypointDocker.sh
-
 RUN chown $user:$user /home/$user -R
 
-
-#RUN wget -O - http://apache.mirrors.spacedump.net/lucene/solr/6.6.2/solr-6.6.2.tgz   | tar zxf - -C /opt/
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.11/bin/apache-tomcat-9.0.11.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.12/bin/apache-tomcat-9.0.12.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
-
-#RUN cp -r /opt/solr-6.6.2/server/solr /opt/solrCopy
 
 RUN npm install -g karma-cli
 
 USER $user
 
-#RUN export SWT_GTK3=0
- 
-#CMD SWT_GTK3=0 /home/$user/eclipse/eclipse
-#CMD  /home/$user/eclipse/eclipse
 CMD  /home/$user/entrypoint.sh
-#CMD  /home/$user/entrypointDocker.sh
-
