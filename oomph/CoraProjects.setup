@@ -1127,6 +1127,70 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-metadata">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.metadata.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.metadata"
+          location="${workspace.location}/cora-metadata"
+          remoteURI="https://github.com/olovm/cora-metadata">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="systemone-metadata">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.systemone.metadata.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.systemone.metadata"
+          location="${workspace.location}/systemone-metadata"
+          remoteURI="https://github.com/olovm/systemone-metadata">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="alvin-cora">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -1446,6 +1510,40 @@
         <description>${scope.project.label}</description>
       </setupTask>
     </setupTask>
+    
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="alvin-metadata">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.alvin.metadata.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.alvin.metadata"
+          location="${workspace.location}/alvin-metadata"
+          remoteURI="https://github.com/olovm/alvin-metadata">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+      </setupTask>
+    
     <setupTask
         xsi:type="setup:CompoundTask"
         name="diva-cora">
@@ -1735,6 +1833,38 @@
         <description>${scope.project.label}</description>
       </setupTask>
     </setupTask>
+   <setupTask
+        xsi:type="setup:CompoundTask"
+        name="diva-metadata">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.diva.metadata.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.diva.metadata"
+          location="${workspace.location}/diva-metadata"
+          remoteURI="https://github.com/olovm/diva-metadata">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+      </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">

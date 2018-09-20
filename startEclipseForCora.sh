@@ -22,8 +22,8 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -e user=$USER\
  -p 8080:8080 -p 9876:9876 -p 8090:8090\
  --network=eclipseForCoraNet\
- --name eclipseforcoraphoton1\
- eclipseforcoraphoton1 $2
+ --name eclipse201809forcora1\
+ eclipse201809forcora1 $2
  #--service-ports eclipseforcoraoxygen2 $2
  #docker-compose down
  cd ../

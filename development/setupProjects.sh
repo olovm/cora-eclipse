@@ -31,7 +31,8 @@ chooseRepo(){
 	echo "2. https://github.com/olovm/"
 	echo "3. https://github.com/maddekenn/"
 	echo "4. https://github.com/oelrich/"
-	echo "Choose 1, 2, 3, 4 or enter your own base url to clone as origin. (eg. https://github.com/olovm/)"
+	echo "5. https://github.com/johandersson/"
+	echo "Choose 1, 2, 3, 4, 5 or enter your own base url to clone as origin. (eg. https://github.com/olovm/)"
 	read -p "For origin, use? " userchoice
 	case "$userchoice" in
 	        1)
@@ -53,6 +54,11 @@ chooseRepo(){
 				echo "You choose: $userchoice 4"
 	            originRepo="https://github.com/oelrich/"
 	            otherRepos="lsu-ub-uu olovm maddekenn "
+	            ;;
+	        5)
+				echo "You choose: $userchoice 5"
+	            originRepo="https://github.com/johandersson/"
+	            otherRepos="lsu-ub-uu olovm maddekenn oelrich"
 	            ;;
 	        *)
 				echo "You choose: $userchoice other"

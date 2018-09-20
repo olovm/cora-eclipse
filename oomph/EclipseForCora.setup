@@ -19,20 +19,27 @@
     </detail>
   </annotation>
   <version name="latest.released"
-      label="Latest Release (Photon)"
+      label="Latest Release (2018-09)"
       requiredJavaVersion="1.8">
+    <annotation
+        source="http://www.eclipse.org/oomph/setup/BrandingInfo">
+      <detail
+          key="siteURI">
+        <value>https://www.eclipse.org/downloads/packages/release/2018-09/rc1/eclipse-ide-java-ee-developers</value>
+      </detail>
+    </annotation>
     <setupTask
         xsi:type="setup.p2:P2Task"
-        label="Eclipse IDE for Java EE Developers (Photon)">
+        label="Eclipse IDE for Java EE Developers (2018-09)">
       <requirement
           name="epp.package.jee"
-          versionRange="[4.8.0,4.9.0)"/>
+          versionRange="[4.9.0,4.10.0)"/>
       <requirement
           name="org.eclipse.platform.feature.group"
-          versionRange="[4.8.0,4.9.0)"/>
+          versionRange="[4.9.0,4.10.0)"/>
       <requirement
           name="org.eclipse.rcp.feature.group"
-          versionRange="[4.8.0,4.9.0)"/>
+          versionRange="[4.9.0,4.10.0)"/>
       <requirement
           name="org.eclipse.buildship.feature.group"/>
       <requirement
@@ -117,6 +124,8 @@
           name="org.eclipse.egit.feature.group"/>
       <requirement
           name="org.eclipse.egit.mylyn.feature.group"/>
+      <requirement
+          name="org.eclipse.epp.mpc.feature.group"/>
       <requirement
           name="org.eclipse.jdt.feature.group"/>
       <requirement
@@ -208,9 +217,9 @@
       <requirement
           name="org.eclipse.wst.xsl.feature.feature.group"/>
       <repository
-          url="http://download.eclipse.org/technology/epp/packages/photon"/>
+          url="http://download.eclipse.org/technology/epp/packages/2018-09"/>
       <repository
-          url="http://download.eclipse.org/releases/photon/201806271001"/>
+          url="http://download.eclipse.org/releases/2018-09"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
