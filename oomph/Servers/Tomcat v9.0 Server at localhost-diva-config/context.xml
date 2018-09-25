@@ -34,7 +34,7 @@
 		override="false" />
 	<Parameter name="apptokenVerifierPublicPathToSystem" value="/apptokenverifier/rest/"
 		override="false" />
-	<Parameter name="gatekeeperURL" value="http://localhost:8080/gatekeeper/"
+	<Parameter name="gatekeeperURL" value="http://localhost:8082/gatekeeper/"
 		override="false" />
 
 	<Parameter name="dependencyProviderClassName" value="se.uu.ub.cora.diva.DivaDependencyProvider"
@@ -48,7 +48,7 @@
 		override="false" />
 	<Parameter name="storageOnDiskBasePath"
 		value="/home/olov/workspace/cora-basicstorage/files/" override="false" />
-	<Parameter name="solrURL" value="http://cora-solr:8983/solr/coracore"
+	<Parameter name="solrURL" value="http://diva-cora-solr:8983/solr/coracore"
 		override="false" />
 
 	<Parameter name="theRestPublicPathToSystem" value="/therest/rest/"

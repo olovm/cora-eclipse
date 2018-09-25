@@ -67,3 +67,24 @@ This should get you through the installer and will eventually start eclipse and 
 Before starting the server go into the launch configuration / classpath and under User Entries add<br>
 cora-basicstorage/target/cora-basicstorage-0.5-SNAPSHOT.jar<br>
 cora-systemone/target/cora-systemone-0.13-SNAPSHOT.jar<br>
+
+##Links
+(this is not fully working yet)
+After starting the appropriate servers and containers from inside eclipse, the following will be exposed:
+
+###SystemOne
+[SystemOne web:](http://localhost:8080/)<br>
+[SystemOne REST:](http://localhost:8080/)<br>
+[Solr:](http://localhost:8983/solr/)<br>
+[Karma:](http://localhost:9876/)<br>
+
+###Alvin
+[Alvin web:](http://localhost:8081/)<br>
+[Alvin REST:](http://localhost:8081/)<br>
+[Solr:](http://localhost:8984/solr/)<br>
+
+###DiVA
+[DiVA web:](http://localhost:8082/)<br>
+[DiVA REST:](http://localhost:8082/)<br>
+[Solr:](http://localhost:8984/solr/)<br>
+

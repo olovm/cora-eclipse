@@ -11,6 +11,7 @@ RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -
 RUN dnf clean all && \
   dnf install -y \
   firefox \
+  webkit2gtk3 \
   wget \
   lsof \
   tar \

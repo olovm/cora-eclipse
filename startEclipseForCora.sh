@@ -1,10 +1,14 @@
 #! /bin/bash
 
-USER=$1
+#USER=$1
+USER=$(id -u -n)
 BASEDIR=$(dirname $BASH_SOURCE)
 
+echo starting eclipse using:
+echo userName: $USER
+
 if [ ! $USER ]; then
-  	echo "You must specify the userName used when starting eclipseforcoraphoton"
+  	echo "You must specify the userName used when starting eclipse201809forcora2"
 else
 	#docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
 cd eclipseForCora
@@ -18,12 +22,14 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -v INSTALLDIR/m2:/home/$USER/.m2\
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
- -v PARENTDIR/solr:/opt/solr-6.6.2/server/solr\
  -e user=$USER\
  -p 8080:8080 -p 9876:9876 -p 8090:8090\
+ -p 8081:8081\
+ -p 8082:8082\
  --network=eclipseForCoraNet\
- --name eclipse201809forcora1\
- eclipse201809forcora1 $2
+ --name eclipse201809forcora2\
+ eclipse201809forcora2 $2
+# -v PARENTDIR/solr:/opt/solr-6.6.2/server/solr\
  #--service-ports eclipseforcoraoxygen2 $2
  #docker-compose down
  cd ../

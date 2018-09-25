@@ -3,26 +3,29 @@
     <booleanAttribute key="allocatePseudoTTY" value="false"/>
     <booleanAttribute key="autoRemove" value="true"/>
     <listAttribute key="binds"/>
-    <stringAttribute key="command" value="/home/fedora/checkAndStart.sh "/>
+    <stringAttribute key="command" value="solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore"/>
     <stringAttribute key="connectionName" value="unix:///var/run/docker.sock"/>
-    <stringAttribute key="containerName" value="diva-docker-fedora"/>
+    <stringAttribute key="containerName" value="diva-cora-solr"/>
     <stringAttribute key="cpuPriority" value="1024"/>
+    <stringAttribute key="creationDate" value="2018-08-27 12:27:00"/>
     <booleanAttribute key="enableLimits" value="false"/>
     <listAttribute key="envVariables"/>
-    <stringAttribute key="imageId" value="sha256:1c8b6f3a6c7bcbed60a9dd321298171f139a6b7cf94d2549428da88375330b8c"/>
-    <stringAttribute key="imageName" value="diva-cora-docker-fedora:latest"/>
+    <stringAttribute key="imageId" value="sha256:a8d8debd78b8224f3ac2a9e9b08b3d37951a7c0ce228469424f09a0060bbb91d"/>
+    <stringAttribute key="imageName" value="cora-solr:0.2-SNAPSHOT"/>
     <booleanAttribute key="interactive" value="false"/>
     <mapAttribute key="labels"/>
     <listAttribute key="links"/>
-    <stringAttribute key="memoryLimit" value="512"/>
+    <stringAttribute key="memoryLimit" value="-1"/>
     <stringAttribute key="networkMode" value="eclipseForCoraNet"/>
+    <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+        <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+    </listAttribute>
     <booleanAttribute key="privileged" value="false"/>
     <booleanAttribute key="publishAllPorts" value="false"/>
-    <listAttribute key="publishedPorts"/>
-    <listAttribute key="volumes">
-        <listEntry value="/home/fedora/fedora38/data:NONE::false"/>
-        <listEntry value="/home/fedora/fedora38/server/logs:NONE::false"/>
-        <listEntry value="/home/fedora/fedora38/tomcat/logs:NONE::false"/>
+    <listAttribute key="publishedPorts">
+        <listEntry value="8983/tcp::8985:true"/>
     </listAttribute>
+    <booleanAttribute key="readonly" value="false"/>
+    <listAttribute key="volumes"/>
     <listAttribute key="volumesFrom"/>
 </launchConfiguration>

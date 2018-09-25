@@ -1,5 +1,7 @@
 #! /bin/bash
 
+echo "Running setupDirectoriesAndScriptsForEclipseForCora..."
+
 #USER=$1
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname $SCRIPT)

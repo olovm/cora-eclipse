@@ -10,7 +10,7 @@
     <stringAttribute key="creationDate" value="2018-08-27 12:27:00"/>
     <booleanAttribute key="enableLimits" value="false"/>
     <listAttribute key="envVariables"/>
-    <stringAttribute key="imageId" value="sha256:f9f8be67e6ccb99cd1f4a295b2ba1c27483b954095437b97306656d1803be1de"/>
+    <stringAttribute key="imageId" value="sha256:a8d8debd78b8224f3ac2a9e9b08b3d37951a7c0ce228469424f09a0060bbb91d"/>
     <stringAttribute key="imageName" value="cora-solr:0.2-SNAPSHOT"/>
     <booleanAttribute key="interactive" value="false"/>
     <mapAttribute key="labels"/>
