@@ -46,8 +46,9 @@
 	<Parameter name="storageOnDiskClassName"
 		value="se.uu.ub.cora.storage.RecordStorageInMemoryReadFromDisk"
 		override="false" />
-	<Parameter name="storageOnDiskBasePath"
-		value="/home/olov/workspace/cora-basicstorage/files/" override="false" />
+<!-- 	<Parameter name="storageOnDiskBasePath" -->
+<!-- 		value="/home/olov/workspace/cora-basicstorage/files/" override="false" /> -->
+	<Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/diva/" override="false" />
 	<Parameter name="solrURL" value="http://diva-cora-solr:8983/solr/coracore"
 		override="false" />
 

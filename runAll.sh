@@ -1,8 +1,5 @@
 #! /bin/bash
 
-#USER=$1
-#USERID=$2
-#DOCKERGROUPID=$3
 USER=$(id -u -n)
 USERID=$(id -u)
 DOCKERGROUPID=$1
