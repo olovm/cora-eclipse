@@ -77,18 +77,18 @@ cora-systemone/target/cora-systemone-0.13-SNAPSHOT.jar<br>
 After starting the appropriate servers and containers from inside eclipse, the following will be exposed:
 
 ### SystemOne
-[SystemOne web:](http://localhost:8080/jsclient/theClient.html)<br>
+[SystemOne web:](http://localhost:8080/jsclient/theClient.html) choose ip from url<br>
 [SystemOne REST:](http://localhost:8080/therest/rest/)<br>
 [Solr:](http://localhost:8983/solr/)<br>
 [Karma:](http://localhost:9876/)<br>
 
 ### Alvin
-[Alvin web:](http://localhost:8081/jsclient/theClient.html)<br>
+[Alvin web:](http://localhost:8081/jsclient/theClient.html) choose ip from url<br>
 [Alvin REST:](http://localhost:8081/therest/rest/)<br>
 [Solr:](http://localhost:8984/solr/)<br>
 
 ### DiVA
-[DiVA web:](http://localhost:8082/jsclient/theClient.html)<br>
+[DiVA web:](http://localhost:8082/jsclient/theClient.html) choose ip from url<br>
 [DiVA REST:](http://localhost:8082/therest/rest/)<br>
 [Solr:](http://localhost:8984/solr/)<br>
 

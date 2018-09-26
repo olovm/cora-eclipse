@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.linuxtools.docker.ui.runDockerImageLaunchConfigurationType">
-<booleanAttribute key="allocatePseudoTTY" value="false"/>
-<booleanAttribute key="autoRemove" value="true"/>
-<listAttribute key="binds"/>
-<stringAttribute key="command" value="postgres "/>
-<stringAttribute key="connectionName" value="unix:///var/run/docker.sock"/>
-<stringAttribute key="containerName" value="postgres-fcrepo"/>
-<stringAttribute key="cpuPriority" value="1024"/>
-<booleanAttribute key="enableLimits" value="false"/>
-<stringAttribute key="entryPoint" value="docker-entrypoint.sh "/>
-<listAttribute key="envVariables">
-<listEntry value="POSTGRES_DB=fedora38"/>
-<listEntry value="POSTGRES_USER=fedoraAdmin"/>
-<listEntry value="POSTGRES_PASSWORD=fedora"/>
-</listAttribute>
-<stringAttribute key="imageId" value="sha256:98b5c906e550d3100dc2a02735061e8c02c19037d0265c1576ca91d262636471"/>
-<stringAttribute key="imageName" value="cora-docker-postgresql:9.6"/>
-<booleanAttribute key="interactive" value="false"/>
-<mapAttribute key="labels"/>
-<listAttribute key="links"/>
-<stringAttribute key="memoryLimit" value="512"/>
-<stringAttribute key="networkMode" value="eclipseForCoraNet"/>
-<booleanAttribute key="privileged" value="false"/>
-<booleanAttribute key="publishAllPorts" value="false"/>
-<listAttribute key="publishedPorts"/>
-<listAttribute key="volumes">
-<listEntry value="/var/lib/postgresql/data:NONE::false"/>
-</listAttribute>
-<listAttribute key="volumesFrom"/>
+    <booleanAttribute key="allocatePseudoTTY" value="false"/>
+    <booleanAttribute key="autoRemove" value="true"/>
+    <listAttribute key="binds"/>
+    <stringAttribute key="command" value="postgres "/>
+    <stringAttribute key="connectionName" value="unix:///var/run/docker.sock"/>
+    <stringAttribute key="containerName" value="postgres-fcrepo"/>
+    <stringAttribute key="cpuPriority" value="1024"/>
+    <booleanAttribute key="enableLimits" value="false"/>
+    <stringAttribute key="entryPoint" value="docker-entrypoint.sh "/>
+    <listAttribute key="envVariables">
+        <listEntry value="POSTGRES_DB=fedora38"/>
+        <listEntry value="POSTGRES_USER=fedoraAdmin"/>
+        <listEntry value="POSTGRES_PASSWORD=fedora"/>
+    </listAttribute>
+    <stringAttribute key="imageId" value="sha256:ea3b25afe676a7c87bc2a4caf8e4d9ace4ebf80a93c21306acf635d9fdc79fda"/>
+    <stringAttribute key="imageName" value="cora-docker-postgresql:9.6"/>
+    <booleanAttribute key="interactive" value="false"/>
+    <mapAttribute key="labels"/>
+    <listAttribute key="links"/>
+    <stringAttribute key="memoryLimit" value="512"/>
+    <stringAttribute key="networkMode" value="eclipseForCoraNet"/>
+    <booleanAttribute key="privileged" value="false"/>
+    <booleanAttribute key="publishAllPorts" value="false"/>
+    <listAttribute key="publishedPorts"/>
+    <listAttribute key="volumes">
+        <listEntry value="/var/lib/postgresql/data:NONE::false"/>
+    </listAttribute>
+    <listAttribute key="volumesFrom"/>
 </launchConfiguration>

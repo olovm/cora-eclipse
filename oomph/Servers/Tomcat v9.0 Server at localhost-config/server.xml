@@ -155,7 +155,6 @@
       <Context docBase="cora-apptokenverifier" path="/apptokenverifier" reloadable="true" source="org.eclipse.jst.jee.server:cora-apptokenverifier"/>
       <Context docBase="cora-gatekeeper" path="/gatekeeper" reloadable="true" source="org.eclipse.jst.jee.server:cora-gatekeeper"/>
       <Context docBase="cora-therest" path="/therest" reloadable="true" source="org.eclipse.jst.jee.server:cora-therest"/>
-      <Context docBase="cora-jsclient" path="/jsclient" reloadable="true" source="org.eclipse.jst.jee.server:cora-jsclient"/>
       </Host>
     </Engine>
   </Service>
