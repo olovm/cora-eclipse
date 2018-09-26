@@ -5,12 +5,12 @@
     <listAttribute key="binds"/>
     <stringAttribute key="command" value="solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore"/>
     <stringAttribute key="connectionName" value="unix:///var/run/docker.sock"/>
-    <stringAttribute key="containerName" value="diva-cora-solr"/>
+    <stringAttribute key="containerName" value="alvin-cora-solr"/>
     <stringAttribute key="cpuPriority" value="1024"/>
     <stringAttribute key="creationDate" value="2018-08-27 12:27:00"/>
     <booleanAttribute key="enableLimits" value="false"/>
     <listAttribute key="envVariables"/>
-    <stringAttribute key="imageId" value="sha256:1e28e47fce65e84363d2095a0148e5f2a4bfd98317ef96ce8ea94422e0a363b3"/>
+    <stringAttribute key="imageId" value="sha256:eed5e29c5eeb1d03cce788c71068dc8de870170f3c71f77e870c6ea14becb286"/>
     <stringAttribute key="imageName" value="cora-solr:0.2-SNAPSHOT"/>
     <booleanAttribute key="interactive" value="false"/>
     <mapAttribute key="labels"/>
@@ -23,7 +23,7 @@
     <booleanAttribute key="privileged" value="false"/>
     <booleanAttribute key="publishAllPorts" value="false"/>
     <listAttribute key="publishedPorts">
-        <listEntry value="8983/tcp::8985:true"/>
+        <listEntry value="8983/tcp::8984:true"/>
     </listAttribute>
     <booleanAttribute key="readonly" value="false"/>
     <listAttribute key="volumes"/>

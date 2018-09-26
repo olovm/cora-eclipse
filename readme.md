@@ -71,6 +71,8 @@ You can click on the spinning arrows, in the bottom of the screen to see what th
 Before starting the server go into the launch configuration / classpath and under User Entries add<br>
 cora-basicstorage/target/cora-basicstorage-0.5-SNAPSHOT.jar<br>
 cora-systemone/target/cora-systemone-0.13-SNAPSHOT.jar<br>
+<br>
+Start docker containers for development by running systemoneStartDevDockers, or similar for Alvin or DiVA.
 
 ## Links
 (this is not fully working yet)

@@ -21,6 +21,8 @@ else
 		./cora-eclipse/buildEclipseForCora.sh $USER $USERID $DOCKERGROUPID
 		./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh
 		docker network create eclipseForCoraNet
+		docker network create eclipseForAlvinNet
+		docker network create eclipseForDivaNet
 	fi
 	./eclipseForCora/startEclipseForCora.sh $USER
 fi
