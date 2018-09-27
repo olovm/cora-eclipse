@@ -12,6 +12,7 @@ RUN dnf clean all && \
   dnf install -y \
   firefox \
   webkit2gtk3 \
+  eclipse-swt \
   wget \
   lsof \
   tar \
