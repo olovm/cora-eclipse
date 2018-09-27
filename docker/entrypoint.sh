@@ -31,5 +31,6 @@ if [ ! -d ~/workspace/cora-jsclient ]; then
 elif [ ! -d ~/eclipse/eclipseforcora ]; then
 	runInstaller
 else
-	SWT_GTK3=0 ~/eclipse/eclipseforcora/eclipse
+	#SWT_GTK3=0 ~/eclipse/eclipseforcora/eclipse
+	~/eclipse/eclipseforcora/eclipse
 fi
