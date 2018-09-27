@@ -6,53 +6,27 @@ I am running this on linux so, change as needed for other platforms.
 1. Make sure you have git and docker set up on your local machine
 2. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
 
-## RunAll
+## Installing, runAll
 The runAll script will take you through the entire process of setting up a docker based development
-environment for Cora. It will go through the parts below.. </br>
+environment for Cora. It will go through all needed steps. </br>
 Run:</br>
 `./cora-eclipse/runAll.sh`
 
-## Build docker image
+### Build docker image
 Automatically run by runAll<br>
-Replace `yourUserName` with with your desired username.</br>
-Run:</br>
-`./cora-eclipse/buildEclipseForCora.sh yourUserName`
-or:</br>
- `docker build --build-arg user=yourUserName -t eclipseforcoraoxygen1 cora-eclipse/docker/`</br>
-or: if you want an updated FROM</br>
- `docker build --pull --build-arg user=yourUserName -t eclipseforcoraoxygen1 cora-eclipse/docker/`</br>
-this will take some time as it downloads quite a few things
+this will take some time as it downloads quite a few things, eclipse, tomcat, etc
 
-
-
-## Create directories on host 
+### Create directories on host 
 Automatically run by runAll<br>
-To get persistent storage in the container, create the following directories</br>
-` ./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh`</br>
-or:</br>
 1. workspace (for your eclipse workspace)
 2. eclipse (for your eclipse installation)
 3. eclipseP2 (for files shared between multiple installations of eclipse)
 4. m2 (for maven files)
 
-
-## First run installing eclipse
+### Docker first run installing eclipse
 Automatically run by runAll<br>
-I am using path `/mnt/depot/eclipseForCora` replace that with where you created your directories above.
-Replace `yourUserName` with with your desired username (must be the same as you used when building the image)</br>
-</br>
-` ./eclipseForCora/startEclipseForCora.sh yourUserName`</br>
-or:</br>
-Run:</br>
-`docker run --rm -ti --privileged -e DISPLAY=$DISPLAY 
--v /tmp/.X11-unix:/tmp/.X11-unix 
--v /mnt/depot/eclipseForCora/workspace:/home/yourUserName/workspace 
--v /mnt/depot/eclipseForCora/eclipse:/home/yourUserName/eclipse 
--v /mnt/depot/eclipseP2:/home/yourUserName/.p2 
--v /mnt/depot/eclipseForCora/m2:/home/yourUserName/.m2 
---env user=yourUserName -p 8080:8080 -p 9876:9876 -p 8090:8090 --name eclipseforcoraoxygen1 eclipseforcoraoxygen1`
 
-### Eclipse installation
+#### Eclipse installation
 When the container starts for the first time will it run the installation part of entrypoint.sh. This will
 clone all Cora repositories, add other remotes to all of them, install needed npm karma in cora-jsclient and
 start the eclipse installer (oomph). </br>
@@ -64,13 +38,43 @@ can be found in /home/yourUserName/workspace/cora-eclipse/oomph.
 2. Use absolute path for your eclipse installation, set it to /home/yourUserName/eclipse
 3. Fill in path for Installation location, set it to /home/yourUserName/eclipse
 4. Use absolute path for your workspace, set it to /home/yourUserName/workspace
+<br>
 This should get you through the installer and will eventually start eclipse and do a first run to setup eclipse. 
 You can click on the spinning arrows, in the bottom of the screen to see what the setup does.
+<br>
+Once the setuptask are finnished, no more spinning arrows, close eclipse, and then close the installer window. 
+<br>
+You are now ready to do a first startup of the environment. 
 
-## Starting server
+
+## Finishing up, your first startup of the environment
+Start the environment by running:</br>
+`./eclipseForCora/startEclipseForCora.sh`
+<br>
+ **Do the following in the listed order to avoid problems!**
+ 1. In project explorer, under the little arrow, deselect working sets
+ 2. Mark all projects and refresh them, menu or F5 (this will make sure eclipse sees files in target folders)
+ 3. Add jars to servers, see instructions below.
+ 4. Start and stop the servers (in server tab) in the following order:
+ ..1. Tomcat v9.0 at localhost
+ ..2. Tomcat v9.0 at localhost (alvin)
+ ..3. Tomcat v9.0 at localhost (diva)
+ 5. Go under External Tools Configurations (play icon with toolbox) and run linkJsClientToTomcats
+
+### Adding jars to tomcats
 Before starting the server go into the launch configuration / classpath and under User Entries add<br>
+For:Tomcat v9.0 at localhost<br>
 cora-basicstorage/target/cora-basicstorage-0.5-SNAPSHOT.jar<br>
 cora-systemone/target/cora-systemone-0.13-SNAPSHOT.jar<br>
+<br>
+For:Tomcat v9.0 at localhost (alvin)<br>
+cora-basicstorage/target/cora-basicstorage-0.5-SNAPSHOT.jar<br>
+cora-systemone/target/alvin-cora-0.x-SNAPSHOT.jar<br>
+<br>
+<br>
+For:Tomcat v9.0 at localhost (diva)<br>
+cora-basicstorage/target/cora-basicstorage-0.5-SNAPSHOT.jar<br>
+cora-systemone/target/diva-cora-0.x-SNAPSHOT.jar<br>
 <br>
 Start docker containers for development by running systemoneStartDevDockers, or similar for Alvin or DiVA.
 
