@@ -1510,7 +1510,6 @@
         <description>${scope.project.label}</description>
       </setupTask>
     </setupTask>
-    
     <setupTask
         xsi:type="setup:CompoundTask"
         name="alvin-metadata">
@@ -1542,8 +1541,7 @@
         </annotation>
         <description>${scope.project.label}</description>
       </setupTask>
-      </setupTask>
-    
+    </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
         name="diva-cora">
@@ -1833,7 +1831,7 @@
         <description>${scope.project.label}</description>
       </setupTask>
     </setupTask>
-   <setupTask
+    <setupTask
         xsi:type="setup:CompoundTask"
         name="diva-metadata">
       <setupTask
@@ -1864,7 +1862,7 @@
         </annotation>
         <description>${scope.project.label}</description>
       </setupTask>
-      </setupTask>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
@@ -2407,15 +2405,15 @@
   </setupTask>
   <setupTask
       xsi:type="launching:LaunchTask"
-      id="mvnCleanInstallAllButDocker"
-      launcher="mvnCleanInstallAllButDocker">
-    <description>launch external script mvnCleanInstallAllButDocker.sh </description>
+      id="mvnPomCleanInstallAllButDocker"
+      launcher="mvnPomCleanInstallAllButDocker">
+    <description>launch external script mvnPomCleanInstallAllButDocker.sh </description>
   </setupTask>
   <setupTask
       xsi:type="launching:LaunchTask"
-      id="mvnCleanInstallDevDocker"
-      launcher="mvnCleanInstallDevDocker">
-    <description>launch external script mvnCleanInstallDevDocker.sh</description>
+      id="mvnPomCleanInstallDevDocker"
+      launcher="mvnPomCleanInstallDevDocker">
+    <description>launch external script mvnPomCleanInstallDevDocker.sh</description>
   </setupTask>
   <stream name="master"
       label="Master">
