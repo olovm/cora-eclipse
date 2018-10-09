@@ -262,6 +262,8 @@
           url="http://beust.com/eclipse"/>
       <repository
           url="http://findbugs.cs.umd.edu/eclipse"/>
+      <repository
+          url="https://www.mihai-nita.net/eclipse"/>
     </setupTask>
   </version>
   <description>EclipseForCora provides an Eclipse Photon develepment environment for Cora.</description>
