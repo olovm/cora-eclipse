@@ -44,7 +44,7 @@ writeEndToTempPomFile(){
 }
 
 cleanInstallAllUsingTempPomFile(){
-	mvn clean install -T 1.5C -f ~/workspace/tempPom.xml
+	mvn -T 1.5C -f ~/workspace/tempPom.xml clean install
 }	
 
 # ################# calls start here #######################################
