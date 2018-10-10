@@ -17,8 +17,8 @@ RUN dnf clean all && \
   tar \
   less \
   docker \
-  java-10-openjdk* \
-  java-11-openjdk* \
+  java-10-openjdk \
+  java-11-openjdk \
   maven \
   git \ 
   node \
