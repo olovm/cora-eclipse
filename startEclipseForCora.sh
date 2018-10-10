@@ -8,7 +8,7 @@ echo starting eclipse using:
 echo userName: $USER
 
 if [ ! $USER ]; then
-  	echo "You must specify the userName used when starting eclipse201809forcora3"
+  	echo "You must specify the userName used when starting eclipse201809forcora4"
 else
 	#docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
 cd eclipseForCora
@@ -27,8 +27,8 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -p 8081:8081\
  -p 8082:8082\
  --network=eclipseForCoraNet\
- --name eclipse201809forcora3\
- eclipse201809forcora3 $2
+ --name eclipse201809forcora4\
+ eclipse201809forcora4 $2
 # -v PARENTDIR/solr:/opt/solr-6.6.2/server/solr\
  #--service-ports eclipseforcoraoxygen2 $2
  #docker-compose down
