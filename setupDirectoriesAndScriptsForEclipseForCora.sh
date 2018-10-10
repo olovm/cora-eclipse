@@ -29,6 +29,10 @@ changeAndCopyScripts(){
 	cp $BASEDIR/startEclipseForCora.sh $PARENTDIR/eclipseForCora/
 	sed -i "s|INSTALLDIR|$INSTALLDIR|g" $PARENTDIR/eclipseForCora/startEclipseForCora.sh
 	sed -i "s|PARENTDIR|$PARENTDIR|g" $PARENTDIR/eclipseForCora/startEclipseForCora.sh
+
+	cp $BASEDIR/startEclipseForCoraTempSetup.sh $PARENTDIR/eclipseForCora/
+	sed -i "s|INSTALLDIR|$INSTALLDIR|g" $PARENTDIR/eclipseForCora/startEclipseForCoraTempSetup.sh
+	sed -i "s|PARENTDIR|$PARENTDIR|g" $PARENTDIR/eclipseForCora/startEclipseForCoraTempSetup.sh
 	
 	#cp $BASEDIR/buildEclipseForCora.sh $PARENTDIR/eclipseForCora/
 	#sed -i "s|INSTALLDIR|$INSTALLDIR|g" $PARENTDIR/eclipseForCora/buildEclipseForCora.sh
