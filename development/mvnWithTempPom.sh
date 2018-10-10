@@ -6,6 +6,7 @@ start(){
 	PROJECTS_TO_RUN="${!userChoosenGroup}";
 	checkChoosenProjectsExists;
 	createTempPomFile;
+	buildParentSeparatelyFirstAsMavenNeedsItForBuilding;
 	cleanInstallAllUsingTempPomFile;	
 }
 
@@ -41,6 +42,10 @@ addAllProjectsToTempPomFile(){
 writeEndToTempPomFile(){
 		echo "</modules>" >>  ~/workspace/tempPom.xml
 		echo "</project>" >>  ~/workspace/tempPom.xml
+}
+
+buildParentSeparatelyFirstAsMavenNeedsItForBuilding(){
+	mvn -f ~/workspace/cora-parent/pom.xml clean install
 }
 
 cleanInstallAllUsingTempPomFile(){
