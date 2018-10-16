@@ -8,7 +8,7 @@ fetchAll() {
 	local dir=$1
 	echo $dir
 	cd ~/workspace/$dir
-	git fetch --all
+	git fetch github-lsu-ub-uu
 }
 
 cd ~/workspace/
