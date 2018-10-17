@@ -4,6 +4,7 @@ echo "starting solr"
 docker run -d --name alvin-cora-solr \
 --network=eclipseForCoraNet \
 cora-solr:0.2-SNAPSHOT \
+-p 8983:8984 \
 solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore
 docker start alvin-cora-solr
 

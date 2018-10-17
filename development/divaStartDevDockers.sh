@@ -3,6 +3,7 @@
 echo "starting solr"
 docker run -d --name diva-cora-solr \
 --network=eclipseForCoraNet \
+-p 8983:8985 \
 cora-solr:0.2-SNAPSHOT \
 solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore
 docker start diva-cora-solr
