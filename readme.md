@@ -60,6 +60,7 @@ Start the environment by running:</br>
  ..2. Tomcat v9.0 at localhost (alvin)
  ..3. Tomcat v9.0 at localhost (diva)
  5. Go under External Tools Configurations (play icon with toolbox) and run linkJsClientToTomcats
+ 6. Go under External Tools Configurations (play icon with toolbox) and run copyMetadata
 
 ### Adding jars to tomcats
 Before starting the server go into the launch configuration / classpath and under User Entries add<br>
