@@ -11,6 +11,7 @@ docker start diva-cora-solr
 echo "starting postgresql for fedora"
 docker run -d --name diva-postgres-fcrepo --rm \
 --net-alias=postgres-fcrepo \
+-p 5432:5434 \
 --network=eclipseForDivaNet \
 -e POSTGRES_DB=fedora38 \
 -e POSTGRES_USER=fedoraAdmin \

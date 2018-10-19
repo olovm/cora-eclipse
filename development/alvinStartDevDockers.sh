@@ -11,6 +11,7 @@ docker start alvin-cora-solr
 echo "starting postgresql for fedora"
 docker run -d --name alvin-postgres-fcrepo --rm \
 --net-alias=postgres-fcrepo \
+-p 5432:5433 \
 --network=eclipseForAlvinNet \
 -e POSTGRES_DB=fedora38 \
 -e POSTGRES_USER=fedoraAdmin \
