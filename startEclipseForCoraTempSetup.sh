@@ -19,7 +19,6 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -v INSTALLDIR/.eclipse:/home/$USER/.eclipse\
  -v INSTALLDIR/m2:/home/$USER/.m2\
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
- -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
  -e user=$USER\
  --network=eclipseForCoraNet\
  --name eclipse201809forcora4TempSetup\
