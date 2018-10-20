@@ -77,25 +77,45 @@ For:Tomcat v9.0 at localhost (diva)<br>
 cora-basicstorage/target/cora-basicstorage-0.5-SNAPSHOT.jar<br>
 cora-systemone/target/diva-cora-0.x-SNAPSHOT.jar<br>
 <br>
-Start docker containers for development by running systemoneStartDevDockers, or similar for Alvin or DiVA.
+
+###Start systemOne
+1. Go under External Tools Configurations (play icon with toolbox) and start the docker containers for development by running systemoneStartDevDockers 
+2. Start the tomcat server
+3. See links section below to find the running system
+
+(or similar for Alvin or DiVA)
 
 ## Links
 (this is not fully working yet)
 After starting the appropriate servers and containers from inside eclipse, the following will be exposed:
 
 ### SystemOne
-[SystemOne web:](http://localhost:8080/jsclient/theClient.html) choose ip from url<br>
-[SystemOne REST:](http://localhost:8080/therest/rest/)<br>
-[Solr:](http://localhost:8983/solr/)<br>
-[Karma:](http://localhost:9876/)<br>
+[SystemOne web:http://localhost:8080/jsclient/theClient.html](http://localhost:8080/jsclient/theClient.html)<br>
+[SystemOne REST:http://localhost:8080/therest/rest/](http://localhost:8080/therest/rest/)<br>
+[Solr:http://localhost:8983/solr/](http://localhost:8983/solr/)<br>
+[Karma:http://localhost:9876/](http://localhost:9876/)<br>
 
 ### Alvin
-[Alvin web:](http://localhost:8081/jsclient/theClient.html) choose ip from url<br>
-[Alvin REST:](http://localhost:8081/therest/rest/)<br>
-[Solr:](http://localhost:8984/solr/)<br>
+[Alvin web:http://localhost:8081/jsclient/theClient.html](http://localhost:8081/jsclient/theClient.html)<br>
+[Alvin REST:http://localhost:8081/therest/rest/](http://localhost:8081/therest/rest/)<br>
+[Solr:http://localhost:8984/solr/](http://localhost:8984/solr/)<br>
 
 ### DiVA
-[DiVA web:](http://localhost:8082/jsclient/theClient.html) choose ip from url<br>
-[DiVA REST:](http://localhost:8082/therest/rest/)<br>
-[Solr:](http://localhost:8984/solr/)<br>
+[DiVA web:http://localhost:8082/jsclient/theClient.html](http://localhost:8082/jsclient/theClient.html)<br>
+[DiVA REST:http://localhost:8082/therest/rest/](http://localhost:8082/therest/rest/)<br>
+[Solr:http://localhost:8984/solr/](http://localhost:8984/solr/)<br>
 
+
+##Updating to a newer version of developed systems
+1. Set your username in .gitconfig found in the root catalog where you installed the system, do this
+from the host system as there currently seems to be some issue with setting information in the
+file from the docker side of things.<br>
+[user]<br>
+        name = yourusername<br>
+        email = user@organisation.org<br>
+2. Go under External Tools Configurations (play icon with toolbox), run fetchAllFromLSU
+3. Go under External Tools Configurations (play icon with toolbox), run mergeProjectsFromLSUMaster (confirm in console)
+3. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallAllButDocker
+4. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallDevDocker
+5. Rightclick any project, and choose, maven / update project... (or F5) select all projects and run
+6. Stop and start containers and tomcat servers.
