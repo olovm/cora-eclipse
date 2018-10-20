@@ -30,6 +30,8 @@ RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2018-09/R/ecli
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
 
+RUN touch /home/$user/.gitconfig
+
 RUN chown $user:$user /home/$user -R
 
 RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.12/bin/apache-tomcat-9.0.12.tar.gz  | tar zxf - -C /opt/
