@@ -78,7 +78,7 @@ cora-basicstorage/target/cora-basicstorage-0.5-SNAPSHOT.jar<br>
 cora-systemone/target/diva-cora-0.x-SNAPSHOT.jar<br>
 <br>
 
-###Start systemOne
+### Start systemOne
 1. Go under External Tools Configurations (play icon with toolbox) and start the docker containers for development by running systemoneStartDevDockers 
 2. Start the tomcat server
 3. See links section below to find the running system
@@ -106,7 +106,7 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [Solr:http://localhost:8984/solr/](http://localhost:8984/solr/)<br>
 
 
-##Updating to a newer version of developed systems
+## Updating to a newer version of developed systems
 1. Set your username in .gitconfig found in the root catalog where you installed the system, do this
 from the host system as there currently seems to be some issue with setting information in the
 file from the docker side of things.<br>
