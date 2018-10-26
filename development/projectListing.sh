@@ -7,7 +7,7 @@ TIER1="cora-json cora-httphandler cora-userpicker cora-apptokenstorage cora-sear
 TIER2="cora-beefeater cora-bookkeeper cora-gatekeeper "
 TIER3="cora-spider cora-gatekeepertokenprovider"
 TIER4="cora-basicstorage cora-sqlstorage cora-gatekeeperclient cora-therest cora-apptokenverifier "
-TIER4+="cora-idplogin cora-solrsearch cora-metacreator "
+TIER4+="cora-idplogin cora-solrsearch cora-metacreator cora-fedora "
 TIER5="cora-clientdata "
 TIER6="cora-fitnesseintegration cora-fitnesse cora-systemone cora-javaclient cora-metadata systemone-metadata "
 
