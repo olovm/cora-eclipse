@@ -33,7 +33,7 @@ RUN touch /home/$user/.gitconfig
 
 RUN chown $user:$user /home/$user -R
 
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.12/bin/apache-tomcat-9.0.12.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.13/bin/apache-tomcat-9.0.13.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
