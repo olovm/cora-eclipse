@@ -29,6 +29,8 @@ diva-cora-docker-fedora:3.8.1 /home/fedora/checkAndStart.sh
 echo "connecting fedora docker to eclipseForCoraNet to access from tomcat and main application"
 docker network connect eclipseForCoraNet diva-docker-fedora
 
+echo "removing previous postgresql with diva data"
+docker rm diva-cora-docker-postgresql
 echo "starting postgresql with diva data"
 docker run -d --name diva-cora-docker-postgresql --restart always  \
 --net-alias=postgres-diva \
