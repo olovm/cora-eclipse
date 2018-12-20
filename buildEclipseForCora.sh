@@ -13,7 +13,7 @@ elif [ ! $DOCKERGROUPID ]; then
 else
 	#for possibly newer version of from: X
 	#docker build --pull --no-cache --build-arg user=$USER --build-arg dockergroupid=$DOCKERGROUPID -t eclipseforcoraoxygen2 cora-eclipse/docker/
-	docker build --build-arg user=$USER --build-arg userid=$USERID --build-arg dockergroupid=$DOCKERGROUPID -t eclipse201809forcora7 cora-eclipse/docker/
+	docker build --build-arg user=$USER --build-arg userid=$USERID --build-arg dockergroupid=$DOCKERGROUPID -t eclipse201812forcora1 cora-eclipse/docker/
 	#docker build --build-arg user=$USER -t eclipseforcoraoxygen2 cora-eclipse/docker/
 	#cd cora-eclipse/docker/
 	#docker-compose build --build-arg user=$USER eclipseforcoraoxygen2
