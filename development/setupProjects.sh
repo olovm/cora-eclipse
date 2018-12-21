@@ -97,7 +97,7 @@ cloneRepoAndAddRemotes() {
 	git clone $tempRepository$tempProjectName.git $projectName
 	cd $workspaceDir/$projectName
 	addOtherRemotes $projectName
-	git fetch --all
+	#git fetch --all
 	cd $workspaceDir
 }
 
