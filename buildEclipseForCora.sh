@@ -5,11 +5,11 @@ USERID=$2
 DOCKERGROUPID=$3
 
 if [ ! $USER ]; then
-  	echo you must specify the userName to be used when building eclipseforcoraphoton
+  	echo you must specify the userName to be used when building eclipse201812forcora2
 elif [ ! $USERID ]; then
-	echo you must specify the userid to be used when building eclipseforcoraphoton, use: id -u youruserid 
+	echo you must specify the userid to be used when building eclipse201812forcora2, use: id -u youruserid 
 elif [ ! $DOCKERGROUPID ]; then
-	echo you must specify the dockergroupid to be used when building eclipseforcoraphoton, use: getent group docker 
+	echo you must specify the dockergroupid to be used when building eclipse201812forcora2, use: getent group docker 
 else
 	#for possibly newer version of from: X
 	#docker build --pull --no-cache --build-arg user=$USER --build-arg dockergroupid=$DOCKERGROUPID -t eclipseforcoraoxygen2 cora-eclipse/docker/
