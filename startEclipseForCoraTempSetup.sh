@@ -8,7 +8,7 @@ echo starting eclipse using:
 echo userName: $USER
 
 if [ ! $USER ]; then
-  	echo "You must specify the userName used when starting eclipse201812forcora1TempSetup"
+  	echo "You must specify the userName used when starting eclipse201812forcora2TempSetup"
 else
 cd eclipseForCora
 docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
@@ -21,8 +21,8 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
  -e user=$USER\
  --network=eclipseForCoraNet\
- --name eclipse201812forcora1TempSetup\
- eclipse201812forcora1 $2
+ --name eclipse201812forcora2TempSetup\
+ eclipse201812forcora2 $2
  cd ../
 fi
 # -p 8080:8080 -p 9876:9876 -p 8090:8090\
