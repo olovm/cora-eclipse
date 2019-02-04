@@ -80,6 +80,11 @@ cora-basicstorage/target/cora-basicstorage-0.5-SNAPSHOT.jar<br>
 cora-systemone/target/diva-cora-0.x-SNAPSHOT.jar<br>
 <br>
 
+### Build all tags
+1. Go under External Tools Configurations (play icon with toolbox) and run checkOutLatestTagOfAllProjects
+2. Go under External Tools Configurations (play icon with toolbox) and run mvnPomCleanInstallAllButDocker 
+3. Go under External Tools Configurations (play icon with toolbox) and run checkOutMasterOfAllProjects
+
 ### Start systemOne
 1. Go under External Tools Configurations (play icon with toolbox) and start the docker containers for development by running systemoneStartDevDockers 
 2. Start the tomcat server
