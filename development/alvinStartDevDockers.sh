@@ -24,7 +24,7 @@ sleep 10
 echo "starting fedora"
 docker run -d --name alvin-docker-fedora --rm \
 --network=eclipseForAlvinNet \
-alvin-cora-docker-fedora:latest /home/fedora/checkAndStart.sh
+alvin-cora-docker-fedora:3.8.1 /home/fedora/checkAndStart.sh
 
 echo "connecting fedora docker to eclipseForCoraNet to access from tomcat and main application"
 docker network connect eclipseForCoraNet alvin-docker-fedora
