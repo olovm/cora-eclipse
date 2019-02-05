@@ -106,6 +106,7 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [Alvin web:http://localhost:8081/jsclient/theClient.html](http://localhost:8081/jsclient/theClient.html)<br>
 [Alvin REST:http://localhost:8081/therest/rest/](http://localhost:8081/therest/rest/)<br>
 [Solr:http://localhost:8984/solr/](http://localhost:8984/solr/)<br>
+[Fedora Commons:http://localhost:8089/fedora/](http://localhost:8089/fedora/)<br>
 
 ### DiVA
 [DiVA web:http://localhost:8082/jsclient/theClient.html](http://localhost:8082/jsclient/theClient.html)<br>
