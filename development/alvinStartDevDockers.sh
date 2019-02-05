@@ -11,7 +11,7 @@ docker start alvin-cora-solr
 echo "starting postgresql for fedora"
 docker run -d --name alvin-postgres-fcrepo --rm \
 --net-alias=postgres-fcrepo \
--p 5432:5433 \
+-p 5433:5432 \
 --network=eclipseForAlvinNet \
 -e POSTGRES_DB=fedora38 \
 -e POSTGRES_USER=fedoraAdmin \
@@ -23,6 +23,8 @@ sleep 10
 
 echo "starting fedora"
 docker run -d --name alvin-docker-fedora --rm \
+-p 8089:8088 \
+-p 8444:8443 \
 --network=eclipseForAlvinNet \
 alvin-cora-docker-fedora:3.8.1 /home/fedora/checkAndStart.sh
 

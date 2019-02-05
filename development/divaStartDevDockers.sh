@@ -23,6 +23,8 @@ sleep 10
 
 echo "starting fedora"
 docker run -d --name diva-docker-fedora --rm \
+-p 8089:8088 \
+-p 8444:8443 \
 --network=eclipseForDivaNet \
 diva-cora-docker-fedora:3.8.1 /home/fedora/checkAndStart.sh
 
