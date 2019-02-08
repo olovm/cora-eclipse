@@ -58,12 +58,15 @@
 	<Parameter name="idpLoginPublicPathToSystem" value="/idplogin/rest/"
 		override="false" />
 	<Parameter name="storageClassName"
-		value="se.uu.ub.cora.alvin.mixedstorage.AlvinMixedRecordStorage"
-		override="false" />
+	value="se.uu.ub.cora.alvin.mixedstorage.AlvinMixedRecordStorage"
+	override="false" />
+	<Parameter name="fedoraUsername" value="fedoraAdmin" override="false" />
+	<Parameter name="fedoraPassword" value="changeit" override="false" />
+	
 	<Parameter name="fedoraToCoraStorageClassName"
 		value="se.uu.ub.cora.alvin.tocorastorage.fedora.AlvinFedoraToCoraRecordStorage"
 		override="false" />
-	<Parameter name="fedoraURL" value="http://alvin-docker-fedora:8088/fedora/"
+	<Parameter name="fedoraURL" value="https://alvin-docker-fedora:8443/fedora/"
 		override="false" />
 	
 	<Parameter name="dbToCoraStorageClassName"
