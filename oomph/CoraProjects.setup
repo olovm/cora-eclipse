@@ -1903,7 +1903,7 @@
         id="">
       <predicate
           xsi:type="predicates:NamePredicate"
-          pattern=".*cora-docker.*"/>
+          pattern="cora-docker.*"/>
     </workingSet>
     <workingSet
         name="cora-tier1">
@@ -2003,38 +2003,74 @@
     <workingSet
         name="Alvin">
       <predicate
-          xsi:type="predicates:NamePredicate"
-          pattern=".*alvin.*"/>
+          xsi:type="predicates:AndPredicate">
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="alvin.*"/>
+        <operand
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="alvin-docker.*"/>
+        </operand>
+        <operand
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="alvin-cora-docker.*"/>
+        </operand>
+      </predicate>
+    </workingSet>
+    <workingSet
+        name="alvin-docker">
+      <predicate
+          xsi:type="predicates:OrPredicate">
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="alvin-cora-docker.*"/>
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="alvin-docker.*"/>
+      </predicate>
     </workingSet>
     <workingSet
         name="DiVA">
       <predicate
-          xsi:type="predicates:NamePredicate"
-          pattern=".*diva.*"/>
+          xsi:type="predicates:AndPredicate">
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="diva.*"/>
+        <operand
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="diva-docker.*"/>
+        </operand>
+        <operand
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="diva-cora-docker.*"/>
+        </operand>
+      </predicate>
+    </workingSet>
+    <workingSet
+        name="diva-docker">
+      <predicate
+          xsi:type="predicates:OrPredicate">
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="diva-cora-docker.*"/>
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="diva-docker.*"/>
+      </predicate>
     </workingSet>
     <workingSet
         name="cora-eclipse">
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-eclipse"/>
-    </workingSet>
-    <workingSet
-        name="alvin-docker">
-      <predicate
-          xsi:type="predicates:NamePredicate"
-          pattern="*alvin-docker*"/>
-      <predicate
-          xsi:type="predicates:NamePredicate"
-          pattern="*alvin-cora-docker*"/>
-    </workingSet>
-    <workingSet
-        name="diva-docker">
-      <predicate
-          xsi:type="predicates:NamePredicate"
-          pattern="*diva-docker*"/>
-      <predicate
-          xsi:type="predicates:NamePredicate"
-          pattern="*diva-cora-docker*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
