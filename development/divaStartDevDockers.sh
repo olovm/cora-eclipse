@@ -23,10 +23,10 @@ sleep 10
 
 echo "starting fedora"
 docker run -d --name diva-docker-fedora --rm \
--p 8089:8088 \
--p 8444:8443 \
+-p 38089:8088 \
+-p 8445:8443 \
 --network=eclipseForDivaNet \
-diva-cora-docker-fedora:3.8.1 /home/fedora/checkAndStart.sh
+diva-cora-docker-fedora-3.8.1:1.0.0 /home/fedora/checkAndStart.sh
 
 echo "connecting fedora docker to eclipseForCoraNet to access from tomcat and main application"
 docker network connect eclipseForCoraNet diva-docker-fedora
