@@ -1903,7 +1903,7 @@
         id="">
       <predicate
           xsi:type="predicates:NamePredicate"
-          pattern=".*docker.*"/>
+          pattern=".*cora-docker.*"/>
     </workingSet>
     <workingSet
         name="cora-tier1">
@@ -2011,6 +2011,24 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern=".*diva.*"/>
+    </workingSet>
+    <workingSet
+        name="cora-eclipse">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-eclipse"/>
+    </workingSet>
+    <workingSet
+        name="alvin-docker">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="*alvin*docker*"/>
+    </workingSet>
+    <workingSet
+        name="diva-docker">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="*diva*docker*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
