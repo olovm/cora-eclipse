@@ -2022,13 +2022,19 @@
         name="alvin-docker">
       <predicate
           xsi:type="predicates:NamePredicate"
-          pattern="*alvin*docker*"/>
+          pattern="*alvin-docker*"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="*alvin-cora-docker*"/>
     </workingSet>
     <workingSet
         name="diva-docker">
       <predicate
           xsi:type="predicates:NamePredicate"
-          pattern="*diva*docker*"/>
+          pattern="*diva-docker*"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="*diva-cora-docker*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
