@@ -60,7 +60,7 @@
 		value="se.uu.ub.cora.diva.mixedstorage.DivaMixedRecordStorage"
 		override="false" />
 	<Parameter name="divaFedoraToCoraStorageClassName"
-		value="se.uu.ub.cora.diva.tocorastorage.fedora.DivaToCoraRecordStorage"
+		value="se.uu.ub.cora.diva.tocorastorage.fedora.DivaFedoraRecordStorage"
 		override="false" />
 		<Parameter name="divaDbToCoraStorageClassName"
 		value="se.uu.ub.cora.diva.tocorastorage.db.DivaDbToCoraRecordStorage"
