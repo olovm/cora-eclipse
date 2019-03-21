@@ -115,6 +115,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-data">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.json.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.data"
+          location="${workspace.location}/cora-data"
+          remoteURI="https://github.com/olovm/cora-data">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-json">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -287,6 +319,38 @@
           id="git.clone.cora.gatekeeper"
           location="${workspace.location}/cora-gatekeeper"
           remoteURI="https://github.com/olovm/cora-gatekeeper">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-gatekeeperserver">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.gatekeeper.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.gatekeeperserver"
+          location="${workspace.location}/cora-gatekeeperserver"
+          remoteURI="https://github.com/olovm/cora-gatekeeperserver">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
@@ -1925,6 +1989,9 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-sqldatabase"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-data"/>
     </workingSet>
     <workingSet
         name="cora-tier2">
@@ -1937,6 +2004,9 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-gatekeeper"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-gatekeeperserver"/>
     </workingSet>
     <workingSet
         name="cora-tier3">
@@ -2421,7 +2491,7 @@
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.jst.server.tomcat.core/locationorg.eclipse.jst.server.tomcat.runtime.90"
-          value="/opt/apache-tomcat-9.0.14"/>
+          value="/opt/apache-tomcat-9.0.17"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -2429,7 +2499,7 @@
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.wst.server.core/runtimes"
-          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;runtimes>&#xA;  &lt;runtime id=&quot;Apache Tomcat v9.0&quot; location=&quot;/opt/apache-tomcat-9.0.14&quot; name=&quot;Apache Tomcat v9.0&quot; runtime-type-id=&quot;org.eclipse.jst.server.tomcat.runtime.90&quot; timestamp=&quot;0&quot;/>&#xA;&lt;/runtimes>&#xA;"/>
+          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;runtimes>&#xA;  &lt;runtime id=&quot;Apache Tomcat v9.0&quot; location=&quot;/opt/apache-tomcat-9.0.17&quot; name=&quot;Apache Tomcat v9.0&quot; runtime-type-id=&quot;org.eclipse.jst.server.tomcat.runtime.90&quot; timestamp=&quot;0&quot;/>&#xA;&lt;/runtimes>&#xA;"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"

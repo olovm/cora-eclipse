@@ -3,8 +3,8 @@
 ECLIPSE="cora-eclipse"
 
 TIER0="cora-parent "
-TIER1="cora-json cora-httphandler cora-userpicker cora-apptokenstorage cora-searchstorage cora-sqldatabase"
-TIER2="cora-beefeater cora-bookkeeper cora-gatekeeper "
+TIER1="cora-data cora-json cora-httphandler cora-userpicker cora-apptokenstorage cora-searchstorage cora-sqldatabase"
+TIER2="cora-beefeater cora-bookkeeper cora-gatekeeper cora-gatekeeperserver"
 TIER3="cora-spider cora-gatekeepertokenprovider"
 TIER4="cora-basicstorage cora-sqlstorage cora-gatekeeperclient cora-therest cora-apptokenverifier "
 TIER4+="cora-idplogin cora-solrsearch cora-metacreator cora-fedora "
