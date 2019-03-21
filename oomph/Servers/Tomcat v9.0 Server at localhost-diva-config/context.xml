@@ -60,7 +60,7 @@
 		value="se.uu.ub.cora.diva.mixedstorage.DivaMixedRecordStorage"
 		override="false" />
 	<Parameter name="divaFedoraToCoraStorageClassName"
-		value="se.uu.ub.cora.diva.tocorastorage.fedora.DivaToCoraRecordStorage"
+		value="se.uu.ub.cora.diva.tocorastorage.fedora.DivaFedoraRecordStorage"
 		override="false" />
 		<Parameter name="divaDbToCoraStorageClassName"
 		value="se.uu.ub.cora.diva.tocorastorage.db.DivaDbToCoraRecordStorage"
@@ -72,7 +72,10 @@
 		url="jdbc:postgresql://diva-cora-docker-postgresql:5432/diva"
 		username="diva" password="diva" maxTotal="20" maxIdle="10"
 		maxWaitMillis="-1" />
-	<Parameter name="fedoraURL" value="http://diva-docker-fedora:8088/fedora/"
-		override="false" />
+	<Parameter name="fedoraURL" value="https://diva-docker-fedora:8443/fedora/"
+		override="false"/>
+	<Parameter name="fedoraUsername" value="fedoraAdmin" override="false"/>
+	<Parameter name="fedoraPassword" value="changeit" override="false"/>
+	
 
 </Context>
