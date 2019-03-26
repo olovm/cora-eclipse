@@ -62,16 +62,16 @@
 	override="false" />
 	
 	<Parameter name="fedoraToCoraStorageClassName"
-		value="se.uu.ub.cora.alvin.tocorastorage.fedora.AlvinFedoraToCoraRecordStorage"
+		value="se.uu.ub.cora.alvin.mixedstorage.fedora.FedoraRecordStorage"
 		override="false" />
 	
-	<Parameter name="fedoraURL" value="https://alvin-docker-fedora:8443/fedora/"
-		override="false" />
+	<Parameter name="fedoraURL" value="https://alvin-docker-fedora:8443/fedora/" override="false" />
+	
 	<Parameter name="fedoraUsername" value="fedoraAdmin" override="false" />
 	<Parameter name="fedoraPassword" value="changeit" override="false" />
 	
 	<Parameter name="dbToCoraStorageClassName"
-		value="se.uu.ub.cora.alvin.tocorastorage.db.AlvinDbToCoraRecordStorage"
+		value="se.uu.ub.cora.alvin.mixedstorage.db.AlvinDbToCoraRecordStorage"
 		override="false" />
 	<Parameter name="databaseLookupName" value="java:/comp/env/jdbc/postgres"
 		override="false" />
