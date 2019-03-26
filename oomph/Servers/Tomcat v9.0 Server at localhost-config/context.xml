@@ -26,6 +26,7 @@
     <!--
     <Manager pathname="" />
     -->
+    
     <Parameter name="guestUserId" value="12345" override="false" />
 	
 	<Parameter name="appTokenStorageClassName" value="se.uu.ub.cora.storage.AppTokenStorageImp"
