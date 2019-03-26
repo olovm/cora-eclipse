@@ -26,15 +26,13 @@
     <!--
     <Manager pathname="" />
     -->
-	<Parameter name="userPickerProviderClassName"
-		value="se.uu.ub.cora.systemone.authentication.UserPickerProviderImp"
-		override="false" />
+    <Parameter name="guestUserId" value="12345" override="false" />
 	
 	<Parameter name="appTokenStorageClassName" value="se.uu.ub.cora.storage.AppTokenStorageImp"
 		override="false" />
 		<Parameter name="apptokenVerifierPublicPathToSystem" value="/apptokenverifier/rest/"
 		override="false" />
-	<Parameter name="gatekeeperURL" value="http://localhost:8080/gatekeeper/"
+	<Parameter name="gatekeeperURL" value="http://localhost:8080/gatekeeperserver/"
 		override="false" />
 		
 	<Parameter name="dependencyProviderClassName"

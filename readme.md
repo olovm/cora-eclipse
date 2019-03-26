@@ -80,6 +80,11 @@ cora-basicstorage/target/cora-basicstorage-0.5-SNAPSHOT.jar<br>
 cora-systemone/target/diva-cora-0.x-SNAPSHOT.jar<br>
 <br>
 
+### Adding cert information for connection to Fedora Commons
+For alvin server go into the launch configuration / arguments under VM arguments  add<br>
+-Djavax.net.ssl.trustStore="/home/olov/workspace/cora-docker-fedora/files/fedoraKeystore.jks" -Djavax.net.ssl.trustStorePassword="changeit"
+
+
 ### Build all tags
 1. Go under External Tools Configurations (play icon with toolbox) and run checkOutLatestTagOfAllProjects
 2. Go under External Tools Configurations (play icon with toolbox) and run mvnPomCleanInstallAllButDocker 
