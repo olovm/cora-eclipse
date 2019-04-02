@@ -26,9 +26,7 @@
     <!--
     <Manager pathname="" />
     -->
-	<Parameter name="userPickerProviderClassName"
-		value="se.uu.ub.cora.alvin.authentication.UserPickerProviderImp"
-		override="false" />
+	<Parameter name="guestUserId" value="coraUser:5368244264733286" override="false" />
 
 	<Parameter name="appTokenStorageClassName" value="se.uu.ub.cora.storage.AppTokenStorageImp"
 		override="false" />
