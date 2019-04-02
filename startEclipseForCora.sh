@@ -19,7 +19,7 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -v INSTALLDIR/workspace:/home/$USER/workspace\
  -v INSTALLDIR/eclipse:/home/$USER/eclipse\
  -v INSTALLDIR/.eclipse:/home/$USER/.eclipse\
- -v INSTALLDIR/m2:/home/$USER/.m2\
+ -v PARENTDIR/m2:/home/$USER/.m2\
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
  -e user=$USER\
@@ -33,9 +33,6 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  --network=eclipseForCoraNet\
  --name eclipse201903forcora1\
  eclipse201903forcora1 $2
-# -v PARENTDIR/solr:/opt/solr-6.6.2/server/solr\
- #--service-ports eclipseforcoraoxygen2 $2
- #docker-compose down
  cd ../
 fi
 

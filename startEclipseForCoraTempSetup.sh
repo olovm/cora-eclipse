@@ -17,7 +17,7 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -v INSTALLDIR/workspace:/home/$USER/workspace\
  -v INSTALLDIR/eclipse:/home/$USER/eclipse\
  -v INSTALLDIR/.eclipse:/home/$USER/.eclipse\
- -v INSTALLDIR/m2:/home/$USER/.m2\
+ -v PARENTDIR/m2:/home/$USER/.m2\
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
  -e user=$USER\
  --network=eclipseForCoraNet\

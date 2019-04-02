@@ -25,7 +25,7 @@ RUN dnf clean all && \
   npm && \
   dnf clean all
 
-RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2018-12/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
+RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2019-03/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh

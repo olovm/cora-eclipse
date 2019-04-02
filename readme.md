@@ -4,11 +4,14 @@ I am running this on linux so, change as needed for other platforms.
 
 ## Getting started
 1. Make sure you have git and docker set up on your local machine
-2. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
+2. Make a directory where you want everything installed /x/y/z/cora
+3. cd to your new directory
+3. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
+
+
 
 ## Installing, runAll
-The runAll script will take you through the entire process of setting up a docker based development
-environment for Cora. It will go through all needed steps. </br>
+The runAll script will take you through the entire process of setting up a docker based development environment for Cora. It will go through all needed steps. </br>
 Run:</br>
 `./cora-eclipse/runAll.sh`
 
