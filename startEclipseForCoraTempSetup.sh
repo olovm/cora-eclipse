@@ -10,7 +10,7 @@ echo userName: $USER
 if [ ! $USER ]; then
   	echo "You must specify the userName used when starting eclipse201903forcora1TempSetup"
 else
-cd eclipseForCora
+cd eclipse201903forcora1
 docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
  -v /var/run/docker.sock:/var/run/docker.sock\
  -v /tmp/.X11-unix:/tmp/.X11-unix\

@@ -12,6 +12,7 @@ TOPDIR="$(dirname "$PARENTDIR")"
 echo script: $SCRIPT
 echo basedir: $BASEDIR
 echo parentdir: $PARENTDIR
+echo installdir: $INSTALLDIR
 
 createDirectories(){
   	mkdir $INSTALLDIR
