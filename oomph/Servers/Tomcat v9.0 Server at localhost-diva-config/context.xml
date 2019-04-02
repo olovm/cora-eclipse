@@ -34,7 +34,7 @@
 		override="false" />
 	<Parameter name="apptokenVerifierPublicPathToSystem" value="/apptokenverifier/rest/"
 		override="false" />
-	<Parameter name="gatekeeperURL" value="http://localhost:8082/gatekeeper/"
+	<Parameter name="gatekeeperURL" value="http://localhost:8082/gatekeeperserver/"
 		override="false" />
 
 	<Parameter name="dependencyProviderClassName" value="se.uu.ub.cora.diva.DivaDependencyProvider"
