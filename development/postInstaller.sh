@@ -13,6 +13,7 @@ start(){
 
 changeUserInContexts(){
 	find /home/$USER/workspace/cora-eclipse/oomph/Servers/ -type f -exec sed -i -e 's/olov/'"$USER"'/g' {} \;
+	find /home/$USER/workspace/cora-eclipse/oomph/eclipse/ -type f -exec sed -i -e 's/olov/'"$USER"'/g' {} \;
 }
 
 
