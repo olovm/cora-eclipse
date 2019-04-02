@@ -25,5 +25,5 @@ else
 		docker network create eclipseForDivaNet
 	fi
 #	./eclipseForCora/startEclipseForCora.sh $USER
-	./eclipseForCora/startEclipseForCoraTempSetup.sh $USER
+	./eclipse201903forcora1/startEclipseForCoraTempSetup.sh $USER
 fi
