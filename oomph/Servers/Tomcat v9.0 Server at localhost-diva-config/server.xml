@@ -157,7 +157,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
       <Context docBase="cora-apptokenverifier" path="/apptokenverifier" reloadable="true" source="org.eclipse.jst.jee.server:cora-apptokenverifier"/>
-      <Context docBase="cora-gatekeeper" path="/gatekeeper" reloadable="true" source="org.eclipse.jst.jee.server:cora-gatekeeper"/>
+      <Context docBase="cora-gatekeeperserver" path="/gatekeeperserver" reloadable="true" source="org.eclipse.jst.jee.server:cora-gatekeeperserver"/>
       <Context docBase="cora-therest" path="/therest" reloadable="true" source="org.eclipse.jst.jee.server:cora-therest"/>
       </Host>
     </Engine>

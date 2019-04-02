@@ -6,50 +6,46 @@ echo "Running setupDirectoriesAndScriptsForEclipseForCora..."
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname $SCRIPT)
 PARENTDIR="$(dirname "$BASEDIR")"
-INSTALLDIR=$PARENTDIR/eclipseForCora
+INSTALLDIR=$PARENTDIR/eclipse201903forcora1
 TOPDIR="$(dirname "$PARENTDIR")"
 
+echo 
 echo script: $SCRIPT
 echo basedir: $BASEDIR
 echo parentdir: $PARENTDIR
+echo installdir: $INSTALLDIR
 
 createDirectories(){
-  	mkdir $PARENTDIR/eclipseForCora
-  	mkdir $PARENTDIR/eclipseForCora/eclipse
-  	mkdir $PARENTDIR/eclipseForCora/.eclipse
-  	mkdir $PARENTDIR/eclipseForCora/workspace
- 	mkdir $PARENTDIR/eclipseForCora/m2
+  	mkdir $INSTALLDIR
+  	mkdir $INSTALLDIR/eclipse
+  	mkdir $INSTALLDIR/.eclipse
+  	mkdir $INSTALLDIR/workspace
+ 	mkdir $PARENTDIR/m2
   	mkdir $PARENTDIR/eclipseP2
-  	mkdir $PARENTDIR/systemOne/solr -p
-  	mkdir $PARENTDIR/alvin/solr -p
-  	mkdir $PARENTDIR/diva/solr -p
 }
 	
 changeAndCopyScripts(){
-	cp $BASEDIR/startEclipseForCora.sh $PARENTDIR/eclipseForCora/
-	sed -i "s|INSTALLDIR|$INSTALLDIR|g" $PARENTDIR/eclipseForCora/startEclipseForCora.sh
-	sed -i "s|PARENTDIR|$PARENTDIR|g" $PARENTDIR/eclipseForCora/startEclipseForCora.sh
+	cp $BASEDIR/startEclipseForCora.sh $INSTALLDIR/
+	sed -i "s|INSTALLDIR|$INSTALLDIR|g" $INSTALLDIR/startEclipseForCora.sh
+	sed -i "s|PARENTDIR|$PARENTDIR|g" $INSTALLDIR/startEclipseForCora.sh
 
-	cp $BASEDIR/startEclipseForCoraTempSetup.sh $PARENTDIR/eclipseForCora/
-	sed -i "s|INSTALLDIR|$INSTALLDIR|g" $PARENTDIR/eclipseForCora/startEclipseForCoraTempSetup.sh
-	sed -i "s|PARENTDIR|$PARENTDIR|g" $PARENTDIR/eclipseForCora/startEclipseForCoraTempSetup.sh
+	cp $BASEDIR/startEclipseForCoraTempSetup.sh $INSTALLDIR/
+	sed -i "s|INSTALLDIR|$INSTALLDIR|g" $INSTALLDIR/startEclipseForCoraTempSetup.sh
+	sed -i "s|PARENTDIR|$PARENTDIR|g" $INSTALLDIR/startEclipseForCoraTempSetup.sh
 	
-	#cp $BASEDIR/buildEclipseForCora.sh $PARENTDIR/eclipseForCora/
-	#sed -i "s|INSTALLDIR|$INSTALLDIR|g" $PARENTDIR/eclipseForCora/buildEclipseForCora.sh
+	cp $BASEDIR/development/projectListing.sh $INSTALLDIR/projectListing.sh
+	cp $BASEDIR/development/setupProjects.sh $INSTALLDIR/setupProjects.sh
 	
-	cp $BASEDIR/development/projectListing.sh $PARENTDIR/eclipseForCora/projectListing.sh
-	cp $BASEDIR/development/setupProjects.sh $PARENTDIR/eclipseForCora/setupProjects.sh
-	
-	cp $BASEDIR/docker/docker-compose.yml $PARENTDIR/eclipseForCora/
-	cp $BASEDIR/docker/Dockerfile $PARENTDIR/eclipseForCora/
-	cp $BASEDIR/docker/entrypoint.sh $PARENTDIR/eclipseForCora/
+	cp $BASEDIR/docker/docker-compose.yml $INSTALLDIR/
+	cp $BASEDIR/docker/Dockerfile $INSTALLDIR/
+	cp $BASEDIR/docker/entrypoint.sh $INSTALLDIR/
 }
 
 createGitConfigFile(){
 	touch $PARENTDIR/.gitconfig
 }
 
-if [ ! -d $PARENTDIR/eclipseForCora ]; then
+if [ ! -d $INSTALLDIR ]; then
 	createDirectories
 	changeAndCopyScripts
 	createGitConfigFile

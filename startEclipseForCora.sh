@@ -4,14 +4,16 @@
 USER=$(id -u -n)
 BASEDIR=$(dirname $BASH_SOURCE)
 
+echo 
 echo starting eclipse using:
 echo userName: $USER
+echo 
 
 if [ ! $USER ]; then
-  	echo "You must specify the userName used when starting eclipse201812forcora2"
+  	echo "You must specify the userName used when starting eclipse201903forcora1"
 else
 	#docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
-cd eclipseForCora
+cd eclipse201903forcora1
 #docker-compose run -e DISPLAY=$DISPLAY\
 docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
  -v /var/run/docker.sock:/var/run/docker.sock\
@@ -19,7 +21,7 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -v INSTALLDIR/workspace:/home/$USER/workspace\
  -v INSTALLDIR/eclipse:/home/$USER/eclipse\
  -v INSTALLDIR/.eclipse:/home/$USER/.eclipse\
- -v INSTALLDIR/m2:/home/$USER/.m2\
+ -v PARENTDIR/m2:/home/$USER/.m2\
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
  -e user=$USER\
@@ -31,11 +33,8 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -p 8091:8091 \
  -p 8092:8092 \
  --network=eclipseForCoraNet\
- --name eclipse201812forcora2\
- eclipse201812forcora2 $2
-# -v PARENTDIR/solr:/opt/solr-6.6.2/server/solr\
- #--service-ports eclipseforcoraoxygen2 $2
- #docker-compose down
+ --name eclipse201903forcora1\
+ eclipse201903forcora1 $2
  cd ../
 fi
 

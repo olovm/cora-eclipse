@@ -84,8 +84,10 @@ cloneRepoAndAddRemotes() {
 	local projectName=$1
 	
 	setWorkingRepositoryAndProjectNameAsTemp
-	echo "tempRepository:$tempRepository"
-	echo "tempProjectName:$tempProjectName"
+	echo "..."
+	echo " "
+	echo "tempRepository: $tempRepository"
+	echo "tempProjectName: $tempProjectName"
 	
 	cd $workspaceDir
 	git clone $tempRepository$tempProjectName.git $projectName

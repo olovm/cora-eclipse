@@ -4,25 +4,27 @@
 USER=$(id -u -n)
 BASEDIR=$(dirname $BASH_SOURCE)
 
+echo 
 echo starting eclipse using:
 echo userName: $USER
+echo 
 
 if [ ! $USER ]; then
-  	echo "You must specify the userName used when starting eclipse201812forcora2TempSetup"
+  	echo "You must specify the userName used when starting eclipse201903forcora1TempSetup"
 else
-cd eclipseForCora
+cd eclipse201903forcora1
 docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
  -v /var/run/docker.sock:/var/run/docker.sock\
  -v /tmp/.X11-unix:/tmp/.X11-unix\
  -v INSTALLDIR/workspace:/home/$USER/workspace\
  -v INSTALLDIR/eclipse:/home/$USER/eclipse\
  -v INSTALLDIR/.eclipse:/home/$USER/.eclipse\
- -v INSTALLDIR/m2:/home/$USER/.m2\
+ -v PARENTDIR/m2:/home/$USER/.m2\
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
  -e user=$USER\
  --network=eclipseForCoraNet\
- --name eclipse201812forcora2TempSetup\
- eclipse201812forcora2 $2
+ --name eclipse201903forcora1TempSetup\
+ eclipse201903forcora1 $2
  cd ../
 fi
 # -p 8080:8080 -p 9876:9876 -p 8090:8090\
