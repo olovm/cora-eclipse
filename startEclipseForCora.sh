@@ -4,8 +4,10 @@
 USER=$(id -u -n)
 BASEDIR=$(dirname $BASH_SOURCE)
 
+echo 
 echo starting eclipse using:
 echo userName: $USER
+echo 
 
 if [ ! $USER ]; then
   	echo "You must specify the userName used when starting eclipse201903forcora1"

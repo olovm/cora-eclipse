@@ -9,6 +9,7 @@ PARENTDIR="$(dirname "$BASEDIR")"
 INSTALLDIR=$PARENTDIR/eclipse201903forcora1
 TOPDIR="$(dirname "$PARENTDIR")"
 
+echo 
 echo script: $SCRIPT
 echo basedir: $BASEDIR
 echo parentdir: $PARENTDIR

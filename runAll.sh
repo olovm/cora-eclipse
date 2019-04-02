@@ -4,6 +4,7 @@ USER=$(id -u -n)
 USERID=$(id -u)
 DOCKERGROUPID=$1
 
+echo 
 echo running all using:
 echo userName: $USER
 echo userId: $USERID
