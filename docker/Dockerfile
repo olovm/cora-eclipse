@@ -1,15 +1,15 @@
 FROM fedora:29
 
 # Set the locale
-ENV LANG=en_US.UTF-8
-ENV LANGUAGE=en_US:en  
-ENV LC_ALL=en_US.UTF-8  
-RUN localedef --verbose --force -i en_US -f UTF-8 en_US.UTF-8
+#ENV LANG=en_US.UTF-8
+#ENV LANGUAGE=en_US:en  
+#ENV LC_ALL=en_US.UTF-8  
+#RUN localedef --verbose --force -i en_US -f UTF-8 en_US.UTF-8
 
-#RUN echo "export LANG=en_US.utf-8" > /opt/export_LANG.sh
-#ENV BASH_ENV=/opt/export_LANG.sh \
-#    ENV=/opt/export_LANG.sh \
-#    PROMPT_COMMAND="source /opt/export_LANG.sh"
+RUN echo "export LANG=en_US.utf-8" > /opt/export_LANG.sh
+ENV BASH_ENV=/opt/export_LANG.sh \
+    ENV=/opt/export_LANG.sh \
+    PROMPT_COMMAND="source /opt/export_LANG.sh"
 
 
 ARG user
