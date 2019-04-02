@@ -84,7 +84,7 @@ cloneRepoAndAddRemotes() {
 	local projectName=$1
 	
 	setWorkingRepositoryAndProjectNameAsTemp
-	echo 
+	echo " "
 	echo "tempRepository:$tempRepository"
 	echo "tempProjectName:$tempProjectName"
 	

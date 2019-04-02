@@ -506,5 +506,5 @@
           url="https://www.mihai-nita.net/eclipse"/>
     </setupTask>
   </version>
-  <description>EclipseForCora provides an Eclipse Photon develepment environment for Cora.</description>
+  <description>EclipseForCora provides an Eclipse develepment environment for Cora.</description>
 </setup:Product>
