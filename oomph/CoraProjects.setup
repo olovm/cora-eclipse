@@ -119,7 +119,7 @@
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.cora.json.location}"
+            rootFolder="${git.clone.cora.data.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
