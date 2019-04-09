@@ -115,6 +115,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-logger">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.logger.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.logger"
+          location="${workspace.location}/cora-logger"
+          remoteURI="https://github.com/olovm/cora-logger">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-logger</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-logger</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-data">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -1320,6 +1352,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-log4j">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.log4j.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.log4j"
+          location="${workspace.location}/cora-log4j"
+          remoteURI="https://github.com/olovm/cora-log4j">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-logger</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-logger</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="alvin-cora">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -2091,6 +2155,9 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-data"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-logger"/>
     </workingSet>
     <workingSet
         name="cora-tier2">
@@ -2149,6 +2216,9 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-clientdata"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-log4j"/>
     </workingSet>
     <workingSet
         name="cora-tier6"
