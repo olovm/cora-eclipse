@@ -30,3 +30,19 @@ alvin-cora-docker-fedora-3.8.1:1.0.1 /home/fedora/checkAndStart.sh
 
 echo "connecting fedora docker to eclipseForCoraNet to access from tomcat and main application"
 docker network connect eclipseForCoraNet alvin-docker-fedora
+
+
+echo "removing previous postgresql with Alvin data"
+docker rm alvin-cora-docker-postgresql
+echo "starting postgresql with Alvin data"
+docker run -d --name alvin-cora-docker-postgresql --restart always  \
+--net-alias=postgres-alvin \
+-p 5436:5432 \
+--network=eclipseForAlvinNet \
+-e POSTGRES_DB=alvin \
+-e POSTGRES_USER=alvin \
+-e POSTGRES_PASSWORD=alvin \
+alvin-cora-docker-postgresql 
+
+echo "connecting postgresq docker to eclipseForCoraNet to access from tomcat and main application"
+docker network connect eclipseForCoraNet alvin-cora-docker-postgresql
