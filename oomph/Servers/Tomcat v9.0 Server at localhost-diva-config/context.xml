@@ -58,10 +58,10 @@
 		value="se.uu.ub.cora.diva.mixedstorage.DivaMixedRecordStorage"
 		override="false" />
 	<Parameter name="divaFedoraToCoraStorageClassName"
-		value="se.uu.ub.cora.diva.tocorastorage.fedora.DivaFedoraRecordStorage"
+		value="se.uu.ub.cora.diva.mixedstorage.fedora.DivaFedoraRecordStorage"
 		override="false" />
 		<Parameter name="divaDbToCoraStorageClassName"
-		value="se.uu.ub.cora.diva.tocorastorage.db.DivaDbToCoraRecordStorage"
+		value="se.uu.ub.cora.diva.mixedstorage.db.DivaDbToCoraRecordStorage"
 		override="false" />
 		<Parameter name="databaseLookupName" value="java:/comp/env/jdbc/postgres"
 		override="false" />
