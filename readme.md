@@ -93,6 +93,14 @@ For alvin server go into the launch configuration / arguments under VM arguments
 2. Go under External Tools Configurations (play icon with toolbox) and run mvnPomCleanInstallAllButDocker 
 3. Go under External Tools Configurations (play icon with toolbox) and run checkOutMasterOfAllProjects
 
+
+### help with rename bug
+see: https://bugs.eclipse.org/bugs/show_bug.cgi?id=545293
+comment 27,
+add the following update site and search for updates:
+https://download.eclipse.org/eclipse/updates/4.11-P-builds
+
+
 ### Start systemOne
 1. Go under External Tools Configurations (play icon with toolbox) and start the docker containers for development by running systemoneStartDevDockers 
 2. Start the tomcat server
