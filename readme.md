@@ -56,6 +56,7 @@ You are now ready to do a first startup of the environment.
 Start the environment by running:</br>
 `./eclipseForCora/startEclipseForCora.sh`
 <br>
+**Go in under preferences and make sure the latest java is choosen as default jre**<br>
  **Do the following in the listed order to avoid problems!**
  1. In project explorer, under the little arrow, deselect working sets
  2. Mark all projects and refresh them, menu or F5 (this will make sure eclipse sees files in target folders)
