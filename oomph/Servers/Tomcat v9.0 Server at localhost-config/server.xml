@@ -61,13 +61,7 @@
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
 <!--     <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/> -->
-    <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443"
-    	maxHttpHeaderSize="8192"
-        maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
-		enableLookups="false" acceptCount="100" compressionMinSize="4096"
-		disableUploadTimeout="true"
-		compression="on" noCompressionUserAgents="gozilla, traviata"
-		compressibleMimeType="text/html,text/xml,application/vnd.uub.recordList+json"/>
+    <Connector acceptCount="100" compressibleMimeType="text/html,text/xml,application/vnd.uub.recordList+json" compression="on" compressionMinSize="4096" connectionTimeout="20000" disableUploadTimeout="true" enableLookups="false" maxHttpHeaderSize="8192" maxSpareThreads="75" maxThreads="150" minSpareThreads="25" noCompressionUserAgents="gozilla, traviata" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -162,7 +156,7 @@
       <Context docBase="cora-apptokenverifier" path="/apptokenverifier" reloadable="true" source="org.eclipse.jst.jee.server:cora-apptokenverifier"/>
       
       <Context docBase="cora-therest" path="/therest" reloadable="true" source="org.eclipse.jst.jee.server:cora-therest"/>
-      <Context docBase="cora-gatekeeperserver" path="/gatekeeperserver" reloadable="true" source="org.eclipse.jst.jee.server:cora-gatekeeperserver"/></Host>
+      <Context docBase="cora-gatekeeperserver" path="/gatekeeperserver" reloadable="true" source="org.eclipse.jst.jee.server:cora-gatekeeperserver"/><Context docBase="cora-idplogin" path="/idplogin" reloadable="true" source="org.eclipse.jst.jee.server:cora-idplogin"/></Host>
     </Engine>
   </Service>
 </Server>
