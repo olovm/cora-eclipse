@@ -105,6 +105,10 @@ setWorkingRepositoryAndProjectNameAsTemp(){
 		echo "- WARN - Chosen origin not found ($tempRepository$tempProjectName)"
 		tryWithProjectNameWithoutCora
 	fi
+	if ! checkIfTempUrlExists; then 
+		echo "- WARN - Chosen origin not found ($tempRepository$tempProjectName)"
+		tryWithProjectFromLsu
+	fi
 }
 
 checkIfTempUrlExists(){
@@ -132,10 +136,12 @@ tryWithProjectNameWithoutCora(){
 	echo "Trying project name without cora..."
 	if [ ${projectName:0:4} != "cora" ]; then
 		tempProjectName=${projectName:5}
-	else
-	#if ! checkIfTempUrlExists; then 
-		useLsuAsOrigin
 	fi
+}
+
+tryWithProjectNameFromLsu(){
+	tempProjectName=$projectName
+	useLsuAsOrigin
 	
 	if ! checkIfTempUrlExists; then 
 		useOlovmAsOrigin
