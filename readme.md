@@ -14,7 +14,11 @@ I am running this on linux so, change as needed for other platforms.
 3. list remote branches: git ls-remote
 4. checkout latest branch: git checkout 201903_2
 5. cd up to cora directory: cd ..
-6. continue with "Installing, runAll"
+6. run: ./cora-eclipse/runAll.sh
+7. before choosing setupfiles, enter the docker: docker exec -it eclipse201903forcora2TempSetup bash
+8. list remote branches(inside docker): git ls-remote
+9. check out current dev branch: git checkout 201903_2
+10. continue wiht installation
 
 ## Installing, runAll
 The runAll script will take you through the entire process of setting up a docker based development environment for Cora. It will go through all needed steps. </br>
