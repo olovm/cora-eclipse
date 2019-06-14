@@ -4,7 +4,7 @@ ECLIPSEBRANCH=$eclipsebranch
 firstRun(){
 	git clone https://github.com/olovm/cora-eclipse.git ~/workspace/cora-eclipse
 	echo *** using cora-eclipse branch: $ECLIPSEBRANCH ***
-	if [ $ECLIPSEBRANCH -eq 'master' ]; then
+	if [ $ECLIPSEBRANCH != 'master' ]; then
 		echo *** checking out cora-eclipse branch: $ECLIPSEBRANCH ***
 		cd ~/workspace/cora-eclipse
 		git checkout $ECLIPSEBRANCH
