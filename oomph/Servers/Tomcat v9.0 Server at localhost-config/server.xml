@@ -158,7 +158,10 @@
       
       
       
-      <Context docBase="systemone" path="/systemone" reloadable="true" source="org.eclipse.jst.jee.server:systemone"/><Context docBase="cora-apptokenverifier" path="/apptokenverifier" reloadable="true" source="org.eclipse.jst.jee.server:cora-apptokenverifier"/><Context docBase="cora-gatekeeperserver" path="/gatekeeperserver" reloadable="true" source="org.eclipse.jst.jee.server:cora-gatekeeperserver"/></Host>
+      
+      <Context docBase="cora-apptokenverifier" path="/apptokenverifier" reloadable="true" source="org.eclipse.jst.jee.server:cora-apptokenverifier"/>
+      <Context docBase="cora-gatekeeperserver" path="/gatekeeperserver" reloadable="true" source="org.eclipse.jst.jee.server:cora-gatekeeperserver"/>
+      <Context docBase="systemone" path="/systemone" reloadable="true" source="org.eclipse.jst.jee.server:systemone"/></Host>
     </Engine>
   </Service>
 </Server>
