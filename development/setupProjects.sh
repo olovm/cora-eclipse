@@ -83,9 +83,12 @@ addAllRepositories() {
 cloneRepoAndAddRemotes() {
 	local projectName=$1
 	
-	setWorkingRepositoryAndProjectNameAsTemp
-	echo "..."
 	echo " "
+	echo "..."
+	echo "checking that repository and project exists:"
+	setWorkingRepositoryAndProjectNameAsTemp
+	echo " "
+	echo "clone using:"
 	echo "tempRepository: $tempRepository"
 	echo "tempProjectName: $tempProjectName"
 	
