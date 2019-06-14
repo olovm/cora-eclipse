@@ -3,10 +3,12 @@
 #USER=$1
 USER=$(id -u -n)
 BASEDIR=$(dirname $BASH_SOURCE)
+ECLIPSEBRANCH=$1
 
 echo 
 echo starting eclipse using:
 echo userName: $USER
+echo cora-eclipse branch: $ECLIPSEBRANCH
 echo 
 
 if [ ! $USER ]; then
@@ -22,6 +24,7 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -v PARENTDIR/m2:/home/$USER/.m2\
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
  -e user=$USER\
+ -e eclipsebranch=$ECLIPSEBRANCH\
  --network=eclipseForCoraNet\
  --name eclipse201903forcora2TempSetup\
  eclipse201903forcora2 $2

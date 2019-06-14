@@ -7,7 +7,6 @@ ENV LC_CTYPE en_US.utf8
 ARG user
 ARG userid
 ARG dockergroupid
-ARG eclipsebranch
 
 RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -U -G docker -m -s /bin/bash $user
 
@@ -44,4 +43,4 @@ RUN npm install -g karma-cli
 
 USER $user
 
-CMD  /home/$user/entrypoint.sh eclipsebranch
+CMD  /home/$user/entrypoint.sh
