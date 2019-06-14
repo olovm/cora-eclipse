@@ -1,5 +1,5 @@
 #! /bin/bash
-ECLIPSEBRANCH=eclipsebranch
+ECLIPSEBRANCH=$eclipsebranch
 
 firstRun(){
 	git clone https://github.com/olovm/cora-eclipse.git ~/workspace/cora-eclipse
