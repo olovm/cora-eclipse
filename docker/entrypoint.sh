@@ -1,5 +1,5 @@
 #! /bin/bash
-ECLIPSEBRANCH=eclipsebranch
+ECLIPSEBRANCH=$eclipsebranch
 echo "*** using cora-eclipse branch: $ECLIPSEBRANCH ***"
 
 firstRun(){
