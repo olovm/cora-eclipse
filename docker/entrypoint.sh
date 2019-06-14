@@ -3,7 +3,10 @@ ECLIPSEBRANCH=$1
 
 firstRun(){
 	git clone https://github.com/olovm/cora-eclipse.git ~/workspace/cora-eclipse
-	git checkout $ECLIPSEBRANCH
+	if [ ! $ECLIPSEBRANCH ]; then
+		echo *** using cora-eclipse branch: $ECLIPSEBRANCH ***
+		git checkout $ECLIPSEBRANCH
+	fi
 		
 	chmod +x ~/workspace/cora-eclipse/development/setupProjects.sh
 	~/workspace/cora-eclipse/development/setupProjects.sh ~/workspace

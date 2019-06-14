@@ -14,6 +14,10 @@ I am running this on linux so, change as needed for other platforms.
 3. list remote branches: git ls-remote
 4. checkout latest branch: git checkout 201903_2
 5. cd up to cora directory: cd ..
+6. run: ./cora-eclipse/runAll.sh 1001 201903_2
+7. continue with installation
+
+
 6. run: ./cora-eclipse/runAll.sh
 7. before choosing setupfiles, enter the docker: docker exec -it eclipse201903forcora2TempSetup bash
 8. list remote branches(inside docker): git ls-remote
