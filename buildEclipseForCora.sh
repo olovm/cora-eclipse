@@ -3,6 +3,11 @@
 USER=$1
 USERID=$2
 DOCKERGROUPID=$3
+ECLIPSEBRANCH=$4
+
+if [ ! $ECLIPSEBRANCH ]; then
+	ECLIPSEBRANCH='master'
+fi
 
 if [ ! $USER ]; then
   	echo you must specify the userName to be used when building eclipse201903forcora2
@@ -13,7 +18,11 @@ elif [ ! $DOCKERGROUPID ]; then
 else
 	#for possibly newer version of from: X
 	#docker build --pull --no-cache --build-arg user=$USER --build-arg dockergroupid=$DOCKERGROUPID -t eclipseforcoraoxygen2 cora-eclipse/docker/
-	docker build --build-arg user=$USER --build-arg userid=$USERID --build-arg dockergroupid=$DOCKERGROUPID -t eclipse201903forcora2 cora-eclipse/docker/
+	docker build --build-arg user=$USER \
+	 --build-arg userid=$USERID \
+	 --build-arg dockergroupid=$DOCKERGROUPID \
+	 --build-arg eclipsebranch=$ECLIPSEBRANCH \
+	 -t eclipse201903forcora2 cora-eclipse/docker/
 	#docker build --build-arg user=$USER -t eclipseforcoraoxygen2 cora-eclipse/docker/
 	#cd cora-eclipse/docker/
 	#docker-compose build --build-arg user=$USER eclipseforcoraoxygen2

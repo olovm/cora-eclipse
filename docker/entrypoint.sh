@@ -1,8 +1,10 @@
 #! /bin/bash
+ECLIPSEBRANCH=$1
 
 firstRun(){
 	git clone https://github.com/olovm/cora-eclipse.git ~/workspace/cora-eclipse
-	
+	git checkout $ECLIPSEBRANCH
+		
 	chmod +x ~/workspace/cora-eclipse/development/setupProjects.sh
 	~/workspace/cora-eclipse/development/setupProjects.sh ~/workspace
 	

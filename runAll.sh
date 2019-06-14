@@ -3,6 +3,7 @@
 USER=$(id -u -n)
 USERID=$(id -u)
 DOCKERGROUPID=$1
+ECLIPSEBRANCH=$2
 
 echo 
 echo running all using:
@@ -19,7 +20,7 @@ elif [ ! $DOCKERGROUPID ] && [ ! -d ./eclipseForCora ]; then
 	echo you must specify the dockergroupid to be used when building eclipse201903forcora2, use: getent group docker 
 else
 	if [ ! -d ./eclipse201903forcora2 ]; then
-		./cora-eclipse/buildEclipseForCora.sh $USER $USERID $DOCKERGROUPID
+		./cora-eclipse/buildEclipseForCora.sh $USER $USERID $DOCKERGROUPID $ECLIPSEBRANCH
 		./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh
 		docker network create eclipseForCoraNet
 		docker network create eclipseForAlvinNet
