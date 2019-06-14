@@ -8,6 +8,7 @@ ECLIPSEBRANCH=$4
 if [ ! $ECLIPSEBRANCH ]; then
 	ECLIPSEBRANCH='master'
 fi
+echo *** using cora-eclipse branch: $ECLIPSEBRANCH ***
 
 if [ ! $USER ]; then
   	echo you must specify the userName to be used when building eclipse201903forcora2
