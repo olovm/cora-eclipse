@@ -8,7 +8,13 @@ I am running this on linux so, change as needed for other platforms.
 3. cd to your new directory
 3. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
 
-
+### Updating with a new non master version of eclipse dev environment
+1. cd to your eclipse install directory cd /x/y/z/cora/cora-eclipse
+2. do a git pull: git pull
+3. list remote branches: git ls-remote
+4. checkout latest branch: git checkout 201903_2
+5. cd up to cora directory: cd ..
+6. continue with "Installing, runAll"
 
 ## Installing, runAll
 The runAll script will take you through the entire process of setting up a docker based development environment for Cora. It will go through all needed steps. </br>
