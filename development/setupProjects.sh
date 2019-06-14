@@ -139,7 +139,7 @@ tryWithProjectNameWithoutCora(){
 	fi
 }
 
-tryWithProjectNameFromLsu(){
+tryWithProjectFromLsu(){
 	tempProjectName=$projectName
 	useLsuAsOrigin
 	
