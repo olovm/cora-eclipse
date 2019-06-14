@@ -8,6 +8,14 @@ I am running this on linux so, change as needed for other platforms.
 3. cd to your new directory
 3. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
 
+### Updating with a new non master version of eclipse dev environment
+1. cd to your eclipse install directory cd /x/y/z/cora/cora-eclipse
+2. do a git pull: git pull
+3. list remote branches: git ls-remote
+4. checkout latest branch: git checkout 201903_2
+5. cd up to cora directory: cd ..
+6. run: ./cora-eclipse/runAll.sh 1001 201903_2
+7. continue with installation
 
 
 ## Installing, runAll
@@ -115,7 +123,7 @@ After starting the appropriate servers and containers from inside eclipse, the f
 
 ### SystemOne
 [SystemOne web:http://localhost:8080/jsclient/theClient.html](http://localhost:8080/jsclient/theClient.html)<br>
-[SystemOne REST:http://localhost:8080/therest/rest/](http://localhost:8080/therest/rest/)<br>
+[SystemOne REST:http://localhost:8080/therest/rest/](http://localhost:8080/systemone/rest/)<br>
 [Solr:http://localhost:8983/solr/](http://localhost:8983/solr/)<br>
 [Karma:http://localhost:9876/](http://localhost:9876/)<br>
 

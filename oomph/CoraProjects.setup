@@ -627,18 +627,50 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="cora-systemone">
+        name="systemone">
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.cora.systemone.location}"
+            rootFolder="${git.clone.systemone.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.cora.systemone"
-          location="${workspace.location}/cora-systemone"
-          remoteURI="https://github.com/olovm/cora-systemone">
+          id="git.clone.systemone"
+          location="${workspace.location}/systemone"
+          remoteURI="https://github.com/olovm/systemone">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="systemone-basicstorage">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.systemone-basicstorage.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.systemone-basicstorage"
+          location="${workspace.location}/systemone-basicstorage"
+          remoteURI="https://github.com/olovm/systemone-basicstorage">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
@@ -883,18 +915,18 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="cora-docker-therest">
+        name="systemone-docker">
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.cora.docker.therest.location}"
+            rootFolder="${git.clone.systemone.docker.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.cora.docker.therest"
-          location="${workspace.location}/cora-docker-therest"
-          remoteURI="https://github.com/olovm/cora-docker-therest">
+          id="git.clone.systemone.docker"
+          location="${workspace.location}/systemone-docker"
+          remoteURI="https://github.com/olovm/systemone-docker">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
@@ -915,18 +947,18 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="cora-docker-fitnesse">
+        name="systemone-docker-fitnesse">
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.cora.docker.fitnesse.location}"
+            rootFolder="${git.clone.systemone.docker.fitnesse.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.cora.docker.fitnesse"
-          location="${workspace.location}/cora-docker-fitnesse"
-          remoteURI="https://github.com/olovm/cora-docker-fitnesse">
+          id="git.clone.systemone.docker.fitnesse"
+          location="${workspace.location}/systemone-docker-fitnesse"
+          remoteURI="https://github.com/olovm/systemone-docker-fitnesse">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
@@ -1143,18 +1175,18 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="cora-searchstorage">
+        name="cora-storage">
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.corasearchstorage"
-          location="${workspace.location}/cora-searchstorage"
-          remoteURI="https://github.com/olovm/cora-searchstorage">
+          id="git.clone.cora.storage"
+          location="${workspace.location}/cora-storage"
+          remoteURI="https://github.com/olovm/cora-storage">
         <description></description>
       </setupTask>
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.corasearchstorage.location}"
+            rootFolder="${git.clone.cora.storage.location}"
             locateNestedProjects="true"/>
       </setupTask>
     </setupTask>
@@ -2182,6 +2214,9 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-gatekeepertokenprovider"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-storage"/>
     </workingSet>
     <workingSet
         name="cora-tier4">
@@ -2238,6 +2273,27 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-jsclient"/>
+    </workingSet>
+    <workingSet
+        name="SystemOne">
+      <predicate
+          xsi:type="predicates:AndPredicate">
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="systemone"/>
+        <operand
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="systemone-docker.*"/>
+        </operand>
+      </predicate>
+    </workingSet>
+    <workingSet
+        name="SystemOne-docker">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="systemone-docker.*"/>
     </workingSet>
     <workingSet
         name="Alvin">
@@ -2706,7 +2762,7 @@
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.jst.server.tomcat.core/locationorg.eclipse.jst.server.tomcat.runtime.90"
-          value="/opt/apache-tomcat-9.0.17"/>
+          value="/opt/apache-tomcat-9.0.21"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -2714,7 +2770,7 @@
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.wst.server.core/runtimes"
-          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;runtimes>&#xA;  &lt;runtime id=&quot;Apache Tomcat v9.0&quot; location=&quot;/opt/apache-tomcat-9.0.17&quot; name=&quot;Apache Tomcat v9.0&quot; runtime-type-id=&quot;org.eclipse.jst.server.tomcat.runtime.90&quot; timestamp=&quot;0&quot;/>&#xA;&lt;/runtimes>&#xA;"/>
+          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;runtimes>&#xA;  &lt;runtime id=&quot;Apache Tomcat v9.0&quot; location=&quot;/opt/apache-tomcat-9.0.21&quot; name=&quot;Apache Tomcat v9.0&quot; runtime-type-id=&quot;org.eclipse.jst.server.tomcat.runtime.90&quot; timestamp=&quot;0&quot;/>&#xA;&lt;/runtimes>&#xA;"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"

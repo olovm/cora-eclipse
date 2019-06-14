@@ -32,11 +32,11 @@ echo "connecting fedora docker to eclipseForCoraNet to access from tomcat and ma
 docker network connect eclipseForCoraNet alvin-docker-fedora
 
 
+#--net-alias=postgres-alvin \
 echo "removing previous postgresql with Alvin data"
 docker rm alvin-cora-docker-postgresql
 echo "starting postgresql with Alvin data"
 docker run -d --name alvin-cora-docker-postgresql --restart always  \
---net-alias=postgres-alvin \
 -p 5436:5432 \
 --network=eclipseForAlvinNet \
 -e POSTGRES_DB=alvin \

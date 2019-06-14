@@ -1,8 +1,16 @@
 #! /bin/bash
+ECLIPSEBRANCH=$eclipsebranch
+echo "*** using cora-eclipse branch: $ECLIPSEBRANCH ***"
 
 firstRun(){
 	git clone https://github.com/olovm/cora-eclipse.git ~/workspace/cora-eclipse
-	
+	if [ $ECLIPSEBRANCH != 'master' ]; then
+		echo "*** checking out cora-eclipse branch: $ECLIPSEBRANCH ***"
+		cd ~/workspace/cora-eclipse
+		git checkout $ECLIPSEBRANCH
+		cd ~
+	fi
+		
 	chmod +x ~/workspace/cora-eclipse/development/setupProjects.sh
 	~/workspace/cora-eclipse/development/setupProjects.sh ~/workspace
 	
