@@ -3,7 +3,7 @@
 #USER=$1
 USER=$(id -u -n)
 BASEDIR=$(dirname $BASH_SOURCE)
-ECLIPSEBRANCH=$1
+ECLIPSEBRANCH=$2
 
 echo 
 echo starting eclipse using:
@@ -27,7 +27,7 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -e eclipsebranch=$ECLIPSEBRANCH\
  --network=eclipseForCoraNet\
  --name eclipse201903forcora2TempSetup\
- eclipse201903forcora2 $2
+ eclipse201903forcora2
  cd ../
 fi
 # -p 8080:8080 -p 9876:9876 -p 8090:8090\
