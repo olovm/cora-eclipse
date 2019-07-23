@@ -2,7 +2,8 @@ FROM fedora:30
 
 # Set the locale
 ENV LANG en_US.UTF-8
-ENV LC_CTYPE en_US.utf8
+ENV LC_CTYPE en_US.utf-8
+ENV LANGUAGE en_US.UTF-8
 
 ARG user
 ARG userid
