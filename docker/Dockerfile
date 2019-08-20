@@ -8,6 +8,8 @@ ARG user
 ARG userid
 ARG dockergroupid
 
+RUN localedef --verbose --force -i en_US -f UTF-8 en_US.UTF-8
+
 RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -U -G docker -m -s /bin/bash $user
 
 RUN dnf clean all && \
