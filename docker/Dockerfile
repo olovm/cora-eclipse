@@ -4,7 +4,7 @@ FROM fedora:30
 ENV LANG en_US.UTF-8
 ENV LC_CTYPE en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
-RUN localedef --verbose --force -i en_US -f UTF-8 en_US.UTF-8
+RUN localedef --verbose --force -i en_US -f en_US.UTF-8
 RUN locale
 #RUN localedef -v -c -i en_US -f en_US.UTF-8 || true
 
