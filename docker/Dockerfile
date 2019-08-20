@@ -1,4 +1,4 @@
-FROM fedora:29
+FROM fedora:30
 
 # Set the locale
 ENV LANG en_US.UTF-8
@@ -27,7 +27,7 @@ RUN dnf clean all && \
   npm && \
   dnf clean all
 
-RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2019-03/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
+RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2019-06/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
@@ -36,7 +36,7 @@ RUN touch /home/$user/.gitconfig
 
 RUN chown $user:$user /home/$user -R
 
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.24/bin/apache-tomcat-9.0.24.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
