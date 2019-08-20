@@ -8,7 +8,8 @@ ARG user
 ARG userid
 ARG dockergroupid
 
-RUN localedef --verbose --force -i en_US -f UTF-8 en_US.UTF-8
+ENV TZ=America/Denver
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -U -G docker -m -s /bin/bash $user
 
