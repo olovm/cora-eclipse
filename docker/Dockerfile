@@ -2,17 +2,15 @@ FROM fedora:30
 
 # Set the locale
 ENV LANG en_US.UTF-8
-ENV LC_CTYPE en_US.utf8
+ENV LC_CTYPE en_US.utf-8
+ENV LANGUAGE en_US.UTF-8
+RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || true
 
 ARG user
 ARG userid
 ARG dockergroupid
 
 RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -U -G docker -m -s /bin/bash $user
-
-RUN dnf install -y \
-  glibc-langpack-en \
-  glibc-langpack-se 
 
 RUN dnf clean all && \
   dnf install -y \
