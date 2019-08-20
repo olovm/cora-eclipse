@@ -1,11 +1,16 @@
 FROM fedora:30
-
+# Set a useful default locale
+RUN echo "export LANG=en_US.utf-8" > /opt/export_LANG.sh
+ENV BASH_ENV=/opt/export_LANG.sh \
+    ENV=/opt/export_LANG.sh \
+    PROMPT_COMMAND="source /opt/export_LANG.sh"
+    
 # Set the locale
-ENV LANG en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
-ENV LC_CTYPE en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
-RUN localedef -f UTF-8 -i en_US en_US.UTF-8
+#ENV LANG en_US.UTF-8
+#ENV LC_ALL en_US.UTF-8
+#ENV LC_CTYPE en_US.UTF-8
+#ENV LANGUAGE en_US.UTF-8
+#RUN localedef -f UTF-8 -i en_US en_US.UTF-8
 #RUN localedef --verbose --force -i en_US -f en_US.UTF-8
 #RUN locale
 #RUN localedef -v -c -i en_US -f en_US.UTF-8 || true
