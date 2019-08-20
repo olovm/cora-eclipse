@@ -8,10 +8,11 @@ ARG user
 ARG userid
 ARG dockergroupid
 
-ENV TZ=America/Denver
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
 RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -U -G docker -m -s /bin/bash $user
+
+RUN dnf install -y \
+  glibc-langpack-en \
+  glibc-langpack-se 
 
 RUN dnf clean all && \
   dnf install -y \
@@ -29,7 +30,7 @@ RUN dnf clean all && \
   node \
   npm && \
   dnf clean all
-
+  
 RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2019-06/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
