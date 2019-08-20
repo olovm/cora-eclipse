@@ -4,6 +4,9 @@ USER=$1
 USERID=$2
 DOCKERGROUPID=$3
 
+echo "running buildEclipseForCora.sh..."
+
+
 if [ ! $USER ]; then
   	echo you must specify the userName to be used when building eclipse201906forcora1
 elif [ ! $USERID ]; then

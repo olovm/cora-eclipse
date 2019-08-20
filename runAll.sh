@@ -10,6 +10,7 @@ if [ ! $ECLIPSEBRANCH ]; then
 fi
 
 echo 
+echo "running runAll.sh..."
 echo running all using:
 echo userName: $USER
 echo userId: $USERID

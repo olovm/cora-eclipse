@@ -6,6 +6,7 @@ BASEDIR=$(dirname $BASH_SOURCE)
 ECLIPSEBRANCH=$2
 
 echo 
+echo "running startEclipseForCoraTempSetup.sh..."
 echo starting eclipse using:
 echo userName: $USER
 echo cora-eclipse branch: $ECLIPSEBRANCH
