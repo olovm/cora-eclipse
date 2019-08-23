@@ -129,11 +129,9 @@ lookupUrl(){
 }
 
 tryWithProjectNameWithoutCora(){
-	echo "Trying project name without cora..."
-	if [ ${projectName:0:4} != "cora" ]; then
-		tempProjectName=${projectName:5}
-	else
-	#if ! checkIfTempUrlExists; then 
+	ensureTempProjectNameDoesNotHaveCora
+	
+	if ! checkIfTempUrlExists; then 
 		useLsuAsOrigin
 	fi
 	
@@ -142,16 +140,32 @@ tryWithProjectNameWithoutCora(){
 	fi
 }
 
+ensureTempProjectNameDoesNotHaveCora(){
+	echo "Trying project name without cora..."
+	if [ ${projectName:0:4} != "cora" ]; then
+		tempProjectName=${projectName:5}
+	#else
+	fi
+}
+
 useLsuAsOrigin(){
 	echo "- WARN - Falling back to using lsu as origin";
 	tempProjectName=$projectName
 	tempRepository="https://github.com/lsu-ub-uu/"
+
+	if ! checkIfTempUrlExists; then
+		ensureTempProjectNameDoesNotHaveCora
+	fi
 }
 
 useOlovmAsOrigin(){
 	echo "- WARN - Falling back to using olovm as origin";
 	tempProjectName=$projectName
 	tempRepository="https://github.com/olovm/"
+
+	if ! checkIfTempUrlExists; then
+		ensureTempProjectNameDoesNotHaveCora
+	fi
 }
 
 addOtherRemotes(){
