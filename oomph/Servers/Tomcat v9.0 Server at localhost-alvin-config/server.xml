@@ -153,7 +153,7 @@
       <Context docBase="cora-apptokenverifier" path="/apptokenverifier" reloadable="true" source="org.eclipse.jst.jee.server:cora-apptokenverifier"/>
       <Context docBase="cora-gatekeeperserver" path="/gatekeeperserver" reloadable="true" source="org.eclipse.jst.jee.server:cora-gatekeeperserver"/>
       
-      </Host>
+      <Context docBase="alvin-cora" path="/alvin" reloadable="true" source="org.eclipse.jst.jee.server:alvin-cora"/></Host>
     </Engine>
   </Service>
 </Server>

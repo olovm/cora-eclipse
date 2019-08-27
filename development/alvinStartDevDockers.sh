@@ -42,7 +42,7 @@ docker run -d --name alvin-cora-docker-postgresql --restart always  \
 -e POSTGRES_DB=alvin \
 -e POSTGRES_USER=alvin \
 -e POSTGRES_PASSWORD=alvin \
-alvin-cora-docker-postgresql 
+alvin-cora-docker-postgresql-9.6
 
 echo "connecting postgresq docker to eclipseForCoraNet to access from tomcat and main application"
 docker network connect eclipseForCoraNet alvin-cora-docker-postgresql
