@@ -1,5 +1,6 @@
 #! /bin/bash
 ECLIPSEBRANCH=$eclipsebranch
+echo "running entrypoint.sh..."
 echo "*** using cora-eclipse branch: $ECLIPSEBRANCH ***"
 
 firstRun(){

@@ -82,11 +82,12 @@ addAllRepositories() {
 
 cloneRepoAndAddRemotes() {
 	local projectName=$1
-	
+	 
 	echo " "
 	echo "..."
 	echo "checking that repository and project exists:"
 	setWorkingRepositoryAndProjectNameAsTemp
+	echo "..."
 	echo " "
 	echo "clone using:"
 	echo "tempRepository: $tempRepository"
@@ -107,10 +108,6 @@ setWorkingRepositoryAndProjectNameAsTemp(){
 	if ! checkIfTempUrlExists; then 
 		echo "- WARN - Chosen origin not found ($tempRepository$tempProjectName)"
 		tryWithProjectNameWithoutCora
-	fi
-	if ! checkIfTempUrlExists; then 
-		echo "- WARN - Chosen origin not found ($tempRepository$tempProjectName)"
-		tryWithProjectFromLsu
 	fi
 }
 
@@ -136,18 +133,22 @@ lookupUrl(){
 }
 
 tryWithProjectNameWithoutCora(){
-	echo "Trying project name without cora..."
-	if [ ${projectName:0:4} != "cora" ]; then
-		tempProjectName=${projectName:5}
+	ensureTempProjectNameDoesNotHaveCora
+	
+	if ! checkIfTempUrlExists; then 
+		useLsuAsOrigin
 	fi
-}
-
-tryWithProjectFromLsu(){
-	tempProjectName=$projectName
-	useLsuAsOrigin
 	
 	if ! checkIfTempUrlExists; then 
 		useOlovmAsOrigin
+	fi
+}
+
+ensureTempProjectNameDoesNotHaveCora(){
+	echo "Trying project name without cora..."
+	if [ ${projectName:0:4} != "cora" ]; then
+		tempProjectName=${projectName:5}
+	#else
 	fi
 }
 
@@ -155,12 +156,20 @@ useLsuAsOrigin(){
 	echo "- WARN - Falling back to using lsu as origin";
 	tempProjectName=$projectName
 	tempRepository="https://github.com/lsu-ub-uu/"
+
+	if ! checkIfTempUrlExists; then
+		ensureTempProjectNameDoesNotHaveCora
+	fi
 }
 
 useOlovmAsOrigin(){
 	echo "- WARN - Falling back to using olovm as origin";
 	tempProjectName=$projectName
 	tempRepository="https://github.com/olovm/"
+
+	if ! checkIfTempUrlExists; then
+		ensureTempProjectNameDoesNotHaveCora
+	fi
 }
 
 addOtherRemotes(){
