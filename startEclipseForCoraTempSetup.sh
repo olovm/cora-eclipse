@@ -13,9 +13,9 @@ echo cora-eclipse branch: $ECLIPSEBRANCH
 echo 
 
 if [ ! $USER ]; then
-  	echo "You must specify the userName used when starting eclipse201906forcora1TempSetup"
+  	echo "You must specify the userName used when starting eclipse201906forcora2TempSetup"
 else
-cd eclipse201906forcora1
+cd eclipse201906forcora2
 docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
  -v /var/run/docker.sock:/var/run/docker.sock\
  -v /tmp/.X11-unix:/tmp/.X11-unix\
@@ -27,8 +27,8 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -e user=$USER\
  -e eclipsebranch=$ECLIPSEBRANCH\
  --network=eclipseForCoraNet\
- --name eclipse201906forcora1TempSetup\
- eclipse201906forcora1
+ --name eclipse201906forcora2TempSetup\
+ eclipse201906forcora2
  cd ../
 fi
 # -p 8080:8080 -p 9876:9876 -p 8090:8090\
