@@ -35,33 +35,19 @@
 	<Parameter name="gatekeeperURL" value="http://localhost:8082/gatekeeperserver/"
 		override="false" />
 
-	<Parameter name="dependencyProviderClassName" value="se.uu.ub.cora.diva.DivaDependencyProvider"
-		override="false" />
+	<Parameter name="dependencyProviderClassName"
+		value="se.uu.ub.cora.therest.initialize.TheRestDependencyProvider" override="false" />
 
-
-	<!-- <Parameter name="storageOnDiskClassName" value="se.uu.ub.cora.storage.RecordStorageOnDisk" -->
-	<!-- override="false" /> -->
-	<Parameter name="storageOnDiskClassName"
-		value="se.uu.ub.cora.storage.RecordStorageInMemoryReadFromDisk"
-		override="false" />
-<!-- 	<Parameter name="storageOnDiskBasePath" -->
-<!-- 		value="/home/olov/workspace/cora-basicstorage/files/" override="false" /> -->
 	<Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/diva/" override="false" />
+	<Parameter name="storageType" value="memory" override="false" />
+<!-- 	<Parameter name="storageType" value="disk" override="false" /> -->
+
 	<Parameter name="solrURL" value="http://diva-cora-solr:8983/solr/coracore"
 		override="false" />
 
-	<Parameter name="theRestPublicPathToSystem" value="/therest/rest/"
+	<Parameter name="theRestPublicPathToSystem" value="/diva/rest/"
 		override="false" />
 	<Parameter name="idpLoginPublicPathToSystem" value="/idplogin/rest/"
-		override="false" />
-	<Parameter name="mixedStorageClassName"
-		value="se.uu.ub.cora.diva.mixedstorage.DivaMixedRecordStorage"
-		override="false" />
-	<Parameter name="divaFedoraToCoraStorageClassName"
-		value="se.uu.ub.cora.diva.mixedstorage.fedora.DivaFedoraRecordStorage"
-		override="false" />
-		<Parameter name="divaDbToCoraStorageClassName"
-		value="se.uu.ub.cora.diva.mixedstorage.db.DivaDbToCoraRecordStorage"
 		override="false" />
 		<Parameter name="databaseLookupName" value="java:/comp/env/jdbc/postgres"
 		override="false" />
