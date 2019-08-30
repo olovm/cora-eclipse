@@ -26,40 +26,33 @@
     <!--
     <Manager pathname="" />
     -->
-    <Parameter name="guestUserId" value="coraUser:5368656924943436" override="false" />
-
-	<Parameter name="appTokenStorageClassName" value="se.uu.ub.cora.storage.AppTokenStorageImp"
+    
+    <Parameter name="guestUserId" value="12345" override="false" />
+	
+	<Parameter name="gatekeeperURL" value="http://localhost:8280/gatekeeperserver/"
 		override="false" />
-	<Parameter name="apptokenVerifierPublicPathToSystem" value="/apptokenverifier/rest/"
-		override="false" />
-	<Parameter name="gatekeeperURL" value="http://localhost:8082/gatekeeperserver/"
-		override="false" />
-
+		
 	<Parameter name="dependencyProviderClassName"
 		value="se.uu.ub.cora.therest.initialize.TheRestDependencyProvider" override="false" />
 
-	<Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/diva/" override="false" />
-	<Parameter name="storageType" value="memory" override="false" />
-<!-- 	<Parameter name="storageType" value="disk" override="false" /> -->
-
-	<Parameter name="solrURL" value="http://diva-cora-solr:8983/solr/coracore"
+   	<Parameter name="storageType" value="memory" override="false" />
+    <Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/systemone/" override="false" />
+	<Parameter name="solrURL" value="http://systemone-cora-solr:8983/solr/coracore"
 		override="false" />
-
-	<Parameter name="theRestPublicPathToSystem" value="/diva/rest/"
+	
+	<Parameter name="theRestPublicPathToSystem" value="/systemone/rest/"
 		override="false" />
 	<Parameter name="idpLoginPublicPathToSystem" value="/idplogin/rest/"
 		override="false" />
-		<Parameter name="databaseLookupName" value="java:/comp/env/jdbc/postgres"
-		override="false" />
-	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
-		driverClassName="org.postgresql.Driver"
-		url="jdbc:postgresql://diva-cora-docker-postgresql:5432/diva"
-		username="diva" password="diva" maxTotal="20" maxIdle="10"
-		maxWaitMillis="-1" />
-	<Parameter name="fedoraURL" value="https://diva-docker-fedora:8443/fedora/"
-		override="false"/>
-	<Parameter name="fedoraUsername" value="fedoraAdmin" override="false"/>
-	<Parameter name="fedoraPassword" value="changeit" override="false"/>
-	
 
+<Resource name="jdbc/postgres" auth="Container"
+          type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
+          url="jdbc:postgresql://127.0.0.1:5432/docker"
+          username="docker" password="docker" maxTotal="20" maxIdle="10"
+maxWaitMillis="-1"/>
+
+<!-- 	<Parameter name="mainSystemDomain" value="http://localhost:8080/" -->
+<!-- 		override="false" /> -->
+<!-- 	<Parameter name="tokenLogoutURL" value="http://localhost:8180/apptokenverifier/rest/" -->
+<!-- 		override="false" /> -->
 </Context>

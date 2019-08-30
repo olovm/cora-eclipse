@@ -17,7 +17,7 @@
 --><!-- Note:  A "Server" is not itself a "Container", so you may not
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
- --><Server port="8006" shutdown="SHUTDOWN">
+ --><Server port="8005" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
@@ -60,8 +60,8 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-<!--     <Connector connectionTimeout="20000" port="8081" protocol="HTTP/1.1" redirectPort="8443"/> -->
-    <Connector acceptCount="100" compressibleMimeType="text/html,text/xml,application/vnd.uub.recordList+json" compression="on" compressionMinSize="4096" connectionTimeout="20000" disableUploadTimeout="true" enableLookups="false" maxHttpHeaderSize="8192" maxSpareThreads="75" maxThreads="150" minSpareThreads="25" noCompressionUserAgents="gozilla, traviata" port="8081" protocol="HTTP/1.1" redirectPort="8443"/>
+<!--     <Connector connectionTimeout="20000" port="8080" protocol="HTTP/1.1" redirectPort="8443"/> -->
+    <Connector acceptCount="100" compressibleMimeType="text/html,text/xml,application/vnd.uub.recordList+json" compression="on" compressionMinSize="4096" connectionTimeout="20000" disableUploadTimeout="true" enableLookups="false" maxHttpHeaderSize="8192" maxSpareThreads="75" maxThreads="150" minSpareThreads="25" noCompressionUserAgents="gozilla, traviata" port="8080" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
@@ -106,8 +106,8 @@
     -->
 
     <!-- Define an AJP 1.3 Connector on port 8009 -->
-    <Connector port="8010" protocol="AJP/1.3" redirectPort="8443"/>
-
+    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443"/>
+	
 
     <!-- An Engine represents the entry point (within Catalina) that processes
          every request.  The Engine implementation for Tomcat stand alone
@@ -150,10 +150,14 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="cora-apptokenverifier" path="/apptokenverifier" reloadable="true" source="org.eclipse.jst.jee.server:cora-apptokenverifier"/>
-      <Context docBase="cora-gatekeeperserver" path="/gatekeeperserver" reloadable="true" source="org.eclipse.jst.jee.server:cora-gatekeeperserver"/>
+	      
+	      
+	      <Context docBase="systemone" path="/systemone" reloadable="true" source="org.eclipse.jst.jee.server:systemone"/>
       
-      <Context docBase="alvin-cora" path="/alvin" reloadable="true" source="org.eclipse.jst.jee.server:alvin-cora"/></Host>
+      
+      
+      
+      </Host>
     </Engine>
   </Service>
 </Server>

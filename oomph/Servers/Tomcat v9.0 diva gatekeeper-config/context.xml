@@ -26,35 +26,8 @@
     <!--
     <Manager pathname="" />
     -->
-    
     <Parameter name="guestUserId" value="12345" override="false" />
 	
-		<Parameter name="apptokenVerifierPublicPathToSystem" value="/apptokenverifier/rest/"
-		override="false" />
-	<Parameter name="gatekeeperURL" value="http://localhost:8080/gatekeeperserver/"
-		override="false" />
-		
-	<Parameter name="dependencyProviderClassName"
-		value="se.uu.ub.cora.therest.initialize.TheRestDependencyProvider" override="false" />
-
    	<Parameter name="storageType" value="memory" override="false" />
-    <Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/systemone/" override="false" />
-	<Parameter name="solrURL" value="http://systemone-cora-solr:8983/solr/coracore"
-		override="false" />
-	
-	<Parameter name="theRestPublicPathToSystem" value="/systemone/rest/"
-		override="false" />
-	<Parameter name="idpLoginPublicPathToSystem" value="/idplogin/rest/"
-		override="false" />
-
-<Resource name="jdbc/postgres" auth="Container"
-          type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
-          url="jdbc:postgresql://127.0.0.1:5432/docker"
-          username="docker" password="docker" maxTotal="20" maxIdle="10"
-maxWaitMillis="-1"/>
-
-	<Parameter name="mainSystemDomain" value="http://localhost:8080/"
-		override="false" />
-	<Parameter name="tokenLogoutURL" value="http://localhost:8080/apptokenverifier/rest/"
-		override="false" />
+    <Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/diva/" override="false" />
 </Context>
