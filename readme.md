@@ -67,7 +67,7 @@ Start the environment by running:</br>
  3. Mark all projects and refresh them, menu or F5 (this will make sure eclipse sees files in target folders)
  4. Start and stop the servers (in server tab) in the following order:
     1. Tomcat v9.0 systemOne
-    2. Tomcat v9.0 alivn
+    2. Tomcat v9.0 alvin
     3. Tomcat v9.0 diva
  5. Go under External Tools Configurations (play icon with toolbox) and run linkJsClientToTomcats
  6. Go under External Tools Configurations (play icon with toolbox) and run copyMetadata
