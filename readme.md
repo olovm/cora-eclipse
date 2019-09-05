@@ -2,26 +2,23 @@
 Cora-eclipse is a project to enable easy setup of an Eclipse install for Cora development, using Eclipse and Docker.</br>
 I am running this on linux so, change as needed for other platforms.
 
-## Getting started
+## Before you begin
 1. Make sure you have git and docker set up on your local machine
-2. Make a directory where you want everything installed /x/y/z/cora
+2. Make a directory where you want everything installed /x/y/z/cora (/mnt/depot/cora)
 3. cd to your new directory
 3. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
 
-### Updating with a new non master version of eclipse dev environment
-1. cd to your eclipse install directory cd /x/y/z/cora/cora-eclipse
-2. do a git pull: git pull
-3. list remote branches: git ls-remote
-4. checkout latest branch: git checkout 201903_2
-5. cd up to cora directory: cd ..
-6. run: ./cora-eclipse/runAll.sh 1001 201903_2
-7. continue with installation
 
 
 ## Installing, runAll
 The runAll script will take you through the entire process of setting up a docker based development environment for Cora. It will go through all needed steps. </br>
+You can get your docker group id by running;
+`getent group docker`
+
 Run:</br>
-`./cora-eclipse/runAll.sh`
+`./cora-eclipse/runAll.sh dockerGroupId`
+
+This scrip will, run the following headers automatically
 
 ### Build docker image
 Automatically run by runAll<br>
@@ -43,14 +40,14 @@ clone all Cora repositories, add other remotes to all of them, install needed np
 start the eclipse installer (oomph). </br>
 **There are a few things that needs to be choosen in the installer:**
 
-1. You need to use the advanced mode and
-browse for setup files for eclipse and cora, they are called EclipseForCora.setup and CoraProjects.setup, and
-can be found in /home/yourUserName/workspace/cora-eclipse/oomph. 
-2. Java 1.8+ VM, set it to: /usr/lib/jvm/java-11-openjdk
-3. Use absolute path for your eclipse installation, set it to /home/yourUserName/eclipse
-4. Fill in path for Installation location, set it to /home/yourUserName/eclipse
-5. Use absolute path for your workspace, set it to /home/yourUserName/workspace
-6. JRE 1.8 Location, set it to: /usr/lib/jvm/java-11-openjdk
+ 1. You need to use the advanced mode 
+ 2. Browse for setup files for eclipse, /home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup (use the plussign to add)
+ 3. In next step browse for setup for projects, /home/yourUserName/workspace/cora-eclipse/oomph/CoraProjects.setup (use the plussign to add)
+ 2. Java 1.8+ VM, set it to: /usr/lib/jvm/java-11-openjdk
+ 3. Use absolute path for your eclipse installation, set it to /home/yourUserName/eclipse
+ 4. Fill in path for Installation location, set it to /home/yourUserName/eclipse
+ 5. Use absolute path for your workspace, set it to /home/yourUserName/workspace
+ 6. JRE 1.8 Location, set it to: /usr/lib/jvm/java-11-openjdk
 <br>
 This should get you through the installer and will eventually start eclipse and do a first run to setup eclipse. 
 You can click on the spinning arrows, in the bottom of the screen to see what the setup does.
@@ -64,55 +61,22 @@ You are now ready to do a first startup of the environment.
 Start the environment by running:</br>
 `./eclipseForCora/startEclipseForCora.sh`
 <br>
-**Go in under preferences and make sure the latest java is choosen as default jre**<br>
  **Do the following in the listed order to avoid problems!**
- 1. In project explorer, under the little arrow, deselect working sets
- 2. Mark all projects and refresh them, menu or F5 (this will make sure eclipse sees files in target folders)
- 3. Add jars to servers, see instructions below.
- 4. Start and stop the servers (in server tab) in the following order:
- ..1. Tomcat v9.0 at localhost
- ..2. Tomcat v9.0 at localhost (alvin)
- ..3. Tomcat v9.0 at localhost (diva)
- 5. Go under External Tools Configurations (play icon with toolbox) and run linkJsClientToTomcats
- 6. Go under External Tools Configurations (play icon with toolbox) and run copyMetadata
-
-### Adding jars to tomcats
-Before starting the server go into the launch configuration / classpath and under User Entries add<br>
-For:Tomcat v9.0 at localhost<br>
-cora-basicstorage/target/cora-basicstorage-0.5-SNAPSHOT.jar<br>
-cora-systemone/target/cora-systemone-0.13-SNAPSHOT.jar<br>
-<br>
-For:Tomcat v9.0 at localhost (alvin)<br>
-cora-basicstorage/target/cora-basicstorage-0.5-SNAPSHOT.jar<br>
-cora-systemone/target/alvin-cora-0.x-SNAPSHOT.jar<br>
-<br>
-<br>
-For:Tomcat v9.0 at localhost (diva)<br>
-cora-basicstorage/target/cora-basicstorage-0.5-SNAPSHOT.jar<br>
-cora-systemone/target/diva-cora-0.x-SNAPSHOT.jar<br>
-<br>
-
-### Adding cert information for connection to Fedora Commons
-For alvin server go into the launch configuration / arguments under VM arguments  add<br>
--Djavax.net.ssl.trustStore="/home/olov/workspace/cora-docker-fedora/files/fedoraKeystore.jks" -Djavax.net.ssl.trustStorePassword="changeit"
-
-
-### Build all tags
-1. Go under External Tools Configurations (play icon with toolbox) and run checkOutLatestTagOfAllProjects
-2. Go under External Tools Configurations (play icon with toolbox) and run mvnPomCleanInstallAllButDocker 
-3. Go under External Tools Configurations (play icon with toolbox) and run checkOutMasterOfAllProjects
-
-
-### help with rename bug
-see: https://bugs.eclipse.org/bugs/show_bug.cgi?id=545293
-comment 27,
-add the following update site and search for updates:
-https://download.eclipse.org/eclipse/updates/4.11-P-builds
+ 1. Go in under preferences and make sure the latest java is choosen as default jre
+ 2. In project explorer, under the little arrow, deselect working sets
+ 3. Mark all projects and refresh them, menu or F5 (this will make sure eclipse sees files in target folders)
+ 4. Add jars to servers, see instructions below.
+ 5. Start and stop the servers (in server tab) in the following order:
+ ..1. Tomcat v9.0 systemOne
+ ..2. Tomcat v9.0 alivn
+ ..3. Tomcat v9.0 diva
+ 6. Go under External Tools Configurations (play icon with toolbox) and run linkJsClientToTomcats
+ 7. Go under External Tools Configurations (play icon with toolbox) and run copyMetadata
 
 
 ### Start systemOne
 1. Go under External Tools Configurations (play icon with toolbox) and start the docker containers for development by running systemoneStartDevDockers 
-2. Start the tomcat server
+2. Start the tomcat servers
 3. See links section below to find the running system
 
 (or similar for Alvin or DiVA)
@@ -138,6 +102,7 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [DiVA REST:http://localhost:8082/therest/rest/](http://localhost:8082/therest/rest/)<br>
 [Solr:http://localhost:8984/solr/](http://localhost:8984/solr/)<br>
 
+# Updating
 
 ## Updating to a newer version of developed systems
 1. Set your username in .gitconfig found in the root catalog where you installed the system, do this
@@ -152,3 +117,25 @@ file from the docker side of things.<br>
 4. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallDevDocker
 5. Rightclick any project, and choose, maven / update project... (or F5) select all projects and run
 6. Stop and start containers and tomcat servers.
+
+### Updating with a new non master version of eclipse dev environment
+1. cd to your eclipse install directory cd /x/y/z/cora/cora-eclipse
+2. do a git pull: git pull
+3. list remote branches: git ls-remote
+4. checkout latest branch: git checkout 201903_2
+5. cd up to cora directory: cd ..
+6. run: ./cora-eclipse/runAll.sh 1001 201903_2
+7. continue with installation
+
+# Other
+
+### Adding cert information for connection to Fedora Commons
+For alvin server go into the launch configuration / arguments under VM arguments  add<br>
+-Djavax.net.ssl.trustStore="/home/olov/workspace/cora-docker-fedora/files/fedoraKeystore.jks" -Djavax.net.ssl.trustStorePassword="changeit"
+
+
+### Build all tags
+1. Go under External Tools Configurations (play icon with toolbox) and run checkOutLatestTagOfAllProjects
+2. Go under External Tools Configurations (play icon with toolbox) and run mvnPomCleanInstallAllButDocker 
+3. Go under External Tools Configurations (play icon with toolbox) and run checkOutMasterOfAllProjects
+
