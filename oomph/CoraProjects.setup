@@ -1192,6 +1192,40 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-search">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.search"
+          location="${workspace.location}/cora-search"
+          remoteURI="https://github.com/olovm/cora-search">
+        <description></description>
+      </setupTask>
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.search.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-searchstorage">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.searchstorage"
+          location="${workspace.location}/cora-searchstorage"
+          remoteURI="https://github.com/olovm/cora-searchstorage">
+        <description></description>
+      </setupTask>
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.searchstorage.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-sqlstorage">
       <setupTask
           xsi:type="maven:MavenImportTask">
