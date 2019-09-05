@@ -65,40 +65,42 @@ Start the environment by running:</br>
  1. Go in under preferences and make sure the latest java is choosen as default jre
  2. In project explorer, under the little arrow, deselect working sets
  3. Mark all projects and refresh them, menu or F5 (this will make sure eclipse sees files in target folders)
- 4. Add jars to servers, see instructions below.
- 5. Start and stop the servers (in server tab) in the following order:
+ 4. Start and stop the servers (in server tab) in the following order:
     1. Tomcat v9.0 systemOne
     2. Tomcat v9.0 alivn
     3. Tomcat v9.0 diva
- 6. Go under External Tools Configurations (play icon with toolbox) and run linkJsClientToTomcats
- 7. Go under External Tools Configurations (play icon with toolbox) and run copyMetadata
+ 5. Go under External Tools Configurations (play icon with toolbox) and run linkJsClientToTomcats
+ 6. Go under External Tools Configurations (play icon with toolbox) and run copyMetadata
 
 
 ### Start systemOne
 1. Go under External Tools Configurations (play icon with toolbox) and start the docker containers for development by running systemoneStartDevDockers 
-2. Start the tomcat servers
+2. Start fitnesse, Go under Run Configurations (play icon) and start fitnesse
+2. Start the tomcat servers for systemOne
 3. See links section below to find the running system
 
 (or similar for Alvin or DiVA)
 
 ## Links
-(this is not fully working yet)
 After starting the appropriate servers and containers from inside eclipse, the following will be exposed:
 
 ### SystemOne
 [SystemOne web:http://localhost:8080/jsclient/theClient.html](http://localhost:8080/jsclient/theClient.html)<br>
+[Fitnesse:http://localhost:8090/fitnesse/FrontPage](http://localhost:8090/fitnesse/FrontPage)<br>
 [SystemOne REST:http://localhost:8080/therest/rest/](http://localhost:8080/systemone/rest/)<br>
 [Solr:http://localhost:8983/solr/](http://localhost:8983/solr/)<br>
 [Karma:http://localhost:9876/](http://localhost:9876/)<br>
 
 ### Alvin
 [Alvin web:http://localhost:8081/jsclient/theClient.html](http://localhost:8081/jsclient/theClient.html)<br>
+[Fitnesse:http://localhost:8091/fitnesse/FrontPage](http://localhost:8091/fitnesse/FrontPage)<br>
 [Alvin REST:http://localhost:8081/therest/rest/](http://localhost:8081/therest/rest/)<br>
 [Solr:http://localhost:8984/solr/](http://localhost:8984/solr/)<br>
 [Fedora Commons:http://localhost:8089/fedora/](http://localhost:8089/fedora/)<br>
 
 ### DiVA
 [DiVA web:http://localhost:8082/jsclient/theClient.html](http://localhost:8082/jsclient/theClient.html)<br>
+[Fitnesse:http://localhost:8092/fitnesse/FrontPage](http://localhost:8092/fitnesse/FrontPage)<br>
 [DiVA REST:http://localhost:8082/therest/rest/](http://localhost:8082/therest/rest/)<br>
 [Solr:http://localhost:8984/solr/](http://localhost:8984/solr/)<br>
 
