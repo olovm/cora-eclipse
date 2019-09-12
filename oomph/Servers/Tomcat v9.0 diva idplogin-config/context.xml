@@ -26,4 +26,10 @@
     <!--
     <Manager pathname="" />
     -->
+      <Parameter name="mainSystemDomain" value="http://localhost:8082/"
+		override="false" />
+	<Parameter name="tokenLogoutURL" value="http://localhost:8182/apptokenverifier/rest/"
+		override="false" />
+	<Parameter name="gatekeeperURL" value="http://localhost:8282/gatekeeperserver/"
+		override="false" />
 </Context>
