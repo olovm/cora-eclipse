@@ -19,5 +19,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-p 8091"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="alvin-cora-fitnesse"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-DsystemUnderTestUrl=&quot;http://localhost:8081/alvin/&quot; -DappTokenVerifierUrl=&quot;http://localhost:8181/apptokenverifier/&quot;"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-DsystemUnderTestUrl=&quot;http://localhost:8081/alvin/&quot; -DappTokenVerifierUrl=&quot;http://localhost:8181/apptokenverifier/&quot; -DidpLoginUrl=&quot;http://localhost:8381/idplogin/&quot; -DgatekeeperServerUrl=&quot;http://localhost:8281/gatekeeperserver/&quot;"/>
 </launchConfiguration>
