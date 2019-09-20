@@ -140,7 +140,7 @@ tryWithProjectNameWithoutCora(){
 }
 
 setBasePathToPointToBasicStorageWorkspaceDirectoryInTomcatContextXml(){
-	sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "$workspaceDir/cora-eclipse/oomph/Servers/Tomcat v9.0 Server at localhost-config/context.xml"
+	sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "$workspaceDir/cora-eclipse/oomph/Servers/Tomcat v9.0 systemOne-config/context.xml"
 }
 
 # ################# calls start here #######################################
