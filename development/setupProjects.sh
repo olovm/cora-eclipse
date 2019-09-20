@@ -31,33 +31,39 @@ chooseRepo(){
 	echo "2. https://github.com/olovm/"
 	echo "3. https://github.com/maddekenn/"
 	echo "4. https://github.com/johandersson/"
-	echo "Choose 1, 2, 3, 4 or enter your own base url to clone as origin. (eg. https://github.com/olovm/)"
+	echo "5. https://github.com/perebartrolisimo/"
+	echo "Choose 1, 2, 3, 4, 5 or enter your own base url to clone as origin. (eg. https://github.com/olovm/)"
 	read -p "For origin, use? " userchoice
 	case "$userchoice" in
 	        1)
 				echo "You choose: $userchoice 1"
 	            originRepo="https://github.com/lsu-ub-uu/"
-	            otherRepos="olovm maddekenn johandersson"
+	            otherRepos="olovm maddekenn johandersson perebartrolisimo"
 	            ;;
 	        2)
 				echo "You choose: $userchoice 2"
 	            originRepo="https://github.com/olovm/"
-	            otherRepos="lsu-ub-uu maddekenn johandersson"
+	            otherRepos="lsu-ub-uu maddekenn johandersson perebartrolisimo"
 	            ;;
 	        3)
 				echo "You choose: $userchoice 3"
 	            originRepo="https://github.com/maddekenn/"
-	            otherRepos="lsu-ub-uu olovm johandersson"
+	            otherRepos="lsu-ub-uu olovm johandersson perebartrolisimo"
 	            ;;
 	        4)
-				echo "You choose: $userchoice 5"
+				echo "You choose: $userchoice 4"
 	            originRepo="https://github.com/johandersson/"
-	            otherRepos="lsu-ub-uu olovm maddekenn"
+	            otherRepos="lsu-ub-uu olovm maddekenn perebartrolisimo"
+	            ;;
+	        5)
+				echo "You choose: $userchoice 5"
+	            originRepo="https://github.com/perebartrolisimo/"
+	            otherRepos="lsu-ub-uu olovm maddekenn johandersson"
 	            ;;
 	        *)
 				echo "You choose: $userchoice other"
 	            originRepo="$userchoice"
-	            otherRepos="lsu-ub-uu olovm maddekenn johandersson"
+	            otherRepos="lsu-ub-uu olovm maddekenn johandersson perebartrolisimo"
 	esac
 	
 	echo "Origin choosen as: $originRepo"
