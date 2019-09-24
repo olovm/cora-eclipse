@@ -26,6 +26,7 @@ RUN dnf clean all && \
   firefox \
   webkit2gtk3 \
   wget \
+  telnet \
   lsof \
   tar \
   less \
