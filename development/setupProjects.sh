@@ -152,7 +152,7 @@ tryWithProjectNameWithoutCora(){
 
 ensureTempProjectNameDoesNotHaveCora(){
 	echo "Trying project name without cora..."
-	if [ ${projectName:0:4} != "cora" ]; then
+	if [ ${projectName:0:4} = "cora" ]; then
 		tempProjectName=${projectName:5}
 	#else
 	fi
