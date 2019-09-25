@@ -147,6 +147,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-messaging">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.messaging.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.messaging"
+          location="${workspace.location}/cora-messaging"
+          remoteURI="https://github.com/olovm/cora-messaging">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-messaging</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-messaging</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-data">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -167,11 +199,11 @@
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>cora-data</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/olovm/cora-data</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2314,7 +2346,7 @@
           xsi:type="predicates:AndPredicate">
         <operand
             xsi:type="predicates:NamePredicate"
-            pattern="systemone"/>
+            pattern="systemone.*"/>
         <operand
             xsi:type="predicates:NotPredicate">
           <operand
