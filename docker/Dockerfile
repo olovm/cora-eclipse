@@ -26,12 +26,13 @@ RUN dnf clean all && \
   firefox \
   webkit2gtk3 \
   wget \
+  telnet \
   lsof \
   tar \
   less \
   htop \
   docker \
-  java-11-openjdk java-11-openjdk-devel java-11-openjdk-javadoc \
+  java-latest-openjdk java-latest-openjdk-devel java-latest-openjdk-javadoc \
   maven \
   git \ 
   node \
@@ -47,7 +48,7 @@ RUN touch /home/$user/.gitconfig
 
 RUN chown $user:$user /home/$user -R
 
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.24/bin/apache-tomcat-9.0.24.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.26/bin/apache-tomcat-9.0.26.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
