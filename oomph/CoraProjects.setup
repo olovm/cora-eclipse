@@ -147,6 +147,134 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-messaging">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.messaging.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.messaging"
+          location="${workspace.location}/cora-messaging"
+          remoteURI="https://github.com/olovm/cora-messaging">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-messaging</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-messaging</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-activemq">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.activemq.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.activemq"
+          location="${workspace.location}/cora-activemq"
+          remoteURI="https://github.com/olovm/cora-activemq">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-activemq</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-activemq</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-rabbitmq">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.rabbitmq.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.rabbitmq"
+          location="${workspace.location}/cora-rabbitmq"
+          remoteURI="https://github.com/olovm/cora-rabbitmq">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-rabbitmq</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-rabbitmq</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-indexmessenger">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.indexmessenger.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.indexmessenger"
+          location="${workspace.location}/cora-indexmessenger"
+          remoteURI="https://github.com/olovm/cora-indexmessenger">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-indexmessenger</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-indexmessenger</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-data">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -167,11 +295,11 @@
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>cora-data</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/olovm/cora-data</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2314,7 +2442,7 @@
           xsi:type="predicates:AndPredicate">
         <operand
             xsi:type="predicates:NamePredicate"
-            pattern="systemone"/>
+            pattern="systemone.*"/>
         <operand
             xsi:type="predicates:NotPredicate">
           <operand
