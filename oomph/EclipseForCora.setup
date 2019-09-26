@@ -240,6 +240,34 @@
             value="100"/>
       </setupTask>
     </setupTask>
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="Extra plugins for Cora Development">
+      <requirement
+          name="org.testng.eclipse.feature.group"/>
+      <requirement
+          name="org.testng.eclipse.maven.feature.feature.group"/>
+      <requirement
+          name="edu.umd.cs.findbugs.plugin.eclipse.feature.group"/>
+      <requirement
+          name="org.sonarlint.eclipse.feature.feature.group"/>
+      <requirement
+          name="org.eclipse.linuxtools.docker.feature.feature.group"/>
+      <requirement
+          name="org.eclipse.dltk.sh.feature.group"/>
+      <requirement
+          name="net.mihai-nita.ansicon.feature.group"/>
+      <repository
+          url="http://eclipse.sonarlint.org"/>
+      <repository
+          url="https://dl.bintray.com/testng-team/testng-eclipse/updatesites/7.0.0.201902250541/"/>
+      <repository
+          url="http://beust.com/eclipse"/>
+      <repository
+          url="http://findbugs.cs.umd.edu/eclipse"/>
+      <repository
+          url="https://www.mihai-nita.net/eclipse"/>
+    </setupTask>
   </version>
   <version name="2019-06"
       label="2019-06"

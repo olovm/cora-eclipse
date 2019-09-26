@@ -2529,6 +2529,48 @@
           xsi:type="predicates:NamePredicate"
           pattern="cora-eclipse"/>
     </workingSet>
+    <workingSet
+        name="cora-interfaces">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-logger"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-storage"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-search"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-searchstorage"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-gatekeeper"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-apptokenstorage"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-messaging"/>
+    </workingSet>
+    <workingSet
+        name="cora-interfaceimplementations">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-log4j"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-activemq"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-rabbitmq"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-solrsearch"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-basicstorage"/>
+    </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
   <setupTask
