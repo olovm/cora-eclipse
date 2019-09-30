@@ -81,14 +81,10 @@ preventGitAskingForUsernameAndPasswordIfRepoIsMissing() {
 }
 
 addAllRepositories() {
-        cnt=0;
+        N=10;
 	for PROJECT in $ALL; do
-		echo "############################################################### updated ##########################################################"
+		((i=i%N)); ((i++==0)) && wait
 		cloneRepoAndAddRemotes $PROJECT &
-		if [ $(( $cnt % 10 )) -eq 0 ]; then   # run 10 at the same time
-                    echo "************************************************************************* waiting **********************************************"
-		    wait
-                fi
 	done
         wait      # catch the processes that we did not wait for earlier
 }
