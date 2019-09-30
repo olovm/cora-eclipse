@@ -85,7 +85,7 @@ addAllRepositories() {
 	for PROJECT in $ALL; do
 		echo "############################################################### updated ##########################################################"
 		cloneRepoAndAddRemotes $PROJECT
-		if [[ $(( $cnt % 10 )) -eq 0 ]; then   # run 10 at the same time
+		if [ $(( $cnt % 10 )) -eq 0 ]; then   # run 10 at the same time
                     echo "************************************************************************* waiting **********************************************"
 		    wait
                 fi
