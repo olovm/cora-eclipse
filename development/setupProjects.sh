@@ -81,7 +81,7 @@ preventGitAskingForUsernameAndPasswordIfRepoIsMissing() {
 }
 
 addAllRepositories() {
-        N=10;
+    N=10;
 	for PROJECT in $ALL; do
 		((i=i%N)); ((i++==0)) && wait
 		cloneRepoAndAddRemotes $PROJECT &

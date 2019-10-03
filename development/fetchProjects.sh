@@ -13,7 +13,11 @@ fetchAll() {
 
 cd ~/workspace/
 
-for i in $(find . -maxdepth 1 -type d)
+N=10;
+for d in $(find . -maxdepth 1 -type d)
 do
-    fetchAll "$i"
+		((i=i%N)); ((i++==0)) && wait
+    	fetchAll "$d" &
 done
+        # catch the processes that we did not wait for earlier
+        wait
