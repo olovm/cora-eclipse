@@ -62,5 +62,8 @@
 		url="jdbc:postgresql://alvin-cora-docker-postgresql:5432/alvin"
 		username="alvin" password="alvin" maxTotal="20" maxIdle="10"
 		maxWaitMillis="-1" />
+		
+	<Parameter name="messageServerHostname" value="messaging.alvin-portal.org" override="false" />
+	<Parameter name="messageServerPort" value="5672" override="false" />
 
 </Context>
