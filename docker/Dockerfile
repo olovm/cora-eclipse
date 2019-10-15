@@ -22,7 +22,7 @@ ARG dockergroupid
 RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -U -G docker -m -s /bin/bash $user
 
 RUN dnf clean all && \
-  dnf install -y \
+  dnf install \
   firefox \
   webkit2gtk3 \
   wget \
@@ -36,10 +36,10 @@ RUN dnf clean all && \
   maven \
   git \ 
   node \
-  npm && \
+  npm -y && \
   dnf clean all
   
-RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2019-06/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
+RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2019-09/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
@@ -48,7 +48,7 @@ RUN touch /home/$user/.gitconfig
 
 RUN chown $user:$user /home/$user -R
 
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.26/bin/apache-tomcat-9.0.26.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
