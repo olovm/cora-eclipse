@@ -10,10 +10,10 @@ echo userName: $USER
 echo 
 
 if [ ! $USER ]; then
-  	echo "You must specify the userName used when starting eclipse201909forcora2"
+  	echo "You must specify the userName used when starting eclipse201909forcora3"
 else
 	#docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
-cd eclipse201909forcora2
+cd eclipse201909forcora3
 #docker-compose run -e DISPLAY=$DISPLAY\
 docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
  -v /var/run/docker.sock:/var/run/docker.sock\
@@ -39,8 +39,8 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -p 8091:8091 \
  -p 8092:8092 \
  --network=eclipseForCoraNet\
- --name eclipse201909forcora2\
- eclipse201909forcora2 $2
+ --name eclipse201909forcora3\
+ eclipse201909forcora3 $2
  cd ../
 fi
 
