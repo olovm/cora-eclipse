@@ -260,8 +260,6 @@
       <repository
           url="http://eclipse.sonarlint.org"/>
       <repository
-          url="https://dl.bintray.com/testng-team/testng-eclipse/updatesites/7.0.0.201902250541/"/>
-      <repository
           url="http://beust.com/eclipse"/>
       <repository
           url="http://findbugs.cs.umd.edu/eclipse"/>
