@@ -1899,6 +1899,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="alvin-docker-index">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.alvin.cora.docker.index.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.alvin.cora.docker.index"
+          location="${workspace.location}/alvin-cora-docker-index"
+          remoteURI="https://github.com/olovm/alvin-cora-docker-index">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="alvin-metadata">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -1911,6 +1943,38 @@
           id="git.clone.alvin.metadata"
           location="${workspace.location}/alvin-metadata"
           remoteURI="https://github.com/olovm/alvin-metadata">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="alvin-indexmessenger">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.alvin.indexmessenger.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.alvin.indexmessenger"
+          location="${workspace.location}/alvin-indexmessenger"
+          remoteURI="https://github.com/olovm/alvin-indexmessenger">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail

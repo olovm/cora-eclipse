@@ -22,8 +22,9 @@ CORA_DEV_DOCKER="cora-docker-solr cora-docker-fedora cora-docker-fedora32 cora-d
 SYSTEMONE="systemone systemone-basicstorage "
 SYSTEMONE_DOCKER="systemone-docker systemone-docker-fitnesse "
 
-ALVIN="alvin-cora-fitnesse alvin-mixedstorage alvin-tocorastorage alvin-tocorautils alvin-cora alvin-metadata "
-ALVIN_DEV_DOCKER="alvin-cora-docker-fedora  alvin-cora-docker-postgresql "
+ALVIN="alvin-cora-fitnesse alvin-mixedstorage alvin-tocorastorage alvin-tocorautils alvin-cora "
+ALVIN+="alvin-metadata alvin-indexmessenger "
+ALVIN_DEV_DOCKER="alvin-cora-docker-fedora alvin-cora-docker-postgresql alvin-docker-index "
 ALVIN_DOCKER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse "
 
 DIVA="diva-cora-fitnesse diva-mixedstorage diva-tocorastorage diva-cora diva-metadata "
