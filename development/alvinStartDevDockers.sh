@@ -4,7 +4,7 @@ echo "starting solr"
 docker run -d --name alvin-cora-solr \
 --network=eclipseForCoraNet \
 -p 8984:8983 \
-cora-solr:0.4-SNAPSHOT \
+cora-solr:1.0-SNAPSHOT \
 solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore
 docker start alvin-cora-solr
 
@@ -26,7 +26,7 @@ docker run -d --name alvin-docker-fedora --rm \
 -p 8089:8088 \
 -p 8444:8443 \
 --network=eclipseForAlvinNet \
-alvin-cora-docker-fedora-3.8.1:1.0.1 /home/fedora/checkAndStart.sh
+alvin-cora-docker-fedora-3.8.1:1.0.6 /home/fedora/checkAndStart.sh
 
 echo "connecting fedora docker to eclipseForCoraNet to access from tomcat and main application"
 docker network connect eclipseForCoraNet alvin-docker-fedora

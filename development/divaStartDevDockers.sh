@@ -4,7 +4,7 @@ echo "starting solr"
 docker run -d --name diva-cora-solr \
 --network=eclipseForCoraNet \
 -p 8985:8983 \
-cora-solr:0.4-SNAPSHOT \
+cora-solr:1.0-SNAPSHOT \
 solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore
 docker start diva-cora-solr
 
@@ -26,7 +26,7 @@ docker run -d --name diva-docker-fedora --rm \
 -p 38089:8088 \
 -p 8445:8443 \
 --network=eclipseForDivaNet \
-diva-cora-docker-fedora-3.2.1:1.0.1
+diva-cora-docker-fedora-3.2.1:1.0.2
 #diva-cora-docker-fedora-3.2.1:1.0.0 /home/fedora/checkAndStart.sh
 
 echo "connecting fedora docker to eclipseForCoraNet to access from tomcat and main application"
