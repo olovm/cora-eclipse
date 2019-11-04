@@ -16,46 +16,57 @@ CORA_PURE_CONTAINER="cora-docker-solr cora-docker-fedora cora-docker-fedora32 co
 CORA0="cora-metadata cora-data "
 
 #PARENT, COMMON, CORA
+LOGIN0="cora-gatekeepertokenprovider cora-apptokenstorage "
+LOGIN_DEPLOYMENT="cora-idplogin cora-apptokenverifier "
+LOGIN_CONTAINER="cora-docker-idplogin cora-docker-apptokenverifier "
+
+#PARENT, COMMON, CORA
 GATEKEEPER0="cora-gatekeeper "
 GATEKEEPER_IMPLEMENTATION="cora-userpicker "
 GATEKEEPER_DEPLOYMENT="cora-gatekeeperserver "
 GATEKEEPER_CONTAINER="cora-docker-gatekeeper "
 
 #PARENT, COMMON, CORA
-LOGIN0="cora-gatekeepertokenprovider cora-apptokenstorage "
-LOGIN_DEPLOYMENT="cora-idplogin cora-apptokenverifier "
-LOGIN_CONTAINER="cora-docker-idplogin cora-docker-apptokenverifier "
+CORE0="cora-storage cora-search cora-searchstorage cora-beefeater "
+CORE1="cora-bookkeeper "
+CORE2="cora-spider "
+CORE3="cora-metacreator cora-gatekeeperclient "
+CORE4="cora-therest "
+CORE_DEPLOYMENT=""
 
-#PARENT, COMMON, CORA
-THEREST0="cora-storage cora-search cora-searchstorage cora-beefeater "
-THEREST1="cora-bookkeeper "
-THEREST2="cora-spider "
-THEREST3="cora-metacreator cora-gatekeeperclient "
-THEREST4="cora-therest "
-
-THEREST_DEPLOYMENT=""
-
-#COMMON
+#PARENT #COMMON
 CLIENT0="cora-clientdata "
 CLIENT1="cora-javaclient "
 
-TIER2+=" cora-sqldatabase "
+
+TIER2+="  "
 TIER3="  "
-#TIER4="cora-basicdata cora-searchstorage cora-spider cora-gatekeepertokenprovider "
+#TIER4="cora-basicdata  "
 TIER4="  "
-TIER5="cora-basicstorage cora-sqlstorage    "
+TIER5="    "
 TIER5+=" cora-solrsearch cora-fedora "
-TIER6="  cora-indexmessenger "
-TIER7="cora-fitnesseintegration cora-fitnesse   "
+TIER7="    "
 
+#PARENT
 JS="cora-jsclient  "
+JS_CONTAINER="cora-docker-jsclient "
 
-CORA_DOCKER=" "
-CORA_DOCKER+="cora-docker-jsclient "
+
+#PARENT, COMMON, CORA, CORE
+STORAGE0="cora-sqldatabase cora-basicstorage cora-sqlstorage "
+
+
+#PARENT #COMMON #CLIENT
+INDEX0="cora-indexmessenger "
+
+#PARENT #COMMON #CLIENT
+VALIDATION0="cora-fitnesseintegration "
+
 
 SYSTEMONE0="systemone-metadata systemone-basicstorage "
 SYSTEMONE1="systemone "
-SYSTEMONE_DOCKER="systemone-docker systemone-docker-fitnesse "
+SYSTEMONE_CONTAINER="systemone-docker systemone-docker-fitnesse "
+SYSTEMONE_VALIDATION="cora-fitnesse "
 
 ALVIN0="alvin-metadata alvin-cora-fitnesse alvin-mixedstorage alvin-tocorastorage alvin-tocorautils  "
 ALVIN1=" alvin-indexmessenger alvin-cora"
