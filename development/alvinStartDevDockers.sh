@@ -21,8 +21,9 @@ cora-docker-postgresql:9.6 postgres
 echo "waiting 10s for postresql to start up"
 sleep 10
 
+#docker run -d --name alvin-docker-fedora --rm \
 echo "starting fedora"
-docker run -d --name alvin-docker-fedora --rm \
+docker run -d --name alvin-docker-fedora \
 -p 8089:8088 \
 -p 8444:8443 \
 --network=eclipseForAlvinNet \
