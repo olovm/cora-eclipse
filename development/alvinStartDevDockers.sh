@@ -27,7 +27,7 @@ docker run -d --name alvin-docker-fedora \
 -p 8089:8088 \
 -p 8444:8443 \
 --network=eclipseForAlvinNet \
-alvin-cora-docker-fedora-3.8.1:1.0.6 /home/fedora/checkAndStart.sh
+alvin-cora-docker-fedora-3.8.1:2.2.0 /home/fedora/checkAndStart.sh
 
 echo "connecting fedora docker to eclipseForCoraNet to access from tomcat and main application"
 docker network connect eclipseForCoraNet alvin-docker-fedora
