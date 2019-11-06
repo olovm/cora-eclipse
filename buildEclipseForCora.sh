@@ -19,6 +19,7 @@ else
 	docker build --build-arg user=$USER \
 	 --build-arg userid=$USERID \
 	 --build-arg dockergroupid=$DOCKERGROUPID \
+	 --no-cache \
 	 -t eclipse201909forcora4 cora-eclipse/docker/
 	#docker build --build-arg user=$USER -t eclipseforcoraoxygen2 cora-eclipse/docker/
 	#cd cora-eclipse/docker/

@@ -28,7 +28,6 @@ docker run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPL
  -e eclipsebranch=$ECLIPSEBRANCH\
  --network=eclipseForCoraNet\
  --name eclipse201909forcora4TempSetup\
- --no-cache\
  eclipse201909forcora4
  cd ../
 fi
