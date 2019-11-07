@@ -62,11 +62,11 @@ Start the environment by running:</br>
 `./eclipseForCora/startEclipseForCora.sh`
 <br>
  **Do the following in the listed order to avoid problems!**
- 1. Go in under preferences and make sure the latest java is choosen as default jre
+ 1. Go in under preferences and make sure the latest java is choosen as default jre, **Installed JREs** menu
  2. In project explorer, under the little arrow, deselect working sets
  3. Mark all projects and refresh them, menu or F5 (this will make sure eclipse sees files in target folders)
- 4. Start and stop the servers (in server tab) in the following order:
-    1. Tomcat v9.0 systemOne
+ 4. Start and stop the 3 servers (in server tab) in the following order:
+    1. Tomcat v9.0 systemOne 
     2. Tomcat v9.0 alvin
     3. Tomcat v9.0 diva
  5. Go under External Tools Configurations (play icon with toolbox) and run linkJsClientToTomcats
