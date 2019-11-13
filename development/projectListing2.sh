@@ -72,7 +72,7 @@ ALVIN_CONTAINER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fit
 
 #DIVA0="diva-metadata diva-cora-fitnesse diva-mixedstorage diva-tocorastorage "
 DIVA0="diva-metadata diva-mixedstorage "
-DIVA1="diva-cora diva-cora-fitnesse"
+DIVA1="diva-cora diva-cora-fitnesse diva-indexmessenger "
 DIVA_DEV_CONTAINER="diva-cora-docker-fedora diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
 DIVA_CONTAINER="diva-docker-cora diva-docker-gatekeeper diva-cora-docker-fitnesse "
 
