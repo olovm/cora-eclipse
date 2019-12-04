@@ -4,13 +4,13 @@ ECLIPSE="cora-eclipse"
 
 TIER0="cora-parent "
 TIER1="cora-logger cora-messaging "
-TIER1+="cora-data cora-json cora-httphandler cora-userpicker cora-apptokenstorage cora-sqldatabase "
+TIER1+="cora-data cora-converter cora-json cora-httphandler cora-userpicker cora-apptokenstorage cora-sqldatabase "
 TIER2="cora-storage cora-search cora-beefeater cora-bookkeeper cora-gatekeeper cora-gatekeeperserver "
 #TIER3="cora-basicdata cora-searchstorage cora-spider cora-gatekeepertokenprovider "
 TIER3=" cora-searchstorage cora-spider cora-gatekeepertokenprovider "
 TIER4="cora-basicstorage cora-sqlstorage cora-gatekeeperclient cora-therest cora-apptokenverifier "
 TIER4+="cora-idplogin cora-solrsearch cora-metacreator cora-fedora "
-TIER5="cora-clientdata cora-log4j cora-activemq cora-rabbitmq cora-indexmessenger "
+TIER5="cora-clientdata cora-log4j cora-activemq cora-rabbitmq cora-indexmessenger cora-xmlconverter "
 TIER6="cora-fitnesseintegration cora-fitnesse cora-javaclient cora-metadata systemone-metadata "
 
 TIER6_JS="cora-jsclient  "
@@ -36,4 +36,6 @@ ALL_JAVA=$TIER0" "$TIER1" "$TIER2" "$TIER3" "$TIER4" "$TIER5" "$TIER6" "$SYSTEMO
 
 DEV_DOCKER=$CORA_DEV_DOCKER" "$ALVIN_DEV_DOCKER" "$DIVA_DEV_DOCKER
 
-ALL=$ECLIPSE" "$ALL_JAVA" "$TIER6_JS" "$CORA_DOCKER" "$DEV_DOCKER" "$SYSTEMONE_DOCKER" "$ALVIN_DOCKER" "$DIVA_DOCKER
+FRIDAY="friday-monitoring"
+
+ALL=$ECLIPSE" "$ALL_JAVA" "$TIER6_JS" "$CORA_DOCKER" "$DEV_DOCKER" "$SYSTEMONE_DOCKER" "$ALVIN_DOCKER" "$DIVA_DOCKER" "$FRIDAY 

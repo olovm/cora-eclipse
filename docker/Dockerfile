@@ -1,6 +1,8 @@
 FROM fedora:30
 # Set a useful default locale
-RUN echo "export LANG=en_US.utf-8" > /opt/export_LANG.sh
+RUN echo "export LANG=en_US.UTF-8" > /opt/export_LANG.sh
+RUN echo "export LANGUAGE=en_US.UTF-8" >> /opt/export_LANG.sh
+RUN echo "export LC_ALL=en_US.UTF-8" >> /opt/export_LANG.sh
 ENV BASH_ENV=/opt/export_LANG.sh \
     ENV=/opt/export_LANG.sh \
     PROMPT_COMMAND="source /opt/export_LANG.sh"
@@ -23,10 +25,12 @@ RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -
 
 RUN dnf clean all && \
   dnf install \
+  glibc-langpack-en \
   firefox \
   webkit2gtk3 \
   wget \
   telnet \
+  nano \
   lsof \
   tar \
   less \
@@ -48,7 +52,7 @@ RUN touch /home/$user/.gitconfig
 
 RUN chown $user:$user /home/$user -R
 
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.29/bin/apache-tomcat-9.0.29.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
