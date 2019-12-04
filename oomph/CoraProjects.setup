@@ -2499,11 +2499,11 @@
           </detail>
           <detail
               key="label">
-            <value>cora-logger</value>
+            <value>friday-monitoring</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-logger</value>
+            <value>https://github.com/olovm/friday-monitoring</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
