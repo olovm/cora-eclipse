@@ -26,6 +26,9 @@ RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -
 RUN dnf clean all && \
   dnf install \
   glibc-langpack-en \
+  google-noto-sans-runic* \
+  google-noto-sans-math-fonts \
+  google-noto-sans-arabic* \
   firefox \
   webkit2gtk3 \
   wget \
