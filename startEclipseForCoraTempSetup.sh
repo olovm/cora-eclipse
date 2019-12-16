@@ -11,12 +11,15 @@ echo starting eclipse using:
 echo userName: $USER
 echo cora-eclipse branch: $ECLIPSEBRANCH
 echo 
-
+CONTAINERRUNTIME=podman;
+if [ command -v docker > /dev/null 2>&1 ]; then
+	CONCONTAINERRUNTIME=docker;
+fi
 if [ ! $USER ]; then
   	echo "You must specify the userName used when starting eclipse201909forcora5TempSetup"
 else
 cd eclipse201909forcora5
-docker run --rm -ti --privileged --net=host --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
+${CONTAINERRUNTIME} run --rm -ti --privileged --net=host --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
  -v /var/run/docker.sock:/var/run/docker.sock\
  -v /tmp/.X11-unix:/tmp/.X11-unix\
  -v INSTALLDIR/workspace:/home/$USER/workspace\
