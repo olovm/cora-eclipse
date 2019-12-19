@@ -11,6 +11,7 @@ echo starting eclipse using:
 echo userName: $USER
 echo cora-eclipse branch: $ECLIPSEBRANCH
 echo 
+echo "Testing for container runtimes...."
 CONTAINERRUNTIME=podman;
 DOCKER_EXISTS=$(command -v docker)
 
