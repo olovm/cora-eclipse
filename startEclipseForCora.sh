@@ -13,10 +13,10 @@ if [ command -v docker > /dev/null 2>&1 ]; then
 	CONCONTAINERRUNTIME=docker;
 fi
 if [ ! $USER ]; then
-  	echo "You must specify the userName used when starting eclipse201909forcora5"
+  	echo "You must specify the userName used when starting eclipse201909forcora6"
 else
 	#${CONTAINERRUNTIME} run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
-cd eclipse201909forcora5
+cd eclipse201909forcora6
 #docker-compose run -e DISPLAY=$DISPLAY\
 ${CONTAINERRUNTIME} run --rm -ti --privileged --net=host --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
  -v /var/run/docker.sock:/var/run/docker.sock\
@@ -42,8 +42,8 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged --net=host --ipc=host --env="QT_X1
  -p 8091:8091 \
  -p 8092:8092 \
  --network=eclipseForCoraNet\
- --name eclipse201909forcora5\
- eclipse201909forcora5 $2
+ --name eclipse201909forcora6\
+ eclipse201909forcora6 $2
  cd ../
 fi
 
