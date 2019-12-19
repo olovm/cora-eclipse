@@ -81,11 +81,11 @@
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>cora-eclipse</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/olovm/cora-eclipse</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -109,12 +109,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.coraparent"
           location="${workspace.location}/cora-parent"
-          remoteURI="https://github.com/olovm/cora-parent">
+          remoteURI="https://github.com/lsu-ub-uu/cora-parent">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -122,7 +122,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -141,12 +141,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.logger"
           location="${workspace.location}/cora-logger"
-          remoteURI="https://github.com/olovm/cora-logger">
+          remoteURI="https://github.com/lsu-ub-uu/cora-logger">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -154,7 +154,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-logger</value>
+            <value>https://github.com/lsu-ub-uu/cora-logger</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -173,12 +173,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.converter"
           location="${workspace.location}/cora-converter"
-          remoteURI="https://github.com/olovm/cora-converter">
+          remoteURI="https://github.com/lsu-ub-uu/cora-converter">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -186,7 +186,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-logger</value>
+            <value>https://github.com/lsu-ub-uu/cora-logger</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -205,12 +205,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.xmlconverter"
           location="${workspace.location}/cora-xmlconverter"
-          remoteURI="https://github.com/olovm/cora-xmlconverter">
+          remoteURI="https://github.com/lsu-ub-uu/cora-xmlconverter">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -218,7 +218,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-logger</value>
+            <value>https://github.com/lsu-ub-uu/cora-logger</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -237,12 +237,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.messaging"
           location="${workspace.location}/cora-messaging"
-          remoteURI="https://github.com/olovm/cora-messaging">
+          remoteURI="https://github.com/lsu-ub-uu/cora-messaging">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -250,7 +250,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-messaging</value>
+            <value>https://github.com/lsu-ub-uu/cora-messaging</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -269,12 +269,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.activemq"
           location="${workspace.location}/cora-activemq"
-          remoteURI="https://github.com/olovm/cora-activemq">
+          remoteURI="https://github.com/lsu-ub-uu/cora-activemq">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -282,7 +282,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-activemq</value>
+            <value>https://github.com/lsu-ub-uu/cora-activemq</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -301,12 +301,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.rabbitmq"
           location="${workspace.location}/cora-rabbitmq"
-          remoteURI="https://github.com/olovm/cora-rabbitmq">
+          remoteURI="https://github.com/lsu-ub-uu/cora-rabbitmq">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -314,7 +314,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-rabbitmq</value>
+            <value>https://github.com/lsu-ub-uu/cora-rabbitmq</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -333,12 +333,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.indexmessenger"
           location="${workspace.location}/cora-indexmessenger"
-          remoteURI="https://github.com/olovm/cora-indexmessenger">
+          remoteURI="https://github.com/lsu-ub-uu/cora-indexmessenger">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -346,7 +346,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-indexmessenger</value>
+            <value>https://github.com/lsu-ub-uu/cora-indexmessenger</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -365,12 +365,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.data"
           location="${workspace.location}/cora-data"
-          remoteURI="https://github.com/olovm/cora-data">
+          remoteURI="https://github.com/lsu-ub-uu/cora-data">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -378,7 +378,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-data</value>
+            <value>https://github.com/lsu-ub-uu/cora-data</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -397,12 +397,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.json"
           location="${workspace.location}/cora-json"
-          remoteURI="https://github.com/olovm/cora-json">
+          remoteURI="https://github.com/lsu-ub-uu/cora-json">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -410,7 +410,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -423,7 +423,7 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.corahttphandler"
           location="${workspace.location}/cora-httphandler"
-          remoteURI="https://github.com/olovm/cora-httphandler"/>
+          remoteURI="https://github.com/lsu-ub-uu/cora-httphandler"/>
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
@@ -438,7 +438,7 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.coraapptokenstorage"
           location="${workspace.location}/cora-apptokenstorage"
-          remoteURI="https://github.com/olovm/cora-apptokenstorage"/>
+          remoteURI="https://github.com/lsu-ub-uu/cora-apptokenstorage"/>
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
@@ -459,12 +459,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.userpicker"
           location="${workspace.location}/cora-userpicker"
-          remoteURI="https://github.com/olovm/cora-userpicker">
+          remoteURI="https://github.com/lsu-ub-uu/cora-userpicker">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -472,7 +472,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -491,12 +491,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.beefeater"
           location="${workspace.location}/cora-beefeater"
-          remoteURI="https://github.com/olovm/cora-beefeater">
+          remoteURI="https://github.com/lsu-ub-uu/cora-beefeater">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -504,7 +504,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -523,13 +523,13 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.bookkeeper"
           location="${workspace.location}/cora-bookkeeper"
-          remoteURI="https://github.com/olovm/cora-bookkeeper"
+          remoteURI="https://github.com/lsu-ub-uu/cora-bookkeeper"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -537,7 +537,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -557,12 +557,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.gatekeeper"
           location="${workspace.location}/cora-gatekeeper"
-          remoteURI="https://github.com/olovm/cora-gatekeeper">
+          remoteURI="https://github.com/lsu-ub-uu/cora-gatekeeper">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -570,7 +570,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -589,12 +589,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.gatekeeperserver"
           location="${workspace.location}/cora-gatekeeperserver"
-          remoteURI="https://github.com/olovm/cora-gatekeeperserver">
+          remoteURI="https://github.com/lsu-ub-uu/cora-gatekeeperserver">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -602,7 +602,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -621,12 +621,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.spider"
           location="${workspace.location}/cora-spider"
-          remoteURI="https://github.com/olovm/cora-spider">
+          remoteURI="https://github.com/lsu-ub-uu/cora-spider">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -634,7 +634,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -653,12 +653,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.gatekeepertokenprovider"
           location="${workspace.location}/cora-gatekeepertokenprovider"
-          remoteURI="https://github.com/olovm/cora-gatekeepertokenprovider">
+          remoteURI="https://github.com/lsu-ub-uu/cora-gatekeepertokenprovider">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -666,7 +666,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -685,12 +685,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.basicstorage"
           location="${workspace.location}/cora-basicstorage"
-          remoteURI="https://github.com/olovm/cora-basicstorage">
+          remoteURI="https://github.com/lsu-ub-uu/cora-basicstorage">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -698,7 +698,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -717,12 +717,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.gatekeeperclient"
           location="${workspace.location}/cora-gatekeeperclient"
-          remoteURI="https://github.com/olovm/cora-gatekeeperclient">
+          remoteURI="https://github.com/lsu-ub-uu/cora-gatekeeperclient">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -730,7 +730,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -749,12 +749,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.therest"
           location="${workspace.location}/cora-therest"
-          remoteURI="https://github.com/olovm/cora-therest">
+          remoteURI="https://github.com/lsu-ub-uu/cora-therest">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -762,7 +762,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -781,12 +781,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.apptokenverifier"
           location="${workspace.location}/cora-apptokenverifier"
-          remoteURI="https://github.com/olovm/cora-apptokenverifier">
+          remoteURI="https://github.com/lsu-ub-uu/cora-apptokenverifier">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -794,7 +794,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -813,12 +813,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.metacreator"
           location="${workspace.location}/cora-metacreator"
-          remoteURI="https://github.com/olovm/cora-metacreator">
+          remoteURI="https://github.com/lsu-ub-uu/cora-metacreator">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -826,7 +826,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -845,12 +845,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.systemone"
           location="${workspace.location}/systemone"
-          remoteURI="https://github.com/olovm/systemone">
+          remoteURI="https://github.com/lsu-ub-uu/systemone">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -858,7 +858,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -877,12 +877,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.systemone-basicstorage"
           location="${workspace.location}/systemone-basicstorage"
-          remoteURI="https://github.com/olovm/systemone-basicstorage">
+          remoteURI="https://github.com/lsu-ub-uu/systemone-basicstorage">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -890,7 +890,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -909,12 +909,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.jsclient"
           location="${workspace.location}/cora-jsclient"
-          remoteURI="https://github.com/olovm/cora-jsclient">
+          remoteURI="https://github.com/lsu-ub-uu/cora-jsclient">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -922,7 +922,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -941,12 +941,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.javaclient"
           location="${workspace.location}/cora-javaclient"
-          remoteURI="https://github.com/olovm/cora-javaclient">
+          remoteURI="https://github.com/lsu-ub-uu/cora-javaclient">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -954,7 +954,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -973,12 +973,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.fitnesse"
           location="${workspace.location}/cora-fitnesse"
-          remoteURI="https://github.com/olovm/cora-fitnesse">
+          remoteURI="https://github.com/lsu-ub-uu/cora-fitnesse">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -986,7 +986,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1005,12 +1005,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.fedora"
           location="${workspace.location}/cora-fedora"
-          remoteURI="https://github.com/olovm/cora-fedora">
+          remoteURI="https://github.com/lsu-ub-uu/cora-fedora">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1018,7 +1018,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1037,12 +1037,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.fitnesseintegration"
           location="${workspace.location}/cora-fitnesseintegration"
-          remoteURI="https://github.com/olovm/cora-fitnesseintegration">
+          remoteURI="https://github.com/lsu-ub-uu/cora-fitnesseintegration">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1050,7 +1050,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1069,12 +1069,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.jsclient"
           location="${workspace.location}/cora-docker-jsclient"
-          remoteURI="https://github.com/olovm/cora-docker-jsclient">
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-jsclient">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1082,7 +1082,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1101,12 +1101,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.gatekeeper"
           location="${workspace.location}/cora-docker-gatekeeper"
-          remoteURI="https://github.com/olovm/cora-docker-gatekeeper">
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-gatekeeper">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1114,7 +1114,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1133,12 +1133,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.systemone.docker"
           location="${workspace.location}/systemone-docker"
-          remoteURI="https://github.com/olovm/systemone-docker">
+          remoteURI="https://github.com/lsu-ub-uu/systemone-docker">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1146,7 +1146,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1165,12 +1165,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.systemone.docker.fitnesse"
           location="${workspace.location}/systemone-docker-fitnesse"
-          remoteURI="https://github.com/olovm/systemone-docker-fitnesse">
+          remoteURI="https://github.com/lsu-ub-uu/systemone-docker-fitnesse">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1178,7 +1178,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1197,12 +1197,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.apptokenverifier"
           location="${workspace.location}/cora-docker-apptokenverifier"
-          remoteURI="https://github.com/olovm/cora-docker-apptokenverifier">
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-apptokenverifier">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1210,7 +1210,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1229,13 +1229,13 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.fedora"
           location="${workspace.location}/cora-docker-fedora"
-          remoteURI="https://github.com/olovm/cora-docker-fedora"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-fedora"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1243,7 +1243,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1262,13 +1262,13 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.fedora32"
           location="${workspace.location}/cora-docker-fedora32"
-          remoteURI="https://github.com/olovm/cora-docker-fedora32"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-fedora32"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1276,7 +1276,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1295,13 +1295,13 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.postgresql"
           location="${workspace.location}/cora-docker-postgresql"
-          remoteURI="https://github.com/olovm/cora-docker-postgresql"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-postgresql"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1309,7 +1309,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1328,12 +1328,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.solrsearch"
           location="${workspace.location}/cora-solrsearch"
-          remoteURI="https://github.com/olovm/cora-solrsearch">
+          remoteURI="https://github.com/lsu-ub-uu/cora-solrsearch">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1341,7 +1341,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1360,13 +1360,13 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.solr"
           location="${workspace.location}/cora-docker-solr"
-          remoteURI="https://github.com/olovm/cora-docker-solr"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-solr"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1374,7 +1374,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1387,7 +1387,7 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.storage"
           location="${workspace.location}/cora-storage"
-          remoteURI="https://github.com/olovm/cora-storage">
+          remoteURI="https://github.com/lsu-ub-uu/cora-storage">
         <description></description>
       </setupTask>
       <setupTask
@@ -1404,7 +1404,7 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.search"
           location="${workspace.location}/cora-search"
-          remoteURI="https://github.com/olovm/cora-search">
+          remoteURI="https://github.com/lsu-ub-uu/cora-search">
         <description></description>
       </setupTask>
       <setupTask
@@ -1421,7 +1421,7 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.searchstorage"
           location="${workspace.location}/cora-searchstorage"
-          remoteURI="https://github.com/olovm/cora-searchstorage">
+          remoteURI="https://github.com/lsu-ub-uu/cora-searchstorage">
         <description></description>
       </setupTask>
       <setupTask
@@ -1444,12 +1444,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.sqlstorage"
           location="${workspace.location}/cora-sqlstorage"
-          remoteURI="https://github.com/olovm/cora-sqlstorage">
+          remoteURI="https://github.com/lsu-ub-uu/cora-sqlstorage">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1457,7 +1457,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1476,12 +1476,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.sqldatabase"
           location="${workspace.location}/cora-sqldatabase"
-          remoteURI="https://github.com/olovm/cora-sqldatabase">
+          remoteURI="https://github.com/lsu-ub-uu/cora-sqldatabase">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1489,7 +1489,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1508,12 +1508,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.idplogin"
           location="${workspace.location}/cora-idplogin"
-          remoteURI="https://github.com/olovm/cora-idplogin">
+          remoteURI="https://github.com/lsu-ub-uu/cora-idplogin">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1521,7 +1521,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1540,12 +1540,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.idplogin"
           location="${workspace.location}/cora-docker-idplogin"
-          remoteURI="https://github.com/olovm/cora-docker-idplogin">
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-idplogin">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1553,7 +1553,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1572,12 +1572,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.metadata"
           location="${workspace.location}/cora-metadata"
-          remoteURI="https://github.com/olovm/cora-metadata">
+          remoteURI="https://github.com/lsu-ub-uu/cora-metadata">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1585,7 +1585,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1604,12 +1604,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.systemone.metadata"
           location="${workspace.location}/systemone-metadata"
-          remoteURI="https://github.com/olovm/systemone-metadata">
+          remoteURI="https://github.com/lsu-ub-uu/systemone-metadata">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1617,7 +1617,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1636,12 +1636,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.log4j"
           location="${workspace.location}/cora-log4j"
-          remoteURI="https://github.com/olovm/cora-log4j">
+          remoteURI="https://github.com/lsu-ub-uu/cora-log4j">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1649,7 +1649,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-logger</value>
+            <value>https://github.com/lsu-ub-uu/cora-logger</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1668,12 +1668,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.cora"
           location="${workspace.location}/alvin-cora"
-          remoteURI="https://github.com/olovm/alvin-cora">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-cora">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1681,7 +1681,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1700,13 +1700,13 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.mixedstorage"
           location="${workspace.location}/alvin-mixedstorage"
-          remoteURI="https://github.com/olovm/alvin-mixedstorage"
+          remoteURI="https://github.com/lsu-ub-uu/alvin-mixedstorage"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1714,7 +1714,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1733,12 +1733,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.tocorastorage"
           location="${workspace.location}/alvin-tocorastorage"
-          remoteURI="https://github.com/olovm/alvin-tocorastorage">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-tocorastorage">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1746,7 +1746,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1765,12 +1765,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.tocorautils"
           location="${workspace.location}/alvin-tocorautils"
-          remoteURI="https://github.com/olovm/alvin-tocorautils">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-tocorautils">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1778,7 +1778,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1797,12 +1797,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.cora.docker.fitnesse"
           location="${workspace.location}/alvin-cora-docker-fitnesse"
-          remoteURI="https://github.com/olovm/alvin-cora-docker-fitnesse">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-cora-docker-fitnesse">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1810,7 +1810,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1829,12 +1829,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.cora.fitnesse"
           location="${workspace.location}/alvin-cora-fitnesse"
-          remoteURI="https://github.com/olovm/alvin-cora-fitnesse">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-cora-fitnesse">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1842,7 +1842,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1861,12 +1861,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.docker.cora"
           location="${workspace.location}/alvin-docker-cora"
-          remoteURI="https://github.com/olovm/alvin-docker-cora">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-docker-cora">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1874,7 +1874,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1893,12 +1893,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.docker.gatekeeper"
           location="${workspace.location}/alvin-docker-gatekeeper"
-          remoteURI="https://github.com/olovm/alvin-docker-gatekeeper">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-docker-gatekeeper">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1906,7 +1906,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1925,12 +1925,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.cora.docker.fedora"
           location="${workspace.location}/alvin-cora-docker-fedora"
-          remoteURI="https://github.com/olovm/alvin-cora-docker-fedora">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-cora-docker-fedora">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1938,7 +1938,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1957,12 +1957,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.cora.docker.postgresql"
           location="${workspace.location}/alvin-cora-docker-postgresql"
-          remoteURI="https://github.com/olovm/alvin-cora-docker-postgresql">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-cora-docker-postgresql">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1970,7 +1970,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1989,12 +1989,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.docker.index"
           location="${workspace.location}/alvin-docker-index"
-          remoteURI="https://github.com/olovm/alvin-docker-index">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-docker-index">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2002,7 +2002,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2021,12 +2021,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.metadata"
           location="${workspace.location}/alvin-metadata"
-          remoteURI="https://github.com/olovm/alvin-metadata">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-metadata">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2034,7 +2034,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2053,12 +2053,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.indexmessenger"
           location="${workspace.location}/alvin-indexmessenger"
-          remoteURI="https://github.com/olovm/alvin-indexmessenger">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-indexmessenger">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2066,7 +2066,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2085,12 +2085,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.cora"
           location="${workspace.location}/diva-cora"
-          remoteURI="https://github.com/olovm/diva-cora">
+          remoteURI="https://github.com/lsu-ub-uu/diva-cora">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2098,7 +2098,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2117,12 +2117,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.mixedstorage"
           location="${workspace.location}/diva-mixedstorage"
-          remoteURI="https://github.com/olovm/diva-mixedstorage">
+          remoteURI="https://github.com/lsu-ub-uu/diva-mixedstorage">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2130,7 +2130,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2149,12 +2149,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.tocorastorage"
           location="${workspace.location}/diva-tocorastorage"
-          remoteURI="https://github.com/olovm/diva-tocorastorage">
+          remoteURI="https://github.com/lsu-ub-uu/diva-tocorastorage">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2162,7 +2162,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2181,12 +2181,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.cora.docker.fitnesse"
           location="${workspace.location}/diva-cora-docker-fitnesse"
-          remoteURI="https://github.com/olovm/diva-cora-docker-fitnesse">
+          remoteURI="https://github.com/lsu-ub-uu/diva-cora-docker-fitnesse">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2194,7 +2194,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2213,12 +2213,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.cora.fitnesse"
           location="${workspace.location}/diva-cora-fitnesse"
-          remoteURI="https://github.com/olovm/diva-cora-fitnesse">
+          remoteURI="https://github.com/lsu-ub-uu/diva-cora-fitnesse">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2226,7 +2226,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2245,12 +2245,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.docker.cora"
           location="${workspace.location}/diva-docker-cora"
-          remoteURI="https://github.com/olovm/diva-docker-cora">
+          remoteURI="https://github.com/lsu-ub-uu/diva-docker-cora">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2258,7 +2258,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2277,12 +2277,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.docker.gatekeeper"
           location="${workspace.location}/diva-docker-gatekeeper"
-          remoteURI="https://github.com/olovm/diva-docker-gatekeeper">
+          remoteURI="https://github.com/lsu-ub-uu/diva-docker-gatekeeper">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2290,7 +2290,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2309,13 +2309,13 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.cora.docker.fedora"
           location="${workspace.location}/diva-cora-docker-fedora"
-          remoteURI="https://github.com/olovm/diva-cora-docker-fedora"
+          remoteURI="https://github.com/lsu-ub-uu/diva-cora-docker-fedora"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2323,7 +2323,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2342,13 +2342,13 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.cora.docker.postgresql"
           location="${workspace.location}/diva-cora-docker-postgresql"
-          remoteURI="https://github.com/olovm/diva-cora-docker-postgresql"
+          remoteURI="https://github.com/lsu-ub-uu/diva-cora-docker-postgresql"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2356,7 +2356,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2375,13 +2375,13 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.cora.docker.fcrepo.postgresql"
           location="${workspace.location}/diva-cora-docker-fcrepo-postgresql"
-          remoteURI="https://github.com/olovm/diva-cora-docker-fcrepo-postgresql"
+          remoteURI="https://github.com/lsu-ub-uu/diva-cora-docker-fcrepo-postgresql"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2389,7 +2389,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2408,12 +2408,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.clientdata"
           location="${workspace.location}/cora-clientdata"
-          remoteURI="https://github.com/olovm/cora-clientdata">
+          remoteURI="https://github.com/lsu-ub-uu/cora-clientdata">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2421,7 +2421,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2440,12 +2440,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.metadata"
           location="${workspace.location}/diva-metadata"
-          remoteURI="https://github.com/olovm/diva-metadata">
+          remoteURI="https://github.com/lsu-ub-uu/diva-metadata">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2453,7 +2453,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2472,12 +2472,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.indexmessenger"
           location="${workspace.location}/diva-indexmessenger"
-          remoteURI="https://github.com/olovm/diva-indexmessenger">
+          remoteURI="https://github.com/lsu-ub-uu/diva-indexmessenger">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2485,7 +2485,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2498,12 +2498,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.friday.monitoring"
           location="${workspace.location}/friday-monitoring"
-          remoteURI="https://github.com/olovm/friday-monitoring">
+          remoteURI="https://github.com/lsu-ub-uu/friday-monitoring">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2511,7 +2511,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/friday-monitoring</value>
+            <value>https://github.com/lsu-ub-uu/friday-monitoring</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2530,12 +2530,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.utils"
           location="${workspace.location}/cora-utils"
-          remoteURI="https://github.com/olovm/cora-utils">
+          remoteURI="https://github.com/lsu-ub-uu/cora-utils">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2543,7 +2543,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-utils</value>
+            <value>https://github.com/lsu-ub-uu/cora-utils</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
