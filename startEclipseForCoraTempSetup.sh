@@ -16,7 +16,7 @@ CONTAINERRUNTIME=podman;
 DOCKER_EXISTS=$(command -v docker)
 echo "Docker size: "${#DOCKER_EXISTS}
 if [ ${#DOCKER_EXISTS} -gt 0 ]; then
-	CONCONTAINERRUNTIME=docker;
+	CONTAINERRUNTIME=docker;
 fi
 echo "Container runtime will be "${CONTAINERRUNTIME}
 
