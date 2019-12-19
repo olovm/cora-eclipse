@@ -9,9 +9,12 @@ echo starting eclipse using:
 echo userName: $USER
 echo 
 CONTAINERRUNTIME=podman;
-if [ command -v docker > /dev/null 2>&1 ]; then
+DOCKER_EXISTS=$(command -v docker)
+
+if [ ${#DOCKER_EXISTS} -gt 0 ]; then
 	CONCONTAINERRUNTIME=docker;
 fi
+echo "Container runtime will be "${CONTAINERRUNTIME}
 if [ ! $USER ]; then
   	echo "You must specify the userName used when starting eclipse201909forcora6"
 else

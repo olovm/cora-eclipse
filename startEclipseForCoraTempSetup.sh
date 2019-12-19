@@ -11,12 +11,14 @@ echo starting eclipse using:
 echo userName: $USER
 echo cora-eclipse branch: $ECLIPSEBRANCH
 echo 
-CONTAINERRUNTIME=docker;
-#if [ command -v docker > /dev/null 2>&1 ]; then
-if [ command -v podman > /dev/null 2>&1 ]; then
-	CONCONTAINERRUNTIME=podman;
-	echo "podman";
+CONTAINERRUNTIME=podman;
+DOCKER_EXISTS=$(command -v docker)
+
+if [ ${#DOCKER_EXISTS} -gt 0 ]; then
+	CONCONTAINERRUNTIME=docker;
 fi
+echo "Container runtime will be "${CONTAINERRUNTIME}
+
 if [ ! $USER ]; then
   	echo "You must specify the userName used when starting eclipse201909forcora6TempSetup"
 else

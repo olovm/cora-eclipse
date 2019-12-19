@@ -6,9 +6,12 @@ DOCKERGROUPID=$3
 echo "running buildEclipseForCora.sh..."
 
 CONTAINERRUNTIME=podman;
-if [ command -v docker > /dev/null 2>&1 ]; then
+DOCKER_EXISTS=$(command -v docker)
+
+if [ ${#DOCKER_EXISTS} -gt 0 ]; then
 	CONCONTAINERRUNTIME=docker;
 fi
+echo "Container runtime will be "${CONTAINERRUNTIME}
 
 if [ ! $USER ]; then
   	echo you must specify the userName to be used when building eclipse201909forcora6
