@@ -15,6 +15,7 @@ CONTAINERRUNTIME=docker;
 #if [ command -v docker > /dev/null 2>&1 ]; then
 if [ command -v podman > /dev/null 2>&1 ]; then
 	CONCONTAINERRUNTIME=podman;
+	echo "podman";
 fi
 if [ ! $USER ]; then
   	echo "You must specify the userName used when starting eclipse201909forcora6TempSetup"
