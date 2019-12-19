@@ -2539,11 +2539,11 @@
           </detail>
           <detail
               key="label">
-            <value>friday-monitoring</value>
+            <value>cora-utils</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/friday-monitoring</value>
+            <value>https://github.com/olovm/cora-utils</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
