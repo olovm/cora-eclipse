@@ -232,6 +232,8 @@
       <requirement
           name="org.testng.eclipse.feature.group"/>
       <requirement
+          name="de.jcup.basheditor.feature.group"/>
+      <requirement
           name="org.testng.eclipse.maven.feature.feature.group"/>
       <requirement
           name="edu.umd.cs.findbugs.plugin.eclipse.feature.group"/>
