@@ -63,7 +63,7 @@ Start the environment by running:</br>
 <br>
  **Do the following in the listed order to avoid problems!**
  1. Go in under preferences and make sure the latest java is choosen as default jre
- 2. In project explorer, under the little arrow, deselect working sets
+ 2. In project explorer, under the three little dots, deselect working sets
  3. Mark all projects and refresh them, menu or F5 (this will make sure eclipse sees files in target folders)
  4. Start and stop the servers (in server tab) in the following order:
     1. Tomcat v9.0 systemOne
