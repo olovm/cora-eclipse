@@ -246,7 +246,7 @@
       <repository
           url="http://eclipse.sonarlint.org"/>
       <repository
-          url="https://dl.bintray.com/testng-team/testng-eclipse-release/7.0.0/"/>
+          url="http://beust.com/eclipse"/>
       <repository
           url="http://findbugs.cs.umd.edu/eclipse"/>
       <repository
