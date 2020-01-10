@@ -898,38 +898,6 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="systemone-basicstorage">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.systemone-basicstorage.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.systemone-basicstorage"
-          location="${workspace.location}/systemone-basicstorage"
-          remoteURI="https://github.com/lsu-ub-uu/systemone-basicstorage">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/lsu-ub-uu/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/lsu-ub-uu/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
         name="cora-jsclient">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -1006,38 +974,6 @@
           id="git.clone.cora.fitnesse"
           location="${workspace.location}/cora-fitnesse"
           remoteURI="https://github.com/lsu-ub-uu/cora-fitnesse">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/lsu-ub-uu/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/lsu-ub-uu/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="cora-fedora">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.cora.fedora.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.cora.fedora"
-          location="${workspace.location}/cora-fedora"
-          remoteURI="https://github.com/lsu-ub-uu/cora-fedora">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
@@ -1786,38 +1722,6 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="alvin-tocorastorage">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.alvin.tocorastorage.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.alvin.tocorastorage"
-          location="${workspace.location}/alvin-tocorastorage"
-          remoteURI="https://github.com/lsu-ub-uu/alvin-tocorastorage">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/lsu-ub-uu/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/lsu-ub-uu/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
         name="alvin-tocorautils">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -2214,38 +2118,6 @@
           id="git.clone.diva.mixedstorage"
           location="${workspace.location}/diva-mixedstorage"
           remoteURI="https://github.com/lsu-ub-uu/diva-mixedstorage">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/lsu-ub-uu/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/lsu-ub-uu/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="diva-tocorastorage">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.diva.tocorastorage.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.diva.tocorastorage"
-          location="${workspace.location}/diva-tocorastorage"
-          remoteURI="https://github.com/lsu-ub-uu/diva-tocorastorage">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
