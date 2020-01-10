@@ -226,6 +226,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-basicdata">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.basicdata.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.basicdata"
+          location="${workspace.location}/cora-basicdata"
+          remoteURI="https://github.com/lsu-ub-uu/cora-basicdata">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-logger</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-logger</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-messaging">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -1625,6 +1657,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="systemone-gatekeeper-war">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.systemone.gatekeeper.war.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.systemone.gatekeeper.war"
+          location="${workspace.location}/systemone-gatekeeper-war"
+          remoteURI="https://github.com/lsu-ub-uu/systemone-gatekeeper-war">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-log4j">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -1766,6 +1830,38 @@
           id="git.clone.alvin.tocorautils"
           location="${workspace.location}/alvin-tocorautils"
           remoteURI="https://github.com/lsu-ub-uu/alvin-tocorautils">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="alvin-gatekeeper-war">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.alvin.gatekeeper.war.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.alvin.gatekeeper.war"
+          location="${workspace.location}/alvin-gatekeeper-war"
+          remoteURI="https://github.com/lsu-ub-uu/alvin-gatekeeper-war">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
@@ -2150,6 +2246,38 @@
           id="git.clone.diva.tocorastorage"
           location="${workspace.location}/diva-tocorastorage"
           remoteURI="https://github.com/lsu-ub-uu/diva-tocorastorage">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="diva-gatekeeper-war">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.diva.gatekeeper.war.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.diva.gatekeeper.war"
+          location="${workspace.location}/diva-gatekeeper-war"
+          remoteURI="https://github.com/lsu-ub-uu/diva-gatekeeper-war">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail

@@ -16,7 +16,7 @@ COMMON_PURE_CONTAINER="cora-docker-solr cora-docker-fedora cora-docker-fedora32 
 #PARENT, COMMON
 CORA0="cora-metadata cora-data "
 CORA1="cora-converter "
-CORA_IMPLEMENTAITON="cora-xmlconverter cora-basicdata "
+CORA_IMPLEMENTATION="cora-xmlconverter cora-basicdata "
 ALL_CORA=$CORA0" "$CORA1" "$CORA_IMPLEMENTATION
 
 #PARENT, COMMON, CORA
@@ -29,7 +29,7 @@ ALL_LOGIN=$LOGIN0" "$LOGIN_DEPLOYMENT
 GATEKEEPER0="cora-gatekeeper "
 GATEKEEPER_IMPLEMENTATION="cora-userpicker "
 GATEKEEPER_DEPLOYMENT="cora-gatekeeperserver "
-ALL_GATEKEEPER=$GATEKEEPER0" "$LOGIN_IMPLEMENTATION" "$LOGIN_DEPLOYMENT
+ALL_GATEKEEPER=$GATEKEEPER0" "$GATEKEEPER_IMPLEMENTATION" "$GATEKEEPER_DEPLOYMENT
 
 #PARENT, COMMON, CORA
 CORE0="cora-storage cora-search cora-searchstorage cora-beefeater "
@@ -37,7 +37,7 @@ CORE1="cora-bookkeeper "
 CORE2="cora-spider "
 CORE3="cora-metacreator cora-gatekeeperclient "
 CORE4="cora-therest "
-ALL_CORE=$CORE0" "$CORE1" "$CORE2" "$CORE4" "$CORE4
+ALL_CORE=$CORE0" "$CORE1" "$CORE2" "$CORE3" "$CORE4" "$CORE4
 
 #PARENT #COMMON
 CLIENT0="cora-clientdata "
@@ -67,7 +67,7 @@ ALL_VALIDATION=$VALIDATION0
 
 #PARENT, COMMON, CORA, CORE, STORAGE
 SYSTEMONE0="systemone-metadata "
-SYSTEMONE_DEPLOYMENT="systemone systemone-apptoken-war systemone-idplogin-war "
+SYSTEMONE_DEPLOYMENT="systemone systemone-gatekeeper-war systemone-apptoken-war systemone-idplogin-war "
 SYSTEMONE_VALIDATION="cora-fitnesse "
 SYSTEMONE_CONTAINER="cora-docker-gatekeeper systemone-docker systemone-docker-fitnesse "
 ALL_SYSTEMONE=$SYSTEMONE0" "$SYSTEMONE_DEPLOYMENT" "$SYSTEMONE_VALIDATION
@@ -82,7 +82,7 @@ ALL_ALVIN=$ALVIN0" "$ALVIN_DEPLOYMENT" "$ALVIN_VALIDATION
 
 #PARENT, COMMON, CORA, CORE, STORAGE
 DIVA0="diva-metadata diva-mixedstorage "
-DIVA_DEPLOYMENT="diva-cora diva-indexmessenger "
+DIVA_DEPLOYMENT="diva-cora diva-gatekeeper-war diva-indexmessenger "
 DIVA_VALIDATION="diva-cora-fitnesse "
 DIVA_DEV_CONTAINER="diva-cora-docker-fedora diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
 DIVA_CONTAINER="diva-docker-cora diva-docker-gatekeeper diva-cora-docker-fitnesse "
