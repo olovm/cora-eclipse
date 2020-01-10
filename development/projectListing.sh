@@ -2,40 +2,101 @@
 
 ECLIPSE="cora-eclipse"
 
-TIER0="cora-parent "
-TIER1="cora-logger cora-messaging "
-TIER1+="cora-data cora-converter cora-json cora-httphandler cora-userpicker cora-apptokenstorage cora-sqldatabase "
-TIER2="cora-storage cora-search cora-beefeater cora-bookkeeper cora-gatekeeper cora-gatekeeperserver "
-#TIER3="cora-basicdata cora-searchstorage cora-spider cora-gatekeepertokenprovider "
-TIER3=" cora-searchstorage cora-spider cora-gatekeepertokenprovider "
-TIER4="cora-basicstorage cora-sqlstorage cora-gatekeeperclient cora-therest cora-apptokenverifier "
-TIER4+="cora-idplogin cora-solrsearch cora-metacreator cora-fedora "
-TIER5="cora-clientdata cora-log4j cora-activemq cora-rabbitmq cora-indexmessenger cora-xmlconverter "
-TIER6="cora-fitnesseintegration cora-fitnesse cora-javaclient cora-metadata systemone-metadata "
+PARENT0="cora-parent "
 
-TIER6_JS="cora-jsclient  "
+#PARENT
+COMMON1="cora-logger "
+COMMON2="cora-httphandler cora-json cora-messaging "
+COMMON_IMPLEMENTATION="cora-log4j cora-activemq cora-rabbitmq "
+ALL_COMMON=$COMMON1" "$COMMON2" "$COMMON_IMPLEMENTATION
 
-CORA_DOCKER="cora-docker-gatekeeper cora-docker-apptokenverifier cora-docker-idplogin "
-CORA_DOCKER+="cora-docker-jsclient "
-CORA_DEV_DOCKER="cora-docker-solr cora-docker-fedora cora-docker-fedora32 cora-docker-postgresql "
+#PARENT
+COMMON_PURE_CONTAINER="cora-docker-solr cora-docker-fedora cora-docker-fedora32 cora-docker-postgresql "
 
-SYSTEMONE="systemone systemone-basicstorage "
-SYSTEMONE_DOCKER="systemone-docker systemone-docker-fitnesse "
+#PARENT, COMMON
+CORA0="cora-metadata cora-data "
+CORA1="cora-converter "
+CORA_IMPLEMENTAITON="cora-xmlconverter cora-basicdata "
+ALL_CORA=$CORA0" "$CORA1" "$CORA_IMPLEMENTATION
 
-ALVIN="alvin-cora-fitnesse alvin-mixedstorage alvin-tocorastorage alvin-tocorautils alvin-cora "
-ALVIN+="alvin-metadata alvin-indexmessenger "
-ALVIN_DEV_DOCKER="alvin-cora-docker-fedora alvin-cora-docker-postgresql alvin-docker-index "
-ALVIN_DOCKER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse "
+#PARENT, COMMON, CORA
+LOGIN0="cora-gatekeepertokenprovider cora-apptokenstorage "
+LOGIN_DEPLOYMENT="cora-idplogin cora-apptokenverifier "
+LOGIN_CONTAINER="cora-docker-idplogin cora-docker-apptokenverifier "
+ALL_LOGIN=$LOGIN0" "$LOGIN_DEPLOYMENT
 
-DIVA="diva-cora-fitnesse diva-mixedstorage diva-tocorastorage diva-cora diva-metadata "
-DIVA+="diva-indexmessenger "
-DIVA_DEV_DOCKER="diva-cora-docker-fedora diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
-DIVA_DOCKER="diva-docker-cora diva-docker-gatekeeper diva-cora-docker-fitnesse "
+#PARENT, COMMON, CORA
+GATEKEEPER0="cora-gatekeeper "
+GATEKEEPER_IMPLEMENTATION="cora-userpicker "
+GATEKEEPER_DEPLOYMENT="cora-gatekeeperserver "
+ALL_GATEKEEPER=$GATEKEEPER0" "$LOGIN_IMPLEMENTATION" "$LOGIN_DEPLOYMENT
 
-ALL_JAVA=$TIER0" "$TIER1" "$TIER2" "$TIER3" "$TIER4" "$TIER5" "$TIER6" "$SYSTEMONE" "$ALVIN" "$DIVA
+#PARENT, COMMON, CORA
+CORE0="cora-storage cora-search cora-searchstorage cora-beefeater "
+CORE1="cora-bookkeeper "
+CORE2="cora-spider "
+CORE3="cora-metacreator cora-gatekeeperclient "
+CORE4="cora-therest "
+ALL_CORE=$CORE0" "$CORE1" "$CORE2" "$CORE4" "$CORE4
 
-DEV_DOCKER=$CORA_DEV_DOCKER" "$ALVIN_DEV_DOCKER" "$DIVA_DEV_DOCKER
+#PARENT #COMMON
+CLIENT0="cora-clientdata "
+CLIENT1="cora-javaclient "
+ALL_CLIENT=$CLIENT0" "$CLIENT1
+
+#PARENT
+JS="cora-jsclient "
+JS_CONTAINER="cora-docker-jsclient "
+ALL_JS=$JS" "$JS_CONTAINER
+
+#PARENT, COMMON, CORA, CORE
+STORAGE0="cora-sqldatabase cora-basicstorage cora-sqlstorage "
+ALL_STORAGE=$STORAGE0
+
+#PARENT, COMMON, CORA, CORE
+SEARCH0="cora-solrsearch "
+ALL_SEARCH=$SEARCH0
+
+#PARENT #COMMON #CLIENT
+INDEX0="cora-indexmessenger "
+ALL_INDEDX=$INDEX0
+
+#PARENT #COMMON #CLIENT
+VALIDATION0="cora-fitnesseintegration "
+ALL_VALIDATION=$VALIDATION0
+
+#PARENT, COMMON, CORA, CORE, STORAGE
+SYSTEMONE0="systemone-metadata "
+SYSTEMONE_DEPLOYMENT="systemone systemone-apptoken-war systemone-idplogin-war "
+SYSTEMONE_VALIDATION="cora-fitnesse "
+SYSTEMONE_CONTAINER="cora-docker-gatekeeper systemone-docker systemone-docker-fitnesse "
+ALL_SYSTEMONE=$SYSTEMONE0" "$SYSTEMONE_DEPLOYMENT" "$SYSTEMONE_VALIDATION
+
+#PARENT, COMMON, CORA, CORE, STORAGE
+ALVIN0="alvin-metadata alvin-mixedstorage alvin-tocorautils "
+ALVIN_DEPLOYMENT="alvin-cora alvin-gatekeeper-war alvin-indexmessenger "
+ALVIN_VALIDATION="alvin-cora-fitnesse "
+ALVIN_DEV_CONTAINER="alvin-cora-docker-fedora alvin-cora-docker-postgresql alvin-docker-index "
+ALVIN_CONTAINER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse "
+ALL_ALVIN=$ALVIN0" "$ALVIN_DEPLOYMENT" "$ALVIN_VALIDATION
+
+#PARENT, COMMON, CORA, CORE, STORAGE
+DIVA0="diva-metadata diva-mixedstorage "
+DIVA_DEPLOYMENT="diva-cora diva-indexmessenger "
+DIVA_VALIDATION="diva-cora-fitnesse "
+DIVA_DEV_CONTAINER="diva-cora-docker-fedora diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
+DIVA_CONTAINER="diva-docker-cora diva-docker-gatekeeper diva-cora-docker-fitnesse "
+ALL_DIVA=$DIVA0" "$DIVA_DEPLOYMENT" "$DIVA_VALIDATION
+
+
+ALL_JAVA=$PARENT0" "$ALL_COMMON" "$ALL_CORA" "$ALL_LOGIN" "$ALL_GATEKEEPER" "$ALL_CORE" "
+ALL_JAVA+=$ALL_CLIENT" "$ALL_STORAGE" "$ALL_SEARCH" "$ALL_INDEDX" "$ALL_VALIDATION" "
+ALL_JAVA+=$ALL_SYSTEMONE" "$ALL_ALVIN" "$ALL_DIVA
+
+DEV_CONTAINER=$COMMON_PURE_CONTAINER" "$ALVIN_DEV_CONTAINER" "$DIVA_DEV_CONTAINER
+
+SERVER_CONTAINER=$LOGIN_CONTAINER" "$SYSTEMONE_CONTAINER" "$ALVIN_CONTAINER" "$DIVA_CONTAINER
 
 OTHER="friday-monitoring cora-utils "
 
-ALL=$ECLIPSE" "$ALL_JAVA" "$TIER6_JS" "$CORA_DOCKER" "$DEV_DOCKER" "$SYSTEMONE_DOCKER" "$ALVIN_DOCKER" "$DIVA_DOCKER" "$OTHER 
+ALL=$ECLIPSE" "$ALL_JAVA" "$ALL_JS" "$DEV_CONTAINER" "$SERVER_CONTAINER" "$OTHER

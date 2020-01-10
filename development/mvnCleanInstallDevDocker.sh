@@ -24,7 +24,7 @@ cleanInstall() {
 
 #echo $ALL
 
-for PROJECT in $DEV_DOCKER; do
+for PROJECT in $DEV_CONTAINER; do
 #for PROJECT in $TIER1; do
 	cleanInstall $PROJECT
 done
