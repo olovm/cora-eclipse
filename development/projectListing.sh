@@ -37,7 +37,7 @@ CORE1="cora-bookkeeper "
 CORE2="cora-spider "
 CORE3="cora-metacreator cora-gatekeeperclient "
 CORE4="cora-therest "
-ALL_CORE=$CORE0" "$CORE1" "$CORE2" "$CORE3" "$CORE4" "$CORE4
+ALL_CORE=$CORE0" "$CORE1" "$CORE2" "$CORE3" "$CORE4
 
 #PARENT #COMMON
 CLIENT0="cora-clientdata "
