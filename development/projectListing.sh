@@ -67,7 +67,8 @@ ALL_VALIDATION=$VALIDATION0
 
 #PARENT, COMMON, CORA, CORE, STORAGE
 SYSTEMONE0="systemone-metadata "
-SYSTEMONE_DEPLOYMENT="systemone systemone-gatekeeper-war systemone-apptoken-war systemone-idplogin-war "
+#SYSTEMONE_DEPLOYMENT="systemone systemone-gatekeeper-war systemone-apptoken-war systemone-idplogin-war "
+SYSTEMONE_DEPLOYMENT="systemone systemone-gatekeeper-war "
 SYSTEMONE_VALIDATION="cora-fitnesse "
 SYSTEMONE_CONTAINER="cora-docker-gatekeeper systemone-docker systemone-docker-fitnesse "
 ALL_SYSTEMONE=$SYSTEMONE0" "$SYSTEMONE_DEPLOYMENT" "$SYSTEMONE_VALIDATION
