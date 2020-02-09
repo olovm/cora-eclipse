@@ -248,7 +248,7 @@
       <repository
           url="https://dl.bintray.com/de-jcup/basheditor"/>
       <repository
-          url="http://beust.com/eclipse"/>
+          url="https://dl.bintray.com/testng-team/testng-eclipse-release"/>
       <repository
           url="http://findbugs.cs.umd.edu/eclipse"/>
       <repository
