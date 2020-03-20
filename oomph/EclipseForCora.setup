@@ -273,6 +273,14 @@
             key="/instance/org.eclipse.ui.editors/printMarginColumn"
             value="100"/>
       </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.jdt.core">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.codeComplete.subwordMatch"
+            value="enabled"/>
+      </setupTask>
     </setupTask>
   </version>
   <version name="2019-12"
