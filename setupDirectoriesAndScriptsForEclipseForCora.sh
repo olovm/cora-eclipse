@@ -19,6 +19,7 @@ createDirectories(){
   	mkdir $INSTALLDIR
   	mkdir $INSTALLDIR/eclipse
   	mkdir $INSTALLDIR/.eclipse
+  	mkdir $INSTALLDIR/.saros
   	mkdir $INSTALLDIR/workspace
  	mkdir $PARENTDIR/m2
   	mkdir $PARENTDIR/eclipseP2
