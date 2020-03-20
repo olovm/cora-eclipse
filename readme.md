@@ -141,3 +141,6 @@ For alvin server go into the launch configuration / arguments under VM arguments
 2. Go under External Tools Configurations (play icon with toolbox) and run mvnPomCleanInstallAllButDocker 
 3. Go under External Tools Configurations (play icon with toolbox) and run checkOutMasterOfAllProjects
 
+###For adding marketplace to oomph installer (note to self)
+https://stackoverflow.com/questions/47582157/eclipse-marketplace-plug-ins-silent-install
+Given a Marketplace install URL (https://marketplace.eclipse.org/marketplace-client-intro?mpc_install={ID}), construct the API URL as https://marketplace.eclipse.org/node/{ID}/api/p. Retrieve the XML file from that URL and look for the repository URL in the updateURL tag, and the available features in the ius tag. You'll need to append .feature.group to each IU feature listed
