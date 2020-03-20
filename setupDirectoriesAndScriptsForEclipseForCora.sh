@@ -6,7 +6,7 @@ echo "Running setupDirectoriesAndScriptsForEclipseForCora..."
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname $SCRIPT)
 PARENTDIR="$(dirname "$BASEDIR")"
-INSTALLDIR=$PARENTDIR/eclipse201912forcora4
+INSTALLDIR=$PARENTDIR/eclipse202003forcora1
 TOPDIR="$(dirname "$PARENTDIR")"
 
 echo 
