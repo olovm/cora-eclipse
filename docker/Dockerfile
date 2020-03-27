@@ -39,7 +39,9 @@ RUN dnf clean all && \
   less \
   htop \
   docker \
-  java-latest-openjdk java-latest-openjdk-devel java-latest-openjdk-javadoc \
+  java-latest-openjdk java-latest-openjdk-devel \ 
+  java-latest-openjdk-javadoc java-latest-openjdk-javadoc-zip \
+  java-latest-openjdk-src \
   maven \
   git \ 
   node \
