@@ -36,6 +36,7 @@
 		value="se.uu.ub.cora.therest.initialize.TheRestDependencyProvider" override="false" />
 
    	<Parameter name="storageType" value="memory" override="false" />
+<!--    	<Parameter name="storageType" value="disk" override="false" /> -->
     <Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/systemone/" override="false" />
 	<Parameter name="solrURL" value="http://systemone-cora-solr:8983/solr/coracore"
 		override="false" />
