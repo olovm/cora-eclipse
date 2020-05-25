@@ -41,13 +41,29 @@ start the eclipse installer (oomph). </br>
 **There are a few things that needs to be choosen in the installer:**
 
  1. You need to use the advanced mode 
- 2. Browse for setup files for eclipse, /home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup (use the plussign to add)
- 3. In next step browse for setup for projects, /home/yourUserName/workspace/cora-eclipse/oomph/CoraProjects.setup (use the plussign to add)
- 2. Java 1.8+ VM, set it to: /usr/lib/jvm/java-13-openjdk
- 3. Use absolute path for your eclipse installation, set it to /home/yourUserName/eclipse
- 4. Fill in path for Installation location, set it to /home/yourUserName/eclipse
- 5. Use absolute path for your workspace, set it to /home/yourUserName/workspace
- 6. JRE 1.8 Location, set it to: /usr/lib/jvm/java-13-openjdk
+ 
+ 1. Browse for setup files for eclipse, /home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup (use the plussign to add)
+ 2. Java 1.8+ VM, set it to: /usr/lib/jvm/java-14-openjdk
+ 
+ next step
+ 
+ 1. In next step browse for setup for projects, /home/yourUserName/workspace/cora-eclipse/oomph/CoraProjects.setup (use the plussign to add)
+ 2. Make sure "Cora projects" are marked
+
+ next step
+ 
+ 1. Choose installation location: "Installed in the specified absolute folder location"
+ 2. Fill in path for "Root install folder": set it to /home/yourUserName/eclipse
+ 6. Fill in path for "Installation location": set it to /home/yourUserName/eclipse
+ 5. Choose Workspace location rule: "Located in the absolute folder location"
+ 6. Fill in path for "Workspace location": /home/yourUserName/workspace
+ 7. Fill in path for "JRE 13 Location": /usr/lib/jvm/java-14-openjdk
+ 
+ next step
+ 
+ finnish
+ 
+ saros might not allow you to log in, if so, skipp that step and do it later
 <br>
 This should get you through the installer and will eventually start eclipse and do a first run to setup eclipse. 
 You can click on the spinning arrows, in the bottom of the screen to see what the setup does.
