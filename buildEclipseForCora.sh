@@ -25,7 +25,6 @@ else
 	#for possibly newer version of from: X
 	#docker build --pull --no-cache --build-arg user=$USER --build-arg dockergroupid=$DOCKERGROUPID -t eclipseforcoraoxygen2 cora-eclipse/docker/
 #	 --no-cache \
-	echo cache $NOCACHE 
 	if [ ! $NOCACHE ]; then
 		${CONTAINERRUNTIME} build \
 		 --build-arg user=$USER \

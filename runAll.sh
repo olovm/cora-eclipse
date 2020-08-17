@@ -27,7 +27,6 @@ elif [ ! $DOCKERGROUPID ] && [ ! -d ./eclipseForCora ]; then
 	echo you must specify the dockergroupid to be used when building eclipse202006forcora2, use: getent group docker 
 else
 	if [ ! -d ./eclipse202006forcora2 ]; then
-		echo cache $NOCACHE 
 		./cora-eclipse/buildEclipseForCora.sh $USER $USERID $DOCKERGROUPID $NOCACHE
 		./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh
 		docker network create eclipseForCoraNet
