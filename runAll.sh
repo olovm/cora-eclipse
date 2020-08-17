@@ -4,6 +4,7 @@ USER=$(id -u -n)
 USERID=$(id -u)
 DOCKERGROUPID=$1
 ECLIPSEBRANCH=$2
+NOCACHE=$3
 
 if [ ! $ECLIPSEBRANCH ]; then
 	ECLIPSEBRANCH='master'
@@ -26,7 +27,7 @@ elif [ ! $DOCKERGROUPID ] && [ ! -d ./eclipseForCora ]; then
 	echo you must specify the dockergroupid to be used when building eclipse202006forcora1, use: getent group docker 
 else
 	if [ ! -d ./eclipse202006forcora1 ]; then
-		./cora-eclipse/buildEclipseForCora.sh $USER $USERID $DOCKERGROUPID
+		./cora-eclipse/buildEclipseForCora.sh $USER $USERID $DOCKERGROUPID $NOCACHE
 		./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh
 		docker network create eclipseForCoraNet
 		docker network create eclipseForAlvinNet

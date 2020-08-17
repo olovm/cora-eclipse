@@ -17,6 +17,8 @@ You can get your docker group id by running;
 
 Run:</br>
 `./cora-eclipse/runAll.sh dockerGroupId`
+or run (to build without cache and a pull of the base image):</br>
+`./cora-eclipse/runAll.sh dockerGroupId master nocache`
 
 This scrip will, run the following headers automatically
 
