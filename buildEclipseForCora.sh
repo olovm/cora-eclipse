@@ -25,19 +25,20 @@ else
 	#for possibly newer version of from: X
 	#docker build --pull --no-cache --build-arg user=$USER --build-arg dockergroupid=$DOCKERGROUPID -t eclipseforcoraoxygen2 cora-eclipse/docker/
 #	 --no-cache \
+	echo cache $NOCACHE 
 	if [ ! $NOCACHE ]; then
 		${CONTAINERRUNTIME} build \
 		 --build-arg user=$USER \
 		 --build-arg userid=$USERID \
 		 --build-arg dockergroupid=$DOCKERGROUPID \
 		 -t eclipse202006forcora2 cora-eclipse/docker/
-    else
-    	${CONTAINERRUNTIME} build --no-cache --pull \
-    	 --build-arg user=$USER \
+	else
+		${CONTAINERRUNTIME} build --no-cache --pull \
+		 --build-arg user=$USER \
 		 --build-arg userid=$USERID \
 		 --build-arg dockergroupid=$DOCKERGROUPID \
 		 -t eclipse202006forcora2 cora-eclipse/docker/
-    fi
+	fi
 	#${CONTAINERRUNTIME} build --build-arg user=$USER -t eclipseforcoraoxygen2 cora-eclipse/docker/
 	#cd cora-eclipse/docker/
 	#docker-compose build --build-arg user=$USER eclipseforcoraoxygen2
