@@ -16,9 +16,10 @@ You can get your docker group id by running;
 `getent group docker`
 
 Run:</br>
-`./cora-eclipse/runAll.sh dockerGroupId`
-or run (to build without cache and a pull of the base image):</br>
-`./cora-eclipse/runAll.sh dockerGroupId master nocache`
+`./cora-eclipse/runAll.sh dockerGroupId`</br>
+**or run:**</br>
+`./cora-eclipse/runAll.sh dockerGroupId master nocache`</br>
+This option will do a pull of the base image, and not use the cache so that you get the latest version of the packages that gets installed from Fedora.
 
 This scrip will, run the following headers automatically
 
