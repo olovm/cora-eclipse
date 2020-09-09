@@ -2508,7 +2508,7 @@
         name="friday-monitoring">
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.friday.monitoring"
+          id="git.clone.fridaymonitoring"
           location="${workspace.location}/friday-monitoring"
           remoteURI="https://github.com/lsu-ub-uu/friday-monitoring">
         <annotation
@@ -2531,7 +2531,7 @@
       <setupTask
           xsi:type="projects:ProjectsImportTask">
         <sourceLocator
-            rootFolder="${git.clone.friday.monitoring.location}"
+            rootFolder="${git.clone.fridaymonitoring.location}"
             locateNestedProjects="true"/>
       </setupTask>
     </setupTask>
@@ -2573,13 +2573,13 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.corajenkins"
           location="${workspace.location}/cora-jenkins"
-          remoteURI="https://github.com/lsu-ub/cora-jenkins"
+          remoteURI="https://github.com/lsu-ub-uu/cora-jenkins"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/lsu-ub/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2587,7 +2587,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/lsu-ub/cora-jenkins</value>
+            <value>https://github.com/lsu-ub-uu/cora-jenkins</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2661,38 +2661,6 @@
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="friday-monitoring">
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.fridaymonitoring"
-          location="${workspace.location}/friday-monitoring"
-          remoteURI="https://github.com/lsu-ub/friday-monitoring"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/lsu-ub/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>friday-monitoring</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/lsu-ub/friday-monitoring</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-      <setupTask
-          xsi:type="projects:ProjectsImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.fridaymonitoring.location}"/>
       </setupTask>
     </setupTask>
     <setupTask
