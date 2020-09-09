@@ -2579,15 +2579,15 @@
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub/</value>
           </detail>
           <detail
               key="label">
-            <value>cora-eclipse</value>
+            <value>cora-jenkins</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-eclipse</value>
+            <value>https://github.com/lsu-ub/cora-jenkins</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2620,11 +2620,11 @@
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>cora-apptokenverifier-war</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-apptokenverifier-war</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2653,11 +2653,11 @@
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>cora-docker-tomcat</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-docker-tomcat</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2676,15 +2676,15 @@
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub/</value>
           </detail>
           <detail
               key="label">
-            <value>cora-eclipse</value>
+            <value>friday-monitoring</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-eclipse</value>
+            <value>https://github.com/lsu-ub/friday-monitoring</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2717,11 +2717,11 @@
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>diva-docker-index</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/diva-docker-index</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
