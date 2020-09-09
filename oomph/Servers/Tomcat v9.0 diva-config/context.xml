@@ -49,7 +49,7 @@
 		override="false" />
 	<Parameter name="idpLoginPublicPathToSystem" value="/idplogin/rest/"
 		override="false" />
-		<Parameter name="databaseLookupName" value="java:/comp/env/jdbc/postgres"
+	<Parameter name="databaseLookupName" value="java:/comp/env/jdbc/postgres"
 		override="false" />
 	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
 		driverClassName="org.postgresql.Driver"

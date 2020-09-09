@@ -46,10 +46,22 @@
   <setupTask
       xsi:type="setup:ResourceCreationTask"
       excludedTriggers="STARTUP MANUAL"
-      content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;section name=&quot;Workbench&quot;>&#xD;&#xA;&#x9;&lt;section name=&quot;org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart&quot;>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;true&quot; key=&quot;group_libraries&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;false&quot; key=&quot;linkWithEditor&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;layout&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;rootMode&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;packageExplorer configured=&amp;quot;true&amp;quot; group_libraries=&amp;quot;1&amp;quot; layout=&amp;quot;2&amp;quot; linkWithEditor=&amp;quot;0&amp;quot; rootMode=&amp;quot;2&amp;quot; sortWorkingSets=&amp;quot;false&amp;quot; workingSetName=&amp;quot;&amp;quot;&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;workingSet editPageId=&amp;quot;org.eclipse.jdt.internal.ui.OthersWorkingSet&amp;quot; factoryID=&amp;quot;org.eclipse.ui.internal.WorkingSetFactory&amp;quot; id=&amp;quot;1382792884467_1&amp;quot; label=&amp;quot;Other Projects&amp;quot; name=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;activeWorkingSet workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;allWorkingSets workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/packageExplorer&amp;gt;&quot; key=&quot;memento&quot;/>&#xD;&#xA;&#x9;&lt;/section>&#xD;&#xA;&lt;/section>&#xD;&#xA;"
       targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
       encoding="UTF-8">
     <description>Initialize JDT's package explorer to show working sets as its root objects</description>
+    <content>
+      &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+      &lt;section name=&quot;Workbench&quot;>
+      	&lt;section name=&quot;org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart&quot;>
+      		&lt;item value=&quot;true&quot; key=&quot;group_libraries&quot;/>
+      		&lt;item value=&quot;false&quot; key=&quot;linkWithEditor&quot;/>
+      		&lt;item value=&quot;2&quot; key=&quot;layout&quot;/>
+      		&lt;item value=&quot;2&quot; key=&quot;rootMode&quot;/>
+      		&lt;item value=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;packageExplorer configured=&amp;quot;true&amp;quot; group_libraries=&amp;quot;1&amp;quot; layout=&amp;quot;2&amp;quot; linkWithEditor=&amp;quot;0&amp;quot; rootMode=&amp;quot;2&amp;quot; sortWorkingSets=&amp;quot;false&amp;quot; workingSetName=&amp;quot;&amp;quot;&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;workingSet editPageId=&amp;quot;org.eclipse.jdt.internal.ui.OthersWorkingSet&amp;quot; factoryID=&amp;quot;org.eclipse.ui.internal.WorkingSetFactory&amp;quot; id=&amp;quot;1382792884467_1&amp;quot; label=&amp;quot;Other Projects&amp;quot; name=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;activeWorkingSet workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;allWorkingSets workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/packageExplorer&amp;gt;&quot; key=&quot;memento&quot;/>
+      	&lt;/section>
+      &lt;/section>
+
+    </content>
   </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"
@@ -2554,6 +2566,167 @@
             rootFolder="${git.clone.cora.utils.location}"/>
       </setupTask>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-jenkins">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.corajenkins"
+          location="${workspace.location}/cora-jenkins"
+          remoteURI="https://github.com/lsu-ub/cora-jenkins"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-eclipse</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-eclipse</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.corajenkins.location}"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-apptokenverifier-war">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.apptokenverifier.war.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.apptokenverifier.war"
+          location="${workspace.location}/cora-apptokenverifier-war"
+          remoteURI="https://github.com/lsu-ub-uu/cora-apptokenverifier-war">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-docker-tomcat">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.docker.tomcat.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.docker.tomcat"
+          location="${workspace.location}/cora-docker-tomcat"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-tomcat"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="friday-monitoring">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.fridaymonitoring"
+          location="${workspace.location}/friday-monitoring"
+          remoteURI="https://github.com/lsu-ub/friday-monitoring"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/olovm/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-eclipse</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/olovm/cora-eclipse</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.fridaymonitoring.location}"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="diva-docker-index">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.diva.docker.index.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.diva.docker.index"
+          location="${workspace.location}/diva-docker-index"
+          remoteURI="https://github.com/lsu-ub-uu/diva-docker-index">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
@@ -3229,10 +3402,51 @@
     <setupTask
         xsi:type="setup:ResourceCreationTask"
         id="server.xml"
-        content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;servers>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 systemOne-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 systemOne&quot; name=&quot;Tomcat v9.0 systemOne&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;15&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;systemone::org.eclipse.jst.jee.server:systemone::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 alvin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 alvin&quot; name=&quot;Tomcat v9.0 alvin&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;29&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;alvin-cora::org.eclipse.jst.jee.server:alvin-cora::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 diva-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 diva&quot; name=&quot;Tomcat v9.0 diva&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;23&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;diva-cora::org.eclipse.jst.jee.server:diva-cora::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 systemOne gatekeeper-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 systemOne gatekeeper&quot; name=&quot;Tomcat v9.0 systemOne gatekeeper&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;6&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;systemone-gatekeeper-war::org.eclipse.jst.jee.server:systemone-gatekeeper-war::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 systemOne apptoken-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 systemOne apptoken&quot; name=&quot;Tomcat v9.0 systemOne apptoken&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;5&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 alvin apptoken-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 alvin apptoken&quot; name=&quot;Tomcat v9.0 alvin apptoken&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 alvin gatekeeper-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 alvin gatekeeper&quot; name=&quot;Tomcat v9.0 alvin gatekeeper&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;3&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;alvin-gatekeeper-war::org.eclipse.jst.jee.server:alvin-gatekeeper-war::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 diva apptoken-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 diva apptoken&quot; name=&quot;Tomcat v9.0 diva apptoken&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 diva gatekeeper-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 diva gatekeeper&quot; name=&quot;Tomcat v9.0 diva gatekeeper&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;3&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;diva-gatekeeper-war::org.eclipse.jst.jee.server:diva-gatekeeper-war::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 systemOne idplogin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 systemOne idplogin&quot; name=&quot;Tomcat v9.0 systemOne idplogin&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 alvin idplogin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 alvin idplogin&quot; name=&quot;Tomcat v9.0 alvin idplogin&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 diva idplogin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 diva idplogin&quot; name=&quot;Tomcat v9.0 diva idplogin&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;&lt;/servers>&#xA;"
         targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.wst.server.core/servers.xml"
         encoding="UTF-8">
       <description>tomcat server integration</description>
+      <content>
+        &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>
+        &lt;servers>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 systemOne-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 systemOne&quot; name=&quot;Tomcat v9.0 systemOne&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;15&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;systemone::org.eclipse.jst.jee.server:systemone::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 alvin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 alvin&quot; name=&quot;Tomcat v9.0 alvin&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;29&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;alvin-cora::org.eclipse.jst.jee.server:alvin-cora::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 diva-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 diva&quot; name=&quot;Tomcat v9.0 diva&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;23&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;diva-cora::org.eclipse.jst.jee.server:diva-cora::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 systemOne gatekeeper-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 systemOne gatekeeper&quot; name=&quot;Tomcat v9.0 systemOne gatekeeper&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;6&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;systemone-gatekeeper-war::org.eclipse.jst.jee.server:systemone-gatekeeper-war::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 systemOne apptoken-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 systemOne apptoken&quot; name=&quot;Tomcat v9.0 systemOne apptoken&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;5&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 alvin apptoken-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 alvin apptoken&quot; name=&quot;Tomcat v9.0 alvin apptoken&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 alvin gatekeeper-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 alvin gatekeeper&quot; name=&quot;Tomcat v9.0 alvin gatekeeper&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;3&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;alvin-gatekeeper-war::org.eclipse.jst.jee.server:alvin-gatekeeper-war::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 diva apptoken-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 diva apptoken&quot; name=&quot;Tomcat v9.0 diva apptoken&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 diva gatekeeper-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 diva gatekeeper&quot; name=&quot;Tomcat v9.0 diva gatekeeper&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;3&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;diva-gatekeeper-war::org.eclipse.jst.jee.server:diva-gatekeeper-war::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 systemOne idplogin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 systemOne idplogin&quot; name=&quot;Tomcat v9.0 systemOne idplogin&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 alvin idplogin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 alvin idplogin&quot; name=&quot;Tomcat v9.0 alvin idplogin&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 diva idplogin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 diva idplogin&quot; name=&quot;Tomcat v9.0 diva idplogin&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>
+          &lt;/server>
+        &lt;/servers>
+
+      </content>
     </setupTask>
     <setupTask
         xsi:type="projects:ProjectsImportTask">

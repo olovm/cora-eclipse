@@ -11,7 +11,7 @@ COMMON_IMPLEMENTATION="cora-log4j cora-activemq cora-rabbitmq "
 ALL_COMMON=$COMMON1" "$COMMON2" "$COMMON_IMPLEMENTATION
 
 #PARENT
-COMMON_PURE_CONTAINER="cora-docker-solr cora-docker-fedora cora-docker-fedora32 cora-docker-postgresql "
+COMMON_PURE_CONTAINER="cora-docker-tomcat cora-docker-solr cora-docker-fedora cora-docker-fedora32 cora-docker-postgresql "
 
 #PARENT, COMMON
 CORA0="cora-metadata cora-data "
@@ -21,7 +21,7 @@ ALL_CORA=$CORA0" "$CORA1" "$CORA_IMPLEMENTATION
 
 #PARENT, COMMON, CORA
 LOGIN0="cora-gatekeepertokenprovider cora-apptokenstorage "
-LOGIN_DEPLOYMENT="cora-idplogin cora-apptokenverifier "
+LOGIN_DEPLOYMENT="cora-idplogin cora-apptokenverifier cora-apptokenverifier-war "
 LOGIN_CONTAINER="cora-docker-idplogin cora-docker-apptokenverifier "
 ALL_LOGIN=$LOGIN0" "$LOGIN_DEPLOYMENT
 
@@ -86,7 +86,7 @@ DIVA0="diva-metadata diva-mixedstorage "
 DIVA_DEPLOYMENT="diva-cora diva-gatekeeper-war diva-indexmessenger "
 DIVA_VALIDATION="diva-cora-fitnesse "
 DIVA_DEV_CONTAINER="diva-cora-docker-fedora diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
-DIVA_CONTAINER="diva-docker-cora diva-docker-gatekeeper diva-cora-docker-fitnesse "
+DIVA_CONTAINER="diva-docker-cora diva-docker-gatekeeper diva-cora-docker-fitnesse diva-docker-index "
 ALL_DIVA=$DIVA0" "$DIVA_DEPLOYMENT" "$DIVA_VALIDATION
 
 
@@ -98,6 +98,6 @@ DEV_CONTAINER=$COMMON_PURE_CONTAINER" "$ALVIN_DEV_CONTAINER" "$DIVA_DEV_CONTAINE
 
 SERVER_CONTAINER=$LOGIN_CONTAINER" "$SYSTEMONE_CONTAINER" "$ALVIN_CONTAINER" "$DIVA_CONTAINER
 
-OTHER="friday-monitoring cora-utils "
+OTHER="friday-monitoring cora-utils cora-jenkins"
 
 ALL=$ECLIPSE" "$ALL_JAVA" "$ALL_JS" "$DEV_CONTAINER" "$SERVER_CONTAINER" "$OTHER
