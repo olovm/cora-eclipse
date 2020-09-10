@@ -2695,6 +2695,39 @@
         <description>${scope.project.label}</description>
       </setupTask>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-docker-java">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.docker.java.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.docker.java"
+          location="${workspace.location}/cora-docker-java"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-java"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-docker-tomcat</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-docker-tomcat</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
@@ -2949,6 +2982,57 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-basicstorage"/>
+    </workingSet>
+    <workingSet
+        name="all-docker"
+        id="">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern=".*docker.*"/>
+    </workingSet>
+    <workingSet
+        name="all-but-docker"
+        id="">
+      <predicate
+          xsi:type="predicates:NotPredicate">
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern=".*docker.*"/>
+      </predicate>
+    </workingSet>
+    <workingSet
+        name="Cora">
+      <predicate
+          xsi:type="predicates:AndPredicate">
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="cora.*"/>
+        <operand
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern=".*docker.*"/>
+        </operand>
+        <operand
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="alvin.*"/>
+        </operand>
+        <operand
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="diva.*"/>
+        </operand>
+      </predicate>
+    </workingSet>
+    <workingSet
+        name="jsclient"
+        id="">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern=".*jsclient.*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>

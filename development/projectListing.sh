@@ -11,8 +11,8 @@ COMMON_IMPLEMENTATION="cora-log4j cora-activemq cora-rabbitmq "
 ALL_COMMON=$COMMON1" "$COMMON2" "$COMMON_IMPLEMENTATION
 
 #PARENT
-COMMON_PURE_CONTAINER="cora-docker-tomcat cora-docker-solr cora-docker-fedora cora-docker-fedora32 cora-docker-postgresql "
-
+COMMON_PURE_CONTAINER="cora-docker-tomcat cora-docker-java cora-docker-solr cora-docker-postgresql "
+COMMON_PURE_CONTAINER+="cora-docker-fedora cora-docker-fedora32 "
 #PARENT, COMMON
 CORA0="cora-metadata cora-data "
 CORA1="cora-converter "
