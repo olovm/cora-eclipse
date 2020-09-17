@@ -46,7 +46,7 @@ start the eclipse installer (oomph). </br>
  1. You need to use the advanced mode 
  
  1. Browse for setup files for eclipse, /home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup (use the plussign to add)
- 2. Java 1.8+ VM, set it to: /usr/lib/jvm/java-14-openjdk
+ 2. Java 11+ VM, set it to: /usr/lib/jvm/java-14-openjdk
  
  next step
  
