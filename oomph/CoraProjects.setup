@@ -3423,6 +3423,16 @@
           key="/instance/org.eclipse.wst.jsdt.ui/formatter_profile"
           value="_Eclipse [built-in] 100"/>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="saros.eclipse">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="editor.annotation.contribution.enabled"
+          value="false">
+        <description>Remove highlighting of changes by other when using Saros.</description>
+      </setupTask>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
