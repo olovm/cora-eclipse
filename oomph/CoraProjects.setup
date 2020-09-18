@@ -3349,7 +3349,7 @@
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.jdt.ui/content_assist_disabled_computers"
-          value="org.eclipse.jdt.ui.templateProposalCategory${0x0}org.eclipse.jdt.ui.javaNoTypeProposalCategory${0x0}org.eclipse.jdt.ui.javaTypeProposalCategory${0x0}org.eclipse.jdt.ui.textProposalCategory${0x0}org.eclipse.jdt.ui.javaAllProposalCategory${0x0}"/>
+          value="org.eclipse.jdt.ui.javaNoTypeProposalCategory${0x0}org.eclipse.jdt.ui.javaTypeProposalCategory${0x0}org.eclipse.jdt.ui.textProposalCategory${0x0}org.eclipse.mylyn.java.ui.javaAllProposalCategory${0x0}"/>
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.text.custom_code_templates"
