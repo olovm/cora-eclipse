@@ -33,7 +33,7 @@
 		url="jdbc:postgresql://diva-cora-docker-postgresql:5432/diva"
 		username="diva" password="diva" maxTotal="20" maxIdle="10"
 		maxWaitMillis="-1" />
-	<Parameter name="guestUserId" value="12345" override="false" />
+	<Parameter name="guestUserId" value="coraUser:5368656924943436" override="false" />
 	
    	<Parameter name="storageType" value="memory" override="false" />
     <Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/diva/" override="false" />
