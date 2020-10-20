@@ -52,7 +52,7 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host --env="QT_X11_NO_MITSH
  -p 8091:8091\
  -p 8092:8092\
  --network=eclipseForCoraNet\
- --name eclipse202009forcora1NoPorts\
+ --name eclipse202009forcora1\
  eclipse202009forcora1 $2
  cd ../
 fi

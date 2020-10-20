@@ -36,7 +36,7 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host --env="QT_X11_NO_MITSH
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
  -e user=$USER\
  --network=eclipseForCoraNet\
- --name eclipse202009forcora1\
+ --name eclipse202009forcora1NoPorts\
  eclipse202009forcora1 $2
  cd ../
 fi
