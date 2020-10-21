@@ -809,6 +809,14 @@
             key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.codeComplete.subwordMatch"
             value="enabled"/>
       </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.egit.ui">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.egit.ui/resourcehistory_show_all_branches"
+            value="true"/>
+      </setupTask>
     </setupTask>
   </version>
   <description>EclipseForCora provides an Eclipse develepment environment for Cora.</description>
