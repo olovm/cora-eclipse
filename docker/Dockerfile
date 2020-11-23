@@ -42,6 +42,7 @@ RUN dnf clean all && \
   java-latest-openjdk java-latest-openjdk-devel \ 
   java-latest-openjdk-javadoc java-latest-openjdk-javadoc-zip \
   java-latest-openjdk-src \
+  postgresql \
   maven \
   git \ 
   node \
