@@ -46,7 +46,7 @@ start the eclipse installer (oomph). </br>
  1. You need to use the advanced mode 
  
  1. Browse for setup files for eclipse, /home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup (use the plussign to add)
- 2. Java 11+ VM, set it to: /usr/lib/jvm/java-14-openjdk
+ 2. Java 11+ VM, set it to: /usr/lib/jvm/java-15-openjdk
  
  next step
  
@@ -60,7 +60,7 @@ start the eclipse installer (oomph). </br>
  6. Fill in path for "Installation location": set it to /home/yourUserName/eclipse
  5. Choose Workspace location rule: "Located in the absolute folder location"
  6. Fill in path for "Workspace location": /home/yourUserName/workspace
- 7. Fill in path for "JRE 13 Location": /usr/lib/jvm/java-14-openjdk
+ 7. Fill in path for "JRE 13 Location": /usr/lib/jvm/java-15-openjdk
  
  next step
  
