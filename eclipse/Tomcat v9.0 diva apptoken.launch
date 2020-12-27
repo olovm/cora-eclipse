@@ -10,6 +10,6 @@
     <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
     <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JRE for JavaSE-13"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="start"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;/home/olov/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp9&quot; -Dcatalina.home=&quot;/opt/apache-tomcat-9.0.38&quot; -Dwtp.deploy=&quot;/home/olov/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp9/wtpwebapps&quot;"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;/home/olov/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp3&quot; -Dcatalina.home=&quot;/opt/apache-tomcat-9.0.38&quot; -Dwtp.deploy=&quot;/home/olov/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp3/wtpwebapps&quot;"/>
     <stringAttribute key="server-id" value="Tomcat v9.0 diva apptoken"/>
 </launchConfiguration>

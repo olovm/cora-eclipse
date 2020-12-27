@@ -37,6 +37,8 @@
 
 	<Parameter name="dependencyProviderClassName"
 		value="se.uu.ub.cora.therest.initialize.TheRestDependencyProvider" override="false" />
+<!-- 	<Parameter name="dependencyProviderClassName" -->
+<!-- 		value="se.uu.ub.cora.diva.DivaDependencyProvider" override="false" /> -->
 
 	<Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/diva/" override="false" />
 	<Parameter name="storageType" value="memory" override="false" />
