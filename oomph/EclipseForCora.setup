@@ -554,6 +554,18 @@
             key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.codeComplete.subwordMatch"
             value="enabled"/>
       </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.debug.ui">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.debug.ui/Console.highWaterMark"
+            value="1008000"/>
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.debug.ui/Console.lowWaterMark"
+            value="1000000"/>
+      </setupTask>
     </setupTask>
   </version>
   <description>EclipseForCora provides an Eclipse develepment environment for Cora.</description>
