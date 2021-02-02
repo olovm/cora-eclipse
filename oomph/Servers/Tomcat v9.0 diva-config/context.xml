@@ -62,6 +62,6 @@
 		override="false"/>
 	<Parameter name="fedoraUsername" value="fedoraAdmin" override="false"/>
 	<Parameter name="fedoraPassword" value="changeit" override="false"/>
-	
-
+	<!-- set to none here, to not call classic in dev environment -->
+	<Parameter name="classicListUpdateURL" value="" override="false"/> 
 </Context>
