@@ -58,8 +58,9 @@ SEARCH0="cora-solrsearch "
 ALL_SEARCH=$SEARCH0
 
 #PARENT #COMMON #CLIENT
-INDEX0="cora-indexmessenger "
-ALL_INDEDX=$INDEX0
+INDEX0="cora-indexmessenger cora-synchronizer "
+INDEX_CONTAINER="cora-docker-synchronizer "
+ALL_INDEDX=$INDEX0" "$INDEX_DEPLOYMENT
 
 #PARENT #COMMON #CLIENT
 VALIDATION0="cora-fitnesseintegration "
@@ -98,6 +99,6 @@ DEV_CONTAINER=$COMMON_PURE_CONTAINER" "$ALVIN_DEV_CONTAINER" "$DIVA_DEV_CONTAINE
 
 SERVER_CONTAINER=$LOGIN_CONTAINER" "$SYSTEMONE_CONTAINER" "$ALVIN_CONTAINER" "$DIVA_CONTAINER
 
-OTHER="friday-monitoring cora-utils cora-jenkins"
+OTHER="friday-monitoring cora-utils cora-jenkins cora-indexloader"
 
 ALL=$ECLIPSE" "$ALL_JAVA" "$ALL_JS" "$DEV_CONTAINER" "$SERVER_CONTAINER" "$OTHER
