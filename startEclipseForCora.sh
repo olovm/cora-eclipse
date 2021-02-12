@@ -35,22 +35,22 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host --env="QT_X11_NO_MITSH
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
  -e user=$USER\
- -p 9876:9876\
- -p 8080:8080\
- -p 8180:8180\
- -p 8280:8280\
- -p 8380:8380\
- -p 8081:8081\
- -p 8181:8181\
- -p 8281:8281\
- -p 8381:8381\
- -p 8082:8082\
- -p 8182:8182\
- -p 8282:8282\
- -p 8382:8382\
- -p 8090:8090\
- -p 8091:8091\
- -p 8092:8092\
+ -p 39876:9876\
+ -p 38080:8080\
+ -p 38180:8180\
+ -p 38280:8280\
+ -p 38380:8380\
+ -p 38081:8081\
+ -p 38181:8181\
+ -p 38281:8281\
+ -p 38381:8381\
+ -p 38082:8082\
+ -p 38182:8182\
+ -p 38282:8282\
+ -p 38382:8382\
+ -p 38090:8090\
+ -p 38091:8091\
+ -p 38092:8092\
  --network=eclipseForCoraNet\
  --name eclipse202012forcora1\
  eclipse202012forcora1 $2

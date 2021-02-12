@@ -104,24 +104,24 @@ Start the environment by running:</br>
 After starting the appropriate servers and containers from inside eclipse, the following will be exposed:
 
 ### SystemOne
-[SystemOne web:http://localhost:8080/jsclient/theClient.html](http://localhost:8080/jsclient/theClient.html)<br>
-[Fitnesse:http://localhost:8090/fitnesse/FrontPage](http://localhost:8090/fitnesse/FrontPage)<br>
-[SystemOne REST:http://localhost:8080/therest/rest/](http://localhost:8080/systemone/rest/)<br>
-[Solr:http://localhost:8983/solr/](http://localhost:8983/solr/)<br>
-[Karma:http://localhost:9876/](http://localhost:9876/)<br>
+[SystemOne web:http://localhost:38080/jsclient/theClient.html](http://localhost:38080/jsclient/theClient.html)<br>
+[Fitnesse:http://localhost:38090/fitnesse/FrontPage](http://localhost:38090/fitnesse/FrontPage)<br>
+[SystemOne REST:http://localhost:38080/therest/rest/](http://localhost:38080/systemone/rest/)<br>
+[Solr:http://localhost:38983/solr/](http://localhost:38983/solr/)<br>
+[Karma:http://localhost:39876/](http://localhost:39876/)<br>
 
 ### Alvin
-[Alvin web:http://localhost:8081/jsclient/theClient.html](http://localhost:8081/jsclient/theClient.html)<br>
-[Fitnesse:http://localhost:8091/fitnesse/FrontPage](http://localhost:8091/fitnesse/FrontPage)<br>
-[Alvin REST:http://localhost:8081/therest/rest/](http://localhost:8081/therest/rest/)<br>
-[Solr:http://localhost:8984/solr/](http://localhost:8984/solr/)<br>
-[Fedora Commons:http://localhost:8089/fedora/](http://localhost:8089/fedora/)<br>
+[Alvin web:http://localhost:38081/jsclient/theClient.html](http://localhost:38081/jsclient/theClient.html)<br>
+[Fitnesse:http://localhost:38091/fitnesse/FrontPage](http://localhost:38091/fitnesse/FrontPage)<br>
+[Alvin REST:http://localhost:38081/therest/rest/](http://localhost:38081/therest/rest/)<br>
+[Solr:http://localhost:38984/solr/](http://localhost:38984/solr/)<br>
+[Fedora Commons:http://localhost:38089/fedora/](http://localhost:38089/fedora/)<br>
 
 ### DiVA
-[DiVA web:http://localhost:8082/jsclient/theClient.html](http://localhost:8082/jsclient/theClient.html)<br>
-[Fitnesse:http://localhost:8092/fitnesse/FrontPage](http://localhost:8092/fitnesse/FrontPage)<br>
-[DiVA REST:http://localhost:8082/therest/rest/](http://localhost:8082/therest/rest/)<br>
-[Solr:http://localhost:8984/solr/](http://localhost:8984/solr/)<br>
+[DiVA web:http://localhost:38082/jsclient/theClient.html](http://localhost:38082/jsclient/theClient.html)<br>
+[Fitnesse:http://localhost:38092/fitnesse/FrontPage](http://localhost:38092/fitnesse/FrontPage)<br>
+[DiVA REST:http://localhost:38082/therest/rest/](http://localhost:38082/therest/rest/)<br>
+[Solr:http://localhost:38984/solr/](http://localhost:38984/solr/)<br>
 
 # Updating
 
