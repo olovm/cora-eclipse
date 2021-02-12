@@ -3443,7 +3443,7 @@
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.jst.server.tomcat.core/locationorg.eclipse.jst.server.tomcat.runtime.90"
-          value="/opt/apache-tomcat-9.0.41"/>
+          value="/opt/apache-tomcat-9.0.43"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -3451,7 +3451,7 @@
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.wst.server.core/runtimes"
-          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;runtimes>&#xA;  &lt;runtime id=&quot;Apache Tomcat v9.0&quot; location=&quot;/opt/apache-tomcat-9.0.41&quot; name=&quot;Apache Tomcat v9.0&quot; runtime-type-id=&quot;org.eclipse.jst.server.tomcat.runtime.90&quot; timestamp=&quot;0&quot;/>&#xA;&lt;/runtimes>&#xA;"/>
+          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;runtimes>&#xA;  &lt;runtime id=&quot;Apache Tomcat v9.0&quot; location=&quot;/opt/apache-tomcat-9.0.43&quot; name=&quot;Apache Tomcat v9.0&quot; runtime-type-id=&quot;org.eclipse.jst.server.tomcat.runtime.90&quot; timestamp=&quot;0&quot;/>&#xA;&lt;/runtimes>&#xA;"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
