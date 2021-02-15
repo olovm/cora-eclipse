@@ -402,7 +402,7 @@
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.cora.indexmessenger.location}"
+            rootFolder="${git.clone.cora.indexloader.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
@@ -434,7 +434,7 @@
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.cora.indexmessenger.location}"
+            rootFolder="${git.clone.cora.synchronizer.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
@@ -2798,7 +2798,7 @@
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.cora.docker.java.location}"
+            rootFolder="${git.clone.cora.docker.synchronizer.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask

@@ -3,7 +3,7 @@
 echo "starting solr"
 docker run -d --name alvin-cora-solr \
 --network=eclipseForCoraNet \
--p 8984:8983 \
+-p 38984:8983 \
 cora-solr:1.0-SNAPSHOT \
 solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore
 docker start alvin-cora-solr
@@ -11,7 +11,7 @@ docker start alvin-cora-solr
 echo "starting postgresql for fedora"
 docker run -d --name alvin-postgres-fcrepo --rm \
 --net-alias=postgres-fcrepo \
--p 5433:5432 \
+-p 35433:5432 \
 --network=eclipseForAlvinNet \
 -e POSTGRES_DB=fedora38 \
 -e POSTGRES_USER=fedoraAdmin \
@@ -24,8 +24,8 @@ sleep 10
 #docker run -d --name alvin-docker-fedora --rm \
 echo "starting fedora"
 docker run -d --name alvin-docker-fedora \
--p 8089:8088 \
--p 8444:8443 \
+-p 38088:8088 \
+-p 38444:8443 \
 --network=eclipseForAlvinNet \
 alvin-cora-docker-fedora-3.8.1:2.2.1 /home/fedora/checkAndStart.sh
 
@@ -38,7 +38,7 @@ echo "removing previous postgresql with Alvin data"
 docker rm alvin-cora-docker-postgresql
 echo "starting postgresql with Alvin data"
 docker run -d --name alvin-cora-docker-postgresql --restart always  \
--p 5436:5432 \
+-p 35436:5432 \
 --network=eclipseForAlvinNet \
 -e POSTGRES_DB=alvin \
 -e POSTGRES_USER=alvin \
