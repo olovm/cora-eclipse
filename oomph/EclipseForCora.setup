@@ -291,6 +291,14 @@
             key="/instance/org.eclipse.egit.ui/resourcehistory_show_all_branches"
             value="true"/>
       </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.debug.ui">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.debug.ui/Console.limitConsoleOutput"
+            value="false"/>
+      </setupTask>
     </setupTask>
   </version>
   <version name="2020-09"
