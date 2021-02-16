@@ -1,5 +1,17 @@
 #! /bin/bash
 
+echo "starting diva synchronizer"
+docker run -d --name diva-docker-synchronizer --rm \
+-p 38482:8080 \
+--network=eclipseForCoraNet \
+-e "JAVA_OPTS=\
+-DapptokenVerifierURL=http://eclipse202012forcora3:8182/apptokenverifier/ \
+-DbaseURL=http://eclipse202012forcora3:8082/diva/rest/ \
+-DuserId=coraUser:490742519075086 \
+-DappToken=2e57eb36-55b9-4820-8c44-8271baab4e8e" \
+cora-docker-synchronizer:1.0-SNAPSHOT
+#can be called from host: http://localhost:38482/synchronizer/synchronizer/index?recordType=organisation&recordId=1
+
 echo "starting solr"
 docker run -d --name diva-cora-solr \
 --network=eclipseForCoraNet \
