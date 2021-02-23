@@ -299,6 +299,14 @@
             key="/instance/org.eclipse.debug.ui/Console.limitConsoleOutput"
             value="false"/>
       </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.m2e.core">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.m2e.core/eclipse.m2.downloadJavadoc"
+            value="true"/>
+      </setupTask>
     </setupTask>
   </version>
   <version name="2020-09"
