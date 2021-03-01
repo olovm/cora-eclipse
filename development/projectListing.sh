@@ -16,7 +16,7 @@ COMMON_PURE_CONTAINER+="cora-docker-fedora cora-docker-fedora32 "
 #PARENT, COMMON
 CORA0="cora-metadata cora-data "
 CORA1="cora-converter "
-CORA_IMPLEMENTATION="cora-xmlconverter cora-basicdata "
+CORA_IMPLEMENTATION="cora-xmlutils cora-xmlconverter cora-basicdata "
 ALL_CORA=$CORA0" "$CORA1" "$CORA_IMPLEMENTATION
 
 #PARENT, COMMON, CORA
