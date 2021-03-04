@@ -38,6 +38,7 @@ linkMetadataToDiVA(){
 #	ln -s $workspaceDir/cora-metadata/files/jsClient $workspaceDir/metadata/diva/jsClient
 	ln -s $workspaceDir/diva-metadata/files/diva $workspaceDir/metadata/diva/diva
 	ln -s $workspaceDir/diva-metadata/files/divaTestSystem $workspaceDir/metadata/diva/divaTestSystem
+	ln -s $workspaceDir/diva-metadata/files/divaProdSystem $workspaceDir/metadata/diva/divaProdSystem
 }
 
 # ################# calls start here #######################################
