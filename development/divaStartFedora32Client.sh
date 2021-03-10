@@ -3,9 +3,9 @@
 echo HOSTBASEDIR: $HOSTBASEDIR
 printenv
 
-PEOPLE=$HOSTBASEDIR/workspace/diva-cora-docker-fedora/docker/people
-echo $PEOPLE
-ls -la $PEOPLE
+RECORDS=$HOSTBASEDIR/workspace/diva-cora-docker-fedora/docker/people
+echo $RECORDS
+ls -la $RECORDS
 
 DATA=$HOSTBASEDIR/workspace/diva-cora-docker-fcrepo-postgresql/docker/data
 echo $DATA
@@ -17,7 +17,7 @@ echo "starting fedora 32 client"
 docker run  --rm --privileged  --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
  -v /var/run/docker.sock:/var/run/docker.sock\
  -v /tmp/.X11-unix:/tmp/.X11-unix\
- -v $PEOPLE:/home/client/xml\
+ -v $RECORDS:/home/client/records\
  -v $DATA:/home/client/data\
  --name cora-docker-fedora32-client  \
  --network=eclipseForCoraNet \
