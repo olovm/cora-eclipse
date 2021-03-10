@@ -1,8 +1,9 @@
 #! /bin/bash
+SCRIPT=$(readlink -f "$0")
+BASEDIR=$(dirname $SCRIPT)
+echo basedir: $BASEDIR
 
-#USER=$1
 USER=$(id -u -n)
-BASEDIR=$(dirname $BASH_SOURCE)
 
 echo 
 echo starting eclipse using:
@@ -35,6 +36,7 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host --env="QT_X11_NO_MITSH
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
  -e user=$USER\
+ -e HOSTBASEDIR=$BASEDIR\
  -p 39876:9876\
  -p 38080:8080\
  -p 38180:8180\
