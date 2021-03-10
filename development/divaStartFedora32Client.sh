@@ -3,7 +3,7 @@
 echo HOSTBASEDIR: $HOSTBASEDIR
 printenv
 
-RECORDS=$HOSTBASEDIR/workspace/diva-cora-docker-fedora/docker/people
+RECORDS=$HOSTBASEDIR/workspace/diva-cora-docker-fedora/docker/records
 echo $RECORDS
 ls -la $RECORDS
 
