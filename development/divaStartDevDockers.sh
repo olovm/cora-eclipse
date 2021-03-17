@@ -4,6 +4,7 @@ echo "starting diva synchronizer"
 docker run -d --name diva-docker-synchronizer --rm \
 -p 38482:8080 \
 --network=eclipseForCoraNet \
+--network-alias=synchronizer \
 -e "JAVA_OPTS=\
 -DapptokenVerifierURL=http://eclipse202012forcora3:8182/apptokenverifier/ \
 -DbaseURL=http://eclipse202012forcora3:8082/diva/rest/ \
