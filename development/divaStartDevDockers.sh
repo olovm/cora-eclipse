@@ -29,7 +29,7 @@ docker run -d --name diva-postgres-fcrepo --rm \
 -e POSTGRES_DB=fedora32 \
 -e POSTGRES_USER=fedoraAdmin \
 -e POSTGRES_PASSWORD=fedora \
-diva-cora-docker-fcrepo-postgresql:1.0.0 postgres 
+diva-cora-docker-fcrepo-postgresql:1.1-SNAPSHOT postgres 
 
 echo "waiting 10s for postresql to start up"
 sleep 10
@@ -39,7 +39,7 @@ docker run -d --name diva-docker-fedora --rm \
 -p 38089:8088 \
 -p 38445:8443 \
 --network=eclipseForDivaNet \
-diva-cora-docker-fedora-3.2.1:1.0.2
+diva-cora-docker-fedora-3.2.1:1.1-SNAPSHOT
 #diva-cora-docker-fedora-3.2.1:1.0.0 /home/fedora/checkAndStart.sh
 
 echo "connecting fedora docker to eclipseForCoraNet to access from tomcat and main application"
