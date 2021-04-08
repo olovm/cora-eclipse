@@ -6,8 +6,8 @@ docker run -d --name diva-docker-synchronizer --rm \
 --network=eclipseForCoraNet \
 --network-alias=synchronizer \
 -e "JAVA_OPTS=\
--DapptokenVerifierURL=http://eclipse202012forcora3:8182/apptokenverifier/ \
--DbaseURL=http://eclipse202012forcora3:8082/diva/rest/ \
+-DapptokenVerifierURL=http://eclipse202012forcora4:8182/apptokenverifier/ \
+-DbaseURL=http://eclipse202012forcora4:8082/diva/rest/ \
 -DuserId=coraUser:490742519075086 \
 -DappToken=2e57eb36-55b9-4820-8c44-8271baab4e8e" \
 cora-docker-synchronizer:1.0-SNAPSHOT
