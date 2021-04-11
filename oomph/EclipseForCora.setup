@@ -220,6 +220,96 @@
             source="http://www.eclipse.org/oomph/setup/ReleaseTrain"/>
       </repository>
     </setupTask>
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="Extra plugins for Cora Development">
+      <requirement
+          name="org.testng.eclipse.feature.group"/>
+      <requirement
+          name="de.jcup.basheditor.feature.group"/>
+      <requirement
+          name="org.testng.eclipse.maven.feature.feature.group"/>
+      <requirement
+          name="edu.umd.cs.findbugs.plugin.eclipse.feature.group"/>
+      <requirement
+          name="org.sonarlint.eclipse.feature.feature.group"/>
+      <requirement
+          name="org.eclipse.linuxtools.docker.feature.feature.group"/>
+      <requirement
+          name="net.mihai-nita.ansicon.feature.group"/>
+      <requirement
+          name="saros.feature.feature.group"/>
+      <requirement
+          name="de.jcup.jenkinseditor.feature.feature.group"/>
+      <repository
+          url="http://eclipse.sonarlint.org"/>
+      <repository
+          url="https://dl.bintray.com/de-jcup/basheditor"/>
+      <repository
+          url="https://dl.bintray.com/testng-team/testng-eclipse-release"/>
+      <repository
+          url="http://findbugs.cs.umd.edu/eclipse"/>
+      <repository
+          url="https://www.mihai-nita.net/eclipse"/>
+      <repository
+          url="https://www.saros-project.org/update-site/eclipse"/>
+      <repository
+          url="https://dl.bintray.com/de-jcup/jenkinseditor"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="User Preferences">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/UserPreferences"/>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.ui.editors">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.ui.editors/printMargin"
+            value="true"/>
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.ui.editors/printMarginColumn"
+            value="100"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.jdt.core">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.codeComplete.subwordMatch"
+            value="enabled"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.egit.ui">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.egit.ui/decorator_projecttext_decoration"
+            value="{dirty:>} {name} [{branch}{ branch_status}]"/>
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.egit.ui/resourcehistory_show_all_branches"
+            value="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.debug.ui">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.debug.ui/Console.limitConsoleOutput"
+            value="false"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.m2e.core">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.m2e.core/eclipse.m2.downloadJavadoc"
+            value="true"/>
+      </setupTask>
+    </setupTask>
   </version>
   <version name="2020-12"
       label="2020-12"
