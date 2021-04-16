@@ -221,42 +221,6 @@
       </repository>
     </setupTask>
     <setupTask
-        xsi:type="setup.p2:P2Task"
-        label="Extra plugins for Cora Development">
-      <requirement
-          name="org.testng.eclipse.feature.group"/>
-      <requirement
-          name="de.jcup.basheditor.feature.group"/>
-      <requirement
-          name="org.testng.eclipse.maven.feature.feature.group"/>
-      <requirement
-          name="edu.umd.cs.findbugs.plugin.eclipse.feature.group"/>
-      <requirement
-          name="org.sonarlint.eclipse.feature.feature.group"/>
-      <requirement
-          name="org.eclipse.linuxtools.docker.feature.feature.group"/>
-      <requirement
-          name="net.mihai-nita.ansicon.feature.group"/>
-      <requirement
-          name="saros.feature.feature.group"/>
-      <requirement
-          name="de.jcup.jenkinseditor.feature.feature.group"/>
-      <repository
-          url="http://eclipse.sonarlint.org"/>
-      <repository
-          url="https://dl.bintray.com/de-jcup/basheditor"/>
-      <repository
-          url="https://dl.bintray.com/testng-team/testng-eclipse-release"/>
-      <repository
-          url="http://findbugs.cs.umd.edu/eclipse"/>
-      <repository
-          url="https://www.mihai-nita.net/eclipse"/>
-      <repository
-          url="https://www.saros-project.org/update-site/eclipse"/>
-      <repository
-          url="https://dl.bintray.com/de-jcup/jenkinseditor"/>
-    </setupTask>
-    <setupTask
         xsi:type="setup:CompoundTask"
         name="User Preferences">
       <annotation
