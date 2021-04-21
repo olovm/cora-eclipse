@@ -172,3 +172,11 @@ docker exec -it eclipse202103forcora1 bash
 
 to export data from running DiVA db run:
 pg_dump -U diva -h diva-cora-docker-postgresql -p 5432 -t organisation diva > ~/workspace/diva-cora-docker-postgresql/docker/data/exported.sql
+
+### Debugging FitNesse
+Add the following to the top of the page, then use remoteDebugging such as DivaFitnesseDebug to connect to it when testing.
+
+```
+!path {java.class.path}
+!define COMMAND_PATTERN {/usr/lib/jvm/java-16-openjdk/bin/java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -cp %p %m}
+```
