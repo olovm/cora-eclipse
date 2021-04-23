@@ -23,7 +23,7 @@ echo "Container runtime will be "${CONTAINERRUNTIME}
 if [ ! $USER ]; then
   	echo "You must specify the userName used when starting eclipse202003forcora1TempSetup"
 else
-cd eclipse202103forcora1
+cd eclipse202103forcora2
 #${CONTAINERRUNTIME} run --rm -ti --privileged --net=host --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
 ${CONTAINERRUNTIME} run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
  -v /var/run/docker.sock:/var/run/docker.sock\
@@ -37,7 +37,7 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM
  -e eclipsebranch=$ECLIPSEBRANCH\
  --network=eclipseForCoraNet\
  --name eclipse202003forcora1TempSetup\
- eclipse202103forcora1
+ eclipse202103forcora2
  cd ../
 fi
 # -p 8080:8080 -p 9876:9876 -p 8090:8090\

@@ -46,7 +46,7 @@ start the eclipse installer (oomph). </br>
  1. You need to use the advanced mode 
  
  1. Browse for setup files for eclipse, /home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup (use the plussign to add)
- 2. Java 11+ VM, set it to: /usr/lib/jvm/java-15-openjdk
+ 2. Java 11+ VM, set it to: /usr/lib/jvm/java-11-openjdk
  
  next step
  
@@ -60,7 +60,7 @@ start the eclipse installer (oomph). </br>
  6. Fill in path for "Installation location": set it to /home/yourUserName/eclipse
  5. Choose Workspace location rule: "Located in the absolute folder location"
  6. Fill in path for "Workspace location": /home/yourUserName/workspace
- 7. Fill in path for "JRE 13 Location": /usr/lib/jvm/java-15-openjdk
+ 7. Fill in path for "JRE 15 Location": /usr/lib/jvm/java-16-openjdk
  
  next step
  
@@ -168,7 +168,7 @@ Given a Marketplace install URL (https://marketplace.eclipse.org/marketplace-cli
 ### exporting data from connected databases
 connect to shell in devEnvironment:
 
-docker exec -it eclipse202103forcora1 bash 
+docker exec -it eclipse202103forcora2 bash 
 
 to export data from running DiVA db run:
 pg_dump -U diva -h diva-cora-docker-postgresql -p 5432 -t organisation diva > ~/workspace/diva-cora-docker-postgresql/docker/data/exported.sql

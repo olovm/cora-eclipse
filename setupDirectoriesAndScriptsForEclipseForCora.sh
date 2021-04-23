@@ -6,7 +6,7 @@ echo "Running setupDirectoriesAndScriptsForEclipseForCora..."
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname $SCRIPT)
 PARENTDIR="$(dirname "$BASEDIR")"
-INSTALLDIR=$PARENTDIR/eclipse202103forcora1
+INSTALLDIR=$PARENTDIR/eclipse202103forcora2
 TOPDIR="$(dirname "$PARENTDIR")"
 
 echo 
@@ -44,6 +44,8 @@ changeAndCopyScripts(){
 	cp $BASEDIR/docker/docker-compose.yml $INSTALLDIR/
 	cp $BASEDIR/docker/Dockerfile $INSTALLDIR/
 	cp $BASEDIR/docker/entrypoint.sh $INSTALLDIR/
+	
+	cp $BASEDIR/docker/derived $INSTALLDIR/workspace/.derived
 }
 
 createGitConfigFile(){

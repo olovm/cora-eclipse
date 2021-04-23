@@ -6,11 +6,21 @@ docker run -d --name diva-docker-synchronizer --rm \
 --network=eclipseForCoraNet \
 --network-alias=synchronizer \
 -e "JAVA_OPTS=\
--DapptokenVerifierURL=http://eclipse202103forcora1:8182/apptokenverifier/ \
--DbaseURL=http://eclipse202103forcora1:8082/diva/rest/ \
+-DapptokenVerifierURL=http://eclipse202103forcora2:8182/apptokenverifier/ \
+-DbaseURL=http://eclipse202103forcora2:8082/diva/rest/ \
 -DuserId=coraUser:490742519075086 \
 -DappToken=2e57eb36-55b9-4820-8c44-8271baab4e8e" \
 cora-docker-synchronizer:1.0-SNAPSHOT
+#can be called from host: http://localhost:38482/synchronizer/synchronizer/index?recordType=organisation&recordId=1
+
+echo "starting diva indexer"
+#docker run -d --name diva-docker-index --rm \
+docker run -d --name diva-docker-index \
+--network=eclipseForCoraNet \
+--network-alias=indexer \
+-e aParameter="first11Parameter" \
+-e aParameter2="second22Parameter" \
+diva-docker-index:1.0-SNAPSHOT
 #can be called from host: http://localhost:38482/synchronizer/synchronizer/index?recordType=organisation&recordId=1
 
 echo "starting solr"

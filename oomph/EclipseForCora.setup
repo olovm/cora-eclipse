@@ -248,6 +248,8 @@
           name="saros.feature.feature.group"/>
       <requirement
           name="de.jcup.jenkinseditor.feature.feature.group"/>
+      <requirement
+          name="net.nodj.AutoDerivFeature.feature.group"/>
       <repository
           url="http://eclipse.sonarlint.org"/>
       <repository
@@ -262,6 +264,8 @@
           url="https://www.saros-project.org/update-site/eclipse"/>
       <repository
           url="https://dl.bintray.com/de-jcup/jenkinseditor"/>
+      <repository
+          url="http://nodj.github.io/AutoDeriv/update"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
