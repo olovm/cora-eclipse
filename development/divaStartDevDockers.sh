@@ -18,15 +18,15 @@ echo "starting diva indexer"
 docker run -d --name diva-docker-index \
 --network=eclipseForCoraNet \
 --network-alias=indexer \
--e messaging.hostname="dev-diva-drafts" \
--e messaging.port="61617" \
--e messaging.routingKey="fedora.apim.*" \
--e messaging.username="admin" \
--e messaging.password="admin" \
--e appTokenVerifierUrl="http://localhost:8181/apptokenverifier/" \
--e baseUrl="http://localhost:8081/diva/rest/" \
--e cora.userId="coraUser:4412566252284358" \
--e cora.appToken="935ae709-4056-4b3d-85d2-469b304acfae" \
+-e messaging.hostname="diva-docker-fedora" \
+-e messaging.port="61616" \
+-e messaging.routingKey="fedora.apim.update" \
+-e messaging.username="fedoraAdmin" \
+-e messaging.password="fedora" \
+-e appTokenVerifierUrl="http://eclipse202103forcora2:8182/apptokenverifier/" \
+-e baseUrl="http://eclipse202103forcora2:8082/diva/rest/" \
+-e cora.userId="coraUser:490742519075086" \
+-e cora.appToken="2e57eb36-55b9-4820-8c44-8271baab4e8e" \
 diva-docker-index:1.0-SNAPSHOT
 #can be called from host: http://localhost:38482/synchronizer/synchronizer/index?recordType=organisation&recordId=1
 
