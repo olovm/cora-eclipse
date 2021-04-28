@@ -13,23 +13,6 @@ docker run -d --name diva-docker-synchronizer --rm \
 cora-docker-synchronizer:1.0-SNAPSHOT
 #can be called from host: http://localhost:38482/synchronizer/synchronizer/index?recordType=organisation&recordId=1
 
-echo "starting diva indexer"
-#docker run -d --name diva-docker-index --rm \
-docker run -d --name diva-docker-index \
---network=eclipseForCoraNet \
---network-alias=indexer \
--e messaging.hostname="diva-docker-fedora" \
--e messaging.port="61616" \
--e messaging.routingKey="fedora.apim.update" \
--e messaging.username="fedoraAdmin" \
--e messaging.password="fedora" \
--e appTokenVerifierUrl="http://eclipse202103forcora2:8182/apptokenverifier/" \
--e baseUrl="http://eclipse202103forcora2:8082/diva/rest/" \
--e cora.userId="coraUser:490742519075086" \
--e cora.appToken="2e57eb36-55b9-4820-8c44-8271baab4e8e" \
-diva-docker-index:1.0-SNAPSHOT
-#can be called from host: http://localhost:38482/synchronizer/synchronizer/index?recordType=organisation&recordId=1
-
 echo "starting solr"
 docker run -d --name diva-cora-solr \
 --network=eclipseForCoraNet \
@@ -76,4 +59,21 @@ diva-cora-docker-postgresql
 
 echo "connecting postgresq docker to eclipseForCoraNet to access from tomcat and main application"
 docker network connect eclipseForCoraNet diva-cora-docker-postgresql
+
+echo "starting diva indexer"
+docker run -d  --name diva-docker-index -rm \
+--restart unless-stopped \
+--network=eclipseForCoraNet \
+--network-alias=indexer \
+-e hostname="diva-docker-fedora" \
+-e port="61616" \
+-e routingKey="fedora.apim.update" \
+-e username="fedoraAdmin" \
+-e password="fedora" \
+-e appTokenVerifierUrl="http://eclipse202103forcora2:8182/apptokenverifier/" \
+-e baseUrl="http://eclipse202103forcora2:8082/diva/rest/" \
+-e userId="coraUser:490742519075086" \
+-e appToken="2e57eb36-55b9-4820-8c44-8271baab4e8e" \
+diva-docker-index:1.0-SNAPSHOT
+#can be called from host: http://localhost:38482/synchronizer/synchronizer/index?recordType=organisation&recordId=1
 
