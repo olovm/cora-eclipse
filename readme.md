@@ -124,7 +124,21 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [Solr:http://localhost:38985/solr/](http://localhost:38985/solr/)<br>
 [Fedora Commons:http://localhost:38089/fedora/](http://localhost:38089/fedora/)<br>
 
-#Commiting
+#Commiting to git
+## remove password 
+ prefrences / security / secure storage / contents
+ 
+remove git from default secure storage
+
+## generate a github token
+as described here:
+
+https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token
+
+## push to git with token
+username: your normal username
+password: you token
+
 # Updating
 
 ## Updating to a newer version of developed systems
