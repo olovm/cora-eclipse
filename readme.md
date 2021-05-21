@@ -124,7 +124,7 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [Solr:http://localhost:38985/solr/](http://localhost:38985/solr/)<br>
 [Fedora Commons:http://localhost:38089/fedora/](http://localhost:38089/fedora/)<br>
 
-#Commiting to git
+# Commiting to github using token
 ## remove password 
  prefrences / security / secure storage / contents
  
