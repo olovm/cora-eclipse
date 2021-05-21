@@ -124,6 +124,7 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [Solr:http://localhost:38985/solr/](http://localhost:38985/solr/)<br>
 [Fedora Commons:http://localhost:38089/fedora/](http://localhost:38089/fedora/)<br>
 
+#Commiting
 # Updating
 
 ## Updating to a newer version of developed systems
