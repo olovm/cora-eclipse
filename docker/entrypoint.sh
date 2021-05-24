@@ -22,6 +22,7 @@ firstRun(){
 	~/workspace/cora-eclipse/development/copyMetadata.sh ~/workspace
 	
 	cd ~/workspace/cora-jsclient/
+	npm cache clean --force
 	npm install karma@latest karma-chrome-launcher@latest karma-firefox-launcher@latest karma-qunit@latest karma-coverage@latest karma-html-reporter@latest qunit@latest --save-dev
 
 	runInstaller	
