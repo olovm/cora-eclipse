@@ -253,9 +253,9 @@
       <repository
           url="http://eclipse.sonarlint.org"/>
       <repository
-          url="https://dl.bintray.com/de-jcup/basheditor"/>
+          url="https://de-jcup.github.io/update-site-eclipse-bash-editor/update-site/"/>
       <repository
-          url="https://dl.bintray.com/testng-team/testng-eclipse-release"/>
+          url="https://testng.org/testng-eclipse-update-site/"/>
       <repository
           url="http://findbugs.cs.umd.edu/eclipse"/>
       <repository
@@ -263,7 +263,7 @@
       <repository
           url="https://www.saros-project.org/update-site/eclipse"/>
       <repository
-          url="https://dl.bintray.com/de-jcup/jenkinseditor"/>
+          url="https://de-jcup.github.io/update-site-eclipse-jenkins-editor/update-site/"/>
       <repository
           url="http://nodj.github.io/AutoDeriv/update"/>
     </setupTask>
