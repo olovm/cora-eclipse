@@ -45,7 +45,7 @@ RUN dnf clean all && \
   postgresql \
   maven \
   git \ 
-  node \
+  nodejs \
   npm -y && \
   dnf clean all
   
