@@ -137,7 +137,7 @@ https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-
 
 ## push to git with token
 username: your normal username
-password: you token
+password: your token
 
 # Updating
 
