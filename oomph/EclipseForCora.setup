@@ -237,7 +237,7 @@
       <requirement
           name="org.testng.eclipse.maven.feature.feature.group"/>
       <requirement
-          name="edu.umd.cs.findbugs.plugin.eclipse.feature.group"/>
+          name="com.github.spotbugs.plugin.eclipse.feature.group"/>
       <requirement
           name="org.sonarlint.eclipse.feature.feature.group"/>
       <requirement
@@ -257,7 +257,7 @@
       <repository
           url="https://testng.org/testng-eclipse-update-site/"/>
       <repository
-          url="http://findbugs.cs.umd.edu/eclipse"/>
+          url="http://spotbugs.github.io/eclipse/"/>
       <repository
           url="https://www.mihai-nita.net/eclipse"/>
       <repository
