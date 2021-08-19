@@ -190,7 +190,7 @@ addOtherRemotes(){
 }
 	
 setBasePathToPointToBasicStorageWorkspaceDirectoryInTomcatContextXml(){
-	sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "$workspaceDir/cora-eclipse/oomph/Servers/Tomcat v9.0 systemOne-config/context.xml"
+	sed -i "s|WORKSPACEDIR|/home/$user/workspace|g" "$workspaceDir/cora-eclipse/oomph/Servers/Tomcat v10.0 systemOne-config/context.xml"
 }
 
 # ################# calls start here #######################################

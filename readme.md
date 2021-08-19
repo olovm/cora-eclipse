@@ -85,9 +85,9 @@ Start the environment by running:</br>
  2. In project explorer, under the three little dots, deselect working sets
  3. Mark all projects and refresh them, menu or F5 (this will make sure eclipse sees files in target folders)
  4. Start and stop the servers (in server tab) in the following order:
-    1. Tomcat v9.0 systemOne
-    2. Tomcat v9.0 alvin
-    3. Tomcat v9.0 diva
+    1. Tomcat v10.0 systemOne
+    2. Tomcat v10.0 alvin
+    3. Tomcat v10.0 diva
  5. Go under External Tools Configurations (play icon with toolbox) and run linkJsClientToTomcats
  6. Go under External Tools Configurations (play icon with toolbox) and run copyMetadata
 
@@ -183,7 +183,7 @@ Given a Marketplace install URL (https://marketplace.eclipse.org/marketplace-cli
 ### exporting data from connected databases
 connect to shell in devEnvironment:
 
-docker exec -it eclipse202106forcora1 bash 
+docker exec -it eclipse202106forcora2 bash 
 
 to export data from running DiVA db run:
 pg_dump -U diva -h diva-cora-docker-postgresql -p 5432 -t organisation diva > ~/workspace/diva-cora-docker-postgresql/docker/data/exported.sql
