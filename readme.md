@@ -60,7 +60,7 @@ start the eclipse installer (oomph). </br>
  6. Fill in path for "Installation location": set it to /home/yourUserName/eclipse
  5. Choose Workspace location rule: "Located in the absolute folder location"
  6. Fill in path for "Workspace location": /home/yourUserName/workspace
- 7. Fill in path for "JRE 15 Location": /usr/lib/jvm/**java-16-openjdk**
+ 7. Fill in path for "JRE 16 Location": /usr/lib/jvm/**java-16-openjdk**
  
  next step
  

@@ -17,9 +17,9 @@
     label="Cora projects">
   <setupTask
       xsi:type="jdt:JRETask"
-      version="JavaSE-15"
-      location="${jre.location-15}"
-      name="JRE for JavaSE-15">
+      version="JavaSE-16"
+      location="${jre.location-16}"
+      name="JRE for JavaSE-16">
     <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
   </setupTask>
   <setupTask
