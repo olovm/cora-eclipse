@@ -2922,6 +2922,38 @@
         <description>${scope.project.label}</description>
       </setupTask>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-testutils">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.testutils.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.testutils"
+          location="${workspace.location}/cora-testutils"
+          remoteURI="https://github.com/lsu-ub-uu/cora-testutils">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-testutils</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-testutils</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
@@ -2958,6 +2990,9 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-logger"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-testutils"/>
     </workingSet>
     <workingSet
         name="cora-tier2">
