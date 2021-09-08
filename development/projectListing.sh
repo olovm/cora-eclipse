@@ -86,7 +86,7 @@ ALL_ALVIN=$ALVIN0" "$ALVIN_DEPLOYMENT" "$ALVIN_VALIDATION
 DIVA0="diva-metadata diva-mixedstorage "
 DIVA_DEPLOYMENT="diva-cora diva-gatekeeper-war diva-indexmessenger "
 DIVA_VALIDATION="diva-cora-fitnesse "
-DIVA_DEV_CONTAINER="diva-cora-docker-fedora diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
+DIVA_DEV_CONTAINER="diva-cora-docker-fedora diva-docker-mock-classic-postgresql diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
 DIVA_CONTAINER="diva-docker-cora diva-docker-gatekeeper diva-cora-docker-fitnesse diva-docker-index "
 ALL_DIVA=$DIVA0" "$DIVA_DEPLOYMENT" "$DIVA_VALIDATION
 

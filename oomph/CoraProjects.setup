@@ -2504,6 +2504,39 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="diva-docker-mock-classic-postgresql">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.diva.docker.mock.classic.postgresql.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.diva.docker.mock.classic.postgresql"
+          location="${workspace.location}/diva-docker-mock-classic-postgresql"
+          remoteURI="https://github.com/lsu-ub-uu/diva-docker-mock-classic-postgresql"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="diva-cora-docker-postgresql">
       <setupTask
           xsi:type="maven:MavenImportTask">

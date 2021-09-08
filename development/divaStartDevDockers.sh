@@ -45,19 +45,34 @@ diva-cora-docker-fedora-3.2.1:1.1-SNAPSHOT
 echo "connecting fedora docker to eclipseForCoraNet to access from tomcat and main application"
 docker network connect eclipseForCoraNet diva-docker-fedora
 
-echo "removing previous postgresql with diva data"
-docker rm diva-cora-docker-postgresql
-echo "starting postgresql with diva data"
-docker run -d --name diva-cora-docker-postgresql --restart always  \
---net-alias=postgres-diva \
+echo "removing previous postgresql with diva mock data"
+docker rm diva-docker-mock-classic-postgresql
+echo "starting postgresql with diva mock data"
+docker run -d --name diva-docker-mock-classic-postgresql --restart always  \
+--net-alias=postgres-mock-classic-diva \
 -p 35435:5432 \
 --network=eclipseForDivaNet \
 -e POSTGRES_DB=diva \
 -e POSTGRES_USER=diva \
 -e POSTGRES_PASSWORD=diva \
-diva-cora-docker-postgresql 
+diva-docker-mock-classic-postgresql:1.0-SNAPSHOT 
 
-echo "connecting postgresq docker to eclipseForCoraNet to access from tomcat and main application"
+echo "connecting postgresql mock docker to eclipseForCoraNet to access from tomcat and main application"
+docker network connect eclipseForCoraNet diva-docker-mock-classic-postgresql
+
+echo "removing previous postgresql with diva data"
+docker rm diva-cora-docker-postgresql
+echo "starting postgresql with diva data"
+docker run -d --name diva-cora-docker-postgresql --restart always  \
+--net-alias=postgres-diva \
+-p 35436:5432 \
+--network=eclipseForDivaNet \
+-e POSTGRES_DB=diva \
+-e POSTGRES_USER=diva \
+-e POSTGRES_PASSWORD=diva \
+diva-cora-docker-postgresql:10.0-SNAPSHOT 
+
+echo "connecting postgresql docker to eclipseForCoraNet to access from tomcat and main application"
 docker network connect eclipseForCoraNet diva-cora-docker-postgresql
 
 echo "starting diva indexer"
