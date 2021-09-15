@@ -49,7 +49,7 @@ RUN dnf clean all && \
   npm -y && \
   dnf clean all
   
-RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2021-06/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
+RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2021-09/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
@@ -58,7 +58,7 @@ RUN touch /home/$user/.gitconfig
 
 RUN chown $user:$user /home/$user -R
 
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-10/v10.0.10/bin/apache-tomcat-10.0.10.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-10/v10.0.11/bin/apache-tomcat-10.0.11.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
