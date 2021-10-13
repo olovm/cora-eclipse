@@ -58,7 +58,7 @@ SEARCH0="cora-solrsearch "
 ALL_SEARCH=$SEARCH0
 
 #PARENT #COMMON #CLIENT
-INDEX0="cora-indexmessenger cora-synchronizer "
+INDEX0="cora-indexmessenger cora-synchronizer cora-classicfedorasynchronizer "
 INDEX_CONTAINER="cora-docker-synchronizer "
 ALL_INDEDX=$INDEX0" "$INDEX_DEPLOYMENT
 
