@@ -1,5 +1,4 @@
 #! /bin/bash
-
 echo "starting diva synchronizer"
 docker run -d --name diva-docker-synchronizer --rm \
 -p 38482:8080 \
@@ -29,7 +28,7 @@ docker run -d --name diva-postgres-fcrepo --rm \
 -e POSTGRES_DB=fedora32 \
 -e POSTGRES_USER=fedoraAdmin \
 -e POSTGRES_PASSWORD=fedora \
-diva-cora-docker-fcrepo-postgresql:1.1-SNAPSHOT postgres 
+diva-cora-docker-fcrepo-postgresql:1.1-SNAPSHOT postgres
 
 echo "waiting 10s for postresql to start up"
 sleep 10
@@ -55,7 +54,7 @@ docker run -d --name diva-docker-mock-classic-postgresql --restart always  \
 -e POSTGRES_DB=diva \
 -e POSTGRES_USER=diva \
 -e POSTGRES_PASSWORD=diva \
-diva-docker-mock-classic-postgresql:1.0-SNAPSHOT 
+diva-docker-mock-classic-postgresql:1.0-SNAPSHOT
 
 echo "connecting postgresql mock docker to eclipseForCoraNet to access from tomcat and main application"
 docker network connect eclipseForCoraNet diva-docker-mock-classic-postgresql
@@ -70,25 +69,25 @@ docker run -d --name diva-cora-docker-postgresql --restart always  \
 -e POSTGRES_DB=diva \
 -e POSTGRES_USER=diva \
 -e POSTGRES_PASSWORD=diva \
-diva-cora-docker-postgresql:10.0-SNAPSHOT 
+diva-cora-docker-postgresql:10.0-SNAPSHOT
 
 echo "connecting postgresql docker to eclipseForCoraNet to access from tomcat and main application"
 docker network connect eclipseForCoraNet diva-cora-docker-postgresql
 
-echo "starting diva indexer"
-docker run -d  --name diva-docker-index -rm \
---restart unless-stopped \
+echo "starting diva classic fedora synchronizer"
+docker run -d  --name diva-classic-fedora-synchronizer \
 --network=eclipseForCoraNet \
---network-alias=indexer \
--e hostname="diva-docker-fedora" \
--e port="61616" \
--e routingKey="fedora.apim.update" \
--e username="fedoraAdmin" \
--e password="fedora" \
--e appTokenVerifierUrl="http://eclipse202109forcora2:8182/apptokenverifier/" \
--e baseUrl="http://eclipse202109forcora2:8082/diva/rest/" \
--e userId="coraUser:490742519075086" \
--e appToken="2e57eb36-55b9-4820-8c44-8271baab4e8e" \
-diva-docker-index:1.0-SNAPSHOT
-#can be called from host: http://localhost:38482/synchronizer/synchronizer/index?recordType=organisation&recordId=1
-
+-e messaginghostname="diva-docker-fedora" \
+-e messagingport="61616" \
+-e messagingroutingKey="fedora.apim.update" \
+-e messagingusername="fedoraAdmin" \
+-e messagingpassword="fedora" \
+-e databaseurl="jdbc:postgresql://diva-cora-docker-postgresql:5432/diva" \
+-e databaseuser="diva" \
+-e databasepassword="diva" \
+-e fedorabaseUrl="http://diva-docker-fedora:8088/fedora/" \
+-e coraapptokenVerifierUrl="http://eclipse202109forcora2:8182/apptokenverifier/" \
+-e corabaseUrl="http://eclipse202109forcora2:8082/diva/rest/" \
+-e corauserId="coraUser:490742519075086" \
+-e coraapptoken="2e57eb36-55b9-4820-8c44-8271baab4e8e" \
+diva-docker-classicfedorasynchronizer:1.0-SNAPSHOT
