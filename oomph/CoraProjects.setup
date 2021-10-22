@@ -2603,6 +2603,39 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="diva-docker-classicfedorasynchronizer">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.diva.docker.classicfedorasynchronizer.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.diva.docker.classicfedorasynchronizer"
+          location="${workspace.location}/diva-docker-classicfedorasynchronizer"
+          remoteURI="https://github.com/lsu-ub-uu/diva-docker-classicfedorasynchronizer"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>diva-cora-docker-fcrepo-postgresql</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/diva-cora-docker-fcrepo-postgresql</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-clientdata">
       <setupTask
           xsi:type="maven:MavenImportTask">
