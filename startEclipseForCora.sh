@@ -19,10 +19,10 @@ fi
 echo "Container runtime will be "${CONTAINERRUNTIME}
 
 if [ ! $USER ]; then
-  	echo "You must specify the userName used when starting eclipse202109forcora3"
+  	echo "You must specify the userName used when starting eclipse202112forcora1"
 else
 	#${CONTAINERRUNTIME} run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
-cd eclipse202109forcora3
+cd eclipse202112forcora1
 #docker-compose run -e DISPLAY=$DISPLAY\
 #${CONTAINERRUNTIME} run --rm -ti --privileged --net=host --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
 ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
@@ -55,8 +55,8 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host --env="QT_X11_NO_MITSH
  -p 38091:8091\
  -p 38092:8092\
  --network=eclipseForCoraNet\
- --name eclipse202109forcora3\
- eclipse202109forcora3 $2
+ --name eclipse202112forcora1\
+ eclipse202112forcora1 $2
  cd ../
 fi
 
