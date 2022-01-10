@@ -235,12 +235,14 @@
         label="Extra plugins for Cora Development">
       <requirement
           name="org.testng.eclipse.feature.group"
-          versionRange="7.4.0"/>
+          versionRange="7.4.0"
+          optional="true"/>
       <requirement
           name="de.jcup.basheditor.feature.group"/>
       <requirement
           name="org.testng.eclipse.maven.feature.feature.group"
-          versionRange="7.4.0"/>
+          versionRange="7.4.0"
+          optional="true"/>
       <requirement
           name="com.github.spotbugs.plugin.eclipse.feature.group"/>
       <requirement
