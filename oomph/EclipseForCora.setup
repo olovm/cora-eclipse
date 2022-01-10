@@ -234,11 +234,13 @@
         xsi:type="setup.p2:P2Task"
         label="Extra plugins for Cora Development">
       <requirement
-          name="org.testng.eclipse.feature.group"/>
+          name="org.testng.eclipse.feature.group"
+          versionRange="7.4.0"/>
       <requirement
           name="de.jcup.basheditor.feature.group"/>
       <requirement
-          name="org.testng.eclipse.maven.feature.feature.group"/>
+          name="org.testng.eclipse.maven.feature.feature.group"
+          versionRange="7.4.0"/>
       <requirement
           name="com.github.spotbugs.plugin.eclipse.feature.group"/>
       <requirement
@@ -923,6 +925,5 @@
       </setupTask>
     </setupTask>
   </version>
-  
   <description>EclipseForCora provides an Eclipse develepment environment for Cora.</description>
 </setup:Product>
