@@ -234,15 +234,7 @@
         xsi:type="setup.p2:P2Task"
         label="Extra plugins for Cora Development">
       <requirement
-          name="org.testng.eclipse.feature.group"
-          versionRange="7.4.0"
-          optional="true"/>
-      <requirement
           name="de.jcup.basheditor.feature.group"/>
-      <requirement
-          name="org.testng.eclipse.maven.feature.feature.group"
-          versionRange="7.4.0"
-          optional="true"/>
       <requirement
           name="com.github.spotbugs.plugin.eclipse.feature.group"/>
       <requirement
@@ -261,8 +253,6 @@
           url="http://eclipse.sonarlint.org"/>
       <repository
           url="https://de-jcup.github.io/update-site-eclipse-bash-editor/update-site/"/>
-      <repository
-          url="https://testng.org/testng-eclipse-update-site/"/>
       <repository
           url="http://spotbugs.github.io/eclipse/"/>
       <repository
