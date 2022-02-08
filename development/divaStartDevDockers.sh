@@ -1,4 +1,5 @@
 #! /bin/bash
+
 echo "starting diva synchronizer"
 docker run -d --name diva-docker-synchronizer --rm \
 -p 38482:8080 \
@@ -74,6 +75,11 @@ diva-cora-docker-postgresql:10.0-SNAPSHOT
 echo "connecting postgresql docker to eclipseForCoraNet to access from tomcat and main application"
 docker network connect eclipseForCoraNet diva-cora-docker-postgresql
 
+
+
+echo "waiting 10s for postresql to start up"
+sleep 10
+
 echo "starting diva classic fedora synchronizer"
 docker run -d  --name diva-classic-fedora-synchronizer \
 --network=eclipseForCoraNet \
@@ -91,3 +97,4 @@ docker run -d  --name diva-classic-fedora-synchronizer \
 -e corauserId="coraUser:490742519075086" \
 -e coraapptoken="2e57eb36-55b9-4820-8c44-8271baab4e8e" \
 diva-docker-classicfedorasynchronizer:1.0-SNAPSHOT
+

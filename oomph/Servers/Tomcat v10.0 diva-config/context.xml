@@ -72,4 +72,8 @@
 	<Parameter name="fedoraPassword" value="changeit" override="false"/>
 	<!-- set to none here, to not call classic in dev environment -->
 	<Parameter name="classicListUpdateURL" value="" override="false"/> 
+	<!-- set to none here, to not call classic in dev environment -->
+	<Parameter name="authorityIndexUrl" value="" override="false" />
+<!-- 	<Parameter name="authorityIndexUrl" value="http://test.diva-portal.org:8082/authority/rest/" -->
+<!-- 		override="false" /> -->
 </Context>
