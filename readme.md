@@ -1,3 +1,6 @@
+There is currently a problem with testng, run on branch testng740 as described under the heading 
+"Updating with a new non master version of eclipse dev environment" (can be run when doing a new install)
+
 # cora-eclipse
 Cora-eclipse is a project to enable easy setup of an Eclipse install for Cora development, using Eclipse and Docker.</br>
 I am running this on linux so, change as needed for other platforms.
