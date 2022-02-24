@@ -35,7 +35,7 @@ ALL_GATEKEEPER=$GATEKEEPER0" "$GATEKEEPER_IMPLEMENTATION" "$GATEKEEPER_DEPLOYMEN
 CORE0="cora-storage cora-search cora-searchstorage cora-beefeater "
 CORE1="cora-bookkeeper "
 CORE2="cora-spider "
-CORE3="cora-metacreator cora-gatekeeperclient cora-fedora"
+CORE3="cora-metacreator cora-gatekeeperclient cora-fedora cora-fedora3x"
 CORE4="cora-therest "
 ALL_CORE=$CORE0" "$CORE1" "$CORE2" "$CORE3" "$CORE4
 

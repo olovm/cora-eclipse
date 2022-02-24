@@ -994,11 +994,43 @@
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>cora-fedora</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-fedora</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-fedora3x">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.fedora3x.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.fedora3x"
+          location="${workspace.location}/cora-fedora3x"
+          remoteURI="https://github.com/lsu-ub-uu/cora-fedora">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-fedora3x</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-fedora3x</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
