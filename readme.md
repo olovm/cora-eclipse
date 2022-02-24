@@ -1,3 +1,6 @@
+There is currently a problem with testng, run on branch testng740 as described under the heading 
+"Updating with a new non master version of eclipse dev environment" (can be run when doing a new install)
+
 # cora-eclipse
 Cora-eclipse is a project to enable easy setup of an Eclipse install for Cora development, using Eclipse and Docker.</br>
 I am running this on linux so, change as needed for other platforms.
@@ -183,7 +186,7 @@ Given a Marketplace install URL (https://marketplace.eclipse.org/marketplace-cli
 ### exporting data from connected databases
 connect to shell in devEnvironment:
 
-docker exec -it eclipse202112forcora2 bash 
+docker exec -it eclipse202112forcora3 bash 
 
 to export data from running DiVA db run:
 pg_dump -U diva -h diva-cora-docker-postgresql -p 5432 -t organisation diva > ~/workspace/diva-cora-docker-postgresql/docker/data/exported.sql

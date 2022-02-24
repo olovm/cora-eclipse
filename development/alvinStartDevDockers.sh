@@ -11,7 +11,7 @@ docker start alvin-cora-solr
 #docker run -d --name alvin-docker-fedora --rm \
 echo "starting fedora"
 docker run -d --name alvin-docker-fedora \
--p 38080:8080 \
+-p 38088:8080 \
 --network=eclipseForAlvinNet \
 cora-docker-fedora:1.0-SNAPSHOT
 
