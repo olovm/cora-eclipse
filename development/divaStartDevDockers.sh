@@ -98,3 +98,10 @@ docker run -d  --name diva-classic-fedora-synchronizer \
 -e coraapptoken="2e57eb36-55b9-4820-8c44-8271baab4e8e" \
 diva-docker-classicfedorasynchronizer:1.0-SNAPSHOT
 
+
+echo ""
+echo "starting fitnesse HttpListener"
+docker run -d --net=eclipseForCoraNet  -p 11111:11111 --name diva-fitnesse-httplistener \
+diva-cora-docker-fitnesse:1.1-SNAPSHOT \
+java -classpath /fitnesse/divacorafitnesse.jar \
+se.uu.ub.cora.fitnesseintegration.httplistener.HttpListener 11111

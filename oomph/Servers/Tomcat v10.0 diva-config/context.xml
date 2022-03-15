@@ -66,14 +66,17 @@
 		username="diva" password="diva" maxTotal="20" maxIdle="10"
 		maxWaitMillis="-1" />
 	
-	<Parameter name="fedoraURL" value="https://diva-docker-fedora:8443/fedora/"
+<!-- 	<Parameter name="fedoraURL" value="https://diva-docker-fedora:8443/fedora/" -->
+<!-- 		override="false"/> -->
+	<Parameter name="fedoraURL" value="http://diva-fitnesse-httplistener:11111/fedoraURL/"
 		override="false"/>
 	<Parameter name="fedoraUsername" value="fedoraAdmin" override="false"/>
 	<Parameter name="fedoraPassword" value="changeit" override="false"/>
 	<!-- set to none here, to not call classic in dev environment -->
-	<Parameter name="classicListUpdateURL" value="" override="false"/> 
+<!-- 	<Parameter name="classicListUpdateURL" value="" override="false"/>  -->
+	<Parameter name="classicListUpdateURL" value="http://diva-fitnesse-httplistener:11111/classicListUpdateURL/" override="false"/> 
 	<!-- set to none here, to not call classic in dev environment -->
-	<Parameter name="authorityIndexUrl" value="" override="false" />
+	<Parameter name="authorityIndexUrl" value="http://diva-fitnesse-httplistener:11111/authorityIndexUrl/" override="false" />
 <!-- 	<Parameter name="authorityIndexUrl" value="http://test.diva-portal.org:8082/authority/rest/" -->
 <!-- 		override="false" /> -->
 </Context>
