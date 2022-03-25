@@ -238,8 +238,6 @@
       <requirement
           name="de.jcup.basheditor.feature.group"/>
       <requirement
-          name="org.testng.eclipse.maven.feature.feature.group"/>
-      <requirement
           name="com.github.spotbugs.plugin.eclipse.feature.group"/>
       <requirement
           name="org.sonarlint.eclipse.feature.feature.group"/>
