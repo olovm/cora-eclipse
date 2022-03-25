@@ -50,7 +50,7 @@ JS_CONTAINER="cora-docker-jsclient "
 ALL_JS=$JS" "$JS_CONTAINER
 
 #PARENT, COMMON, CORA, CORE
-STORAGE0="cora-sqldatabase cora-basicstorage cora-sqlstorage "
+STORAGE0="cora-sqldatabase cora-basicstorage cora-sqlstorage cora-fedoraarchive "
 ALL_STORAGE=$STORAGE0
 
 #PARENT, COMMON, CORA, CORE

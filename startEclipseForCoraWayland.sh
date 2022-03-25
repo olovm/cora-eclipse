@@ -19,10 +19,10 @@ fi
 echo "Container runtime will be "${CONTAINERRUNTIME}
 
 if [ ! $USER ]; then
-  	echo "You must specify the userName used when starting eclipse202112forcora3"
+  	echo "You must specify the userName used when starting eclipse202203forcora1"
 else
 	#${CONTAINERRUNTIME} run --rm -ti --privileged --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
-cd eclipse202112forcora3
+cd eclipse202203forcora1
 #docker-compose run -e DISPLAY=$DISPLAY\
 #${CONTAINERRUNTIME} run --rm -ti --privileged --net=host --ipc=host --env="QT_X11_NO_MITSHM=1"  -e DISPLAY=$DISPLAY \
 ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host \
@@ -33,10 +33,10 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host \
  -v $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:/tmp/$WAYLAND_DISPLAY \
  -v /var/run/docker.sock:/var/run/docker.sock\
  -v /tmp/.X11-unix:/tmp/.X11-unix\
- -v /mnt/depot/cora/eclipse202112forcora3/workspace:/home/$USER/workspace\
- -v /mnt/depot/cora/eclipse202112forcora3/eclipse:/home/$USER/eclipse\
- -v /mnt/depot/cora/eclipse202112forcora3/.eclipse:/home/$USER/.eclipse\
- -v /mnt/depot/cora/eclipse202112forcora3/.saros:/home/$USER/.saros\
+ -v /mnt/depot/cora/eclipse202203forcora1/workspace:/home/$USER/workspace\
+ -v /mnt/depot/cora/eclipse202203forcora1/eclipse:/home/$USER/eclipse\
+ -v /mnt/depot/cora/eclipse202203forcora1/.eclipse:/home/$USER/.eclipse\
+ -v /mnt/depot/cora/eclipse202203forcora1/.saros:/home/$USER/.saros\
  -v /mnt/depot/cora/m2:/home/$USER/.m2\
  -v /mnt/depot/cora/eclipseP2:/home/$USER/.p2\
  -v /mnt/depot/cora/.gitconfig:/home/$USER/.gitconfig\
@@ -59,8 +59,8 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host \
  -p 38091:8091\
  -p 38092:8092\
  --network=eclipseForCoraNet\
- --name eclipse202112forcora3\
- eclipse202112forcora3 $2
+ --name eclipse202203forcora1\
+ eclipse202203forcora1 $2
  cd ../
 fi
 
