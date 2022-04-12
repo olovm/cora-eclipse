@@ -1,12 +1,12 @@
 #! /bin/bash
 
-ECLIPSE="cora-eclipse"
+ECLIPSE="cora-eclipse "
 
 PARENT0="cora-parent "
 
 #PARENT
 COMMON1="cora-testutils cora-logger "
-COMMON2="cora-httphandler cora-json cora-messaging "
+COMMON2="cora-httphandler cora-json cora-messaging cora-password "
 COMMON_IMPLEMENTATION="cora-log4j cora-activemq cora-rabbitmq "
 ALL_COMMON=$COMMON1" "$COMMON2" "$COMMON_IMPLEMENTATION
 
@@ -15,7 +15,7 @@ COMMON_PURE_CONTAINER="cora-docker-tomcat cora-docker-java cora-docker-solr cora
 COMMON_PURE_CONTAINER+="cora-docker-fedora cora-docker-fedora32 cora-docker-fedora32-client cora-docker-fedora38"
 #PARENT, COMMON
 CORA0="cora-metadata cora-data "
-CORA1="cora-converter "
+CORA1="cora-converter cora-testspies "
 CORA_IMPLEMENTATION="cora-xmlutils cora-xmlconverter cora-basicdata "
 ALL_CORA=$CORA0" "$CORA1" "$CORA_IMPLEMENTATION
 
