@@ -174,6 +174,70 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-testspies">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.testspies.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.testspies"
+          location="${workspace.location}/cora-testspies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-testspies">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-testspies</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-testspies</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-password">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.password.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.password"
+          location="${workspace.location}/cora-password"
+          remoteURI="https://github.com/lsu-ub-uu/cora-password">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-password</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-password</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-converter">
       <setupTask
           xsi:type="maven:MavenImportTask">
