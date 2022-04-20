@@ -23,7 +23,8 @@ ALL_CORA=$CORA0" "$CORA1" "$CORA_IMPLEMENTATION
 LOGIN0="cora-gatekeepertokenprovider cora-apptokenstorage "
 LOGIN_DEPLOYMENT="cora-idplogin cora-apptokenverifier cora-apptokenverifier-war "
 LOGIN_CONTAINER="cora-docker-idplogin cora-docker-apptokenverifier "
-ALL_LOGIN=$LOGIN0" "$LOGIN_DEPLOYMENT
+#ALL_LOGIN=$LOGIN0" "$LOGIN_DEPLOYMENT
+ALL_LOGIN=$LOGIN0
 
 #PARENT, COMMON, CORA
 GATEKEEPER0="cora-gatekeeper "
@@ -60,7 +61,7 @@ ALL_SEARCH=$SEARCH0
 #PARENT #COMMON #CLIENT
 INDEX0="cora-indexmessenger cora-synchronizer cora-classicfedorasynchronizer "
 INDEX_CONTAINER="cora-docker-synchronizer "
-ALL_INDEDX=$INDEX0" "$INDEX_DEPLOYMENT
+ALL_INDEX=$INDEX0" "$INDEX_DEPLOYMENT
 
 #PARENT #COMMON #CLIENT
 VALIDATION0="cora-fitnesseintegration "
@@ -68,7 +69,6 @@ ALL_VALIDATION=$VALIDATION0
 
 #PARENT, COMMON, CORA, CORE, STORAGE
 SYSTEMONE0="systemone-metadata "
-#SYSTEMONE_DEPLOYMENT="systemone systemone-gatekeeper-war systemone-apptoken-war systemone-idplogin-war "
 SYSTEMONE_DEPLOYMENT="systemone systemone-gatekeeper-war "
 SYSTEMONE_VALIDATION="cora-fitnesse "
 SYSTEMONE_CONTAINER="cora-docker-gatekeeper systemone-docker systemone-docker-fitnesse "
@@ -95,8 +95,8 @@ ALL_DIVA=$DIVA0" "$DIVA_DEPLOYMENT" "$DIVA_VALIDATION
 
 
 ALL_JAVA=$PARENT0" "$ALL_COMMON" "$ALL_CORA" "$ALL_LOGIN" "$ALL_GATEKEEPER" "$ALL_CORE" "
-ALL_JAVA+=$ALL_CLIENT" "$ALL_STORAGE" "$ALL_SEARCH" "$ALL_INDEDX" "$ALL_VALIDATION" "
-ALL_JAVA+=$ALL_SYSTEMONE" "$ALL_ALVIN" "$ALL_DIVA
+ALL_JAVA+=$ALL_CLIENT" "$ALL_STORAGE" "$ALL_SEARCH" "$ALL_INDEX" "$ALL_VALIDATION" "
+ALL_JAVA+=$LOGIN_DEPLOYMENT" "$ALL_SYSTEMONE" "$ALL_ALVIN" "$ALL_DIVA
 
 DEV_CONTAINER=$COMMON_PURE_CONTAINER" "$INDEX_CONTAINER" "$ALVIN_DEV_CONTAINER" "$DIVA_DEV_CONTAINER
 
