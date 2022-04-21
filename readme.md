@@ -63,7 +63,7 @@ start the eclipse installer (oomph). </br>
  6. Fill in path for "Installation location": set it to /home/yourUserName/eclipse
  5. Choose Workspace location rule: "Located in the absolute folder location"
  6. Fill in path for "Workspace location": /home/yourUserName/workspace
- 7. Fill in path for "JRE 16 Location": /usr/lib/jvm/**java-17-openjdk**
+ 7. Fill in path for "JRE 16 Location": /usr/lib/jvm/**java-18-openjdk**
  
  next step
  
@@ -196,5 +196,5 @@ Add the following to the top of the page, then use remoteDebugging such as DivaF
 
 ```
 !path {java.class.path}
-!define COMMAND_PATTERN {/usr/lib/jvm/java-17-openjdk/bin/java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -cp %p %m}
+!define COMMAND_PATTERN {/usr/lib/jvm/java-18-openjdk/bin/java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -cp %p %m}
 ```
