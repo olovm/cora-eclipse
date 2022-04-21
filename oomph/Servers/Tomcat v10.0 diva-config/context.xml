@@ -68,6 +68,7 @@
 	
 <!-- 	<Parameter name="fedoraURL" value="https://diva-docker-fedora:8443/fedora/" -->
 <!-- 		override="false"/> -->
+	<Parameter name="fedoraArchiveURL" value="http://not_in_use:8080/fcrepo/rest/" override="false" />
 	<Parameter name="fedoraURL" value="http://diva-fitnesse-httplistener:11111/fedoraURL/"
 		override="false"/>
 	<Parameter name="fedoraUsername" value="fedoraAdmin" override="false"/>

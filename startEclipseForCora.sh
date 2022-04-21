@@ -57,6 +57,7 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host --env="QT_X11_NO_MITSH
  -p 38092:8092\
  --network=eclipseForCoraNet\
  --name eclipse202203forcora2\
+ --network-alias=eclipse\
  eclipse202203forcora2 $2
  cd ../
 fi

@@ -6,8 +6,8 @@ docker run -d --name diva-docker-synchronizer --rm \
 --network=eclipseForCoraNet \
 --network-alias=synchronizer \
 -e "JAVA_OPTS=\
--DapptokenVerifierURL=http://eclipse202203forcora2:8182/apptokenverifier/ \
--DbaseURL=http://eclipse202203forcora2:8082/diva/rest/ \
+-DapptokenVerifierURL=http://eclipse:8182/apptokenverifier/ \
+-DbaseURL=http://eclipse:8082/diva/rest/ \
 -DuserId=coraUser:490742519075086 \
 -DappToken=2e57eb36-55b9-4820-8c44-8271baab4e8e" \
 cora-docker-synchronizer:1.0-SNAPSHOT
@@ -92,8 +92,8 @@ docker run -d  --name diva-classic-fedora-synchronizer \
 -e databaseuser="diva" \
 -e databasepassword="diva" \
 -e fedorabaseUrl="http://diva-docker-fedora:8088/fedora/" \
--e coraapptokenVerifierUrl="http://eclipse202203forcora2:8182/apptokenverifier/" \
--e corabaseUrl="http://eclipse202203forcora2:8082/diva/rest/" \
+-e coraapptokenVerifierUrl="http://eclipse:8182/apptokenverifier/" \
+-e corabaseUrl="http://eclipse:8082/diva/rest/" \
 -e corauserId="coraUser:490742519075086" \
 -e coraapptoken="2e57eb36-55b9-4820-8c44-8271baab4e8e" \
 diva-docker-classicfedorasynchronizer:1.0-SNAPSHOT
