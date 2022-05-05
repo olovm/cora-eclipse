@@ -37,8 +37,10 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host --env="QT_X11_NO_MITSH
  -v PARENTDIR/eclipseP2:/home/$USER/.p2\
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
  -v PARENTDIR/ssh:/home/$USER/.ssh\
+ -v PARENTDIR/sharedArchive:/tmp/sharedArchive\
  -e user=$USER\
  -e HOSTBASEDIR=$BASEDIR\
+ -e sharedArchive=PARENTDIR/sharedArchive\
  -p 39876:9876\
  -p 38080:8080\
  -p 38180:8180\

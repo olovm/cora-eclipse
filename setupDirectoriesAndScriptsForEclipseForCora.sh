@@ -23,6 +23,10 @@ createDirectories(){
   	mkdir $INSTALLDIR/workspace
  	mkdir $PARENTDIR/m2
   	mkdir $PARENTDIR/eclipseP2
+  	mkdir $PARENTDIR/sharedArchive
+  	mkdir $PARENTDIR/sharedArchive/systemOne
+  	mkdir $PARENTDIR/sharedArchive/alvin
+  	mkdir $PARENTDIR/sharedArchive/diva
 }
 	
 changeAndCopyScripts(){
