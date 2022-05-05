@@ -2,7 +2,7 @@
 
 echo "Running setupDirectoriesAndScriptsForEclipseForCora..."
 
-#USER=$1
+USER=$1
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname $SCRIPT)
 PARENTDIR="$(dirname "$BASEDIR")"
@@ -56,8 +56,14 @@ createGitConfigFile(){
 	touch $PARENTDIR/.gitconfig
 }
 
+createArchiveReadableFile(){
+	rm $PARENTDIR/archiveReadable
+	echo "bindfs --map=root/$USER:@root/@$USER /tmp/sharedArchive/ /tmp/sharedArchiveReadable/" | $PARENTDIR/archiveReadable.sh
+}
+
 if [ ! -d $INSTALLDIR ]; then
 	createDirectories
 	changeAndCopyScripts
 	createGitConfigFile
+	createArchiveReadableFile
 fi

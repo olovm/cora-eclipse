@@ -28,7 +28,7 @@ elif [ ! $DOCKERGROUPID ] && [ ! -d ./eclipseForCora ]; then
 else
 	if [ ! -d ./eclipse202203forcora3 ]; then
 		./cora-eclipse/buildEclipseForCora.sh $USER $USERID $DOCKERGROUPID $NOCACHE
-		./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh
+		./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh $USER
 		docker network create eclipseForCoraNet
 		docker network create eclipseForAlvinNet
 		docker network create eclipseForDivaNet
