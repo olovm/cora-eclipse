@@ -66,6 +66,8 @@ RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
 
+
+RUN depmod
 RUN modprobe fuse
 RUN mkdir /tmp/sharedArchive /tmp/sharedArchiveReadable
 RUN chown $user:$user /tmp/sharedArchiveReadable -R
