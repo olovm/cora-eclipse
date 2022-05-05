@@ -48,6 +48,7 @@ RUN dnf clean all && \
   git \ 
   nodejs \
   bindfs \
+  fuse \
   npm -y && \
   dnf clean all
   
