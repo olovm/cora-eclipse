@@ -38,7 +38,7 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host --env="QT_X11_NO_MITSH
  -v PARENTDIR/.gitconfig:/home/$USER/.gitconfig\
  -v PARENTDIR/ssh:/home/$USER/.ssh\
  -v PARENTDIR/sharedArchive:/tmp/sharedArchive\
- -v PARENTDIR/sharedArchive.sh:/home/$USER/sharedArchive.sh
+ -v PARENTDIR/archiveReadable.sh:/home/$USER/archiveReadable.sh\
  -e user=$USER\
  -e HOSTBASEDIR=$BASEDIR\
  -e sharedArchive=PARENTDIR/sharedArchive\
