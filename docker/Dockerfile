@@ -47,6 +47,7 @@ RUN dnf clean all && \
   maven \
   git \ 
   nodejs \
+  bindfs \
   npm -y && \
   dnf clean all
   
@@ -63,6 +64,10 @@ RUN wget -O - https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.20/bin/apache-tomc
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
+
+RUN mkdir /tmp/sharedArchive /tmp/sharedArchiveReadable
+RUN chown $user:$user /tmp/sharedArchiveReadable -R
+RUN bindfs --map=root/$user:@root/@${user} /tmp/sharedArchive/ /tmp/sharedArchiveReadable/
 
 USER $user
 
