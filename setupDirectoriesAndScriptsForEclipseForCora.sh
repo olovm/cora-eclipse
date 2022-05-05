@@ -6,7 +6,7 @@ USER=$1
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname $SCRIPT)
 PARENTDIR="$(dirname "$BASEDIR")"
-INSTALLDIR=$PARENTDIR/eclipse202203forcora3
+INSTALLDIR=$PARENTDIR/eclipse202203forcora4
 TOPDIR="$(dirname "$PARENTDIR")"
 
 echo 
@@ -27,7 +27,6 @@ createDirectories(){
   	mkdir $PARENTDIR/sharedArchive/systemOne
   	mkdir $PARENTDIR/sharedArchive/alvin
   	mkdir $PARENTDIR/sharedArchive/diva
-  	mkdir $PARENTDIR/sharedArchiveReadable
 }
 	
 changeAndCopyScripts(){
@@ -60,7 +59,7 @@ createGitConfigFile(){
 createArchiveReadableFile(){
 	rm $PARENTDIR/archiveReadable
 	touch $PARENTDIR/archiveReadable.sh
-	echo "docker exec -u 0 eclipse202203forcora3 bindfs --map=root/olov:@root/@olov /tmp/sharedArchive/ /tmp/sharedArchiveReadable/" > $PARENTDIR/archiveReadable.sh
+	echo "docker exec -u 0 eclipse202203forcora4 bindfs --map=root/$USER:@root/@$USER /tmp/sharedArchive/ /tmp/sharedArchiveReadable/" > $PARENTDIR/archiveReadable.sh
 	chmod +x $PARENTDIR/archiveReadable.sh
 }
 
