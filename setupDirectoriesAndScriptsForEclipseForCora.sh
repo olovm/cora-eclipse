@@ -60,6 +60,7 @@ createArchiveReadableFile(){
 	rm $PARENTDIR/archiveReadable
 	touch $PARENTDIR/archiveReadable.sh
 	echo "bindfs --map=root/$USER:@root/@$USER /tmp/sharedArchive/ /tmp/sharedArchiveReadable/" > $PARENTDIR/archiveReadable.sh
+	chmod +x $PARENTDIR/archiveReadable.sh
 }
 
 if [ ! -d $INSTALLDIR ]; then

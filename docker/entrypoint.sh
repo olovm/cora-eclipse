@@ -42,5 +42,6 @@ elif [ ! -d ~/eclipse/eclipseforcora ]; then
 	runInstaller
 else
 	#SWT_GTK3=0 ~/eclipse/eclipseforcora/eclipse
+	~/archiveReadable.sh
 	~/eclipse/eclipseforcora/eclipse
 fi
