@@ -58,6 +58,7 @@ createGitConfigFile(){
 
 createArchiveReadableFile(){
 	rm $PARENTDIR/archiveReadable
+	touch $PARENTDIR/archiveReadable.sh
 	echo "bindfs --map=root/$USER:@root/@$USER /tmp/sharedArchive/ /tmp/sharedArchiveReadable/" | $PARENTDIR/archiveReadable.sh
 }
 
