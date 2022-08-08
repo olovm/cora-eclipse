@@ -93,7 +93,7 @@ https://newbedev.com/how-to-run-eclipse-in-clean-mode-what-happens-if-we-do-so</
 add </br>
  -clean</br>
 to first row</br>
-</br>
+restart eclipse</br>
 
 Start the environment by running:</br>
 `./eclipseForCora/startEclipseForCora.sh`
