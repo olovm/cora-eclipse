@@ -6,12 +6,12 @@ INDEX_URL='http://localhost:8080/systemone/rest/record/index'
 APP_TOKEN='63e6bd34-02a1-4c82-8001-158c104cae0e'
 start(){
 	login;
-	#indexMetadata 'metadata';
+	indexMetadata 'metadata';
 	indexMetadata 'text';
-	#indexMetadata 'collectTerm';
-	#indexMetadata 'presentation';
-	#indexMetadata 'guiElement';
-	#indexMetadata 'system';
+	indexMetadata 'collectTerm';
+	indexMetadata 'presentation';
+	indexMetadata 'guiElement';
+	indexMetadata 'system';
 	logoutFromCora;
 }
 login(){
