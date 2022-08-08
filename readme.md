@@ -80,6 +80,21 @@ You are now ready to do a first startup of the environment.
 
 
 ## Finishing up, your first startup of the environment
+</br>
+Saros not working on later java > 11 
+https://github.com/saros-project/saros/issues/1142
+https://newbedev.com/how-to-run-eclipse-in-clean-mode-what-happens-if-we-do-so
+
+ docker exec  -it eclipse202206forcora1 bash
+ copy saros.core_0.2.0.jar (fixed one) from 
+ cp /home/olov/workspace/cora-eclipse/docker/saros.core_0.2.0.jar /home/olov/.p2/pool/plugins/
+ nano /home/olov/eclipse/eclipseforcora/eclipse.ini
+  
+add 
+ -clean
+to first row
+</br>
+
 Start the environment by running:</br>
 `./eclipseForCora/startEclipseForCora.sh`
 <br>
