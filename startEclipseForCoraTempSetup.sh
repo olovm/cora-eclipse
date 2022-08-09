@@ -50,6 +50,6 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host\
  --network=eclipseForCoraNet\
  --name eclipse202206forcora1\
  --network-alias=eclipse\
- eclipse202206forcora1 $2
+ eclipse202206forcora1
  cd ../
 fi
