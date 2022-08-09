@@ -45,11 +45,9 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host\
  -v PARENTDIR/sharedArchive:/tmp/sharedArchive\
  -v PARENTDIR/archiveReadable.sh:/home/$USER/archiveReadable.sh\
  -e user=$USER\
- -e HOSTBASEDIR=$BASEDIR\
- -e sharedArchive=PARENTDIR/sharedArchive\
+ -e eclipsebranch=$ECLIPSEBRANCH\
  --network=eclipseForCoraNet\
- --name eclipse202206forcora1\
- --network-alias=eclipse\
+ --name eclipse202103forcora3TempSetup\
  eclipse202206forcora1
  cd ../
 fi
