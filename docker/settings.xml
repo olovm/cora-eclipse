@@ -251,7 +251,7 @@ under the License.
 		<repository>
 			<id>maven-public</id>
 			<name>LSU Nexus Repository</name>
-			<url>http://epc.ub.uu.se/nexus/repository/maven-public/</url>
+			<url>https://epc.ub.uu.se/nexus/repository/maven-public/</url>
 			<releases>
 				<updatePolicy>always</updatePolicy>
 				<enabled>true</enabled>
@@ -267,7 +267,7 @@ under the License.
 		<pluginRepository>
 			<id>maven-public</id>
 			<name>LSU Nexus Repository</name>
-			<url>http://epc.ub.uu.se/nexus/repository/maven-public/</url>
+			<url>https://epc.ub.uu.se/nexus/repository/maven-public/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
