@@ -3929,6 +3929,14 @@
           key="/instance/org.eclipse.debug.ui/Console.limitConsoleOutput"
           value="false"/>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="saros.eclipse">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/saros.eclipse/editor.annotation.contribution.enabled"
+          value="false"/>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
