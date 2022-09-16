@@ -3858,6 +3858,22 @@
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.ui.workbench/org.eclipse.ui.commands"
           value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;org.eclipse.ui.commands>&#xA;&lt;keyBinding commandId=&quot;org.eclipse.m2e.actions.LifeCycleInstall.run&quot; contextId=&quot;org.eclipse.core.runtime.xml&quot; keyConfigurationId=&quot;org.eclipse.ui.defaultAcceleratorConfiguration&quot; keySequence=&quot;ALT+CTRL+I&quot;/>&#xA;&lt;/org.eclipse.ui.commands>"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.workbench/ColorsAndFontsPreferencePage.expandedCategories"
+          value="Torg.eclipse.egit.ui.GitTheme"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.workbench/ColorsAndFontsPreferencePage.selectedElement"
+          value="Forg.eclipse.egit.ui.UncommittedChangeFont"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.UncommittedChangeFont"
+          value="1|Noto Sans|10.0|1|GTK|1|;"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.UncommittedChangeForegroundColor"
+          value="255,120,0"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -3916,10 +3932,12 @@
         name="saros.eclipse">
       <setupTask
           xsi:type="setup:PreferenceTask"
-          key="editor.annotation.contribution.enabled"
-          value="false">
-        <description>Remove highlighting of changes by other when using Saros.</description>
-      </setupTask>
+          key="/instance/saros.eclipse/editor.annotation.contribution.enabled"
+          value="false"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/saros.eclipse/editor.annotation.selectionfillup.enabled"
+          value="false"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
