@@ -21,6 +21,18 @@ docker run -d --name systemone-docker-fedora \
 --mount type=bind,source=$sharedArchive/systemOne,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
 cora-docker-fedora:1.0-SNAPSHOT
 
+echo "removing previous postgresql with cora data"
+docker rm systemone-cora-docker-postgresql
+echo "starting postgresql with cora data"
+docker run -d --name systemone-cora-docker-postgresql --restart always  \
+--net-alias=postgres-systemone \
+-p 35432:5432 \
+--network=eclipseForCoraNet \
+-e POSTGRES_DB=systemone \
+-e POSTGRES_USER=systemone \
+-e POSTGRES_PASSWORD=systemone \
+cora-docker-postgresql:11.0-SNAPSHOT
+
 #--mount type=bind,source=/mnt/depot/cora/sharedArchive,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
 
 #--volumes-from eclipse202209forcora1 \
