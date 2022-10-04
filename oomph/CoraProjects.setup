@@ -174,6 +174,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-initialize">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.initialize.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.initialize"
+          location="${workspace.location}/cora-initialize"
+          remoteURI="https://github.com/lsu-ub-uu/cora-initialize">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-initialize</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-initialize</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-testspies">
       <setupTask
           xsi:type="maven:MavenImportTask">

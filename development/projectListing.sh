@@ -5,7 +5,7 @@ ECLIPSE="cora-eclipse "
 PARENT0="cora-parent "
 
 #PARENT
-COMMON1="cora-testutils cora-logger "
+COMMON1="cora-testutils cora-logger cora-initialize "
 COMMON2="cora-httphandler cora-json cora-messaging cora-password "
 COMMON_IMPLEMENTATION="cora-log4j cora-activemq cora-rabbitmq "
 ALL_COMMON=$COMMON1" "$COMMON2" "$COMMON_IMPLEMENTATION
