@@ -5,16 +5,16 @@ ECLIPSE="cora-eclipse "
 PARENT0="cora-parent "
 
 #PARENT
-COMMON1="cora-testutils cora-logger cora-initialize "
-COMMON2="cora-httphandler cora-json cora-messaging cora-password "
+COMMON1="cora-testutils cora-testutils-spies cora-logger cora-logger-spies cora-initialize cora-initialize-spies "
+COMMON2="cora-httphandler cora-httphandler-spies cora-json cora-messaging cora-password "
 COMMON_IMPLEMENTATION="cora-log4j cora-activemq cora-rabbitmq "
 ALL_COMMON=$COMMON1" "$COMMON2" "$COMMON_IMPLEMENTATION
 
 #PARENT
 COMMON_PURE_CONTAINER="cora-docker-tomcat cora-docker-java cora-docker-solr cora-docker-postgresql "
-COMMON_PURE_CONTAINER+="cora-docker-fedora cora-docker-fedora32 cora-docker-fedora32-client cora-docker-fedora38"
+COMMON_PURE_CONTAINER+="cora-docker-fedora cora-docker-fedora32 cora-docker-fedora32-client cora-docker-fedora38 "
 #PARENT, COMMON
-CORA0="cora-metadata cora-data "
+CORA0="cora-metadata cora-data cora-data-spies "
 CORA1="cora-converter cora-testspies "
 CORA_IMPLEMENTATION="cora-xmlutils cora-xmlconverter cora-basicdata "
 ALL_CORA=$CORA0" "$CORA1" "$CORA_IMPLEMENTATION
@@ -34,9 +34,9 @@ GATEKEEPER_DEPLOYMENT="cora-gatekeeperserver "
 ALL_GATEKEEPER=$GATEKEEPER0" "$GATEKEEPER_IMPLEMENTATION
 
 #PARENT, COMMON, CORA
-CORE0="cora-storage cora-search cora-searchstorage cora-beefeater "
+CORE0="cora-storage cora-storage-spies cora-search cora-searchstorage cora-beefeater "
 CORE1="cora-bookkeeper "
-CORE2="cora-spider "
+CORE2="cora-spider cora-spider-spies "
 CORE3="cora-metacreator cora-gatekeeperclient cora-fedora cora-fedora3x"
 CORE4="cora-therest "
 ALL_CORE=$CORE0" "$CORE1" "$CORE2" "$CORE3" "$CORE4
