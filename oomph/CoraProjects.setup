@@ -174,6 +174,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-logger-spies">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.logger.spies.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.logger.spies"
+          location="${workspace.location}/cora-logger-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-logger-spies">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-logger-spies</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-logger-spies</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-initialize">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -199,6 +231,38 @@
           <detail
               key="target">
             <value>https://github.com/lsu-ub-uu/cora-initialize</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-initialize-spies">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.initialize.spies.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.initialize.spies"
+          location="${workspace.location}/cora-initialize-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-initialize-spies">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-initialize-spies</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-initialize-spies</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -622,6 +686,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-data-spies">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.data.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.data.spies"
+          location="${workspace.location}/cora-data-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-data-spies">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-data-spies</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-data-spies</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-json">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -664,6 +760,21 @@
           xsi:type="maven:MavenImportTask">
         <sourceLocator
             rootFolder="${git.clone.corahttphandler.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-httphandler-spies">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.corahttphandler.spies"
+          location="${workspace.location}/cora-httphandler-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-httphandler-spies"/>
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.corahttphandler.spies.location}"
             locateNestedProjects="true"/>
       </setupTask>
     </setupTask>
@@ -1696,6 +1807,23 @@
           xsi:type="maven:MavenImportTask">
         <sourceLocator
             rootFolder="${git.clone.cora.storage.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-storage-spies">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.storage.spies"
+          location="${workspace.location}/cora-storage-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-storage-spies">
+        <description></description>
+      </setupTask>
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.storage.spies.location}"
             locateNestedProjects="true"/>
       </setupTask>
     </setupTask>
@@ -3208,6 +3336,38 @@
           <detail
               key="target">
             <value>https://github.com/lsu-ub-uu/cora-testutils</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-testutils-spies">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.testutils.spies.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.testutils.spies"
+          location="${workspace.location}/cora-testutils-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-testutils-spies">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-testutils-spies</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-testutils-spies</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
