@@ -20,7 +20,7 @@ CORA_IMPLEMENTATION="cora-xmlutils cora-xmlconverter cora-basicdata "
 ALL_CORA=$CORA0" "$CORA1" "$CORA_IMPLEMENTATION
 
 #PARENT, COMMON, CORA
-LOGIN0="cora-gatekeepertokenprovider cora-apptokenstorage "
+LOGIN0="cora-gatekeepertokenprovider "
 LOGIN_DEPLOYMENT="cora-idplogin cora-apptokenverifier cora-apptokenverifier-war "
 LOGIN_CONTAINER="cora-docker-idplogin cora-docker-apptokenverifier "
 #ALL_LOGIN=$LOGIN0" "$LOGIN_DEPLOYMENT
@@ -28,7 +28,7 @@ ALL_LOGIN=$LOGIN0
 
 #PARENT, COMMON, CORA
 GATEKEEPER0="cora-gatekeeper "
-GATEKEEPER_IMPLEMENTATION="cora-userpicker "
+GATEKEEPER_IMPLEMENTATION="cora-userstorage cora-userpicker "
 GATEKEEPER_DEPLOYMENT="cora-gatekeeperserver "
 #ALL_GATEKEEPER=$GATEKEEPER0" "$GATEKEEPER_IMPLEMENTATION" "$GATEKEEPER_DEPLOYMENT
 ALL_GATEKEEPER=$GATEKEEPER0" "$GATEKEEPER_IMPLEMENTATION

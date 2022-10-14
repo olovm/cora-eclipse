@@ -783,13 +783,13 @@
         name="cora-apptokenstorage">
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.coraapptokenstorage"
-          location="${workspace.location}/cora-apptokenstorage"
-          remoteURI="https://github.com/lsu-ub-uu/cora-apptokenstorage"/>
+          id="git.clone.corauserstorage"
+          location="${workspace.location}/cora-userstorage"
+          remoteURI="https://github.com/lsu-ub-uu/cora-userstorage"/>
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.coraapptokenstorage.location}"
+            rootFolder="${git.clone.corauserstorage.location}"
             locateNestedProjects="true"/>
       </setupTask>
     </setupTask>
