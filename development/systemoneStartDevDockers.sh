@@ -35,4 +35,4 @@ cora-docker-postgresql:11.0-SNAPSHOT
 
 #--mount type=bind,source=/mnt/depot/cora/sharedArchive,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
 
-#--volumes-from eclipse202209forcora2 \
+#--volumes-from eclipse202209forcora3 \
