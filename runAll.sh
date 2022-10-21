@@ -20,13 +20,13 @@ echo cora-eclipse branch: $ECLIPSEBRANCH
 
 
 if [ ! $USER ]; then
-  	echo you must specify the userName to be used when building eclipse202209forcora1
+  	echo you must specify the userName to be used when building eclipse202209forcora2
 elif [ ! $USERID ]; then
-	echo you must specify the userid to be used when building eclipse202209forcora1, use: id -u youruserid 
+	echo you must specify the userid to be used when building eclipse202209forcora2, use: id -u youruserid 
 elif [ ! $DOCKERGROUPID ] && [ ! -d ./eclipseForCora ]; then
-	echo you must specify the dockergroupid to be used when building eclipse202209forcora1, use: getent group docker 
+	echo you must specify the dockergroupid to be used when building eclipse202209forcora2, use: getent group docker 
 else
-	if [ ! -d ./eclipse202209forcora1 ]; then
+	if [ ! -d ./eclipse202209forcora2 ]; then
 		./cora-eclipse/buildEclipseForCora.sh $USER $USERID $DOCKERGROUPID $NOCACHE
 		./cora-eclipse/setupDirectoriesAndScriptsForEclipseForCora.sh $USER
 		docker network create eclipseForCoraNet
@@ -34,5 +34,5 @@ else
 		docker network create eclipseForDivaNet
 	fi
 #	./eclipseForCora/startEclipseForCora.sh $USER
-	./eclipse202209forcora1/startEclipseForCoraTempSetup.sh $USER $ECLIPSEBRANCH
+	./eclipse202209forcora2/startEclipseForCoraTempSetup.sh $USER $ECLIPSEBRANCH
 fi

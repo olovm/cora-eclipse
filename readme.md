@@ -85,7 +85,7 @@ Saros not working on later java > 11 </br>
 https://github.com/saros-project/saros/issues/1142</br>
 https://newbedev.com/how-to-run-eclipse-in-clean-mode-what-happens-if-we-do-so</br>
 
- docker exec  -it eclipse202209forcora1 bash</br>
+ docker exec  -it eclipse202209forcora2 bash</br>
  copy saros.core_0.2.0.jar (fixed one) from </br>
  cp /home/olov/workspace/cora-eclipse/docker/saros.core_0.2.0.jar /home/olov/.p2/pool/plugins/</br>
  nano /home/olov/eclipse/eclipseforcora/eclipse.ini</br>
@@ -201,7 +201,7 @@ Given a Marketplace install URL (https://marketplace.eclipse.org/marketplace-cli
 ### exporting data from connected databases
 connect to shell in devEnvironment:
 
-docker exec -it eclipse202209forcora1 bash 
+docker exec -it eclipse202209forcora2 bash 
 
 to export data from running DiVA db run:
 pg_dump -U diva -h diva-cora-docker-postgresql -p 5432 -t organisation diva > ~/workspace/diva-cora-docker-postgresql/docker/data/exported.sql

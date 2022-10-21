@@ -15,9 +15,17 @@ COMMON_PURE_CONTAINER="cora-docker-tomcat cora-docker-java cora-docker-solr cora
 COMMON_PURE_CONTAINER+="cora-docker-fedora cora-docker-fedora32 cora-docker-fedora32-client cora-docker-fedora38 "
 #PARENT, COMMON
 CORA0="cora-metadata cora-data cora-data-spies "
-CORA1="cora-converter cora-testspies "
+CORA1="cora-converter "
 CORA_IMPLEMENTATION="cora-xmlutils cora-xmlconverter cora-basicdata "
 ALL_CORA=$CORA0" "$CORA1" "$CORA_IMPLEMENTATION
+
+#PARENT, COMMON, CORA
+CORE0="cora-beefeater cora-bookkeeper cora-storage cora-storage-spies "
+CORE1="cora-search cora-searchstorage "
+CORE2="cora-spider cora-spider-spies cora-metadatastorage "
+CORE3="cora-metacreator cora-gatekeeperclient cora-fedora cora-fedora3x"
+CORE4="cora-therest "
+ALL_CORE=$CORE0" "$CORE1" "$CORE2" "$CORE3" "$CORE4
 
 #PARENT, COMMON, CORA
 LOGIN0="cora-gatekeepertokenprovider "
@@ -33,13 +41,6 @@ GATEKEEPER_DEPLOYMENT="cora-gatekeeperserver "
 #ALL_GATEKEEPER=$GATEKEEPER0" "$GATEKEEPER_IMPLEMENTATION" "$GATEKEEPER_DEPLOYMENT
 ALL_GATEKEEPER=$GATEKEEPER0" "$GATEKEEPER_IMPLEMENTATION
 
-#PARENT, COMMON, CORA
-CORE0="cora-storage cora-storage-spies cora-search cora-searchstorage cora-beefeater "
-CORE1="cora-bookkeeper "
-CORE2="cora-spider cora-spider-spies "
-CORE3="cora-metacreator cora-gatekeeperclient cora-fedora cora-fedora3x"
-CORE4="cora-therest "
-ALL_CORE=$CORE0" "$CORE1" "$CORE2" "$CORE3" "$CORE4
 
 #PARENT #COMMON
 CLIENT0="cora-clientdata "
