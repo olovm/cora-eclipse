@@ -232,8 +232,6 @@
       <requirement
           name="org.eclipse.linuxtools.docker.feature.feature.group"/>
       <requirement
-          name="net.mihai-nita.ansicon.feature.group"/>
-      <requirement
           name="saros.feature.feature.group"/>
       <requirement
           name="de.jcup.jenkinseditor.feature.feature.group"/>
@@ -245,8 +243,6 @@
           url="https://de-jcup.github.io/update-site-eclipse-bash-editor/update-site/"/>
       <repository
           url="http://spotbugs.github.io/eclipse/"/>
-      <repository
-          url="https://www.mihai-nita.net/eclipse"/>
       <repository
           url="https://www.saros-project.org/update-site/eclipse"/>
       <repository
