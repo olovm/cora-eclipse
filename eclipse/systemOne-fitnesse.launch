@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
         <listEntry value="/cora-fitnesse"/>
     </listAttribute>
@@ -7,7 +8,7 @@
         <listEntry value="4"/>
     </listAttribute>
     <mapAttribute key="org.eclipse.debug.core.environmentVariables">
-        <mapEntry key="JAVA_HOME" value="/usr/lib/jvm/java-17-openjdk/"/>
+        <mapEntry key="JAVA_HOME" value="/usr/lib/jvm/java-18-openjdk/"/>
     </mapAttribute>
     <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
         <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
@@ -17,11 +18,11 @@
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
     <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
-    <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java17forfitnesse/"/>
+    <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JRE for JavaSE-17/"/>
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="fitnesseMain.FitNesseMain"/>
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="cora-fitnesse"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-p 8090"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="cora-fitnesse"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-DsystemUnderTestUrl=&quot;http://localhost:8080/systemone/&quot; -DappTokenVerifierUrl=&quot;http://localhost:8180/apptokenverifier/&quot; -DidpLoginUrl=&quot;http://localhost:8380/idplogin/&quot; -DgatekeeperServerUrl=&quot;http://localhost:8280/gatekeeperserver/&quot;"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-DsystemUnderTestUrl=&quot;http://localhost:8080/systemone/&quot; -DappTokenVerifierUrl=&quot;http://localhost:8180/apptokenverifier/&quot; -DidpLoginUrl=&quot;http://localhost:8380/idplogin/&quot; -DgatekeeperServerUrl=&quot;http://localhost:8280/gatekeeperserver/&quot; -Djava.security.manager=allow -Dslim.port=9000"/>
 </launchConfiguration>
