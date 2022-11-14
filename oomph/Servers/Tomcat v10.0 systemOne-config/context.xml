@@ -47,11 +47,20 @@
 		override="false" />
 <Parameter name="fedoraArchiveURL" value="http://systemone-docker-fedora:8080/fcrepo/rest/" override="false" />
 	
-<Resource name="jdbc/postgres" auth="Container"
-          type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
-          url="jdbc:postgresql://127.0.0.1:5432/docker"
-          username="docker" password="docker" maxTotal="20" maxIdle="10"
-maxWaitMillis="-1"/>
+<!-- <Resource name="jdbc/postgres" auth="Container" -->
+<!--           type="javax.sql.DataSource" driverClassName="org.postgresql.Driver" -->
+<!--           url="jdbc:postgresql://127.0.0.1:5432/docker" -->
+<!--           username="docker" password="docker" maxTotal="20" maxIdle="10" -->
+<!-- maxWaitMillis="-1"/> -->
+
+	<Parameter name="coraDatabaseLookupName" value="java:/comp/env/jdbc/postgres"
+		override="false" />
+	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
+		driverClassName="org.postgresql.Driver"
+		url="jdbc:postgresql://systemone-cora-docker-postgresql:5432/systemone"
+		username="systemone" password="systemone" maxTotal="20" maxIdle="10"
+		maxWaitMillis="-1" />
+	
 
 <!-- 	<Parameter name="mainSystemDomain" value="http://localhost:8080/" -->
 <!-- 		override="false" /> -->
