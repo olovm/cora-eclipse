@@ -22,9 +22,9 @@ docker run -d --name systemone-docker-fedora \
 cora-docker-fedora:1.0-SNAPSHOT
 
 echo "removing previous postgresql with cora data"
-docker rm systemone-cora-docker-postgresql
+docker rm systemone-docker-postgresql
 echo "starting postgresql with cora data"
-docker run -d --name systemone-cora-docker-postgresql --restart always  \
+docker run -d --name systemone-docker-postgresql --restart always  \
 --net-alias=postgres-systemone \
 -p 35432:5432 \
 --network=eclipseForCoraNet \
