@@ -57,7 +57,7 @@
 		override="false" />
 	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
 		driverClassName="org.postgresql.Driver"
-		url="jdbc:postgresql://systemone-cora-docker-postgresql:5432/systemone"
+		url="jdbc:postgresql://systemone-docker-postgresql:5432/systemone"
 		username="systemone" password="systemone" maxTotal="20000" maxIdle="10"
 		maxWaitMillis="-1" />
 	
