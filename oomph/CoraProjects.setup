@@ -2562,6 +2562,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="alvin-docker-postgresql">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.alvin.docker.postgresql.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.alvin.docker.postgresql"
+          location="${workspace.location}/alvin-docker-postgresql"
+          remoteURI="https://github.com/lsu-ub-uu/alvin-docker-postgresql">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>alvin-docker-postgresql</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/alvin-docker-postgresql</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="alvin-docker-index">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -3040,6 +3072,38 @@
           <detail
               key="target">
             <value>https://github.com/lsu-ub-uu/diva-cora-docker-fcrepo-postgresql</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="diva-docker-postgresql">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.diva.docker.postgresql.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.diva.docker.postgresql"
+          location="${workspace.location}/diva-docker-postgresql"
+          remoteURI="https://github.com/lsu-ub-uu/diva-docker-postgresql">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>diva-docker-postgresql</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/diva-docker-postgresql</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>

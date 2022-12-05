@@ -19,17 +19,17 @@ echo "connecting fedora docker to eclipseForCoraNet to access from tomcat and ma
 docker network connect eclipseForCoraNet alvin-docker-fedora
 
 
-#--net-alias=postgres-alvin \
-echo "removing previous postgresql with Alvin data"
-docker rm alvin-cora-docker-postgresql
-echo "starting postgresql with Alvin data"
-docker run -d --name alvin-cora-docker-postgresql --restart always  \
--p 35436:5432 \
---network=eclipseForAlvinNet \
--e POSTGRES_DB=alvin \
--e POSTGRES_USER=alvin \
--e POSTGRES_PASSWORD=alvin \
-alvin-cora-docker-postgresql-9.6
+echo "removing previous postgresql with cora data"
+docker rm systemone-docker-postgresql
+echo "starting postgresql with cora data"
+docker run -d --name systemone-docker-postgresql --restart always  \
+--net-alias=postgres-systemone \
+-p 35432:5432 \
+--network=eclipseForCoraNet \
+-e POSTGRES_DB=systemone \
+-e POSTGRES_USER=systemone \
+-e POSTGRES_PASSWORD=systemone \
+systemone-docker-postgresql:1.0-SNAPSHOT
 
 echo "connecting postgresq docker to eclipseForCoraNet to access from tomcat and main application"
-docker network connect eclipseForCoraNet alvin-cora-docker-postgresql
+docker network connect eclipseForCoraNet alvin-docker-postgresql

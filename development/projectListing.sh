@@ -82,7 +82,7 @@ ALVIN0="alvin-metadata alvin-mixedstorage alvin-tocorautils "
 ALVIN_DEPLOYMENT="alvin-cora alvin-gatekeeper-war alvin-indexmessenger "
 ALVIN_VALIDATION="alvin-cora-fitnesse "
 ALVIN_DEV_CONTAINER="alvin-cora-docker-fedora alvin-cora-docker-postgresql alvin-docker-index "
-ALVIN_CONTAINER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse "
+ALVIN_CONTAINER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse alvin-docker-postgresql"
 ALL_ALVIN=$ALVIN0" "$ALVIN_DEPLOYMENT" "$ALVIN_VALIDATION
 
 #PARENT, COMMON, CORA, CORE, STORAGE
@@ -92,7 +92,7 @@ DIVA_VALIDATION="diva-cora-fitnesse "
 DIVA_DEV_CONTAINER0="diva-cora-docker-fedora diva-docker-mock-classic-postgresql "
 DIVA_DEV_CONTAINER1="diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
 DIVA_DEV_CONTAINER2="diva-docker-classicfedorasynchronizer diva-cora-docker-fitnesse "
-DIVA_CONTAINER="diva-docker-cora diva-docker-gatekeeper diva-docker-index "
+DIVA_CONTAINER="diva-docker-cora diva-docker-gatekeeper diva-docker-index diva-docker-postgresql"
 DIVA_DEV_CONTAINER=$DIVA_DEV_CONTAINER0" "$DIVA_DEV_CONTAINER1" "$DIVA_DEV_CONTAINER2
 ALL_DIVA=$DIVA0" "$DIVA_DEPLOYMENT" "$DIVA_VALIDATION
 
