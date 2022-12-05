@@ -26,11 +26,14 @@
     <!--
     <Manager pathname="" />
     -->
-    <Parameter name="apptokenVerifierPublicPathToSystem" value="/apptokenverifier/rest/"
-		override="false" />
-	<Parameter name="gatekeeperURL" value="http://localhost:8281/gatekeeperserver/"
-		override="false" />
+    <Parameter name="apptokenVerifierPublicPathToSystem" value="/apptokenverifier/rest/" override="false" />
+	<Parameter name="gatekeeperURL" value="http://localhost:8281/gatekeeperserver/"	override="false" />
 
-   	<Parameter name="storageType" value="memory" override="false" />
-    <Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/alvin/" override="false" />
+    <Parameter name="coraDatabaseLookupName" value="java:/comp/env/jdbc/postgres" override="false" />
+	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
+		driverClassName="org.postgresql.Driver"
+		url="jdbc:postgresql://alvin-docker-postgresql:5432/alvin"
+		username="alvin" password="alvin" maxTotal="20" maxIdle="10"
+		maxWaitMillis="-1" />
+		
 </Context>

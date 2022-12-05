@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.ui.externaltools.ProgramLaunchConfigurationType">
     <mapAttribute key="org.eclipse.debug.core.environmentVariables">
-        <mapEntry key="JAVA_HOME" value="/usr/lib/jvm/java-18-openjdk/"/>
+        <mapEntry key="JAVA_HOME" value="/usr/lib/jvm/java-17-openjdk/"/>
     </mapAttribute>
     <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${workspace_loc:/cora-eclipse/development/mvnCleanInstallDevDocker.sh}"/>
     <stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${workspace_loc}"/>

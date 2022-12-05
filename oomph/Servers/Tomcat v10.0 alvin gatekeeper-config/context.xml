@@ -28,10 +28,9 @@
     -->
     <Parameter name="guestUserId" value="coraUser:5368244264733286" override="false" />
 	
-   	<Parameter name="storageType" value="memory" override="false" />
-    <Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/alvin/" override="false" />
-    <Parameter name="databaseLookupName" value="java:/comp/env/jdbc/postgres"
-		override="false" />
+	<Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/alvin/" override="false" />
+    
+    <Parameter name="databaseLookupName" value="java:/comp/env/jdbc/postgres" override="false" />
 	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
 		driverClassName="org.postgresql.Driver"
 		url="jdbc:postgresql://alvin-cora-docker-postgresql:5432/alvin"
