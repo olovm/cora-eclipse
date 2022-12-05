@@ -1,4 +1,4 @@
-FROM fedora:36
+FROM fedora:37
 # Set a useful default locale
 RUN echo "export LANG=en_US.UTF-8" > /opt/export_LANG.sh
 RUN echo "export LANGUAGE=en_US.UTF-8" >> /opt/export_LANG.sh
@@ -40,6 +40,8 @@ RUN dnf clean all && \
   htop \
   docker \
   java-17-openjdk java-17-openjdk-devel \
+  java-17-openjdk-javadoc java-17-openjdk-javadoc-zip \
+  java-17-openjdk-src \
   java-latest-openjdk java-latest-openjdk-devel \ 
   java-latest-openjdk-javadoc java-latest-openjdk-javadoc-zip \
   java-latest-openjdk-src \
