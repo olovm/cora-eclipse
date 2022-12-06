@@ -4301,6 +4301,14 @@
           key="/instance/saros.eclipse/editor.annotation.contribution.enabled"
           value="false"/>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.egit.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.egit.ui/resourcehistory_show_all_branches"
+          value="true"/>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
