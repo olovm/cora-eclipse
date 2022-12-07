@@ -44,12 +44,12 @@
 		override="false" />
 	<Resource name="jdbc/coraPostgres" auth="Container" type="javax.sql.DataSource"
 		driverClassName="org.postgresql.Driver"
-		url="jdbc:postgresql://diva-cora-postgresql:5432/diva" username="diva" password="diva"
+		url="jdbc:postgresql://diva-postgresql:5432/diva" username="diva" password="diva"
 		maxTotal="20" maxIdle="10" maxWaitMillis="-1" />
 
-	<Parameter name="solrURL" value="http://diva-cora-solr:8983/solr/coracore"
+	<Parameter name="solrURL" value="http://diva-solr:8983/solr/coracore"
 		override="false" />
 
-	<Parameter name="fedoraArchiveURL" value="http://not_in_use:8080/fcrepo/rest/"
+	<Parameter name="fedoraArchiveURL" value="http://diva-fedora:8080/fcrepo/rest/"
 		override="false" />
 </Context>
