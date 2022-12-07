@@ -1,7 +1,7 @@
 #! /bin/bash
 
 echo "starting solr"
-docker run -d --name alvin-cora-solr \
+docker run -d --name alvin-solr \
 --network=eclipseForCoraNet \
 -p 38984:8983 \
 cora-solr:1.0-SNAPSHOT \
@@ -10,7 +10,7 @@ docker start alvin-cora-solr
 
 #docker run -d --name alvin-docker-fedora --rm \
 echo "starting fedora"
-docker run -d --name alvin-docker-fedora \
+docker run -d --name alvin-fedora \
 -p 38088:8080 \
 --network=eclipseForAlvinNet \
 cora-docker-fedora:1.0-SNAPSHOT
@@ -20,11 +20,10 @@ docker network connect eclipseForCoraNet alvin-docker-fedora
 
 
 echo "removing previous postgresql with cora data"
-docker rm alvin-docker-postgresql
+docker rm alvin-postgresql
 echo "starting postgresql with cora data"
-docker run -d --name alvin-docker-postgresql --restart always  \
---net-alias=postgres-alvin \
--p 35432:5432 \
+docker run -d --name alvin-postgresql --restart always  \
+-p 35433:5432 \
 --network=eclipseForAlvinNet \
 -e POSTGRES_DB=alvin \
 -e POSTGRES_USER=alvin \
@@ -32,4 +31,4 @@ docker run -d --name alvin-docker-postgresql --restart always  \
 alvin-docker-postgresql:1.0-SNAPSHOT
 
 echo "connecting postgresql docker to eclipseForCoraNet to access from tomcat and main application"
-docker network connect eclipseForCoraNet alvin-docker-postgresql
+docker network connect eclipseForCoraNet alvin-postgresql

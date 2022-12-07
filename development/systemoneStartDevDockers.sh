@@ -1,7 +1,7 @@
 #! /bin/bash
 
 echo "starting solr"
-docker run -d --name systemone-cora-solr \
+docker run -d --name systemone-solr \
 --network=eclipseForCoraNet \
 -p 38983:8983 \
 cora-solr:1.0-SNAPSHOT \
@@ -15,17 +15,16 @@ echo "/tmp/sharedArchive to store the files for the archive to be able to read i
 echo "using path /tmp/sharedArchive/systemOne."
 #docker run -d --name systemone-docker-fedora --rm \
 echo "starting fedora"
-docker run -d --name systemone-docker-fedora \
+docker run -d --name systemone-fedora \
 -p 38087:8080 \
 --network=eclipseForCoraNet \
 --mount type=bind,source=$sharedArchive/systemOne,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
 cora-docker-fedora:1.0-SNAPSHOT
 
 echo "removing previous postgresql with cora data"
-docker rm systemone-docker-postgresql
+docker rm systemone-postgresql
 echo "starting postgresql with cora data"
-docker run -d --name systemone-docker-postgresql --restart always  \
---net-alias=postgres-systemone \
+docker run -d --name systemone-postgresql --restart always  \
 -p 35432:5432 \
 --network=eclipseForCoraNet \
 -e POSTGRES_DB=systemone \

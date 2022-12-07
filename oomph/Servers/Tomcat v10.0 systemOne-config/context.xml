@@ -14,56 +14,42 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
---><!-- The contents of this file will be loaded for each web application --><Context>
+-->
+<!-- The contents of this file will be loaded for each web application -->
+<Context>
 
-    <!-- Default set of monitored resources. If one of these changes, the    -->
-    <!-- web application will be reloaded.                                   -->
-    <WatchedResource>WEB-INF/web.xml</WatchedResource>
-    <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
-    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+	<!-- Default set of monitored resources. If one of these changes, the -->
+	<!-- web application will be reloaded. -->
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
+	<WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
 
-    <!-- Uncomment this to disable session persistence across Tomcat restarts -->
-    <!--
-    <Manager pathname="" />
-    -->
-    
-    <Parameter name="guestUserId" value="12345" override="false" />
-	
-	<Parameter name="gatekeeperURL" value="http://localhost:8280/gatekeeperserver/"
-		override="false" />
-		
+	<!-- Uncomment this to disable session persistence across Tomcat restarts -->
+	<!-- <Manager pathname="" /> -->
+
 	<Parameter name="dependencyProviderClassName"
 		value="se.uu.ub.cora.therest.initialize.TheRestDependencyProvider" override="false" />
 
-<!--    	<Parameter name="storageType" value="memory" override="false" /> -->
-   	<Parameter name="storageType" value="disk" override="false" />
-    <Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/systemone/" override="false" />
-	<Parameter name="solrURL" value="http://systemone-cora-solr:8983/solr/coracore"
+<!-- 	<Parameter name="guestUserId" value="12345" override="false" /> -->
+
+	<Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/systemone/"
 		override="false" />
-	
-	<Parameter name="theRestPublicPathToSystem" value="/systemone/rest/"
+
+	<Parameter name="theRestPublicPathToSystem" value="/systemone/rest/" override="false" />
+
+	<Parameter name="gatekeeperURL" value="http://localhost:8280/gatekeeperserver/"
 		override="false" />
-	<Parameter name="idpLoginPublicPathToSystem" value="/idplogin/rest/"
-		override="false" />
-<Parameter name="fedoraArchiveURL" value="http://systemone-docker-fedora:8080/fcrepo/rest/" override="false" />
-	
-<!-- <Resource name="jdbc/postgres" auth="Container" -->
-<!--           type="javax.sql.DataSource" driverClassName="org.postgresql.Driver" -->
-<!--           url="jdbc:postgresql://127.0.0.1:5432/docker" -->
-<!--           username="docker" password="docker" maxTotal="20" maxIdle="10" -->
-<!-- maxWaitMillis="-1"/> -->
 
 	<Parameter name="coraDatabaseLookupName" value="java:/comp/env/jdbc/postgres"
 		override="false" />
 	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
 		driverClassName="org.postgresql.Driver"
-		url="jdbc:postgresql://systemone-docker-postgresql:5432/systemone"
-		username="systemone" password="systemone" maxTotal="20000" maxIdle="10"
-		maxWaitMillis="-1" />
-	
+		url="jdbc:postgresql://systemone-postgresql:5432/systemone" username="systemone"
+		password="systemone" maxTotal="20000" maxIdle="10" maxWaitMillis="-1" />
 
-<!-- 	<Parameter name="mainSystemDomain" value="http://localhost:8080/" -->
-<!-- 		override="false" /> -->
-<!-- 	<Parameter name="tokenLogoutURL" value="http://localhost:8180/apptokenverifier/rest/" -->
-<!-- 		override="false" /> -->
+	<Parameter name="solrURL" value="http://systemone-solr:8983/solr/coracore"
+		override="false" />
+
+	<Parameter name="fedoraArchiveURL"
+		value="http://systemone-fedora:8080/fcrepo/rest/" override="false" />
 </Context>

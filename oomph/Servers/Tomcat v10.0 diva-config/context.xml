@@ -14,70 +14,42 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
---><!-- The contents of this file will be loaded for each web application --><Context>
+-->
+<!-- The contents of this file will be loaded for each web application -->
+<Context>
 
-    <!-- Default set of monitored resources. If one of these changes, the    -->
-    <!-- web application will be reloaded.                                   -->
-    <WatchedResource>WEB-INF/web.xml</WatchedResource>
-    <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
-    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+	<!-- Default set of monitored resources. If one of these changes, the -->
+	<!-- web application will be reloaded. -->
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
+	<WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
 
-    <!-- Uncomment this to disable session persistence across Tomcat restarts -->
-    <!--
-    <Manager pathname="" />
-    -->
-    <Parameter name="guestUserId" value="coraUser:5368656924943436" override="false" />
-
-	<Parameter name="appTokenStorageClassName" value="se.uu.ub.cora.storage.AppTokenStorageImp"
-		override="false" />
-	<Parameter name="apptokenVerifierPublicPathToSystem" value="/apptokenverifier/rest/"
-		override="false" />
-	<Parameter name="gatekeeperURL" value="http://localhost:8282/gatekeeperserver/"
-		override="false" />
+	<!-- Uncomment this to disable session persistence across Tomcat restarts -->
+	<!-- <Manager pathname="" /> -->
 
 	<Parameter name="dependencyProviderClassName"
 		value="se.uu.ub.cora.therest.initialize.TheRestDependencyProvider" override="false" />
-<!-- 	<Parameter name="dependencyProviderClassName" -->
-<!-- 		value="se.uu.ub.cora.diva.DivaDependencyProvider" override="false" /> -->
 
-	<Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/diva/" override="false" />
-	<Parameter name="storageType" value="memory" override="false" />
-<!-- 	<Parameter name="storageType" value="disk" override="false" /> -->
+	<Parameter name="guestUserId" value="coraUser:5368656924943436" override="false" />
+
+	<Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/diva/"
+		override="false" />
+
+	<Parameter name="theRestPublicPathToSystem" value="/diva/rest/" override="false" />
+
+	<Parameter name="gatekeeperURL" value="http://localhost:8282/gatekeeperserver/"
+		override="false" />
+
+	<Parameter name="coraDatabaseLookupName" value="java:/comp/env/jdbc/coraPostgres"
+		override="false" />
+	<Resource name="jdbc/coraPostgres" auth="Container" type="javax.sql.DataSource"
+		driverClassName="org.postgresql.Driver"
+		url="jdbc:postgresql://diva-cora-postgresql:5432/diva" username="diva" password="diva"
+		maxTotal="20" maxIdle="10" maxWaitMillis="-1" />
 
 	<Parameter name="solrURL" value="http://diva-cora-solr:8983/solr/coracore"
 		override="false" />
 
-	<Parameter name="theRestPublicPathToSystem" value="/diva/rest/"
+	<Parameter name="fedoraArchiveURL" value="http://not_in_use:8080/fcrepo/rest/"
 		override="false" />
-	<Parameter name="idpLoginPublicPathToSystem" value="/idplogin/rest/"
-		override="false" />
-	
-	<Parameter name="coraDatabaseLookupName" value="java:/comp/env/jdbc/coraPostgres" override="false" />
-	<Resource name="jdbc/coraPostgres" auth="Container" type="javax.sql.DataSource"
-		driverClassName="org.postgresql.Driver"
-		url="jdbc:postgresql://diva-cora-docker-postgresql:5432/diva"
-		username="diva" password="diva" maxTotal="20" maxIdle="10"
-		maxWaitMillis="-1" />
-
-	<Parameter name="databaseLookupName" value="java:/comp/env/jdbc/postgres" override="false" />
-	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
-		driverClassName="org.postgresql.Driver"
-		url="jdbc:postgresql://diva-docker-mock-classic-postgresql:5432/diva"
-		username="diva" password="diva" maxTotal="20" maxIdle="10"
-		maxWaitMillis="-1" />
-	
-<!-- 	<Parameter name="fedoraURL" value="https://diva-docker-fedora:8443/fedora/" -->
-<!-- 		override="false"/> -->
-	<Parameter name="fedoraArchiveURL" value="http://not_in_use:8080/fcrepo/rest/" override="false" />
-	<Parameter name="fedoraURL" value="http://diva-fitnesse-httplistener:11111/fedoraURL/"
-		override="false"/>
-	<Parameter name="fedoraUsername" value="fedoraAdmin" override="false"/>
-	<Parameter name="fedoraPassword" value="changeit" override="false"/>
-	<!-- set to none here, to not call classic in dev environment -->
-<!-- 	<Parameter name="classicListUpdateURL" value="" override="false"/>  -->
-	<Parameter name="classicListUpdateURL" value="http://diva-fitnesse-httplistener:11111/classicListUpdateURL/" override="false"/> 
-	<!-- set to none here, to not call classic in dev environment -->
-	<Parameter name="authorityIndexUrl" value="http://diva-fitnesse-httplistener:11111/authorityIndexUrl/" override="false" />
-<!-- 	<Parameter name="authorityIndexUrl" value="http://test.diva-portal.org:8082/authority/rest/" -->
-<!-- 		override="false" /> -->
 </Context>

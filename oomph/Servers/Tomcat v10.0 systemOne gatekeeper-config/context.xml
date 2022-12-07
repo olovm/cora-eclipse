@@ -14,29 +14,25 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
---><!-- The contents of this file will be loaded for each web application --><Context>
+-->
+<!-- The contents of this file will be loaded for each web application -->
+<Context>
 
-    <!-- Default set of monitored resources. If one of these changes, the    -->
-    <!-- web application will be reloaded.                                   -->
-    <WatchedResource>WEB-INF/web.xml</WatchedResource>
-    <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
-    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+	<!-- Default set of monitored resources. If one of these changes, the -->
+	<!-- web application will be reloaded. -->
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
+	<WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
 
-    <!-- Uncomment this to disable session persistence across Tomcat restarts -->
-    <!--
-    <Manager pathname="" />
-    -->
-    <Parameter name="guestUserId" value="12345" override="false" />
+	<!-- Uncomment this to disable session persistence across Tomcat restarts -->
+	<!-- <Manager pathname="" /> -->
 	
-   	<Parameter name="storageType" value="memory" override="false" />
-    <Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/systemone/" override="false" />
-	
+	<Parameter name="guestUserId" value="12345" override="false" />
+
 	<Parameter name="coraDatabaseLookupName" value="java:/comp/env/jdbc/postgres"
 		override="false" />
 	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
 		driverClassName="org.postgresql.Driver"
-		url="jdbc:postgresql://systemone-docker-postgresql:5432/systemone"
-		username="systemone" password="systemone" maxTotal="20000" maxIdle="10"
-		maxWaitMillis="-1" />
-	
+		url="jdbc:postgresql://systemone-postgresql:5432/systemone" username="systemone"
+		password="systemone" maxTotal="20000" maxIdle="10" maxWaitMillis="-1" />
 </Context>
