@@ -12,7 +12,8 @@ ALL_COMMON=$COMMON1" "$COMMON2" "$COMMON_IMPLEMENTATION
 
 #PARENT
 COMMON_PURE_CONTAINER="cora-docker-tomcat cora-docker-java cora-docker-solr cora-docker-postgresql "
-COMMON_PURE_CONTAINER+="cora-docker-fedora cora-docker-fedora32 cora-docker-fedora32-client cora-docker-fedora38 "
+COMMON_PURE_CONTAINER+="cora-docker-fedora "
+#ARCHIVED="cora-docker-fedora32 cora-docker-fedora32-client cora-docker-fedora38 "
 #PARENT, COMMON
 CORA0="cora-metadata cora-data cora-data-spies "
 CORA1="cora-converter "
@@ -23,7 +24,9 @@ ALL_CORA=$CORA0" "$CORA1" "$CORA_IMPLEMENTATION
 CORE0="cora-beefeater cora-bookkeeper cora-storage cora-storage-spies "
 CORE1="cora-search cora-searchstorage "
 CORE2="cora-spider cora-spider-spies cora-metadatastorage "
-CORE3="cora-metacreator cora-gatekeeperclient cora-fedora cora-fedora3x"
+CORE3="cora-metacreator cora-gatekeeperclient cora-fedora "
+#ARCHIVED="cora-fedora3x "
+
 CORE4="cora-therest "
 ALL_CORE=$CORE0" "$CORE1" "$CORE2" "$CORE3" "$CORE4
 
@@ -61,10 +64,10 @@ SEARCH0="cora-solrsearch "
 ALL_SEARCH=$SEARCH0
 
 #PARENT #COMMON #CLIENT
-INDEX0="cora-indexmessenger cora-synchronizer cora-classicfedorasynchronizer "
-INDEX_CONTAINER="cora-docker-synchronizer "
+#ARCHIVED="INDEX0="cora-indexmessenger cora-synchronizer cora-classicfedorasynchronizer "
+#ARCHIVED="INDEX_CONTAINER="cora-docker-synchronizer "
 #ALL_INDEX=$INDEX0" "$INDEX_DEPLOYMENT
-ALL_INDEX=$INDEX0
+#ALL_INDEX=$INDEX0
 
 #PARENT #COMMON #CLIENT
 VALIDATION0="cora-fitnesseintegration "
@@ -78,22 +81,29 @@ SYSTEMONE_CONTAINER="cora-docker-gatekeeper systemone-docker systemone-docker-fi
 ALL_SYSTEMONE=$SYSTEMONE0" "$SYSTEMONE_DEPLOYMENT" "$SYSTEMONE_VALIDATION
 
 #PARENT, COMMON, CORA, CORE, STORAGE
-ALVIN0="alvin-metadata alvin-mixedstorage alvin-tocorautils "
-ALVIN_DEPLOYMENT="alvin-cora alvin-gatekeeper-war alvin-indexmessenger "
+ALVIN0="alvin-metadata "
+#ARCHIVED="alvin-mixedstorage alvin-tocorautils "
+ALVIN_DEPLOYMENT="alvin-cora alvin-gatekeeper-war "
+#ARCHIVED="alvin-indexmessenger "
 ALVIN_VALIDATION="alvin-cora-fitnesse "
-ALVIN_DEV_CONTAINER="alvin-cora-docker-fedora alvin-cora-docker-postgresql alvin-docker-index alvin-docker-postgresql "
+ALVIN_DEV_CONTAINER="alvin-docker-postgresql "
+#ARCHIVED="alvin-cora-docker-fedora alvin-cora-docker-postgresql alvin-docker-index "
 ALVIN_CONTAINER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse "
 ALL_ALVIN=$ALVIN0" "$ALVIN_DEPLOYMENT" "$ALVIN_VALIDATION
 
 #PARENT, COMMON, CORA, CORE, STORAGE
-DIVA0="diva-metadata diva-mixedstorage "
-DIVA_DEPLOYMENT="diva-cora diva-gatekeeper-war diva-indexmessenger "
+DIVA0="diva-metadata "
+#ARCHIVED="diva-mixedstorage 
+DIVA_DEPLOYMENT="diva-cora diva-gatekeeper-war "
+#ARCHIVED="diva-indexmessenger "
 DIVA_VALIDATION="diva-cora-fitnesse "
-DIVA_DEV_CONTAINER0="diva-cora-docker-fedora diva-docker-mock-classic-postgresql "
-DIVA_DEV_CONTAINER1="diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
-DIVA_DEV_CONTAINER2="diva-docker-classicfedorasynchronizer diva-cora-docker-fitnesse diva-docker-postgresql "
-DIVA_CONTAINER="diva-docker-cora diva-docker-gatekeeper diva-docker-index "
-DIVA_DEV_CONTAINER=$DIVA_DEV_CONTAINER0" "$DIVA_DEV_CONTAINER1" "$DIVA_DEV_CONTAINER2
+#ARCHIVED="DIVA_DEV_CONTAINER0="diva-cora-docker-fedora diva-docker-mock-classic-postgresql "
+#ARCHIVED="DIVA_DEV_CONTAINER1="diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
+DIVA_DEV_CONTAINER1="diva-cora-docker-fitnesse diva-docker-postgresql "
+#ARCHIVED="diva-docker-classicfedorasynchronizer "
+DIVA_CONTAINER="diva-docker-cora diva-docker-gatekeeper "
+#ARCHIVED="diva-docker-index 
+DIVA_DEV_CONTAINER= $DIVA_DEV_CONTAINER1
 ALL_DIVA=$DIVA0" "$DIVA_DEPLOYMENT" "$DIVA_VALIDATION
 
 
@@ -106,6 +116,7 @@ DEV_CONTAINER=$COMMON_PURE_CONTAINER" "$INDEX_CONTAINER" "$ALVIN_DEV_CONTAINER" 
 
 SERVER_CONTAINER=$LOGIN_CONTAINER" "$SYSTEMONE_CONTAINER" "$ALVIN_CONTAINER" "$DIVA_CONTAINER
 
-OTHER="friday-monitoring cora-utils cora-jenkins cora-indexloader"
+OTHER="friday-monitoring cora-utils cora-jenkins "
+#ARCHIVED="cora-indexloader
 
 ALL=$ECLIPSE" "$ALL_JAVA" "$ALL_JS" "$DEV_CONTAINER" "$SERVER_CONTAINER" "$OTHER
