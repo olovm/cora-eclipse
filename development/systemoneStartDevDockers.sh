@@ -6,7 +6,6 @@ docker run -d --name systemone-solr \
 -p 38983:8983 \
 cora-solr:1.0-SNAPSHOT \
 solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore
-docker start systemone-cora-solr
 
 echo ""
 #$sharedArchive is set when starting eclipse docker

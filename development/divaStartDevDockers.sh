@@ -6,7 +6,6 @@ docker run -d --name diva-solr \
 -p 38985:8983 \
 cora-solr:1.0-SNAPSHOT \
 solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore
-docker start diva-cora-solr
 
 echo ""
 #$sharedArchive is set when starting eclipse docker
