@@ -77,7 +77,8 @@ ALL_VALIDATION=$VALIDATION0
 SYSTEMONE0="systemone-metadata "
 SYSTEMONE_DEPLOYMENT="systemone systemone-gatekeeper-war "
 SYSTEMONE_VALIDATION="cora-fitnesse "
-SYSTEMONE_CONTAINER="cora-docker-gatekeeper systemone-docker systemone-docker-fitnesse systemone-docker-postgresql "
+SYSTEMONE_DEV_CONTAINER="systemone-docker-postgresql "
+SYSTEMONE_CONTAINER="cora-docker-gatekeeper systemone-docker systemone-docker-fitnesse "
 ALL_SYSTEMONE=$SYSTEMONE0" "$SYSTEMONE_DEPLOYMENT" "$SYSTEMONE_VALIDATION
 
 #PARENT, COMMON, CORA, CORE, STORAGE
@@ -99,9 +100,9 @@ DIVA_DEPLOYMENT="diva-cora diva-gatekeeper-war "
 DIVA_VALIDATION="diva-cora-fitnesse "
 #ARCHIVED="DIVA_DEV_CONTAINER0="diva-cora-docker-fedora diva-docker-mock-classic-postgresql "
 #ARCHIVED="DIVA_DEV_CONTAINER1="diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
-DIVA_DEV_CONTAINER1="diva-cora-docker-fitnesse diva-docker-postgresql "
+DIVA_DEV_CONTAINER1="diva-docker-postgresql "
 #ARCHIVED="diva-docker-classicfedorasynchronizer "
-DIVA_CONTAINER="diva-docker-cora diva-docker-gatekeeper "
+DIVA_CONTAINER="diva-cora-docker-fitnesse diva-docker-cora diva-docker-gatekeeper "
 #ARCHIVED="diva-docker-index 
 DIVA_DEV_CONTAINER= $DIVA_DEV_CONTAINER1
 ALL_DIVA=$DIVA0" "$DIVA_DEPLOYMENT" "$DIVA_VALIDATION
@@ -112,7 +113,8 @@ ALL_JAVA+=$ALL_CLIENT" "$ALL_STORAGE" "$ALL_SEARCH" "$ALL_INDEX" "$ALL_VALIDATIO
 ALL_JAVA+=$INDEX_DEPLOYMENT" "$LOGIN_DEPLOYMENT" "$GATEKEEPER_DEPLOYMENT" "
 ALL_JAVA+=$ALL_SYSTEMONE" "$ALL_ALVIN" "$ALL_DIVA
 
-DEV_CONTAINER=$COMMON_PURE_CONTAINER" "$INDEX_CONTAINER" "$ALVIN_DEV_CONTAINER" "$DIVA_DEV_CONTAINER
+DEV_CONTAINER=$COMMON_PURE_CONTAINER" "$INDEX_CONTAINER" "
+DEV_CONTAINER+=$SYSTEMONE_DEV_CONTAINER" "$ALVIN_DEV_CONTAINER" "$DIVA_DEV_CONTAINER
 
 SERVER_CONTAINER=$LOGIN_CONTAINER" "$SYSTEMONE_CONTAINER" "$ALVIN_CONTAINER" "$DIVA_CONTAINER
 
