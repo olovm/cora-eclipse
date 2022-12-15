@@ -32,7 +32,7 @@
 
 	<Parameter name="guestUserId" value="coraUser:5368244264733286" override="false" />
 
-	<Parameter name="storageOnDiskBasePath" value="/home/olov/workspace/metadata/alvin/"
+	<Parameter name="storageOnDiskBasePath" value="/home/DEVELOPER/workspace/metadata/alvin/"
 		override="false" />
 
 	<Parameter name="theRestPublicPathToSystem" value="/alvin/rest/" override="false" />

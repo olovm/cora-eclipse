@@ -1,4 +1,5 @@
 #! /bin/bash
+DEVELOPER=$(id -u -n)
 ECLIPSEBRANCH=$eclipsebranch
 echo "running entrypoint.sh..."
 echo "*** using cora-eclipse branch: $ECLIPSEBRANCH ***"
