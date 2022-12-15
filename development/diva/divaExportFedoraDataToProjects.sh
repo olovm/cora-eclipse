@@ -36,5 +36,5 @@ echo "Check that fedora32.sql is updated in diva-cora-docker-fcrepo-postgresql p
 #pg_dump -U fedoraAdmin fedora32 > /temp/fedora32.sql
 
 #export dumped file from db docker 
-#host directory: /home/DEVELOPER/workspace/diva-cora-docker-fedora/docker/expDBData
+#host directory: /home/developer/workspace/diva-cora-docker-fedora/docker/expDBData
 #container path:  /temp/

@@ -32,7 +32,7 @@
 
 <!-- 	<Parameter name="guestUserId" value="12345" override="false" /> -->
 
-	<Parameter name="storageOnDiskBasePath" value="/home/DEVELOPER/workspace/metadata/systemone/"
+	<Parameter name="storageOnDiskBasePath" value="/home/developer/workspace/metadata/systemone/"
 		override="false" />
 
 	<Parameter name="theRestPublicPathToSystem" value="/systemone/rest/" override="false" />

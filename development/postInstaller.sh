@@ -8,7 +8,8 @@ BASEDIR=$(dirname $SCRIPT)
 USER=$(id -u -n)
 
 start(){
-	#changeUserInContexts
+#	changeUserInContexts
+echo "not doing much..."
 }
 
 changeUserInContexts(){
