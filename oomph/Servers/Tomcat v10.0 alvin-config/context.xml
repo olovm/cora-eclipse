@@ -46,7 +46,7 @@
 		driverClassName="org.postgresql.Driver" url="jdbc:postgresql://alvin-postgresql:5432/alvin"
 		username="alvin" password="alvin" maxTotal="20" maxIdle="10" maxWaitMillis="-1" />
 
-	<Parameter name="solrURL" value="http://alvin-cora-solr:8983/solr/coracore"
+	<Parameter name="solrURL" value="http://alvin-solr:8983/solr/coracore"
 		override="false" />
 
 	<Parameter name="fedoraArchiveURL" value="http://alvin-fedora:8080/fcrepo/rest/"
