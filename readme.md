@@ -50,6 +50,7 @@ start the eclipse installer (oomph). </br>
  
  1. Browse for setup files for eclipse, /home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup (use the plussign to add)
  2. Java 17+ VM, set it to: /usr/lib/jvm/**java-17-openjdk**
+ 3. Use release 202206 (there are some problems with the other ones)
  
  next step
  
@@ -102,13 +103,11 @@ Start the environment by running:</br>
  1. Go in under preferences and make sure the latest java is choosen as default jre
  2. In project explorer, under the three little dots, deselect working sets
  3. Mark all projects and refresh them, menu or F5 (this will make sure eclipse sees files in target folders)
- 4. Start and stop the servers (in server tab) in the following order:
-    1. Tomcat v10.0 systemOne
-    2. Tomcat v10.0 alvin
-    3. Tomcat v10.0 diva
- 5. Go under External Tools Configurations (play icon with toolbox) and run linkJsClientToTomcats
- 6. Go under External Tools Configurations (play icon with toolbox) and run copyMetadata
-
+ 4. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallAllButDocker
+ 5. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallDevDocker
+ 6. Rightclick any project, and choose, maven / update project... (or F5) select all projects and run
+ 7. Stop and start containers and tomcat servers.
+ 
 
 ### Start systemOne
 1. Go under External Tools Configurations (play icon with toolbox) and start the docker containers for development by running systemoneStartDevDockers 
@@ -143,11 +142,6 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [Fedora Commons:http://localhost:38089/fedora/](http://localhost:38089/fedora/)<br>
 
 # Commiting to github using token
-## remove password 
- prefrences / security / secure storage / contents
- 
-remove git from default secure storage
-
 ## generate a github token
 as described here:
 
