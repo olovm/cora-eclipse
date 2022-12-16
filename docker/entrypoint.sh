@@ -1,5 +1,4 @@
 #! /bin/bash
-export JAVA_OPTS="-Ddeveloper=$(id -u -n)"
 ECLIPSEBRANCH=$eclipsebranch
 echo "running entrypoint.sh..."
 echo "*** using cora-eclipse branch: $ECLIPSEBRANCH ***"
