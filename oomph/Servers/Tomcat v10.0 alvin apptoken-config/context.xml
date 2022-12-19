@@ -38,4 +38,5 @@
 	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
 		driverClassName="org.postgresql.Driver" url="jdbc:postgresql://alvin-postgresql:5432/alvin"
 		username="alvin" password="alvin" maxTotal="20" maxIdle="10" maxWaitMillis="-1" />
+	<Parameter name="doNotCache" value="true" override="false" />
 </Context>
