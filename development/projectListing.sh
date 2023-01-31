@@ -46,8 +46,8 @@ ALL_GATEKEEPER=$GATEKEEPER0" "$GATEKEEPER_IMPLEMENTATION
 
 
 #PARENT #COMMON
-CLIENT0="cora-clientdata "
-CLIENT1="cora-javaclient "
+CLIENT0="cora-clientdata cora-clientdata-spies cora-basicclientdata"
+CLIENT1="cora-javaclient cora-change"
 ALL_CLIENT=$CLIENT0" "$CLIENT1
 
 #PARENT

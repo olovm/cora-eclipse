@@ -1271,6 +1271,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-change">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.change.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.change"
+          location="${workspace.location}/cora-change"
+          remoteURI="https://github.com/lsu-ub-uu/cora-change">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-change</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-change</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-fitnesse">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -2519,6 +2551,70 @@
           <detail
               key="target">
             <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-clientdata-spies">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.clientdata-spies.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.clientdata-spies"
+          location="${workspace.location}/cora-clientdata-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-clientdata-spies">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-clientdata-spies</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-clientdata-spies</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-basicclientdata">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.basicclientdata.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.basicclientdata"
+          location="${workspace.location}/cora-basicclientdata"
+          remoteURI="https://github.com/lsu-ub-uu/cora-basicclientdata">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-basicclientdata</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-basicclientdata</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
