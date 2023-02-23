@@ -23,7 +23,7 @@ echo "Container runtime will be "${CONTAINERRUNTIME}
 if [ ! $USER ]; then
   	echo "You must specify the userName used when starting eclipse202103forcora3TempSetup"
 else
-cd eclipse202212forcora3
+cd eclipse202212forcora4
 ${CONTAINERRUNTIME} run --rm -ti --privileged --ipc=host\
  --env="QT_X11_NO_MITSHM=1"\
  --env="NO_AT_BRIDGE=1"\
@@ -48,6 +48,6 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged --ipc=host\
  -e eclipsebranch=$ECLIPSEBRANCH\
  --network=eclipseForCoraNet\
  --name eclipse202103forcora3TempSetup\
- eclipse202212forcora3
+ eclipse202212forcora4
  cd ../
 fi
