@@ -6,7 +6,7 @@ USER=$1
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname $SCRIPT)
 PARENTDIR="$(dirname "$BASEDIR")"
-INSTALLDIR=$PARENTDIR/eclipse202212forcora4
+INSTALLDIR=$PARENTDIR/eclipse202203forcora1
 TOPDIR="$(dirname "$PARENTDIR")"
 
 echo 
@@ -59,7 +59,7 @@ createGitConfigFile(){
 createArchiveReadableFile(){
 	rm $PARENTDIR/archiveReadable
 	touch $PARENTDIR/archiveReadable.sh
-	echo "docker exec -u 0 eclipse202212forcora4 bindfs --map=root/$USER:@root/@$USER /tmp/sharedArchive/ /tmp/sharedArchiveReadable/" > $PARENTDIR/archiveReadable.sh
+	echo "docker exec -u 0 eclipse202203forcora1 bindfs --map=root/$USER:@root/@$USER /tmp/sharedArchive/ /tmp/sharedArchiveReadable/" > $PARENTDIR/archiveReadable.sh
 	chmod +x $PARENTDIR/archiveReadable.sh
 }
 

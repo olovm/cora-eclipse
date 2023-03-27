@@ -33,4 +33,4 @@ systemone-docker-postgresql:1.0-SNAPSHOT
 
 #--mount type=bind,source=/mnt/depot/cora/sharedArchive,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
 
-#--volumes-from eclipse202212forcora4 \
+#--volumes-from eclipse202203forcora1 \
