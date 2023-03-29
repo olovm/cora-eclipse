@@ -207,3 +207,22 @@ Add the following to the top of the page, then use remoteDebugging such as DivaF
 !path {java.class.path}
 !define COMMAND_PATTERN {/usr/lib/jvm/java-17-openjdk/bin/java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -cp %p %m}
 ```
+
+### Archive 
+If problems with archive test for path not found:
+enter docker:
+
+docker exec -it eclipse202212forcora4 bash
+
+go to your home dir:
+
+cd /home/yourUserName
+
+create needed dir in temp:
+
+mkdir /tmp/sharedArchiveReadable
+
+run archive readable:
+
+./archiveReadable.sh
+
