@@ -1,8 +1,8 @@
 #! /bin/bash
 
 #INDEX_URL='https://cora.epc.ub.uu.se/systemone/rest/record/index'
-LOGIN_URL='http://localhost:8180/apptokenverifier/rest/apptoken/141414'
-INDEX_URL='http://localhost:8080/systemone/rest/record/index'
+LOGIN_URL='http://localhost:8181/apptokenverifier/rest/apptoken/141414'
+INDEX_URL='http://localhost:8081/alvin/rest/record/index'
 APP_TOKEN='63e6bd34-02a1-4c82-8001-158c104cae0e'
 start(){
 	login;
