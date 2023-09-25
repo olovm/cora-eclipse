@@ -22,9 +22,9 @@ ALL_CORA=$CORA0" "$CORA1" "$CORA_IMPLEMENTATION
 
 #PARENT, COMMON, CORA
 CORE0="cora-beefeater cora-bookkeeper cora-storage cora-storage-spies "
-CORE1="cora-search cora-searchstorage "
+CORE1="cora-search cora-searchstorage cora-contentanalyzer "
 CORE2="cora-spider cora-spider-spies cora-metadatastorage "
-CORE3="cora-metacreator cora-gatekeeperclient cora-fedora "
+CORE3="cora-metacreator cora-gatekeeperclient cora-fedora cora-tikacontentanalyzer"
 #ARCHIVED="cora-fedora3x "
 
 CORE4="cora-therest "
