@@ -125,6 +125,7 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [Fitnesse:http://localhost:38090/fitnesse/FrontPage](http://localhost:38090/fitnesse/FrontPage)<br>
 [SystemOne REST:http://localhost:38080/systemone/rest/](http://localhost:38080/systemone/rest/)<br>
 [Solr:http://localhost:38983/solr/](http://localhost:38983/solr/)<br>
+[RabbitMQ:http://localhost:15672/](http://localhost:15672/)guest/guest<br>
 [Karma:http://localhost:39876/](http://localhost:39876/)<br>
 
 ### Alvin
@@ -132,6 +133,7 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [Fitnesse:http://localhost:38091/fitnesse/FrontPage](http://localhost:38091/fitnesse/FrontPage)<br>
 [Alvin REST:http://localhost:38081/alvin/rest/](http://localhost:38081/alvin/rest/)<br>
 [Solr:http://localhost:38984/solr/](http://localhost:38984/solr/)<br>
+[RabbitMQ:http://localhost:15673/](http://localhost:15673/)guest/guest<br>
 [Fedora Commons:http://localhost:38088/fedora/](http://localhost:38088/fedora/)<br>
 
 ### DiVA
@@ -139,6 +141,7 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [Fitnesse:http://localhost:38092/fitnesse/FrontPage](http://localhost:38092/fitnesse/FrontPage)<br>
 [DiVA REST:http://localhost:38082/diva/rest/](http://localhost:38082/diva/rest/)<br>
 [Solr:http://localhost:38985/solr/](http://localhost:38985/solr/)<br>
+[RabbitMQ:http://localhost:15674/](http://localhost:15674/)guest/guest<br>
 [Fedora Commons:http://localhost:38089/fedora/](http://localhost:38089/fedora/)<br>
 
 # Commiting to github using token

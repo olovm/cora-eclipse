@@ -1,5 +1,14 @@
 #! /bin/bash
 
+echo "starting rabbitmq"
+docker run -d --name systemone-rabbitmq \
+--network=eclipseForCoraNet \
+-p 35672:5672 \
+-p 15672:15672 \
+-d --hostname systemone-rabbitmq \
+cora-docker-rabbitmq:1.0-SNAPSHOT
+
+
 echo "starting solr"
 docker run -d --name systemone-solr \
 --network=eclipseForCoraNet \
