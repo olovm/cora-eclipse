@@ -1658,6 +1658,39 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-docker-rabbitmq">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.docker.rabbitmq.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.docker.rabbitmq"
+          location="${workspace.location}/cora-docker-rabbitmq"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-rabbitmq"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-storage">
       <setupTask
           xsi:type="git:GitCloneTask"
