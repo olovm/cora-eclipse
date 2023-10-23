@@ -127,6 +127,7 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [Solr:http://localhost:38983/solr/](http://localhost:38983/solr/)<br>
 [RabbitMQ:http://localhost:15672/](http://localhost:15672/)guest/guest<br>
 [Karma:http://localhost:39876/](http://localhost:39876/)<br>
+[Fedora Commons:http://localhost:38087/fcrepo/](http://localhost:38087/fcrepo/)<br>
 
 ### Alvin
 [Alvin web:http://localhost:38081/jsclient/theClient.html](http://localhost:38081/jsclient/theClient.html)<br>
