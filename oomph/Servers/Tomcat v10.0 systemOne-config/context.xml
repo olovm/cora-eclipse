@@ -46,7 +46,8 @@
 		driverClassName="org.postgresql.Driver"
 		url="jdbc:postgresql://systemone-postgresql:5432/systemone" username="systemone"
 		password="systemone" maxTotal="20000" maxIdle="10" maxWaitMillis="-1" />
-
+	<Parameter name="doNotCache" value="true" override="false" />
+	
 	<Parameter name="solrURL" value="http://systemone-solr:8983/solr/coracore"
 		override="false" />
 
