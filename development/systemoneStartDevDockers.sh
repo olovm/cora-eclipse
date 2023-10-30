@@ -8,6 +8,10 @@ docker run -d --name systemone-rabbitmq \
 -d --hostname systemone-rabbitmq \
 cora-docker-rabbitmq:1.0-SNAPSHOT
 
+echo "starting binaryConverter"
+docker run -it -d --name systemone-binaryConverterSmall \
+--network=eclipseForCoraNet \
+cora-docker-binaryconverter:1.0-SNAPSHOT
 
 echo "starting solr"
 docker run -d --name systemone-solr \
