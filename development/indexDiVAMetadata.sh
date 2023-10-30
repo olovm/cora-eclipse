@@ -6,6 +6,7 @@ INDEX_URL='http://localhost:8082/diva/rest/record/index'
 APP_TOKEN='63e6bd34-02a1-4c82-8001-158c104cae0e'
 start(){
 	login;
+	
 	indexMetadata 'recordType';
 	indexMetadata 'validationType';
 	indexMetadata 'metadata';
@@ -14,6 +15,11 @@ start(){
 	indexMetadata 'presentation';
 	indexMetadata 'guiElement';
 	indexMetadata 'system';
+	
+	indexMetadata 'person';
+	indexMetadata 'organisation';
+	indexMetadata 'nationalSubjectCategory';
+	
 	logoutFromCora;
 }
 login(){
