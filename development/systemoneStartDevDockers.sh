@@ -11,6 +11,15 @@ cora-docker-rabbitmq:1.0-SNAPSHOT
 echo "starting binaryConverter"
 docker run -it -d --name systemone-binaryConverterSmall \
 --network=eclipseForCoraNet \
+-e coraBaseUrl="http://localhost:38080/systemone/rest/" \
+-e apptokenVerifierUrl="http://localhost:38280/apptokenverifier/" \
+-e userId="141414" \
+-e appToken="63e6bd34-02a1-4c82-8001-158c104cae0e" \
+-e rabbitMqHostName="systemone-rabbitmq" \
+-e rabbitMqPort="5672" \
+-e rabbitMqVirtualHost="/" \
+-e rabbitMqQueueName="smallConverterQueue" \
+-e fedoraOcflHome="/usr/local/tomcat/fcrepo-home/data/ocfl-root" \
 cora-docker-binaryconverter:1.0-SNAPSHOT
 
 echo "starting solr"
@@ -31,6 +40,7 @@ docker run -d --name systemone-fedora \
 -p 38087:8080 \
 --network=eclipseForCoraNet \
 --mount type=bind,source=$sharedArchive/systemOne,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
+-e CATALINA_OPTS="-Dfcrepo.config.file=/usr/local/tomcat/fcrepo.properties" \
 cora-docker-fedora:1.0-SNAPSHOT
 
 echo "removing previous postgresql with cora data"
