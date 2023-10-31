@@ -8,6 +8,9 @@ docker run -d --name systemone-rabbitmq \
 -d --hostname systemone-rabbitmq \
 cora-docker-rabbitmq:1.0-SNAPSHOT
 
+echo "sleep 5s for rabbit to start"
+sleep 5
+
 echo "starting binaryConverter for smallConverterQueue"
 docker run -it -d --name systemone-binaryConverterSmall \
 --mount type=bind,source=/mnt/depot/cora/sharedArchive/systemOne,target=/tmp/sharedArchiveReadable/systemOne,readonly \
