@@ -51,6 +51,8 @@ RUN dnf clean all && \
   nodejs \
   bindfs \
   fuse \
+  libglvnd-gles \
+  ImageMagick \
   npm -y && \
   dnf clean all
   
