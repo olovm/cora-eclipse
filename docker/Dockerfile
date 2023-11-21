@@ -1,4 +1,4 @@
-FROM fedora:38
+FROM fedora:39
 # Set a useful default locale
 RUN echo "export LANG=en_US.UTF-8" > /opt/export_LANG.sh
 RUN echo "export LANGUAGE=en_US.UTF-8" >> /opt/export_LANG.sh
