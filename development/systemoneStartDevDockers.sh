@@ -14,6 +14,7 @@ sleep 5
 echo "starting binaryConverter for smallConverterQueue"
 docker run -it -d --name systemone-binaryConverterSmall \
 --mount type=bind,source=/mnt/depot/cora/sharedArchive/systemOne,target=/tmp/sharedArchiveReadable/systemOne,readonly \
+--mount type=bind,source=/mnt/depot/cora/sharedFileStorage/systemOne,target=/tmp/sharedFileStorage/systemOne \
 --network=eclipseForCoraNet \
 -e coraBaseUrl="http://eclipse:8080/systemone/rest/" \
 -e apptokenVerifierUrl="http://eclipse:8180/apptokenverifier/rest/" \
@@ -24,6 +25,7 @@ docker run -it -d --name systemone-binaryConverterSmall \
 -e rabbitMqVirtualHost="/" \
 -e rabbitMqQueueName="smallConverterQueue" \
 -e fedoraOcflHome="/tmp/sharedArchiveReadable/systemOne" \
+-e fileStorageBasePath="/tmp/sharedFileStorage/systemOne/" \
 cora-docker-binaryconverter:1.0-SNAPSHOT
 
 echo "starting solr"

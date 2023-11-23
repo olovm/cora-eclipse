@@ -45,9 +45,13 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host \
  -v PARENTDIR/ssh:/home/$USER/.ssh\
  -v PARENTDIR/sharedArchive:/tmp/sharedArchive\
  -v PARENTDIR/archiveReadable.sh:/home/$USER/archiveReadable.sh\
+ -v PARENTDIR/sharedFileStorage:/tmp/sharedFileStorage\
+ -v PARENTDIR/archiveReadable.sh:/home/$USER/archiveReadable.sh\
+ -v PARENTDIR/fileStorageReadable.sh:/home/$USER/fileStorageReadable.sh\
  -e user=$USER\
  -e HOSTBASEDIR=$BASEDIR\
  -e sharedArchive=PARENTDIR/sharedArchive\
+ -e sharedFileStorage=PARENTDIR/sharedFileStorage\
  -p 39876:9876\
  -p 38080:8080\
  -p 38180:8180\

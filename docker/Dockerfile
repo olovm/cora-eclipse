@@ -76,6 +76,8 @@ RUN npm install -g karma-cli
 #RUN modprobe fuse
 RUN mkdir /tmp/sharedArchiveReadable
 RUN chown $user:$user /tmp/sharedArchiveReadable -R
+RUN mkdir /tmp/sharedFileStorage
+RUN chown $user:$user /tmp/sharedFileStorage -R
 #RUN bindfs --map=root/$user:@root/@${user} /tmp/sharedArchive/ /tmp/sharedArchiveReadable/
 
 USER $user

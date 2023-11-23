@@ -27,6 +27,10 @@ createDirectories(){
   	mkdir $PARENTDIR/sharedArchive/systemOne
   	mkdir $PARENTDIR/sharedArchive/alvin
   	mkdir $PARENTDIR/sharedArchive/diva
+  	mkdir $PARENTDIR/sharedFileStorage
+  	mkdir $PARENTDIR/sharedFileStorage/systemOne
+  	mkdir $PARENTDIR/sharedFileStorage/alvin
+  	mkdir $PARENTDIR/sharedFileStorage/diva
 }
 	
 changeAndCopyScripts(){
@@ -63,9 +67,17 @@ createArchiveReadableFile(){
 	chmod +x $PARENTDIR/archiveReadable.sh
 }
 
+createSharedFileStorageReadableFile(){
+	rm $PARENTDIR/sharedFileStorage
+	touch $PARENTDIR/sharedFileStorage.sh
+	echo "docker exec -u 0 eclipse202309forcora1 bindfs --map=root/$USER:@root/@$USER /tmp/sharedFileStorage/ /tmp/sharedFileStorage/" > $PARENTDIR/sharedFileStorage.sh
+	chmod +x $PARENTDIR/sharedFileStorage.sh
+}
+
 if [ ! -d $INSTALLDIR ]; then
 	createDirectories
 	changeAndCopyScripts
 	createGitConfigFile
 	createArchiveReadableFile
+	createSharedFileStorageReadableFile
 fi
