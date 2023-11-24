@@ -929,10 +929,6 @@
           name="de.jcup.jenkinseditor.feature.feature.group"/>
       <requirement
           name="net.nodj.AutoDerivFeature.feature.group"/>
-      <requirement
-          name="org.testng.p2.feature.feature.group"/>
-      <requirement
-          name="org.testng.eclipse.maven.feature.feature.group"/>
       <repository
           url="https://eclipse-uc.sonarlint.org"/>
       <repository
