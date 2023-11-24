@@ -233,6 +233,10 @@
           name="de.jcup.jenkinseditor.feature.feature.group"/>
       <requirement
           name="net.nodj.AutoDerivFeature.feature.group"/>
+      <requirement
+          name="org.testng.p2.feature.feature.group"/>
+      <requirement
+          name="org.testng.eclipse.maven.feature.feature.group"/>
       <repository
           url="https://eclipse-uc.sonarlint.org"/>
       <repository
@@ -247,6 +251,8 @@
           url="https://de-jcup.github.io/update-site-eclipse-jenkins-editor/update-site/"/>
       <repository
           url="http://nodj.github.io/AutoDeriv/update"/>
+      <repository
+          url="https://testng.org/testng-eclipse-update-site/"/>
     </setupTask>
   </version>
   <version name="2022-12"
@@ -463,6 +469,10 @@
           name="de.jcup.jenkinseditor.feature.feature.group"/>
       <requirement
           name="net.nodj.AutoDerivFeature.feature.group"/>
+      <requirement
+          name="org.testng.p2.feature.feature.group"/>
+      <requirement
+          name="org.testng.eclipse.maven.feature.feature.group"/>
       <repository
           url="https://eclipse-uc.sonarlint.org"/>
       <repository
@@ -477,6 +487,8 @@
           url="https://de-jcup.github.io/update-site-eclipse-jenkins-editor/update-site/"/>
       <repository
           url="http://nodj.github.io/AutoDeriv/update"/>
+      <repository
+          url="https://testng.org/testng-eclipse-update-site/"/>
     </setupTask>
   </version>
   <version name="2022-09"
@@ -691,6 +703,10 @@
           name="de.jcup.jenkinseditor.feature.feature.group"/>
       <requirement
           name="net.nodj.AutoDerivFeature.feature.group"/>
+      <requirement
+          name="org.testng.p2.feature.feature.group"/>
+      <requirement
+          name="org.testng.eclipse.maven.feature.feature.group"/>
       <repository
           url="https://eclipse-uc.sonarlint.org"/>
       <repository
@@ -703,6 +719,8 @@
           url="https://de-jcup.github.io/update-site-eclipse-jenkins-editor/update-site/"/>
       <repository
           url="http://nodj.github.io/AutoDeriv/update"/>
+      <repository
+          url="https://testng.org/testng-eclipse-update-site/"/>
     </setupTask>
   </version>
   <version name="2022-06"
@@ -917,8 +935,14 @@
           name="de.jcup.jenkinseditor.feature.feature.group"/>
       <requirement
           name="net.nodj.AutoDerivFeature.feature.group"/>
+      <requirement
+          name="org.testng.p2.feature.feature.group"/>
+      <requirement
+          name="org.testng.eclipse.maven.feature.feature.group"/>
       <repository
           url="https://eclipse-uc.sonarlint.org"/>
+      <repository
+          url="https://testng.org/testng-eclipse-update-site/"/>
       <repository
           url="https://de-jcup.github.io/update-site-eclipse-bash-editor/update-site/"/>
       <repository

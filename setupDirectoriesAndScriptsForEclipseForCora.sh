@@ -6,7 +6,7 @@ USER=$1
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname $SCRIPT)
 PARENTDIR="$(dirname "$BASEDIR")"
-INSTALLDIR=$PARENTDIR/eclipse202309forcora1
+INSTALLDIR=$PARENTDIR/eclipse202309forcora2
 TOPDIR="$(dirname "$PARENTDIR")"
 
 echo 
@@ -63,14 +63,14 @@ createGitConfigFile(){
 createArchiveReadableFile(){
 	rm $PARENTDIR/archiveReadable
 	touch $PARENTDIR/archiveReadable.sh
-	echo "docker exec -u 0 eclipse202309forcora1 bindfs --map=root/$USER:@root/@$USER /tmp/sharedArchive/ /tmp/sharedArchiveReadable/" > $PARENTDIR/archiveReadable.sh
+	echo "docker exec -u 0 eclipse202309forcora2 bindfs --map=root/$USER:@root/@$USER /tmp/sharedArchive/ /tmp/sharedArchiveReadable/" > $PARENTDIR/archiveReadable.sh
 	chmod +x $PARENTDIR/archiveReadable.sh
 }
 
 createSharedFileStorageReadableFile(){
 	rm $PARENTDIR/sharedFileStorage
 	touch $PARENTDIR/sharedFileStorage.sh
-	echo "docker exec -u 0 eclipse202309forcora1 bindfs --map=root/$USER:@root/@$USER /tmp/sharedFileStorage/ /tmp/sharedFileStorage/" > $PARENTDIR/sharedFileStorage.sh
+	echo "docker exec -u 0 eclipse202309forcora2 bindfs --map=root/$USER:@root/@$USER /tmp/sharedFileStorage/ /tmp/sharedFileStorage/" > $PARENTDIR/sharedFileStorage.sh
 	chmod +x $PARENTDIR/sharedFileStorage.sh
 }
 
