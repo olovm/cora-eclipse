@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.ui.externaltools.ProgramLaunchConfigurationType">
     <mapAttribute key="org.eclipse.debug.core.environmentVariables">
-        <mapEntry key="JAVA_HOME" value="/usr/lib/jvm/java-13-openjdk/"/>
+        <mapEntry key="JAVA_HOME" value="/usr/lib/jvm/java-17-openjdk/"/>
     </mapAttribute>
     <stringAttribute key="org.eclipse.debug.ui.ATTR_CONSOLE_ENCODING" value="UTF-8"/>
-    <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
-        <listEntry value="org.eclipse.ui.externaltools.launchGroup"/>
-    </listAttribute>
     <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="/usr/bin/mvn"/>
     <stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="-Dusername=olovm release:prepare"/>
     <stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${project_loc}"/>

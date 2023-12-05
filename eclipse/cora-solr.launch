@@ -17,9 +17,6 @@
     <listAttribute key="links"/>
     <stringAttribute key="memoryLimit" value="-1"/>
     <stringAttribute key="networkMode" value="eclipseForCoraNet"/>
-    <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
-        <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
-    </listAttribute>
     <booleanAttribute key="privileged" value="false"/>
     <booleanAttribute key="publishAllPorts" value="false"/>
     <listAttribute key="publishedPorts">

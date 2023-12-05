@@ -6,9 +6,13 @@
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
         <listEntry value="1"/>
     </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_ATTR_USE_ARGFILE" value="false"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_SHOW_CODEDETAILS_IN_EXCEPTION_MESSAGES" value="true"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
     <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="se.uu.ub.cora.alvin.tocorautils.AlvinFromDbImporter"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="alvin-tocorautils"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;141414&quot; &quot;63e6bd34-02a1-4c82-8001-158c104cae0e&quot; &quot;http://localhost:8080/apptokenverifier/&quot; &quot;http://localhost:8080/therest/rest/&quot;&#9;&quot;alvin&quot; &quot;alvin&quot; &quot;jdbc:postgresql://alvin-cora-docker-postgresql:5432/alvin&quot; &quot;completelanguage&quot; &quot;se.uu.ub.cora.alvin.tocorautils.LanguageFromDbToCoraFactory&quot;"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="alvin-tocorautils"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>

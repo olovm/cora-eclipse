@@ -1,49 +1,35 @@
 #! /bin/bash
 
 echo "starting solr"
-docker run -d --name diva-cora-solr \
+docker run -d --name diva-solr \
 --network=eclipseForCoraNet \
--p 8985:8983 \
+-p 38985:8983 \
 cora-solr:1.0-SNAPSHOT \
 solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore
-docker start diva-cora-solr
 
-echo "starting postgresql for fedora"
-docker run -d --name diva-postgres-fcrepo --rm \
---net-alias=postgres-fcrepo \
--p 5434:5432 \
---network=eclipseForDivaNet \
--e POSTGRES_DB=fedora32 \
--e POSTGRES_USER=fedoraAdmin \
--e POSTGRES_PASSWORD=fedora \
-diva-cora-docker-fcrepo-postgresql:1.0.0 postgres 
-
-echo "waiting 10s for postresql to start up"
-sleep 10
-
+echo ""
+#$sharedArchive is set when starting eclipse docker
+echo "using host location $sharedArchive/diva in the eclipse docker mounted on"
+echo "/tmp/sharedArchive to store the files for the archive to be able to read it from fitnesse "
+echo "using path /tmp/sharedArchive/diva."
+#docker run -d --name diva-docker-fedora --rm \
 echo "starting fedora"
-docker run -d --name diva-docker-fedora --rm \
--p 38089:8088 \
--p 8445:8443 \
---network=eclipseForDivaNet \
-diva-cora-docker-fedora-3.2.1:1.0.2
-#diva-cora-docker-fedora-3.2.1:1.0.0 /home/fedora/checkAndStart.sh
+docker run -d --name diva-fedora \
+-p 38089:8080 \
+--network=eclipseForCoraNet \
+--mount type=bind,source=$sharedArchive/diva,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
+cora-docker-fedora:1.0-SNAPSHOT
 
-echo "connecting fedora docker to eclipseForCoraNet to access from tomcat and main application"
-docker network connect eclipseForCoraNet diva-docker-fedora
-
-echo "removing previous postgresql with diva data"
-docker rm diva-cora-docker-postgresql
-echo "starting postgresql with diva data"
-docker run -d --name diva-cora-docker-postgresql --restart always  \
---net-alias=postgres-diva \
--p 5435:5432 \
---network=eclipseForDivaNet \
+echo "removing previous postgresql with cora data"
+docker rm diva-postgresql
+echo "starting postgresql with cora data"
+docker run -d --name diva-postgresql --restart always  \
+-p 35434:5432 \
+--network=eclipseForCoraNet \
 -e POSTGRES_DB=diva \
 -e POSTGRES_USER=diva \
 -e POSTGRES_PASSWORD=diva \
-diva-cora-docker-postgresql 
+diva-docker-postgresql:1.0-SNAPSHOT
 
-echo "connecting postgresq docker to eclipseForCoraNet to access from tomcat and main application"
-docker network connect eclipseForCoraNet diva-cora-docker-postgresql
-
+echo "connecting postgresql docker to eclipseForCoraNet to access from tomcat and main application"
+docker network connect eclipseForCoraNet diva-postgresql

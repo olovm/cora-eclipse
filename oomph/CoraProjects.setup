@@ -9,17 +9,18 @@
     xmlns:maven="http://www.eclipse.org/oomph/setup/maven/1.0"
     xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
     xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
+    xmlns:resources="http://www.eclipse.org/oomph/resources/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/launching/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Launching.ecore http://www.eclipse.org/oomph/setup/maven/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Maven.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/launching/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Launching.ecore http://www.eclipse.org/oomph/setup/maven/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Maven.ecore http://www.eclipse.org/oomph/predicates/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Projects.ecore http://www.eclipse.org/oomph/resources/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/Resources.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 https://raw.githubusercontent.com/eclipse-oomph/oomph/master/setups/models/SetupWorkingSets.ecore"
     name="coraprojects"
     label="Cora projects">
   <setupTask
       xsi:type="jdt:JRETask"
-      version="JavaSE-1.8"
-      location="${jre.location-13}"
-      name="JRE for JavaSE-13">
+      version="JavaSE-17"
+      location="${jre.location-17}"
+      name="JRE for JavaSE-17">
     <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
   </setupTask>
   <setupTask
@@ -30,18 +31,44 @@
     <description>Set the heap space needed to work with the projects of ${scope.project.label}</description>
   </setupTask>
   <setupTask
+      xsi:type="setup:EclipseIniTask"
+      option="-Dfile.encoding="
+      value="UTF-8"
+      vm="true">
+    <description>file encoding</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:EclipseIniTask"
+      option="-Dsun.jnu.encoding="
+      value="UTF-8"
+      vm="true">
+    <description>encoding</description>
+  </setupTask>
+  <setupTask
       xsi:type="setup:ResourceCreationTask"
       excludedTriggers="STARTUP MANUAL"
-      content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;section name=&quot;Workbench&quot;>&#xD;&#xA;&#x9;&lt;section name=&quot;org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart&quot;>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;true&quot; key=&quot;group_libraries&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;false&quot; key=&quot;linkWithEditor&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;layout&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;rootMode&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;packageExplorer configured=&amp;quot;true&amp;quot; group_libraries=&amp;quot;1&amp;quot; layout=&amp;quot;2&amp;quot; linkWithEditor=&amp;quot;0&amp;quot; rootMode=&amp;quot;2&amp;quot; sortWorkingSets=&amp;quot;false&amp;quot; workingSetName=&amp;quot;&amp;quot;&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;workingSet editPageId=&amp;quot;org.eclipse.jdt.internal.ui.OthersWorkingSet&amp;quot; factoryID=&amp;quot;org.eclipse.ui.internal.WorkingSetFactory&amp;quot; id=&amp;quot;1382792884467_1&amp;quot; label=&amp;quot;Other Projects&amp;quot; name=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;activeWorkingSet workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;allWorkingSets workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/packageExplorer&amp;gt;&quot; key=&quot;memento&quot;/>&#xD;&#xA;&#x9;&lt;/section>&#xD;&#xA;&lt;/section>&#xD;&#xA;"
       targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
       encoding="UTF-8">
     <description>Initialize JDT's package explorer to show working sets as its root objects</description>
+    <content>
+      &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+      &lt;section name=&quot;Workbench&quot;>
+      	&lt;section name=&quot;org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart&quot;>
+      		&lt;item value=&quot;true&quot; key=&quot;group_libraries&quot;/>
+      		&lt;item value=&quot;false&quot; key=&quot;linkWithEditor&quot;/>
+      		&lt;item value=&quot;2&quot; key=&quot;layout&quot;/>
+      		&lt;item value=&quot;2&quot; key=&quot;rootMode&quot;/>
+      		&lt;item value=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;packageExplorer configured=&amp;quot;true&amp;quot; group_libraries=&amp;quot;1&amp;quot; layout=&amp;quot;2&amp;quot; linkWithEditor=&amp;quot;0&amp;quot; rootMode=&amp;quot;2&amp;quot; sortWorkingSets=&amp;quot;false&amp;quot; workingSetName=&amp;quot;&amp;quot;&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;workingSet editPageId=&amp;quot;org.eclipse.jdt.internal.ui.OthersWorkingSet&amp;quot; factoryID=&amp;quot;org.eclipse.ui.internal.WorkingSetFactory&amp;quot; id=&amp;quot;1382792884467_1&amp;quot; label=&amp;quot;Other Projects&amp;quot; name=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;activeWorkingSet workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;allWorkingSets workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/packageExplorer&amp;gt;&quot; key=&quot;memento&quot;/>
+      	&lt;/section>
+      &lt;/section>
+
+    </content>
   </setupTask>
   <setupTask
       xsi:type="setup:VariableTask"
       name="eclipse.target.platform"
-      value="Oxygen"
-      defaultValue="Oxygen"
+      value="2021-03"
+      defaultValue="2021-03"
       storageURI="scope://Workspace"/>
   <setupTask
       xsi:type="setup.p2:P2Task">
@@ -67,11 +94,11 @@
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>cora-eclipse</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/olovm/cora-eclipse</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -95,12 +122,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.coraparent"
           location="${workspace.location}/cora-parent"
-          remoteURI="https://github.com/olovm/cora-parent">
+          remoteURI="https://github.com/lsu-ub-uu/cora-parent">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -108,7 +135,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -127,12 +154,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.logger"
           location="${workspace.location}/cora-logger"
-          remoteURI="https://github.com/olovm/cora-logger">
+          remoteURI="https://github.com/lsu-ub-uu/cora-logger">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -140,7 +167,263 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-logger</value>
+            <value>https://github.com/lsu-ub-uu/cora-logger</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-logger-spies">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.logger.spies.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.logger.spies"
+          location="${workspace.location}/cora-logger-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-logger-spies">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-logger-spies</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-logger-spies</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-initialize">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.initialize.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.initialize"
+          location="${workspace.location}/cora-initialize"
+          remoteURI="https://github.com/lsu-ub-uu/cora-initialize">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-initialize</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-initialize</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-initialize-spies">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.initialize.spies.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.initialize.spies"
+          location="${workspace.location}/cora-initialize-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-initialize-spies">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-initialize-spies</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-initialize-spies</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-password">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.password.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.password"
+          location="${workspace.location}/cora-password"
+          remoteURI="https://github.com/lsu-ub-uu/cora-password">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-password</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-password</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-converter">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.converter.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.converter"
+          location="${workspace.location}/cora-converter"
+          remoteURI="https://github.com/lsu-ub-uu/cora-converter">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-logger</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-logger</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-xmlutils">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.xmlutils.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.xmlutils"
+          location="${workspace.location}/cora-xmlutils"
+          remoteURI="https://github.com/lsu-ub-uu/cora-xmlutils">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-xmlutils</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-xmlutils</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-xmlconverter">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.xmlconverter.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.xmlconverter"
+          location="${workspace.location}/cora-xmlconverter"
+          remoteURI="https://github.com/lsu-ub-uu/cora-xmlconverter">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-xmlconverter</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-converter</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-basicdata">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.basicdata.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.basicdata"
+          location="${workspace.location}/cora-basicdata"
+          remoteURI="https://github.com/lsu-ub-uu/cora-basicdata">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-logger</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-logger</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -159,12 +442,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.messaging"
           location="${workspace.location}/cora-messaging"
-          remoteURI="https://github.com/olovm/cora-messaging">
+          remoteURI="https://github.com/lsu-ub-uu/cora-messaging">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -172,7 +455,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-messaging</value>
+            <value>https://github.com/lsu-ub-uu/cora-messaging</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -191,12 +474,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.activemq"
           location="${workspace.location}/cora-activemq"
-          remoteURI="https://github.com/olovm/cora-activemq">
+          remoteURI="https://github.com/lsu-ub-uu/cora-activemq">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -204,7 +487,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-activemq</value>
+            <value>https://github.com/lsu-ub-uu/cora-activemq</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -223,12 +506,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.rabbitmq"
           location="${workspace.location}/cora-rabbitmq"
-          remoteURI="https://github.com/olovm/cora-rabbitmq">
+          remoteURI="https://github.com/lsu-ub-uu/cora-rabbitmq">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -236,39 +519,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-rabbitmq</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="cora-indexmessenger">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.cora.indexmessenger.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.cora.indexmessenger"
-          location="${workspace.location}/cora-indexmessenger"
-          remoteURI="https://github.com/olovm/cora-indexmessenger">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-indexmessenger</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-indexmessenger</value>
+            <value>https://github.com/lsu-ub-uu/cora-rabbitmq</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -287,12 +538,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.data"
           location="${workspace.location}/cora-data"
-          remoteURI="https://github.com/olovm/cora-data">
+          remoteURI="https://github.com/lsu-ub-uu/cora-data">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -300,7 +551,39 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-data</value>
+            <value>https://github.com/lsu-ub-uu/cora-data</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-data-spies">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.data.spies.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.data.spies"
+          location="${workspace.location}/cora-data-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-data-spies">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-data-spies</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-data-spies</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -319,12 +602,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.json"
           location="${workspace.location}/cora-json"
-          remoteURI="https://github.com/olovm/cora-json">
+          remoteURI="https://github.com/lsu-ub-uu/cora-json">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -332,7 +615,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -345,7 +628,7 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.corahttphandler"
           location="${workspace.location}/cora-httphandler"
-          remoteURI="https://github.com/olovm/cora-httphandler"/>
+          remoteURI="https://github.com/lsu-ub-uu/cora-httphandler"/>
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
@@ -355,16 +638,31 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="cora-apptokenstorage">
+        name="cora-httphandler-spies">
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.coraapptokenstorage"
-          location="${workspace.location}/cora-apptokenstorage"
-          remoteURI="https://github.com/olovm/cora-apptokenstorage"/>
+          id="git.clone.corahttphandler.spies"
+          location="${workspace.location}/cora-httphandler-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-httphandler-spies"/>
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.coraapptokenstorage.location}"
+            rootFolder="${git.clone.corahttphandler.spies.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-apptokenstorage">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.corauserstorage"
+          location="${workspace.location}/cora-userstorage"
+          remoteURI="https://github.com/lsu-ub-uu/cora-userstorage"/>
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.corauserstorage.location}"
             locateNestedProjects="true"/>
       </setupTask>
     </setupTask>
@@ -381,12 +679,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.userpicker"
           location="${workspace.location}/cora-userpicker"
-          remoteURI="https://github.com/olovm/cora-userpicker">
+          remoteURI="https://github.com/lsu-ub-uu/cora-userpicker">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -394,7 +692,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -413,12 +711,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.beefeater"
           location="${workspace.location}/cora-beefeater"
-          remoteURI="https://github.com/olovm/cora-beefeater">
+          remoteURI="https://github.com/lsu-ub-uu/cora-beefeater">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -426,7 +724,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -445,13 +743,13 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.bookkeeper"
           location="${workspace.location}/cora-bookkeeper"
-          remoteURI="https://github.com/olovm/cora-bookkeeper"
+          remoteURI="https://github.com/lsu-ub-uu/cora-bookkeeper"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -459,7 +757,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -479,12 +777,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.gatekeeper"
           location="${workspace.location}/cora-gatekeeper"
-          remoteURI="https://github.com/olovm/cora-gatekeeper">
+          remoteURI="https://github.com/lsu-ub-uu/cora-gatekeeper">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -492,7 +790,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -511,12 +809,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.gatekeeperserver"
           location="${workspace.location}/cora-gatekeeperserver"
-          remoteURI="https://github.com/olovm/cora-gatekeeperserver">
+          remoteURI="https://github.com/lsu-ub-uu/cora-gatekeeperserver">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -524,7 +822,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -543,12 +841,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.spider"
           location="${workspace.location}/cora-spider"
-          remoteURI="https://github.com/olovm/cora-spider">
+          remoteURI="https://github.com/lsu-ub-uu/cora-spider">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -556,10 +854,67 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
+          <content
+              xsi:type="resources:SourceLocator"
+              rootFolder="${git.clone.cora.metadatastorage.location}"
+              locateNestedProjects="true"/>
         </annotation>
         <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-spider-spies">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.spider.spies.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.spider.spies"
+          location="${workspace.location}/cora-spider-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-spider-spies">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+          <content
+              xsi:type="resources:SourceLocator"
+              rootFolder="${git.clone.cora.spider.spies.location}"
+              locateNestedProjects="true"/>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-metadatastorage">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.metadatastorage"
+          location="${workspace.location}/cora-metadatastorage"
+          remoteURI="https://github.com/lsu-ub-uu/cora-metadatastorage">
+        <description></description>
+      </setupTask>
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.metadatastorage.location}"
+            locateNestedProjects="true"/>
       </setupTask>
     </setupTask>
     <setupTask
@@ -575,12 +930,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.gatekeepertokenprovider"
           location="${workspace.location}/cora-gatekeepertokenprovider"
-          remoteURI="https://github.com/olovm/cora-gatekeepertokenprovider">
+          remoteURI="https://github.com/lsu-ub-uu/cora-gatekeepertokenprovider">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -588,7 +943,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -607,12 +962,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.basicstorage"
           location="${workspace.location}/cora-basicstorage"
-          remoteURI="https://github.com/olovm/cora-basicstorage">
+          remoteURI="https://github.com/lsu-ub-uu/cora-basicstorage">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -620,7 +975,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -639,12 +994,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.gatekeeperclient"
           location="${workspace.location}/cora-gatekeeperclient"
-          remoteURI="https://github.com/olovm/cora-gatekeeperclient">
+          remoteURI="https://github.com/lsu-ub-uu/cora-gatekeeperclient">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -652,7 +1007,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -671,12 +1026,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.therest"
           location="${workspace.location}/cora-therest"
-          remoteURI="https://github.com/olovm/cora-therest">
+          remoteURI="https://github.com/lsu-ub-uu/cora-therest">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -684,7 +1039,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -703,12 +1058,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.apptokenverifier"
           location="${workspace.location}/cora-apptokenverifier"
-          remoteURI="https://github.com/olovm/cora-apptokenverifier">
+          remoteURI="https://github.com/lsu-ub-uu/cora-apptokenverifier">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -716,7 +1071,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -735,12 +1090,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.metacreator"
           location="${workspace.location}/cora-metacreator"
-          remoteURI="https://github.com/olovm/cora-metacreator">
+          remoteURI="https://github.com/lsu-ub-uu/cora-metacreator">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -748,167 +1103,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="systemone">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.systemone.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.systemone"
-          location="${workspace.location}/systemone"
-          remoteURI="https://github.com/olovm/systemone">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="systemone-basicstorage">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.systemone-basicstorage.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.systemone-basicstorage"
-          location="${workspace.location}/systemone-basicstorage"
-          remoteURI="https://github.com/olovm/systemone-basicstorage">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="cora-jsclient">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.cora.jsclient.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.cora.jsclient"
-          location="${workspace.location}/cora-jsclient"
-          remoteURI="https://github.com/olovm/cora-jsclient">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="cora-javaclient">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.cora.javaclient.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.cora.javaclient"
-          location="${workspace.location}/cora-javaclient"
-          remoteURI="https://github.com/olovm/cora-javaclient">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="cora-fitnesse">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.cora.fitnesse.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.cora.fitnesse"
-          location="${workspace.location}/cora-fitnesse"
-          remoteURI="https://github.com/olovm/cora-fitnesse">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -927,12 +1122,44 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.fedora"
           location="${workspace.location}/cora-fedora"
-          remoteURI="https://github.com/olovm/cora-fedora">
+          remoteURI="https://github.com/lsu-ub-uu/cora-fedora">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-fedora</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-fedora</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="systemone">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.systemone.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.systemone"
+          location="${workspace.location}/systemone"
+          remoteURI="https://github.com/lsu-ub-uu/systemone">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -940,7 +1167,135 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-jsclient">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.jsclient.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.jsclient"
+          location="${workspace.location}/cora-jsclient"
+          remoteURI="https://github.com/lsu-ub-uu/cora-jsclient">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-javaclient">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.javaclient.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.javaclient"
+          location="${workspace.location}/cora-javaclient"
+          remoteURI="https://github.com/lsu-ub-uu/cora-javaclient">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-change">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.change.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.change"
+          location="${workspace.location}/cora-change"
+          remoteURI="https://github.com/lsu-ub-uu/cora-change">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-change</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-change</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-fitnesse">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.fitnesse.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.fitnesse"
+          location="${workspace.location}/cora-fitnesse"
+          remoteURI="https://github.com/lsu-ub-uu/cora-fitnesse">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -959,12 +1314,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.fitnesseintegration"
           location="${workspace.location}/cora-fitnesseintegration"
-          remoteURI="https://github.com/olovm/cora-fitnesseintegration">
+          remoteURI="https://github.com/lsu-ub-uu/cora-fitnesseintegration">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -972,7 +1327,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -991,12 +1346,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.jsclient"
           location="${workspace.location}/cora-docker-jsclient"
-          remoteURI="https://github.com/olovm/cora-docker-jsclient">
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-jsclient">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1004,7 +1359,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1023,12 +1378,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.gatekeeper"
           location="${workspace.location}/cora-docker-gatekeeper"
-          remoteURI="https://github.com/olovm/cora-docker-gatekeeper">
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-gatekeeper">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1036,7 +1391,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1055,12 +1410,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.systemone.docker"
           location="${workspace.location}/systemone-docker"
-          remoteURI="https://github.com/olovm/systemone-docker">
+          remoteURI="https://github.com/lsu-ub-uu/systemone-docker">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1068,7 +1423,39 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="systemone-docker-postgresql">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.systemone.docker.postgresql.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.systemone.docker.postgresql"
+          location="${workspace.location}/systemone-docker-postgresql"
+          remoteURI="https://github.com/lsu-ub-uu/systemone-docker-postgresql">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>systemone-docker-postgresql</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/systemone-docker-postgresql</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1087,12 +1474,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.systemone.docker.fitnesse"
           location="${workspace.location}/systemone-docker-fitnesse"
-          remoteURI="https://github.com/olovm/systemone-docker-fitnesse">
+          remoteURI="https://github.com/lsu-ub-uu/systemone-docker-fitnesse">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1100,7 +1487,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1119,12 +1506,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.apptokenverifier"
           location="${workspace.location}/cora-docker-apptokenverifier"
-          remoteURI="https://github.com/olovm/cora-docker-apptokenverifier">
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-apptokenverifier">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1132,7 +1519,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1151,54 +1538,21 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.fedora"
           location="${workspace.location}/cora-docker-fedora"
-          remoteURI="https://github.com/olovm/cora-docker-fedora"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-fedora"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>cora-docker-fedora</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="cora-docker-fedora32">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.cora.docker.fedora32.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.cora.docker.fedora32"
-          location="${workspace.location}/cora-docker-fedora32"
-          remoteURI="https://github.com/olovm/cora-docker-fedora32"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-docker-fedora</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1217,21 +1571,54 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.postgresql"
           location="${workspace.location}/cora-docker-postgresql"
-          remoteURI="https://github.com/olovm/cora-docker-postgresql"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-postgresql"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>cora-docker-postgresql</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-docker-postgresql</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-docker-binaryconverter">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.docker.binaryconverter.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.docker.binaryconverter"
+          location="${workspace.location}/cora-docker-binaryconverter"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-binaryconverter"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-docker-binaryconverter</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-docker-binaryconverter</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1250,12 +1637,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.solrsearch"
           location="${workspace.location}/cora-solrsearch"
-          remoteURI="https://github.com/olovm/cora-solrsearch">
+          remoteURI="https://github.com/lsu-ub-uu/cora-solrsearch">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1263,7 +1650,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1282,13 +1669,13 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.solr"
           location="${workspace.location}/cora-docker-solr"
-          remoteURI="https://github.com/olovm/cora-docker-solr"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-solr"
           pushURI="">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1296,7 +1683,40 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-docker-rabbitmq">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.docker.rabbitmq.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.docker.rabbitmq"
+          location="${workspace.location}/cora-docker-rabbitmq"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-rabbitmq"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1309,7 +1729,7 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.storage"
           location="${workspace.location}/cora-storage"
-          remoteURI="https://github.com/olovm/cora-storage">
+          remoteURI="https://github.com/lsu-ub-uu/cora-storage">
         <description></description>
       </setupTask>
       <setupTask
@@ -1321,12 +1741,29 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-storage-spies">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.storage.spies"
+          location="${workspace.location}/cora-storage-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-storage-spies">
+        <description></description>
+      </setupTask>
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.storage.spies.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-search">
       <setupTask
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.search"
           location="${workspace.location}/cora-search"
-          remoteURI="https://github.com/olovm/cora-search">
+          remoteURI="https://github.com/lsu-ub-uu/cora-search">
         <description></description>
       </setupTask>
       <setupTask
@@ -1343,7 +1780,7 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.searchstorage"
           location="${workspace.location}/cora-searchstorage"
-          remoteURI="https://github.com/olovm/cora-searchstorage">
+          remoteURI="https://github.com/lsu-ub-uu/cora-searchstorage">
         <description></description>
       </setupTask>
       <setupTask
@@ -1366,20 +1803,52 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.sqlstorage"
           location="${workspace.location}/cora-sqlstorage"
-          remoteURI="https://github.com/olovm/cora-sqlstorage">
+          remoteURI="https://github.com/lsu-ub-uu/cora-sqlstorage">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>cora-fedoraarchive</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-fedoraarchive">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.fedoraarchive.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.fedoraarchive"
+          location="${workspace.location}/cora-fedoraarchive"
+          remoteURI="https://github.com/lsu-ub-uu/cora-fedoraarchive">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-fedoraarchive</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-fedoraarchive</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1398,12 +1867,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.sqldatabase"
           location="${workspace.location}/cora-sqldatabase"
-          remoteURI="https://github.com/olovm/cora-sqldatabase">
+          remoteURI="https://github.com/lsu-ub-uu/cora-sqldatabase">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1411,7 +1880,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1430,12 +1899,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.idplogin"
           location="${workspace.location}/cora-idplogin"
-          remoteURI="https://github.com/olovm/cora-idplogin">
+          remoteURI="https://github.com/lsu-ub-uu/cora-idplogin">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1443,7 +1912,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1462,12 +1931,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.docker.idplogin"
           location="${workspace.location}/cora-docker-idplogin"
-          remoteURI="https://github.com/olovm/cora-docker-idplogin">
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-idplogin">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1475,7 +1944,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1494,12 +1963,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.metadata"
           location="${workspace.location}/cora-metadata"
-          remoteURI="https://github.com/olovm/cora-metadata">
+          remoteURI="https://github.com/lsu-ub-uu/cora-metadata">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1507,7 +1976,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1526,12 +1995,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.systemone.metadata"
           location="${workspace.location}/systemone-metadata"
-          remoteURI="https://github.com/olovm/systemone-metadata">
+          remoteURI="https://github.com/lsu-ub-uu/systemone-metadata">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1539,7 +2008,39 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="systemone-gatekeeper-war">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.systemone.gatekeeper.war.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.systemone.gatekeeper.war"
+          location="${workspace.location}/systemone-gatekeeper-war"
+          remoteURI="https://github.com/lsu-ub-uu/systemone-gatekeeper-war">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-parent</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1558,12 +2059,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.log4j"
           location="${workspace.location}/cora-log4j"
-          remoteURI="https://github.com/olovm/cora-log4j">
+          remoteURI="https://github.com/lsu-ub-uu/cora-log4j">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1571,7 +2072,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-logger</value>
+            <value>https://github.com/lsu-ub-uu/cora-logger</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1590,12 +2091,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.cora"
           location="${workspace.location}/alvin-cora"
-          remoteURI="https://github.com/olovm/alvin-cora">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-cora">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1603,7 +2104,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1611,24 +2112,23 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="alvin-mixedstorage">
+        name="alvin-gatekeeper-war">
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.alvin.mixedstorage.location}"
+            rootFolder="${git.clone.alvin.gatekeeper.war.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.alvin.mixedstorage"
-          location="${workspace.location}/alvin-mixedstorage"
-          remoteURI="https://github.com/olovm/alvin-mixedstorage"
-          pushURI="">
+          id="git.clone.alvin.gatekeeper.war"
+          location="${workspace.location}/alvin-gatekeeper-war"
+          remoteURI="https://github.com/lsu-ub-uu/alvin-gatekeeper-war">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1636,71 +2136,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="alvin-tocorastorage">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.alvin.tocorastorage.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.alvin.tocorastorage"
-          location="${workspace.location}/alvin-tocorastorage"
-          remoteURI="https://github.com/olovm/alvin-tocorastorage">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="alvin-tocorautils">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.alvin.tocorautils.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.alvin.tocorautils"
-          location="${workspace.location}/alvin-tocorautils"
-          remoteURI="https://github.com/olovm/alvin-tocorautils">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1719,12 +2155,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.cora.docker.fitnesse"
           location="${workspace.location}/alvin-cora-docker-fitnesse"
-          remoteURI="https://github.com/olovm/alvin-cora-docker-fitnesse">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-cora-docker-fitnesse">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1732,7 +2168,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1751,12 +2187,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.cora.fitnesse"
           location="${workspace.location}/alvin-cora-fitnesse"
-          remoteURI="https://github.com/olovm/alvin-cora-fitnesse">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-cora-fitnesse">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1764,7 +2200,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1783,12 +2219,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.docker.cora"
           location="${workspace.location}/alvin-docker-cora"
-          remoteURI="https://github.com/olovm/alvin-docker-cora">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-docker-cora">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1796,7 +2232,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1815,12 +2251,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.docker.gatekeeper"
           location="${workspace.location}/alvin-docker-gatekeeper"
-          remoteURI="https://github.com/olovm/alvin-docker-gatekeeper">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-docker-gatekeeper">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1828,7 +2264,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1836,95 +2272,31 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="alvin-cora-docker-fedora">
+        name="alvin-docker-postgresql">
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.alvin.cora.docker.fedora.location}"
+            rootFolder="${git.clone.alvin.docker.postgresql.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.alvin.cora.docker.fedora"
-          location="${workspace.location}/alvin-cora-docker-fedora"
-          remoteURI="https://github.com/olovm/alvin-cora-docker-fedora">
+          id="git.clone.alvin.docker.postgresql"
+          location="${workspace.location}/alvin-docker-postgresql"
+          remoteURI="https://github.com/lsu-ub-uu/alvin-docker-postgresql">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>alvin-docker-postgresql</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="alvin-cora-docker-postgresql">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.alvin.cora.docker.postgresql.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.alvin.cora.docker.postgresql"
-          location="${workspace.location}/alvin-cora-docker-postgresql"
-          remoteURI="https://github.com/olovm/alvin-cora-docker-postgresql">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="alvin-docker-index">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.alvin.docker.index.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.alvin.docker.index"
-          location="${workspace.location}/alvin-docker-index"
-          remoteURI="https://github.com/olovm/alvin-docker-index">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/alvin-docker-postgresql</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1943,12 +2315,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.alvin.metadata"
           location="${workspace.location}/alvin-metadata"
-          remoteURI="https://github.com/olovm/alvin-metadata">
+          remoteURI="https://github.com/lsu-ub-uu/alvin-metadata">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -1956,39 +2328,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="alvin-indexmessenger">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.alvin.indexmessenger.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.alvin.indexmessenger"
-          location="${workspace.location}/alvin-indexmessenger"
-          remoteURI="https://github.com/olovm/alvin-indexmessenger">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2007,12 +2347,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.cora"
           location="${workspace.location}/diva-cora"
-          remoteURI="https://github.com/olovm/diva-cora">
+          remoteURI="https://github.com/lsu-ub-uu/diva-cora">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2020,7 +2360,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2028,23 +2368,23 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="diva-mixedstorage">
+        name="diva-gatekeeper-war">
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.diva.mixedstorage.location}"
+            rootFolder="${git.clone.diva.gatekeeper.war.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.diva.mixedstorage"
-          location="${workspace.location}/diva-mixedstorage"
-          remoteURI="https://github.com/olovm/diva-mixedstorage">
+          id="git.clone.diva.gatekeeper.war"
+          location="${workspace.location}/diva-gatekeeper-war"
+          remoteURI="https://github.com/lsu-ub-uu/diva-gatekeeper-war">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2052,39 +2392,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="diva-tocorastorage">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.diva.tocorastorage.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.diva.tocorastorage"
-          location="${workspace.location}/diva-tocorastorage"
-          remoteURI="https://github.com/olovm/diva-tocorastorage">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2103,12 +2411,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.cora.docker.fitnesse"
           location="${workspace.location}/diva-cora-docker-fitnesse"
-          remoteURI="https://github.com/olovm/diva-cora-docker-fitnesse">
+          remoteURI="https://github.com/lsu-ub-uu/diva-cora-docker-fitnesse">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2116,7 +2424,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2135,12 +2443,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.cora.fitnesse"
           location="${workspace.location}/diva-cora-fitnesse"
-          remoteURI="https://github.com/olovm/diva-cora-fitnesse">
+          remoteURI="https://github.com/lsu-ub-uu/diva-cora-fitnesse">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2148,7 +2456,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2167,12 +2475,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.docker.cora"
           location="${workspace.location}/diva-docker-cora"
-          remoteURI="https://github.com/olovm/diva-docker-cora">
+          remoteURI="https://github.com/lsu-ub-uu/diva-docker-cora">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2180,7 +2488,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2199,12 +2507,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.docker.gatekeeper"
           location="${workspace.location}/diva-docker-gatekeeper"
-          remoteURI="https://github.com/olovm/diva-docker-gatekeeper">
+          remoteURI="https://github.com/lsu-ub-uu/diva-docker-gatekeeper">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2212,7 +2520,7 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2220,98 +2528,31 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="diva-cora-docker-fedora">
+        name="diva-docker-postgresql">
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.diva.cora.docker.fedora.location}"
+            rootFolder="${git.clone.diva.docker.postgresql.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.diva.cora.docker.fedora"
-          location="${workspace.location}/diva-cora-docker-fedora"
-          remoteURI="https://github.com/olovm/diva-cora-docker-fedora"
-          pushURI="">
+          id="git.clone.diva.docker.postgresql"
+          location="${workspace.location}/diva-docker-postgresql"
+          remoteURI="https://github.com/lsu-ub-uu/diva-docker-postgresql">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>diva-docker-postgresql</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="diva-cora-docker-postgresql">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.diva.cora.docker.postgresql.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.diva.cora.docker.postgresql"
-          location="${workspace.location}/diva-cora-docker-postgresql"
-          remoteURI="https://github.com/olovm/diva-cora-docker-postgresql"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="diva-cora-docker-fcrepo-postgresql">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.diva.cora.docker.fcrepo.postgresql.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.diva.cora.docker.fcrepo.postgresql"
-          location="${workspace.location}/diva-cora-docker-fcrepo-postgresql"
-          remoteURI="https://github.com/olovm/diva-cora-docker-fcrepo-postgresql"
-          pushURI="">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/olovm/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-parent</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/diva-docker-postgresql</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2330,12 +2571,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.cora.clientdata"
           location="${workspace.location}/cora-clientdata"
-          remoteURI="https://github.com/olovm/cora-clientdata">
+          remoteURI="https://github.com/lsu-ub-uu/cora-clientdata">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2343,7 +2584,71 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-clientdata-spies">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.clientdata-spies.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.clientdata-spies"
+          location="${workspace.location}/cora-clientdata-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-clientdata-spies">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-clientdata-spies</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-clientdata-spies</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-basicclientdata">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.basicclientdata.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.basicclientdata"
+          location="${workspace.location}/cora-basicclientdata"
+          remoteURI="https://github.com/lsu-ub-uu/cora-basicclientdata">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-basicclientdata</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-basicclientdata</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2362,12 +2667,12 @@
           xsi:type="git:GitCloneTask"
           id="git.clone.diva.metadata"
           location="${workspace.location}/diva-metadata"
-          remoteURI="https://github.com/olovm/diva-metadata">
+          remoteURI="https://github.com/lsu-ub-uu/diva-metadata">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
               key="inherit">
-            <value>https://github.com/olovm/</value>
+            <value>https://github.com/lsu-ub-uu/</value>
           </detail>
           <detail
               key="label">
@@ -2375,7 +2680,360 @@
           </detail>
           <detail
               key="target">
-            <value>https://github.com/olovm/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="friday-monitoring">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.fridaymonitoring"
+          location="${workspace.location}/friday-monitoring"
+          remoteURI="https://github.com/lsu-ub-uu/friday-monitoring">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>friday-monitoring</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/friday-monitoring</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.fridaymonitoring.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-utils">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.utils"
+          location="${workspace.location}/cora-utils"
+          remoteURI="https://github.com/lsu-ub-uu/cora-utils">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-utils</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-utils</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.utils.location}"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-jenkins">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.corajenkins"
+          location="${workspace.location}/cora-jenkins"
+          remoteURI="https://github.com/lsu-ub-uu/cora-jenkins"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-jenkins</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-jenkins</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.corajenkins.location}"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-apptokenverifier-war">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.apptokenverifier.war.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.apptokenverifier.war"
+          location="${workspace.location}/cora-apptokenverifier-war"
+          remoteURI="https://github.com/lsu-ub-uu/cora-apptokenverifier-war">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-apptokenverifier-war</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-apptokenverifier-war</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-docker-tomcat">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.docker.tomcat.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.docker.tomcat"
+          location="${workspace.location}/cora-docker-tomcat"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-tomcat"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-docker-tomcat</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-docker-tomcat</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-docker-java">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.docker.java.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.docker.java"
+          location="${workspace.location}/cora-docker-java"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-java"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-docker-tomcat</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-docker-tomcat</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-testutils">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.testutils.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.testutils"
+          location="${workspace.location}/cora-testutils"
+          remoteURI="https://github.com/lsu-ub-uu/cora-testutils">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-testutils</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-testutils</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-testutils-spies">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.testutils.spies.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.testutils.spies"
+          location="${workspace.location}/cora-testutils-spies"
+          remoteURI="https://github.com/lsu-ub-uu/cora-testutils-spies">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-testutils-spies</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-testutils-spies</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-contentanalyzer">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.contentanalyzer.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.contentanalyzer"
+          location="${workspace.location}/cora-contentanalyzer"
+          remoteURI="https://github.com/lsu-ub-uu/cora-contentanalyzer">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-contentanalyzer</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-contentanalyzer</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-tikacontentanalyzer">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.tikacontentanalyzer.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.tikacontentanalyzer"
+          location="${workspace.location}/cora-tikacontentanalyzer"
+          remoteURI="https://github.com/lsu-ub-uu/cora-tikacontentanalyzer">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-tikacontentanalyzer</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-tikacontentanalyzer</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-binaryconverter">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.binaryconverter.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.binaryconverter"
+          location="${workspace.location}/cora-binaryconverter"
+          remoteURI="https://github.com/lsu-ub-uu/cora-binaryconverter">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-binaryconverter</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-binaryconverter</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2417,6 +3075,9 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-logger"/>
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern="cora-testutils"/>
     </workingSet>
     <workingSet
         name="cora-tier2">
@@ -2635,6 +3296,57 @@
       <predicate
           xsi:type="predicates:NamePredicate"
           pattern="cora-basicstorage"/>
+    </workingSet>
+    <workingSet
+        name="all-docker"
+        id="">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern=".*docker.*"/>
+    </workingSet>
+    <workingSet
+        name="all-but-docker"
+        id="">
+      <predicate
+          xsi:type="predicates:NotPredicate">
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern=".*docker.*"/>
+      </predicate>
+    </workingSet>
+    <workingSet
+        name="Cora">
+      <predicate
+          xsi:type="predicates:AndPredicate">
+        <operand
+            xsi:type="predicates:NamePredicate"
+            pattern="cora.*"/>
+        <operand
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern=".*docker.*"/>
+        </operand>
+        <operand
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="alvin.*"/>
+        </operand>
+        <operand
+            xsi:type="predicates:NotPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="diva.*"/>
+        </operand>
+      </predicate>
+    </workingSet>
+    <workingSet
+        name="jsclient"
+        id="">
+      <predicate
+          xsi:type="predicates:NamePredicate"
+          pattern=".*jsclient.*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
@@ -2951,7 +3663,7 @@
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.jdt.ui/content_assist_disabled_computers"
-          value="org.eclipse.jdt.ui.templateProposalCategory${0x0}org.eclipse.jdt.ui.javaNoTypeProposalCategory${0x0}org.eclipse.jdt.ui.javaTypeProposalCategory${0x0}org.eclipse.jdt.ui.textProposalCategory${0x0}org.eclipse.jdt.ui.javaAllProposalCategory${0x0}"/>
+          value="org.eclipse.jdt.ui.javaNoTypeProposalCategory${0x0}org.eclipse.jdt.ui.javaTypeProposalCategory${0x0}org.eclipse.jdt.ui.textProposalCategory${0x0}org.eclipse.mylyn.java.ui.javaAllProposalCategory${0x0}"/>
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.text.custom_code_templates"
@@ -2972,6 +3684,22 @@
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.ui.workbench/org.eclipse.ui.commands"
           value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;org.eclipse.ui.commands>&#xA;&lt;keyBinding commandId=&quot;org.eclipse.m2e.actions.LifeCycleInstall.run&quot; contextId=&quot;org.eclipse.core.runtime.xml&quot; keyConfigurationId=&quot;org.eclipse.ui.defaultAcceleratorConfiguration&quot; keySequence=&quot;ALT+CTRL+I&quot;/>&#xA;&lt;/org.eclipse.ui.commands>"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.workbench/ColorsAndFontsPreferencePage.expandedCategories"
+          value="Torg.eclipse.egit.ui.GitTheme"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.workbench/ColorsAndFontsPreferencePage.selectedElement"
+          value="Forg.eclipse.egit.ui.UncommittedChangeFont"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.UncommittedChangeFont"
+          value="1|Noto Sans|10.0|1|GTK|1|;"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.UncommittedChangeForegroundColor"
+          value="255,120,0"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -3025,6 +3753,50 @@
           key="/instance/org.eclipse.wst.jsdt.ui/formatter_profile"
           value="_Eclipse [built-in] 100"/>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="saros.eclipse">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/saros.eclipse/editor.annotation.contribution.enabled"
+          value="false"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/saros.eclipse/editor.annotation.selectionfillup.enabled"
+          value="false"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.debug.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.debug.ui/Console.limitConsoleOutput"
+          value="false"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="saros.eclipse">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/saros.eclipse/editor.annotation.contribution.enabled"
+          value="false"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.egit.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.egit.ui/resourcehistory_show_all_branches"
+          value="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.wst.xml.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.xml.core/lineWidth"
+          value="100"/>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
@@ -3034,8 +3806,8 @@
         name="org.eclipse.jst.server.tomcat.core">
       <setupTask
           xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.jst.server.tomcat.core/locationorg.eclipse.jst.server.tomcat.runtime.90"
-          value="/opt/apache-tomcat-9.0.27"/>
+          key="/instance/org.eclipse.jst.server.tomcat.core/locationorg.eclipse.jst.server.tomcat.runtime.100"
+          value="/opt/apache-tomcat-10.0.27"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -3043,7 +3815,7 @@
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.wst.server.core/runtimes"
-          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;runtimes>&#xA;  &lt;runtime id=&quot;Apache Tomcat v9.0&quot; location=&quot;/opt/apache-tomcat-9.0.27&quot; name=&quot;Apache Tomcat v9.0&quot; runtime-type-id=&quot;org.eclipse.jst.server.tomcat.runtime.90&quot; timestamp=&quot;0&quot;/>&#xA;&lt;/runtimes>&#xA;"/>
+          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;runtimes>&#xA;  &lt;runtime id=&quot;Apache Tomcat v10.0&quot; location=&quot;/opt/apache-tomcat-10.0.27&quot; name=&quot;Apache Tomcat v10.0&quot; runtime-type-id=&quot;org.eclipse.jst.server.tomcat.runtime.100&quot; timestamp=&quot;0&quot;/>&#xA;&lt;/runtimes>&#xA;"/>
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -3056,10 +3828,51 @@
     <setupTask
         xsi:type="setup:ResourceCreationTask"
         id="server.xml"
-        content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;servers>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 systemOne-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 systemOne&quot; name=&quot;Tomcat v9.0 systemOne&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;15&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;systemone::org.eclipse.jst.jee.server:systemone::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 alvin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 alvin&quot; name=&quot;Tomcat v9.0 alvin&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;29&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;alvin-cora::org.eclipse.jst.jee.server:alvin-cora::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 diva-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 diva&quot; name=&quot;Tomcat v9.0 diva&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;23&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;diva-cora::org.eclipse.jst.jee.server:diva-cora::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 systemOne gatekeeper-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 systemOne gatekeeper&quot; name=&quot;Tomcat v9.0 systemOne gatekeeper&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;5&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-gatekeeperserver::org.eclipse.jst.jee.server:cora-gatekeeperserver::jst.web::4.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 systemOne apptoken-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 systemOne apptoken&quot; name=&quot;Tomcat v9.0 systemOne apptoken&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;5&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 alvin apptoken-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 alvin apptoken&quot; name=&quot;Tomcat v9.0 alvin apptoken&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 alvin gatekeeper-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 alvin gatekeeper&quot; name=&quot;Tomcat v9.0 alvin gatekeeper&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-gatekeeperserver::org.eclipse.jst.jee.server:cora-gatekeeperserver::jst.web::4.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 diva apptoken-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 diva apptoken&quot; name=&quot;Tomcat v9.0 diva apptoken&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier::org.eclipse.jst.jee.server:cora-apptokenverifier::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 diva gatekeeper-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 diva gatekeeper&quot; name=&quot;Tomcat v9.0 diva gatekeeper&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-gatekeeperserver::org.eclipse.jst.jee.server:cora-gatekeeperserver::jst.web::4.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 systemOne idplogin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 systemOne idplogin&quot; name=&quot;Tomcat v9.0 systemOne idplogin&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 alvin idplogin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 alvin idplogin&quot; name=&quot;Tomcat v9.0 alvin idplogin&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 diva idplogin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 diva idplogin&quot; name=&quot;Tomcat v9.0 diva idplogin&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>&#xA;  &lt;/server>&#xA;&lt;/servers>"
         targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.wst.server.core/servers.xml"
         encoding="UTF-8">
       <description>tomcat server integration</description>
+      <content>
+        &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>
+        &lt;servers>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v10.0 systemOne-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v10.0 systemOne&quot; name=&quot;Tomcat v10.0 systemOne&quot; runtime-id=&quot;Apache Tomcat v10.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.100&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.100&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;15&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;systemone::org.eclipse.jst.jee.server:systemone::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v10.0 alvin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v10.0 alvin&quot; name=&quot;Tomcat v10.0 alvin&quot; runtime-id=&quot;Apache Tomcat v10.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.100&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.100&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;29&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;alvin-cora::org.eclipse.jst.jee.server:alvin-cora::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v10.0 diva-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v10.0 diva&quot; name=&quot;Tomcat v10.0 diva&quot; runtime-id=&quot;Apache Tomcat v10.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.100&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.100&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;23&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;diva-cora::org.eclipse.jst.jee.server:diva-cora::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v10.0 systemOne gatekeeper-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v10.0 systemOne gatekeeper&quot; name=&quot;Tomcat v10.0 systemOne gatekeeper&quot; runtime-id=&quot;Apache Tomcat v10.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.100&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.100&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;6&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;systemone-gatekeeper-war::org.eclipse.jst.jee.server:systemone-gatekeeper-war::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v10.0 systemOne apptoken-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v10.0 systemOne apptoken&quot; name=&quot;Tomcat v10.0 systemOne apptoken&quot; runtime-id=&quot;Apache Tomcat v10.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.100&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.100&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;5&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier-war::org.eclipse.jst.jee.server:cora-apptokenverifier-war::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v10.0 alvin apptoken-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v10.0 alvin apptoken&quot; name=&quot;Tomcat v10.0 alvin apptoken&quot; runtime-id=&quot;Apache Tomcat v10.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.100&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.100&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier-war::org.eclipse.jst.jee.server:cora-apptokenverifier-war::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v10.0 alvin gatekeeper-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v10.0 alvin gatekeeper&quot; name=&quot;Tomcat v10.0 alvin gatekeeper&quot; runtime-id=&quot;Apache Tomcat v10.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.100&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.100&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;3&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;alvin-gatekeeper-war::org.eclipse.jst.jee.server:alvin-gatekeeper-war::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v10.0 diva apptoken-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v10.0 diva apptoken&quot; name=&quot;Tomcat v10.0 diva apptoken&quot; runtime-id=&quot;Apache Tomcat v10.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.100&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.100&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;cora-apptokenverifier-war::org.eclipse.jst.jee.server:cora-apptokenverifier-war::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v10.0 diva gatekeeper-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v10.0 diva gatekeeper&quot; name=&quot;Tomcat v10.0 diva gatekeeper&quot; runtime-id=&quot;Apache Tomcat v10.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.100&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.100&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;3&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;diva-gatekeeper-war::org.eclipse.jst.jee.server:diva-gatekeeper-war::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v10.0 systemOne idplogin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v10.0 systemOne idplogin&quot; name=&quot;Tomcat v10.0 systemOne idplogin&quot; runtime-id=&quot;Apache Tomcat v10.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.100&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.100&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v10.0 alvin idplogin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v10.0 alvin idplogin&quot; name=&quot;Tomcat v10.0 alvin idplogin&quot; runtime-id=&quot;Apache Tomcat v10.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.100&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.100&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>
+          &lt;/server>
+          &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v10.0 diva idplogin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v10.0 diva idplogin&quot; name=&quot;Tomcat v10.0 diva idplogin&quot; runtime-id=&quot;Apache Tomcat v10.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.100&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.100&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;2&quot;>
+            &lt;list key=&quot;modules&quot; value0=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>
+          &lt;/server>
+        &lt;/servers>
+
+      </content>
     </setupTask>
     <setupTask
         xsi:type="projects:ProjectsImportTask">

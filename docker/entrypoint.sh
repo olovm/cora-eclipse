@@ -15,19 +15,15 @@ firstRun(){
 	chmod +x ~/workspace/cora-eclipse/development/setupProjects.sh
 	~/workspace/cora-eclipse/development/setupProjects.sh ~/workspace
 	
-	chmod +x ~/workspace/cora-eclipse/development/linkMetadata.sh
-	~/workspace/cora-eclipse/development/linkMetadata.sh ~/workspace
-	
-	chmod +x ~/workspace/cora-eclipse/development/copyMetadata.sh
-	~/workspace/cora-eclipse/development/copyMetadata.sh ~/workspace
+	chmod +x ~/workspace/cora-eclipse/development/createMetadataDirectoriesForStreams.sh
+	~/workspace/cora-eclipse/development/createMetadataDirectoriesForStreams.sh ~/workspace
 	
 	cd ~/workspace/cora-jsclient/
+	npm cache clean --force
 	npm install karma@latest karma-chrome-launcher@latest karma-firefox-launcher@latest karma-qunit@latest karma-coverage@latest karma-html-reporter@latest qunit@latest --save-dev
 
+	cd ~/workspace/cora-eclipse/oomph
 	runInstaller	
-	
-	chmod +x ~/workspace/cora-eclipse/development/postInstaller.sh
-	~/workspace/cora-eclipse/development/postInstaller.sh ~/workspace
 }
 
 runInstaller(){
@@ -41,5 +37,6 @@ elif [ ! -d ~/eclipse/eclipseforcora ]; then
 	runInstaller
 else
 	#SWT_GTK3=0 ~/eclipse/eclipseforcora/eclipse
+	~/archiveReadable.sh
 	~/eclipse/eclipseforcora/eclipse
 fi

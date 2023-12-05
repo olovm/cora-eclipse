@@ -1,6 +1,8 @@
-FROM fedora:30
+FROM fedora:39
 # Set a useful default locale
-RUN echo "export LANG=en_US.utf-8" > /opt/export_LANG.sh
+RUN echo "export LANG=en_US.UTF-8" > /opt/export_LANG.sh
+RUN echo "export LANGUAGE=en_US.UTF-8" >> /opt/export_LANG.sh
+RUN echo "export LC_ALL=en_US.UTF-8" >> /opt/export_LANG.sh
 ENV BASH_ENV=/opt/export_LANG.sh \
     ENV=/opt/export_LANG.sh \
     PROMPT_COMMAND="source /opt/export_LANG.sh"
@@ -23,23 +25,38 @@ RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -
 
 RUN dnf clean all && \
   dnf install \
+  glibc-langpack-en \
+  google-noto-sans-runic* \
+  google-noto-sans-math-fonts \
+  google-noto-sans-arabic* \
   firefox \
   webkit2gtk3 \
   wget \
   telnet \
+  nano \
   lsof \
   tar \
   less \
   htop \
   docker \
-  java-latest-openjdk java-latest-openjdk-devel java-latest-openjdk-javadoc \
+  java-17-openjdk java-17-openjdk-devel \
+  java-17-openjdk-javadoc java-17-openjdk-javadoc-zip \
+  java-17-openjdk-src \
+  java-latest-openjdk java-latest-openjdk-devel \ 
+  java-latest-openjdk-javadoc java-latest-openjdk-javadoc-zip \
+  java-latest-openjdk-src \
+  postgresql \
   maven \
   git \ 
-  node \
+  nodejs \
+  bindfs \
+  fuse \
+  libglvnd-gles \
+  ImageMagick \
   npm -y && \
   dnf clean all
   
-RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2019-09/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
+RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2023-09/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
@@ -48,10 +65,20 @@ RUN touch /home/$user/.gitconfig
 
 RUN chown $user:$user /home/$user -R
 
-RUN wget -O - http://apache.mirrors.spacedump.net/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz  | tar zxf - -C /opt/
+#RUN wget -O - https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - https://archive.apache.org/dist/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
+
+
+#RUN depmod
+#RUN modprobe fuse
+RUN mkdir /tmp/sharedArchiveReadable
+RUN chown $user:$user /tmp/sharedArchiveReadable -R
+RUN mkdir /tmp/sharedFileStorage
+RUN chown $user:$user /tmp/sharedFileStorage -R
+#RUN bindfs --map=root/$user:@root/@${user} /tmp/sharedArchive/ /tmp/sharedArchiveReadable/
 
 USER $user
 

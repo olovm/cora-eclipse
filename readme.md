@@ -1,3 +1,6 @@
+There is currently a problem with testng, run on branch testng740 as described under the heading 
+"Updating with a new non master version of eclipse dev environment" (can be run when doing a new install)
+
 # cora-eclipse
 Cora-eclipse is a project to enable easy setup of an Eclipse install for Cora development, using Eclipse and Docker.</br>
 I am running this on linux so, change as needed for other platforms.
@@ -16,7 +19,10 @@ You can get your docker group id by running;
 `getent group docker`
 
 Run:</br>
-`./cora-eclipse/runAll.sh dockerGroupId`
+`./cora-eclipse/runAll.sh dockerGroupId`</br>
+**or run:**</br>
+`./cora-eclipse/runAll.sh dockerGroupId master nocache`</br>
+This option will do a pull of the base image, and not use the cache so that you get the latest version of the packages that gets installed from Fedora.
 
 This scrip will, run the following headers automatically
 
@@ -40,14 +46,31 @@ clone all Cora repositories, add other remotes to all of them, install needed np
 start the eclipse installer (oomph). </br>
 **There are a few things that needs to be choosen in the installer:**
 
- 1. You need to use the ***advanced mode*** 
- 2. Browse for setup files for eclipse, /home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup (use the plussign to add)
- 3. In next step browse for setup for projects, /home/yourUserName/workspace/cora-eclipse/oomph/CoraProjects.setup (use the plussign to add)
- 2. Java 1.8+ VM, set it to: **/usr/lib/jvm/java-13-openjdk**
- 3. Use *absolute folder location* for your eclipse installation, set it to **/home/*yourUserName*/eclipse**
- 4. Fill in *folder location* for Installation location, set it to **/home/*yourUserName*/eclipse**
- 5. Use *absolute folder location* for your workspace, set it to **/home/*yourUserName*/workspace**
- 6. JRE 1.8 Location, set it to: **/usr/lib/jvm/java-13-openjdk**
+ 1. You need to use the advanced mode 
+ 
+ 1. Browse for setup files for eclipse, /home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup (use the plussign to add)
+ 2. Java 17+ VM, set it to: /usr/lib/jvm/**java-17-openjdk**
+ 3. Use release 202206 (there are some problems with the other ones)
+ 
+ next step
+ 
+ 1. In next step browse for setup for projects, /home/yourUserName/workspace/cora-eclipse/oomph/CoraProjects.setup (use the plussign to add)
+ 2. Make sure "Cora projects" are marked
+
+ next step
+ 
+ 1. Choose installation location: "Installed in the specified absolute folder location"
+ 2. Fill in path for "Root install folder": set it to /home/yourUserName/eclipse
+ 6. Fill in path for "Installation location": set it to /home/yourUserName/eclipse
+ 5. Choose Workspace location rule: "Located in the absolute folder location"
+ 6. Fill in path for "Workspace location": /home/yourUserName/workspace
+ 7. Fill in path for "JRE 17 Location": /usr/lib/jvm/**java-17-openjdk**
+ 
+ next step
+ 
+ finnish
+ 
+ saros might not allow you to log in, if so, skipp that step and do it later
 <br>
 This should get you through the installer and will eventually start eclipse and do a first run to setup eclipse. 
 You can click on the spinning arrows, in the bottom of the screen to see what the setup does.
@@ -58,20 +81,33 @@ You are now ready to do a first startup of the environment.
 
 
 ## Finishing up, your first startup of the environment
+</br>
+Saros not working on later java > 11 </br>
+https://github.com/saros-project/saros/issues/1142</br>
+https://newbedev.com/how-to-run-eclipse-in-clean-mode-what-happens-if-we-do-so</br>
+
+ docker exec  -it eclipse202309forcora2 bash</br>
+ copy saros.core_0.2.0.jar (fixed one) from </br>
+ cp /home/olov/workspace/cora-eclipse/docker/saros.core_0.2.0.jar /home/olov/.p2/pool/plugins/</br>
+ nano /home/olov/eclipse/eclipseforcora/eclipse.ini</br>
+  
+add </br>
+ -clean</br>
+to first row</br>
+restart eclipse</br>
+
 Start the environment by running:</br>
 `./eclipseForCora/startEclipseForCora.sh`
 <br>
  **Do the following in the listed order to avoid problems!**
- 1. Go in under preferences and make sure the latest java is choosen as default jre, **Installed JREs** menu
- 2. In project explorer, under the little arrow, deselect working sets
+ 1. Go in under preferences and make sure the latest java is choosen as default jre
+ 2. In project explorer, under the three little dots, deselect working sets
  3. Mark all projects and refresh them, menu or F5 (this will make sure eclipse sees files in target folders)
- 4. Start and stop the 3 servers (in server tab) in the following order:
-    1. Tomcat v9.0 systemOne 
-    2. Tomcat v9.0 alvin
-    3. Tomcat v9.0 diva
- 5. Go under External Tools Configurations (play icon with toolbox) and run linkJsClientToTomcats
- 6. Go under External Tools Configurations (play icon with toolbox) and run copyMetadata
-
+ 4. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallAllButDocker
+ 5. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallDevDocker
+ 6. Rightclick any project, and choose, maven / update project... (or F5) select all projects and run
+ 7. Stop and start containers and tomcat servers.
+ 
 
 ### Start systemOne
 1. Go under External Tools Configurations (play icon with toolbox) and start the docker containers for development by running systemoneStartDevDockers 
@@ -85,24 +121,39 @@ Start the environment by running:</br>
 After starting the appropriate servers and containers from inside eclipse, the following will be exposed:
 
 ### SystemOne
-[SystemOne web:http://localhost:8080/jsclient/theClient.html](http://localhost:8080/jsclient/theClient.html)<br>
-[Fitnesse:http://localhost:8090/fitnesse/FrontPage](http://localhost:8090/fitnesse/FrontPage)<br>
-[SystemOne REST:http://localhost:8080/therest/rest/](http://localhost:8080/systemone/rest/)<br>
-[Solr:http://localhost:8983/solr/](http://localhost:8983/solr/)<br>
-[Karma:http://localhost:9876/](http://localhost:9876/)<br>
+[SystemOne web:http://localhost:38080/jsclient/theClient.html](http://localhost:38080/jsclient/theClient.html)<br>
+[Fitnesse:http://localhost:38090/fitnesse/FrontPage](http://localhost:38090/fitnesse/FrontPage)<br>
+[SystemOne REST:http://localhost:38080/systemone/rest/](http://localhost:38080/systemone/rest/)<br>
+[Solr:http://localhost:38983/solr/](http://localhost:38983/solr/)<br>
+[RabbitMQ:http://localhost:15672/](http://localhost:15672/)guest/guest<br>
+[Karma:http://localhost:39876/](http://localhost:39876/)<br>
+[Fedora Commons:http://localhost:38087/fcrepo/](http://localhost:38087/fcrepo/)<br>
 
 ### Alvin
-[Alvin web:http://localhost:8081/jsclient/theClient.html](http://localhost:8081/jsclient/theClient.html)<br>
-[Fitnesse:http://localhost:8091/fitnesse/FrontPage](http://localhost:8091/fitnesse/FrontPage)<br>
-[Alvin REST:http://localhost:8081/therest/rest/](http://localhost:8081/therest/rest/)<br>
-[Solr:http://localhost:8984/solr/](http://localhost:8984/solr/)<br>
-[Fedora Commons:http://localhost:8089/fedora/](http://localhost:8089/fedora/)<br>
+[Alvin web:http://localhost:38081/jsclient/theClient.html](http://localhost:38081/jsclient/theClient.html)<br>
+[Fitnesse:http://localhost:38091/fitnesse/FrontPage](http://localhost:38091/fitnesse/FrontPage)<br>
+[Alvin REST:http://localhost:38081/alvin/rest/](http://localhost:38081/alvin/rest/)<br>
+[Solr:http://localhost:38984/solr/](http://localhost:38984/solr/)<br>
+[RabbitMQ:http://localhost:15673/](http://localhost:15673/)guest/guest<br>
+[Fedora Commons:http://localhost:38088/fedora/](http://localhost:38088/fedora/)<br>
 
 ### DiVA
-[DiVA web:http://localhost:8082/jsclient/theClient.html](http://localhost:8082/jsclient/theClient.html)<br>
-[Fitnesse:http://localhost:8092/fitnesse/FrontPage](http://localhost:8092/fitnesse/FrontPage)<br>
-[DiVA REST:http://localhost:8082/therest/rest/](http://localhost:8082/therest/rest/)<br>
-[Solr:http://localhost:8984/solr/](http://localhost:8984/solr/)<br>
+[DiVA web:http://localhost:38082/jsclient/theClient.html](http://localhost:38082/jsclient/theClient.html)<br>
+[Fitnesse:http://localhost:38092/fitnesse/FrontPage](http://localhost:38092/fitnesse/FrontPage)<br>
+[DiVA REST:http://localhost:38082/diva/rest/](http://localhost:38082/diva/rest/)<br>
+[Solr:http://localhost:38985/solr/](http://localhost:38985/solr/)<br>
+[RabbitMQ:http://localhost:15674/](http://localhost:15674/)guest/guest<br>
+[Fedora Commons:http://localhost:38089/fedora/](http://localhost:38089/fedora/)<br>
+
+# Commiting to github using token
+## generate a github token
+as described here:
+
+https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token
+
+## push to git with token
+username: your normal username
+password: your token
 
 # Updating
 
@@ -140,4 +191,42 @@ For alvin server go into the launch configuration / arguments under VM arguments
 1. Go under External Tools Configurations (play icon with toolbox) and run checkOutLatestTagOfAllProjects
 2. Go under External Tools Configurations (play icon with toolbox) and run mvnPomCleanInstallAllButDocker 
 3. Go under External Tools Configurations (play icon with toolbox) and run checkOutMasterOfAllProjects
+
+### For adding marketplace to oomph installer (note to self)
+https://stackoverflow.com/questions/47582157/eclipse-marketplace-plug-ins-silent-install
+Given a Marketplace install URL (https://marketplace.eclipse.org/marketplace-client-intro?mpc_install={ID}), construct the API URL as https://marketplace.eclipse.org/node/{ID}/api/p. Retrieve the XML file from that URL and look for the repository URL in the updateURL tag, and the available features in the ius tag. You'll need to append .feature.group to each IU feature listed
+
+### exporting data from connected databases
+connect to shell in devEnvironment:
+
+docker exec -it eclipse202309forcora2 bash 
+
+to export data from running DiVA db run:
+pg_dump -U diva -h diva-cora-docker-postgresql -p 5432 -t organisation diva > ~/workspace/diva-cora-docker-postgresql/docker/data/exported.sql
+
+### Debugging FitNesse
+Add the following to the top of the page, then use remoteDebugging such as DivaFitnesseDebug to connect to it when testing.
+
+```
+!path {java.class.path}
+!define COMMAND_PATTERN {/usr/lib/jvm/java-17-openjdk/bin/java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -cp %p %m}
+```
+
+### Archive 
+If problems with archive test for path not found:
+enter docker:
+
+docker exec -it eclipse202212forcora4 bash
+
+go to your home dir:
+
+cd /home/yourUserName
+
+create needed dir in temp:
+
+mkdir /tmp/sharedArchiveReadable
+
+run archive readable:
+
+./archiveReadable.sh
 
