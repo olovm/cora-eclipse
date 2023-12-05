@@ -59,6 +59,7 @@
 	<Parameter name="rabbitMqHostname" value="systemone-rabbitmq" override="false" />
 	<Parameter name="rabbitMqPort" value="5672" override="false" />
 	<Parameter name="rabbitMqVirtualHost" value="/" override="false" />
-	<Parameter name="rabbitMqExchange" value="converterExchange" override="false" />
+	<Parameter name="rabbitMqImageExchange" value="imageConverterExchange" override="false" />
+	<Parameter name="rabbitMqPdfExchange" value="pdfConverterExchange" override="false" />
 	<Parameter name="rabbitMqRoutingKey" value="" override="false" />
 </Context>

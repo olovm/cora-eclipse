@@ -11,8 +11,8 @@ cora-docker-rabbitmq:1.0-SNAPSHOT
 echo "sleep 10s for rabbit to start"
 sleep 10
 
-echo "starting binaryConverter for smallConverterQueue"
-docker run -it -d --name systemone-binaryConverterSmall \
+echo "starting binaryConverter for imageConverterQueue"
+docker run -it -d --name systemone-binarySmallImageConverter \
 --mount type=bind,source=/mnt/depot/cora/sharedArchive/systemOne,target=/tmp/sharedArchiveReadable/systemOne,readonly \
 --mount type=bind,source=/mnt/depot/cora/sharedFileStorage/systemOne,target=/tmp/sharedFileStorage/systemOne \
 --network=eclipseForCoraNet \
@@ -23,7 +23,24 @@ docker run -it -d --name systemone-binaryConverterSmall \
 -e rabbitMqHostName="systemone-rabbitmq" \
 -e rabbitMqPort="5672" \
 -e rabbitMqVirtualHost="/" \
--e rabbitMqQueueName="smallConverterQueue" \
+-e rabbitMqQueueName="smallImageConverterQueue" \
+-e fedoraOcflHome="/tmp/sharedArchiveReadable/systemOne" \
+-e fileStorageBasePath="/tmp/sharedFileStorage/systemOne/" \
+cora-docker-binaryconverter:1.0-SNAPSHOT
+
+echo "starting binaryConverter for pdfConverterQueue"
+docker run -it -d --name systemone-binaryPdfConverter \
+--mount type=bind,source=/mnt/depot/cora/sharedArchive/systemOne,target=/tmp/sharedArchiveReadable/systemOne,readonly \
+--mount type=bind,source=/mnt/depot/cora/sharedFileStorage/systemOne,target=/tmp/sharedFileStorage/systemOne \
+--network=eclipseForCoraNet \
+-e coraBaseUrl="http://eclipse:8080/systemone/rest/" \
+-e apptokenVerifierUrl="http://eclipse:8180/apptokenverifier/rest/" \
+-e userId="141414" \
+-e appToken="63e6bd34-02a1-4c82-8001-158c104cae0e" \
+-e rabbitMqHostName="systemone-rabbitmq" \
+-e rabbitMqPort="5672" \
+-e rabbitMqVirtualHost="/" \
+-e rabbitMqQueueName="pdfConverterQueue" \
 -e fedoraOcflHome="/tmp/sharedArchiveReadable/systemOne" \
 -e fileStorageBasePath="/tmp/sharedFileStorage/systemOne/" \
 cora-docker-binaryconverter:1.0-SNAPSHOT
