@@ -7,10 +7,12 @@ docker run -d --name systemone-rabbitmq \
 -p 15672:15672 \
 -d --hostname systemone-rabbitmq \
 cora-docker-rabbitmq:1.0-SNAPSHOT
-
+echo ""
 echo "sleep 10s for rabbit to start"
 sleep 10
 
+echo ""
+echo "------------ STARTING BINARY CONVERTERS ------------"
 echo "starting binaryConverter for imageConverterQueue"
 docker run -it -d --name systemone-binarySmallImageConverter \
 --mount type=bind,source=/mnt/depot/cora/sharedArchive/systemOne,target=/tmp/sharedArchiveReadable/systemOne,readonly \
@@ -45,6 +47,25 @@ docker run -it -d --name systemone-binaryPdfConverter \
 -e fileStorageBasePath="/tmp/sharedFileStorage/systemOne/" \
 cora-docker-binaryconverter:1.0-SNAPSHOT
 
+echo "starting binaryConverter for jp2ConverterQueue"
+docker run -it -d --name systemone-binaryJp2Converter \
+--mount type=bind,source=/mnt/depot/cora/sharedArchive/systemOne,target=/tmp/sharedArchiveReadable/systemOne,readonly \
+--mount type=bind,source=/mnt/depot/cora/sharedFileStorage/systemOne,target=/tmp/sharedFileStorage/systemOne \
+--network=eclipseForCoraNet \
+-e coraBaseUrl="http://eclipse:8080/systemone/rest/" \
+-e apptokenVerifierUrl="http://eclipse:8180/apptokenverifier/rest/" \
+-e userId="141414" \
+-e appToken="63e6bd34-02a1-4c82-8001-158c104cae0e" \
+-e rabbitMqHostName="systemone-rabbitmq" \
+-e rabbitMqPort="5672" \
+-e rabbitMqVirtualHost="/" \
+-e rabbitMqQueueName="jp2ConverterQueue" \
+-e fedoraOcflHome="/tmp/sharedArchiveReadable/systemOne" \
+-e fileStorageBasePath="/tmp/sharedFileStorage/systemOne/" \
+cora-docker-binaryconverter:1.0-SNAPSHOT
+echo "----------------------------------------------------"
+
+echo ""
 echo "starting solr"
 docker run -d --name systemone-solr \
 --network=eclipseForCoraNet \
