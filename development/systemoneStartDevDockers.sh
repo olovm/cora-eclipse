@@ -108,10 +108,15 @@ docker run -d --name systemone-iipimageserver \
  -p 34010:80 \
  -p 3900:9000 \
  --network=$NETWORK \
+ -e VERBOSITY=6 \
  -e JPEG_QUALITY=100 \
  -e PNG_QUALITY=9 \
  -e WEBP_QUALITY=100 \
  -e FILESYSTEM_PREFIX=/tmp/sharedFileStorage/systemOne/streams/ \
  -e FILESYSTEM_SUFFIX=-jp2 \
+ -e MAX_IMAGE_CACHE_SIZE=1000 \
+ -e ALLOW_UPSCALING=0 \
+ -e OMP_NUM_THREADS=10 \
+ -e CORS=* \
  --mount type=bind,source=/mnt/depot/cora/sharedFileStorage/systemOne,target=/tmp/sharedFileStorage/systemOne,readonly \
  cora-docker-iipimageserver:1.0-SNAPSHOT
