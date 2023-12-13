@@ -99,7 +99,7 @@ startBinaryConverters() {
 startDockerForConverterUsingQueueName(){
 	local queueName=$1
 	echo "starting binaryConverter for $queueName"
-	docker run -it -d --name systemone-binarySmallImageConverter \
+	docker run -it -d --name systemone-$queueName \
 	--mount type=bind,source=/mnt/depot/cora/sharedArchive/systemOne,target=/tmp/sharedArchiveReadable/systemOne,readonly \
 	--mount type=bind,source=/mnt/depot/cora/sharedFileStorage/systemOne,target=/tmp/sharedFileStorage/systemOne \
 	--network=$NETWORK \
