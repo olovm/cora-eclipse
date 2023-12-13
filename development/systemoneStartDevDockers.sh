@@ -15,7 +15,7 @@ start(){
 startRabbitMq() {
 	echoWithMarkers "rabbitmq"
 	docker run -d --name systemone-rabbitmq \
-	--network$NETWORK \
+	--network=$NETWORK \
 	-p 35672:5672 \
 	-p 15672:15672 \
 	-d --hostname systemone-rabbitmq \
@@ -33,7 +33,7 @@ echoWithMarkers() {
 startSolr(){
 	echoWithMarkers "solr"
 	docker run -d --name systemone-solr \
-	--network$NETWORK \
+	--network=$NETWORK \
 	-p 38983:8983 \
 	cora-solr:1.0-SNAPSHOT \
 	solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore
@@ -47,7 +47,7 @@ startFedora() {
 	echo "using path /tmp/sharedArchive/systemOne."
 	docker run -d --name systemone-fedora \
 	-p 38087:8080 \
-	--network$NETWORK \
+	--network=$NETWORK \
 	--mount type=bind,source=$sharedArchive/systemOne,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
 	-e CATALINA_OPTS="-Dfcrepo.config.file=/usr/local/tomcat/fcrepo.properties" \
 	cora-docker-fedora:1.0-SNAPSHOT
@@ -60,7 +60,7 @@ startPostgresql(){
 	echo "starting postgresql with cora data"
 	docker run -d --name systemone-postgresql --restart always  \
 	-p 35432:5432 \
-	--network$NETWORK \
+	--network=$NETWORK \
 	-e POSTGRES_DB=systemone \
 	-e POSTGRES_USER=systemone \
 	-e POSTGRES_PASSWORD=systemone \
@@ -102,7 +102,7 @@ startDockerForConverterUsingQueueName(){
 	docker run -it -d --name systemone-binarySmallImageConverter \
 	--mount type=bind,source=/mnt/depot/cora/sharedArchive/systemOne,target=/tmp/sharedArchiveReadable/systemOne,readonly \
 	--mount type=bind,source=/mnt/depot/cora/sharedFileStorage/systemOne,target=/tmp/sharedFileStorage/systemOne \
-	--network$NETWORK \
+	--network=$NETWORK \
 	-e coraBaseUrl="http://eclipse:8080/systemone/rest/" \
 	-e apptokenVerifierUrl="http://eclipse:8180/apptokenverifier/rest/" \
 	-e userId="141414" \
