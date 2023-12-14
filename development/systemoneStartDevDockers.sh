@@ -13,7 +13,7 @@ start(){
 }
 
 startRabbitMq() {
-	echoWithMarkers "rabbitmq"
+	echoStartingWithMarkers "rabbitmq"
 	docker run -d --name systemone-rabbitmq \
 	--network=$NETWORK \
 	-p 35672:5672 \
@@ -23,7 +23,7 @@ startRabbitMq() {
 	#sleep 10
 }
 
-echoWithMarkers() {
+echoStartingWithMarkers() {
 	local text=$1
 	echo ""
 	echo "------------ STARTING ${text^^} ------------"
@@ -31,7 +31,7 @@ echoWithMarkers() {
 }
 
 startSolr(){
-	echoWithMarkers "solr"
+	echoStartingWithMarkers "solr"
 	docker run -d --name systemone-solr \
 	--network=$NETWORK \
 	-p 38983:8983 \
@@ -40,7 +40,7 @@ startSolr(){
 }
 
 startFedora() {
-	echoWithMarkers "fedora"
+	echoStartingWithMarkers "fedora"
 	#$sharedArchive is set when starting eclipse docker
 	echo "using host location $sharedArchive/systemOne in the eclipse docker mounted on"
 	echo "/tmp/sharedArchive to store the files for the archive to be able to read it from fitnesse "
@@ -54,7 +54,7 @@ startFedora() {
 }
 
 startPostgresql(){
-	echoWithMarkers "postgresql"
+	echoStartingWithMarkers "postgresql"
 	echo "removing previous postgresql with cora data"
 	docker rm systemone-postgresql
 	echo "starting postgresql with cora data"
@@ -70,7 +70,7 @@ startPostgresql(){
 
 #--volumes-from eclipse202309forcora2 \
 startIIP() {
-	echoWithMarkers "IIPImageServer"
+	echoStartingWithMarkers "IIPImageServer"
 	docker run -d --name systemone-iipimageserver \
 	 -p 34010:80 \
 	 -p 3900:9000 \
@@ -90,7 +90,7 @@ startIIP() {
 }
 
 startBinaryConverters() {
-	echoWithMarkers "binary converters"
+	echoStartingWithMarkers "binary converters"
 	startDockerForConverterUsingQueueName "smallImageConverterQueue"
 	startDockerForConverterUsingQueueName "pdfConverterQueue"
 	startDockerForConverterUsingQueueName "jp2ConverterQueue"
