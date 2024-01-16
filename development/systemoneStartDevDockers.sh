@@ -7,8 +7,9 @@ start(){
 	startFedora
 	startPostgresql
 	startIIP
-#	echo ""
-#	echo "sleep 10s for rabbit to start"
+
+ 	sleepAndWait 15
+ 	
 	startBinaryConverters
 }
 
@@ -16,18 +17,15 @@ startRabbitMq() {
 	echoStartingWithMarkers "rabbitmq"
 	docker run -d --name systemone-rabbitmq \
 	--network=$NETWORK \
-	-p 35672:5672 \
-	-p 15672:15672 \
-	-d --hostname systemone-rabbitmq \
+	-p 15670:15672 \
+	--hostname systemone-rabbitmq \
 	cora-docker-rabbitmq:1.0-SNAPSHOT
-	#sleep 10
 }
 
 echoStartingWithMarkers() {
 	local text=$1
 	echo ""
 	echo "------------ STARTING ${text^^} ------------"
-	
 }
 
 startSolr(){
@@ -72,8 +70,8 @@ startPostgresql(){
 startIIP() {
 	echoStartingWithMarkers "IIPImageServer"
 	docker run -d --name systemone-iipimageserver \
-	 -p 34010:80 \
-	 -p 3900:9000 \
+	 -p 39080:80 \
+	 -p 39000:9000 \
 	 --network=$NETWORK \
 	 -e VERBOSITY=6 \
 	 -e JPEG_QUALITY=100 \
@@ -114,6 +112,13 @@ startDockerForConverterUsingQueueName(){
 	-e fedoraOcflHome="/tmp/sharedArchiveReadable/systemOne" \
 	-e fileStorageBasePath="/tmp/sharedFileStorage/systemOne/" \
 	cora-docker-binaryconverter:1.0-SNAPSHOT
+}
+
+sleepAndWait(){
+	local timeToSleep=$1
+	echo ""
+	echo "Waiting $timeToSleep seconds before to continue"
+	sleep $timeToSleep
 }
 
 start
