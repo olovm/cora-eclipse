@@ -323,11 +323,44 @@
           </detail>
           <detail
               key="label">
-            <value>cora-logger</value>
+            <value>cora-converter</value>
           </detail>
           <detail
               key="target">
             <value>https://github.com/lsu-ub-uu/cora-logger</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        id="cora-iiif"
+        name="cora-iiif">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.iiif.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.iiif"
+          location="${workspace.location}/cora-iiif"
+          remoteURI="https://github.com/lsu-ub-uu/cora-iiif">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-iiif</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-iiif</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
