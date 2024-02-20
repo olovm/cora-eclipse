@@ -65,4 +65,6 @@
 	
 	<Parameter name="iiifBaseUrl"
 		value="http://systemone-iiif:8080/iiif/" override="false" />
+	<Parameter name="imageServerUrl"
+		value="http://systemone-iipimageserver/iiif/" override="false" />
 </Context>
