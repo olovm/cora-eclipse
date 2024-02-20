@@ -16,7 +16,7 @@ COMMON_PURE_CONTAINER+="cora-docker-fedora cora-docker-rabbitmq cora-docker-iipi
 #ARCHIVED="cora-docker-fedora32 cora-docker-fedora32-client cora-docker-fedora38 "
 #PARENT, COMMON
 CORA0="cora-metadata cora-data cora-data-spies "
-CORA1="cora-converter "
+CORA1="cora-converter cora-iiif "
 CORA_IMPLEMENTATION="cora-xmlutils cora-xmlconverter cora-basicdata "
 ALL_CORA=$CORA0" "$CORA1" "$CORA_IMPLEMENTATION
 
