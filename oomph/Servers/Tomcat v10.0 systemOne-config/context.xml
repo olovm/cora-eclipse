@@ -55,6 +55,10 @@
 
 	<Parameter name="fedoraArchiveURL"
 		value="http://systemone-fedora:8080/fcrepo/rest/" override="false" />
+	<Parameter name="imageServerUrl"
+		value="http://systemone-iipimageserver:80/iiif/" override="false" />
+	<Parameter name="iiifBaseUrl"
+		value="http://localhost:38080/systemone/iiif/" override="false" />
 	
 	<Parameter name="rabbitMqHostname" value="systemone-rabbitmq" override="false" />
 	<Parameter name="rabbitMqPort" value="5672" override="false" />
