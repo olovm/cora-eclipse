@@ -34,27 +34,24 @@
 
 <!-- 	<Parameter name="storageOnDiskBasePath" value="/home/${user.name}/workspace/metadata/systemone/" -->
 <!-- 		override="false" /> -->
-	<Parameter name="storageOnDiskBasePath" value="/tmp/sharedFileStorage/systemOne/"
-		override="false" />
+	<Parameter name="storageOnDiskBasePath" value="/tmp/sharedFileStorage/systemOne/" override="false" />
 
 	<Parameter name="theRestPublicPathToSystem" value="/systemone/rest/" override="false" />
+	<Parameter name="iiifPublicPathToSystem" value="/systemone/iiif/" override="false" />
 
-	<Parameter name="gatekeeperURL" value="http://localhost:8280/gatekeeperserver/"
-		override="false" />
+	<Parameter name="gatekeeperURL" value="http://localhost:8280/gatekeeperserver/"	override="false" />
 
-	<Parameter name="coraDatabaseLookupName" value="java:/comp/env/jdbc/postgres"
-		override="false" />
+	<Parameter name="coraDatabaseLookupName" value="java:/comp/env/jdbc/postgres" override="false" />
 	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
 		driverClassName="org.postgresql.Driver"
 		url="jdbc:postgresql://systemone-postgresql:5432/systemone" username="systemone"
 		password="systemone" maxTotal="20000" maxIdle="10" maxWaitMillis="-1" />
 	<Parameter name="doNotCache" value="false" override="false" />
 	
-	<Parameter name="solrURL" value="http://systemone-solr:8983/solr/coracore"
-		override="false" />
+	<Parameter name="solrURL" value="http://systemone-solr:8983/solr/coracore" override="false" />
 
-	<Parameter name="fedoraArchiveURL"
-		value="http://systemone-fedora:8080/fcrepo/rest/" override="false" />
+	<Parameter name="fedoraArchiveURL" value="http://systemone-fedora:8080/fcrepo/rest/" override="false" />
+	<Parameter name="imageServerUrl" value="http://systemone-iipimageserver:80/iiif/" override="false" />
 	
 	<Parameter name="rabbitMqHostname" value="systemone-rabbitmq" override="false" />
 	<Parameter name="rabbitMqPort" value="5672" override="false" />
