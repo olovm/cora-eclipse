@@ -32,11 +32,13 @@
 
 	<Parameter name="guestUserId" value="coraUser:5368656924943436" override="false" />
 
-	<Parameter name="storageOnDiskBasePath" value="/home/${user.name}/workspace/metadata/diva/"
-		override="false" />
-
+	<!--<Parameter name="storageOnDiskBasePath" value="/home/${user.name}/workspace/metadata/diva/"
+		override="false" />-->
+	<Parameter name="storageOnDiskBasePath" value="/tmp/sharedFileStorage/diva/" override="false" />
+	
 	<Parameter name="theRestPublicPathToSystem" value="/diva/rest/" override="false" />
-
+	<Parameter name="iiifPublicPathToSystem" value="/diva/iiif/" override="false" />
+	
 	<Parameter name="gatekeeperURL" value="http://localhost:8282/gatekeeperserver/"
 		override="false" />
 
@@ -47,12 +49,14 @@
 		url="jdbc:postgresql://diva-postgresql:5432/diva" username="diva" password="diva"
 		maxTotal="20" maxIdle="10" maxWaitMillis="-1" />
 
+	<Parameter name="doNotCache" value="false" override="false" />
+
 	<Parameter name="solrURL" value="http://diva-solr:8983/solr/coracore"
 		override="false" />
 
-	<Parameter name="fedoraArchiveURL" value="http://diva-fedora:8080/fcrepo/rest/"
-		override="false" />
-
+	<Parameter name="fedoraArchiveURL" value="http://diva-fedora:8080/fcrepo/rest/" override="false" />
+	<Parameter name="imageServerUrl" value="http://diva-iipimageserver:80/iiif/" override="false" />
+	
 <Parameter name="rabbitMqHostname" value="diva-rabbitmq" override="false" />
 	<Parameter name="rabbitMqPort" value="5672" override="false" />
 	<Parameter name="rabbitMqVirtualHost" value="/" override="false" />

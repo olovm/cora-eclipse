@@ -32,11 +32,13 @@
 
 	<Parameter name="guestUserId" value="coraUser:5368244264733286" override="false" />
 
-	<Parameter name="storageOnDiskBasePath" value="/home/${user.name}/workspace/metadata/alvin/"
-		override="false" />
-
+	<!--<Parameter name="storageOnDiskBasePath" value="/home/${user.name}/workspace/metadata/alvin/"
+		override="false" />-->
+	<Parameter name="storageOnDiskBasePath" value="/tmp/sharedFileStorage/alvin/" override="false" />
+	
 	<Parameter name="theRestPublicPathToSystem" value="/alvin/rest/" override="false" />
-
+	<Parameter name="iiifPublicPathToSystem" value="/alvin/iiif/" override="false" />
+	
 	<Parameter name="gatekeeperURL" value="http://localhost:8281/gatekeeperserver/"
 		override="false" />
 
@@ -46,12 +48,14 @@
 		driverClassName="org.postgresql.Driver" url="jdbc:postgresql://alvin-postgresql:5432/alvin"
 		username="alvin" password="alvin" maxTotal="20" maxIdle="10" maxWaitMillis="-1" />
 
+	<Parameter name="doNotCache" value="false" override="false" />
+	
 	<Parameter name="solrURL" value="http://alvin-solr:8983/solr/coracore"
 		override="false" />
 
-	<Parameter name="fedoraArchiveURL" value="http://alvin-fedora:8080/fcrepo/rest/"
-		override="false" />
-		
+	<Parameter name="fedoraArchiveURL" value="http://alvin-fedora:8080/fcrepo/rest/" override="false" />
+	<Parameter name="imageServerUrl" value="http://alvin-iipimageserver:80/iiif/" override="false" />
+	
 	<Parameter name="rabbitMqHostname" value="alvin-rabbitmq" override="false" />
 	<Parameter name="rabbitMqPort" value="5672" override="false" />
 	<Parameter name="rabbitMqVirtualHost" value="/" override="false" />
