@@ -32,8 +32,8 @@ ALL_CORE=$CORE0" "$CORE1" "$CORE2" "$CORE3" "$CORE4
 
 #PARENT, COMMON, CORA
 LOGIN0="cora-gatekeepertokenprovider "
-LOGIN_DEPLOYMENT="cora-idplogin cora-apptokenverifier cora-apptokenverifier-war "
-LOGIN_CONTAINER="cora-docker-idplogin cora-docker-apptokenverifier "
+LOGIN_DEPLOYMENT="cora-idplogin cora-login cora-login-war "
+LOGIN_CONTAINER="cora-docker-idplogin cora-docker-login "
 #ALL_LOGIN=$LOGIN0" "$LOGIN_DEPLOYMENT
 ALL_LOGIN=$LOGIN0
 

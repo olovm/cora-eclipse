@@ -8,7 +8,7 @@ start(){
 	startPostgresql
 	startIIP
 
- 	sleepAndWait 15
+ 	sleepAndWait 10
  	
 	startBinaryConverters
 }
@@ -70,6 +70,7 @@ startPostgresql(){
 startIIP() {
 	echoStartingWithMarkers "IIPImageServer"
 	docker run -d --name systemone-iipimageserver \
+	 --network-alias=iiifserver \
 	 -p 39080:80 \
 	 -p 39000:9000 \
 	 --network=$NETWORK \
@@ -102,7 +103,7 @@ startDockerForConverterUsingQueueName(){
 	--mount type=bind,source=/mnt/depot/cora/sharedFileStorage/systemOne,target=/tmp/sharedFileStorage/systemOne \
 	--network=$NETWORK \
 	-e coraBaseUrl="http://eclipse:8080/systemone/rest/" \
-	-e apptokenVerifierUrl="http://eclipse:8180/apptokenverifier/rest/" \
+	-e apptokenVerifierUrl="http://eclipse:8180/login/rest/" \
 	-e userId="141414" \
 	-e appToken="63e6bd34-02a1-4c82-8001-158c104cae0e" \
 	-e rabbitMqHostName="systemone-rabbitmq" \
