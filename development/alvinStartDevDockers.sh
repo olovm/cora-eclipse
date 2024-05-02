@@ -103,7 +103,7 @@ startDockerForConverterUsingQueueName() {
         --mount type=bind,source=/mnt/depot/cora/sharedFileStorage/alvin,target=/tmp/sharedFileStorage/alvin \
         --network=$NETWORK \
         -e coraBaseUrl="http://eclipse:8081/alvin/rest/" \
-        -e apptokenVerifierUrl="http://eclipse:8181/apptokenverifier/rest/" \
+        -e apptokenVerifierUrl="http://eclipse:8181/login/rest/" \
         -e userId="141414" \
         -e appToken="63e6bd34-02a1-4c82-8001-158c104cae0e" \
         -e rabbitMqHostName="alvin-rabbitmq" \

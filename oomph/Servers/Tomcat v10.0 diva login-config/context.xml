@@ -27,7 +27,7 @@
 	<!-- Uncomment this to disable session persistence across Tomcat restarts -->
 	<!-- <Manager pathname="" /> -->
 	
-	<Parameter name="apptokenVerifierPublicPathToSystem" value="/apptokenverifier/rest/"
+	<Parameter name="loginPublicPathToSystem" value="/login/rest/"
 		override="false" />
 	
 	<Parameter name="gatekeeperURL" value="http://localhost:8282/gatekeeperserver/"

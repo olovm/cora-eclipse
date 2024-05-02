@@ -29,7 +29,7 @@
 	
 	<Parameter name="mainSystemDomain" value="http://localhost:8081/" override="false" />
 	
-	<Parameter name="tokenLogoutURL" value="http://localhost:8181/apptokenverifier/rest/"
+	<Parameter name="tokenLogoutURL" value="http://localhost:8181/login/rest/"
 		override="false" />
 	<Parameter name="gatekeeperURL" value="http://localhost:8281/gatekeeperserver/"
 		override="false" />
