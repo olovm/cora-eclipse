@@ -1080,18 +1080,18 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="cora-apptokenverifier">
+        name="cora-login">
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.cora.apptokenverifier.location}"
+            rootFolder="${git.clone.cora.login.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.cora.apptokenverifier"
-          location="${workspace.location}/cora-apptokenverifier"
-          remoteURI="https://github.com/lsu-ub-uu/cora-apptokenverifier">
+          id="git.clone.cora.login"
+          location="${workspace.location}/cora-login"
+          remoteURI="https://github.com/lsu-ub-uu/cora-login">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
@@ -1100,11 +1100,11 @@
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>cora-login</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-login</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -1528,18 +1528,18 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="cora-docker-apptokenverifier">
+        name="cora-docker-login">
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.cora.docker.apptokenverifier.location}"
+            rootFolder="${git.clone.cora.docker.login.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.cora.docker.apptokenverifier"
-          location="${workspace.location}/cora-docker-apptokenverifier"
-          remoteURI="https://github.com/lsu-ub-uu/cora-docker-apptokenverifier">
+          id="git.clone.cora.docker.login"
+          location="${workspace.location}/cora-docker-login"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-login">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
@@ -1548,11 +1548,11 @@
           </detail>
           <detail
               key="label">
-            <value>cora-parent</value>
+            <value>cora-docker-login</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+            <value>https://github.com/lsu-ub-uu/cora-docker-login</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
@@ -2849,18 +2849,18 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="cora-apptokenverifier-war">
+        name="cora-login-war">
       <setupTask
           xsi:type="maven:MavenImportTask">
         <sourceLocator
-            rootFolder="${git.clone.cora.apptokenverifier.war.location}"
+            rootFolder="${git.clone.cora.login.war.location}"
             locateNestedProjects="true"/>
       </setupTask>
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.cora.apptokenverifier.war"
-          location="${workspace.location}/cora-apptokenverifier-war"
-          remoteURI="https://github.com/lsu-ub-uu/cora-apptokenverifier-war">
+          id="git.clone.cora.login.war"
+          location="${workspace.location}/cora-login-war"
+          remoteURI="https://github.com/lsu-ub-uu/cora-login-war">
         <annotation
             source="http://www.eclipse.org/oomph/setup/InducedChoices">
           <detail
@@ -2869,11 +2869,11 @@
           </detail>
           <detail
               key="label">
-            <value>cora-apptokenverifier-war</value>
+            <value>cora-login-war</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/lsu-ub-uu/cora-apptokenverifier-war</value>
+            <value>https://github.com/lsu-ub-uu/cora-login-war</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
