@@ -28,7 +28,12 @@ indexMetadata(){
 	echo ""
 	local recordType=$1
 	echo 'Indexing recordType: '${recordType}
-	curl -s -X POST -k -H 'authToken: '${AUTH_TOKEN} -i ${INDEX_URL}'/'${recordType} | grep -o -P '(?<={"name":"id","value":").*?(?="})'
+	#curl -s -X POST -k -H 'authToken: '${AUTH_TOKEN} -i ${INDEX_URL}'/'${recordType} | grep -o -P '(?<={"name":"id","value":").*?(?="})'
+	local indexAnswer=$(curl -s -X POST -k -H 'authToken: '${AUTH_TOKEN} -i ${INDEX_URL}'/'${recordType} )
+	echo 'IndexAnswer: '${indexAnswer}
+	
+	local indexAnswerId=$(echo ${indexAnswer} | grep -o -P '(?<={"name":"id","value":").*?(?="})')
+	echo 'IndexAnswerId: '${indexAnswerId}
 }
 logoutFromCora(){
 	echo ""
