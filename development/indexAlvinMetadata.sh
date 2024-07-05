@@ -1,13 +1,21 @@
 #! /bin/bash
 
-INDEX_URL='https://cora.epc.ub.uu.se/systemone/rest/record/index'
+#INDEX_URL='https://cora.epc.ub.uu.se/systemone/rest/record/index'
 LOGIN_URL='http://localhost:8181/login/rest/apptoken/141414'
 LOGOUT_URL='http://localhost:8181/login/rest/authToken/141414'
 INDEX_URL='http://localhost:8081/alvin/rest/record/index'
 APP_TOKEN='63e6bd34-02a1-4c82-8001-158c104cae0e'
+
+#index preview from outside
 #LOGIN_URL='https://cora.alvin-portal.org/login/rest/apptoken/141414'
 #LOGOUT_URL='https://cora.alvin-portal.org/login/rest/authToken/141414'
 #INDEX_URL='https://cora.alvin-portal.org/rest/record/index'
+#APP_TOKEN='63e6bd34-02a1-4c82-8001-158c104cae0e'
+
+#index dev from outside
+#LOGIN_URL='http://130.238.171.238:38181/login/rest/apptoken/141414'
+#LOGOUT_URL='http://130.238.171.238:38181/login/rest/authToken/141414'
+#INDEX_URL='http://130.238.171.238:38081/alvin/rest/record/index'
 #APP_TOKEN='63e6bd34-02a1-4c82-8001-158c104cae0e'
 start(){
 	login;

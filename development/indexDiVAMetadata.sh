@@ -5,6 +5,13 @@ LOGIN_URL='http://localhost:8182/login/rest/apptoken/141414'
 LOGOUT_URL='http://localhost:8182/login/rest/authToken/141414'
 INDEX_URL='http://localhost:8082/diva/rest/record/index'
 APP_TOKEN='63e6bd34-02a1-4c82-8001-158c104cae0e'
+
+#index def from outside
+#LOGIN_URL='http://130.238.171.238:38182/login/rest/apptoken/141414'
+#LOGOUT_URL='http://130.238.171.238:38182/login/rest/authToken/141414'
+#INDEX_URL='http://130.238.171.238:38082/diva/rest/record/index'
+#APP_TOKEN='63e6bd34-02a1-4c82-8001-158c104cae0e'
+
 start(){
 	login;
 	

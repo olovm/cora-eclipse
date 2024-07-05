@@ -5,6 +5,13 @@ LOGIN_URL='http://localhost:8180/login/rest/apptoken/141414'
 LOGOUT_URL='http://localhost:8180/login/rest/authToken/141414'
 INDEX_URL='http://localhost:8080/systemone/rest/record/index'
 APP_TOKEN='63e6bd34-02a1-4c82-8001-158c104cae0e'
+
+#index dev from outside
+#LOGIN_URL='http://130.238.171.238:38180/login/rest/apptoken/141414'
+#LOGOUT_URL='http://130.238.171.238:38180/login/rest/authToken/141414'
+#INDEX_URL='http://130.238.171.238:38080/systemone/rest/record/index'
+#APP_TOKEN='63e6bd34-02a1-4c82-8001-158c104cae0e'
+
 start(){
 	login;
 	indexMetadata 'recordType';
