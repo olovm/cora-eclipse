@@ -13,7 +13,7 @@
     <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
     <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="se.uu.ub.cora.alvin.tocorautils.AlvinFromDbImporter"/>
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="alvin-tocorautils"/>
-    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;jsClientUser@system.cora.uu.se&quot; &quot;5d3f3ed4-4931-4924-9faa-8eaf5ac6457e&quot; &quot;http://localhost:8080/apptokenverifier/&quot; &quot;http://localhost:8080/therest/rest/&quot;&#9;&quot;alvin&quot; &quot;alvin&quot; &quot;jdbc:postgresql://alvin-cora-docker-postgresql:5432/alvin&quot; &quot;completelanguage&quot; &quot;se.uu.ub.cora.alvin.tocorautils.LanguageFromDbToCoraFactory&quot;"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;systemoneAdmin@system.cora.uu.se&quot; &quot;5d3f3ed4-4931-4924-9faa-8eaf5ac6457e&quot; &quot;http://localhost:8080/apptokenverifier/&quot; &quot;http://localhost:8080/therest/rest/&quot;&#9;&quot;alvin&quot; &quot;alvin&quot; &quot;jdbc:postgresql://alvin-cora-docker-postgresql:5432/alvin&quot; &quot;completelanguage&quot; &quot;se.uu.ub.cora.alvin.tocorautils.LanguageFromDbToCoraFactory&quot;"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="alvin-tocorautils"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
 </launchConfiguration>

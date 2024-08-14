@@ -1,13 +1,13 @@
 #! /bin/bash
 
 #INDEX_URL='https://cora.epc.ub.uu.se/systemone/rest/record/index'
-LOGIN_URL='http://localhost:8182/login/rest/apptoken/jsClientUser@system.cora.uu.se'
+LOGIN_URL='http://localhost:8182/login/rest/apptoken/systemoneAdmin@system.cora.uu.se'
 LOGOUT_URL='http://localhost:8182/login/rest/authToken/141414'
 INDEX_URL='http://localhost:8082/diva/rest/record/index'
 APP_TOKEN='5d3f3ed4-4931-4924-9faa-8eaf5ac6457e'
 
 #index def from outside
-#LOGIN_URL='http://130.238.171.238:38182/login/rest/apptoken/jsClientUser@system.cora.uu.se'
+#LOGIN_URL='http://130.238.171.238:38182/login/rest/apptoken/systemoneAdmin@system.cora.uu.se'
 #LOGOUT_URL='http://130.238.171.238:38182/login/rest/authToken/141414'
 #INDEX_URL='http://130.238.171.238:38082/diva/rest/record/index'
 #APP_TOKEN='5d3f3ed4-4931-4924-9faa-8eaf5ac6457e'
