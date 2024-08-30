@@ -45,6 +45,7 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host \
  -e user=$USER\
  -e HOSTBASEDIR=$BASEDIR\
  -e sharedArchive=PARENTDIR/sharedArchive\
+ --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
  --network=eclipseForCoraNet\
  --name eclipse202406forcora\
  --network-alias=eclipse\

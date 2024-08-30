@@ -58,6 +58,7 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged  --ipc=host \
  -p 38090:8090\
  -p 38091:8091\
  -p 38092:8092\
+ --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
  --network=eclipseForCoraNet\
  --name eclipse202406forcora\
  eclipse202406forcora $2

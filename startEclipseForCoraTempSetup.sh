@@ -46,6 +46,7 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged --ipc=host\
  -v PARENTDIR/archiveReadable.sh:/home/$USER/archiveReadable.sh\
  -e user=$USER\
  -e eclipsebranch=$ECLIPSEBRANCH\
+ --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
  --network=eclipseForCoraNet\
  --name eclipse202103forcora3TempSetup\
  eclipse202406forcora
