@@ -9,8 +9,8 @@ I am running this on linux so, change as needed for other platforms.
 1. Make sure you have git and docker set up on your local machine
 2. Make a directory where you want everything installed /x/y/z/cora (/mnt/depot/cora)
 3. cd to your new directory
-3. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
-
+4. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
+5. (if problem with poping subwindows run "xhost +" on the host machine
 
 
 ## Installing, runAll
@@ -49,8 +49,8 @@ start the eclipse installer (oomph). </br>
  1. You need to use the advanced mode 
  
  1. Browse for setup files for eclipse, /home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup (use the plussign to add)
- 2. Java 17+ VM, set it to: /usr/lib/jvm/**java-17-openjdk**
- 3. Use release 202206 (there are some problems with the other ones)
+ 2. Java 17+ VM, set it to: /usr/lib/jvm/**java-21-openjdk**
+ 3. Use release 202406
  
  next step
  
@@ -64,7 +64,7 @@ start the eclipse installer (oomph). </br>
  6. Fill in path for "Installation location": set it to /home/yourUserName/eclipse
  5. Choose Workspace location rule: "Located in the absolute folder location"
  6. Fill in path for "Workspace location": /home/yourUserName/workspace
- 7. Fill in path for "JRE 17 Location": /usr/lib/jvm/**java-17-openjdk**
+ 7. Fill in path for "JRE 17 Location": /usr/lib/jvm/**java-21-openjdk**
  
  next step
  
@@ -86,7 +86,7 @@ Saros not working on later java > 11 </br>
 https://github.com/saros-project/saros/issues/1142</br>
 https://newbedev.com/how-to-run-eclipse-in-clean-mode-what-happens-if-we-do-so</br>
 
- docker exec  -it eclipse202406forcora bash</br>
+ docker exec  -it eclipse202406forcora2 bash</br>
  copy saros.core_0.2.0.jar (fixed one) from </br>
  cp /home/olov/workspace/cora-eclipse/docker/saros.core_0.2.0.jar /home/olov/.p2/pool/plugins/</br>
  nano /home/olov/eclipse/eclipseforcora/eclipse.ini</br>
@@ -199,7 +199,7 @@ Given a Marketplace install URL (https://marketplace.eclipse.org/marketplace-cli
 ### exporting data from connected databases
 connect to shell in devEnvironment:
 
-docker exec -it eclipse202406forcora bash 
+docker exec -it eclipse202406forcora2 bash 
 
 to export data from running DiVA db run:
 pg_dump -U diva -h diva-cora-docker-postgresql -p 5432 -t organisation diva > ~/workspace/diva-cora-docker-postgresql/docker/data/exported.sql

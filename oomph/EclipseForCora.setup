@@ -1500,11 +1500,13 @@
       <requirement
           name="net.mihai-nita.ansicon.feature.group"/>
       <requirement
-          name="saros.feature.feature.group"/>
-      <requirement
           name="de.jcup.jenkinseditor.feature.feature.group"/>
       <requirement
           name="net.nodj.AutoDerivFeature.feature.group"/>
+      <requirement
+          name="org.testng.p2.feature.feature.group"/>
+      <requirement
+          name="org.testng.eclipse.maven.feature.feature.group"/>
       <repository
           url="https://eclipse-uc.sonarlint.org"/>
       <repository
@@ -1513,8 +1515,6 @@
           url="http://spotbugs.github.io/eclipse/"/>
       <repository
           url="https://www.mihai-nita.net/eclipse"/>
-      <repository
-          url="https://www.saros-project.org/update-site/eclipse"/>
       <repository
           url="https://de-jcup.github.io/update-site-eclipse-jenkins-editor/update-site/"/>
       <repository

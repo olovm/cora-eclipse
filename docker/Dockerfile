@@ -39,9 +39,6 @@ RUN dnf clean all && \
   less \
   htop \
   docker \
-  java-17-openjdk java-17-openjdk-devel \
-  java-17-openjdk-javadoc java-17-openjdk-javadoc-zip \
-  java-17-openjdk-src \
   java-21-openjdk java-21-openjdk-devel \
   java-21-openjdk-javadoc java-21-openjdk-javadoc-zip \
   java-21-openjdk-src \
@@ -68,8 +65,8 @@ RUN touch /home/$user/.gitconfig
 
 RUN chown $user:$user /home/$user -R
 
-#RUN wget -O - https://dlcdn.apache.org/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz  | tar zxf - -C /opt/
-RUN wget -O - https://archive.apache.org/dist/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz  | tar zxf - -C /opt/
+#RUN wget -O - https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.28/bin/apache-tomcat-10.1.28.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - https://archive.apache.org/dist/tomcat/tomcat-10/v10.1.28/bin/apache-tomcat-10.1.28.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
