@@ -27,7 +27,7 @@
   </setupTask>
   <version name="2023-06"
       label="2023-06"
-      requiredJavaVersion="17">
+      requiredJavaVersion="21">
     <annotation
         source="http://www.eclipse.org/oomph/setup/BrandingInfo">
       <detail
@@ -255,7 +255,7 @@
   </version>
   <version name="2022-12"
       label="2022-12"
-      requiredJavaVersion="17">
+      requiredJavaVersion="21">
     <annotation
         source="http://www.eclipse.org/oomph/setup/BrandingInfo">
       <detail
@@ -489,7 +489,7 @@
   </version>
   <version name="2022-09"
       label="2022-09"
-      requiredJavaVersion="17">
+      requiredJavaVersion="21">
     <annotation
         source="http://www.eclipse.org/oomph/setup/BrandingInfo">
       <detail
@@ -947,7 +947,7 @@
   </version>
   <version name="2023-09"
       label="2023-09"
-      requiredJavaVersion="17">
+      requiredJavaVersion="21">
     <annotation
         source="http://www.eclipse.org/oomph/setup/BrandingInfo">
       <detail
