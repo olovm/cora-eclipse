@@ -27,7 +27,7 @@
   </setupTask>
   <version name="2023-06"
       label="2023-06"
-      requiredJavaVersion="21">
+      requiredJavaVersion="17">
     <annotation
         source="http://www.eclipse.org/oomph/setup/BrandingInfo">
       <detail
@@ -255,7 +255,7 @@
   </version>
   <version name="2022-12"
       label="2022-12"
-      requiredJavaVersion="21">
+      requiredJavaVersion="17">
     <annotation
         source="http://www.eclipse.org/oomph/setup/BrandingInfo">
       <detail
@@ -489,7 +489,7 @@
   </version>
   <version name="2022-09"
       label="2022-09"
-      requiredJavaVersion="21">
+      requiredJavaVersion="17">
     <annotation
         source="http://www.eclipse.org/oomph/setup/BrandingInfo">
       <detail
@@ -947,7 +947,7 @@
   </version>
   <version name="2023-09"
       label="2023-09"
-      requiredJavaVersion="21">
+      requiredJavaVersion="17">
     <annotation
         source="http://www.eclipse.org/oomph/setup/BrandingInfo">
       <detail
@@ -1498,8 +1498,6 @@
       <requirement
           name="org.eclipse.linuxtools.docker.feature.feature.group"/>
       <requirement
-          name="net.mihai-nita.ansicon.feature.group"/>
-      <requirement
           name="de.jcup.jenkinseditor.feature.feature.group"/>
       <requirement
           name="net.nodj.AutoDerivFeature.feature.group"/>
@@ -1513,8 +1511,6 @@
           url="https://de-jcup.github.io/update-site-eclipse-bash-editor/update-site/"/>
       <repository
           url="http://spotbugs.github.io/eclipse/"/>
-      <repository
-          url="https://www.mihai-nita.net/eclipse"/>
       <repository
           url="https://de-jcup.github.io/update-site-eclipse-jenkins-editor/update-site/"/>
       <repository
