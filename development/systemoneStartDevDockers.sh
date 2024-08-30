@@ -66,7 +66,7 @@ startPostgresql(){
 }
 #--mount type=bind,source=/mnt/depot/cora/sharedArchive,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
 
-#--volumes-from eclipse202309forcora2 \
+#--volumes-from eclipse202406forcora \
 startIIP() {
 	echoStartingWithMarkers "IIPImageServer"
 	docker run -d --name systemone-iipimageserver \
