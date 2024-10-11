@@ -65,6 +65,7 @@ startPostgresql() {
         -e POSTGRES_DB=alvin \
         -e POSTGRES_USER=alvin \
         -e POSTGRES_PASSWORD=alvin \
+        -e DATA_DIVIDERS="cora jsClient alvin alvinPreview alvinTestSystem alvinProduction alvinData" \
         alvin-docker-postgresql:1.0-SNAPSHOT
 }
 
