@@ -105,7 +105,7 @@ startDockerForConverterUsingQueueName() {
         --network=$NETWORK \
         -e coraBaseUrl="http://eclipse:8081/diva/rest/" \
         -e apptokenVerifierUrl="http://eclipse:8181/login/rest/" \
-        -e userId="systemoneAdmin@system.cora.uu.se" \
+        -e loginId="systemoneAdmin@system.cora.uu.se" \
         -e appToken="5d3f3ed4-4931-4924-9faa-8eaf5ac6457e" \
         -e rabbitMqHostName="diva-rabbitmq" \
         -e rabbitMqPort="5672" \
