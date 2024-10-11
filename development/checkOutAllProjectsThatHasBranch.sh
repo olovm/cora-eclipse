@@ -1,39 +1,57 @@
 #! /bin/bash
-
-#prevent git asking for username password if repo is missing
-#export GIT_ASKPASS="/bin/true"
-export GIT_TERMINAL_PROMPT=0
-
-#import projectListing
-.  ~/workspace/cora-eclipse/development/projectListing.sh
-
-
-
-
 declare branch=$1
-echo 'Choosen branch:' $branch
-declare projects=$2
-echo 'Choosen projects:' $projects
+declare skipProjects=$2
 
-checkOutBranch() {
-	local dir=$1
-	echo $dir
-	cd ~/workspace/$dir
-	local fetchOk=$(git fetch origin $branch)
-	echo $fetchOk
-	echo checking out ${branch}
-	git checkout ${branch}
+start() {
+	printStartInfo
+	importProjectListing
+	preventGitFromAskingForPassword
+	checkOutBranchForAllProjects
 }
 
-cd ~/workspace/
+printStartInfo() {
+	echo 'Choosen branch:' $branch
+	echo 'Skipping projects:' $skipProjects
+	echo 'Looping through all projects looking for requested branch...'
+}
 
-#for i in $projects
-#do
-#    checkOutBranch "$i"
-#done
-#echo $ALL
+importProjectListing() {
+	#import projectListing
+	.  ~/workspace/cora-eclipse/development/projectListing.sh
+}
 
-for project in $ALL; do
-#for PROJECT in $TIER1; do
-	checkOutBranch $project
-done
+preventGitFromAskingForPassword() {
+	#prevent git asking for username password if repo is missing
+	#export GIT_ASKPASS="/bin/true"
+	export GIT_TERMINAL_PROMPT=0
+}
+
+checkOutBranchForAllProjects() {
+	cd ~/workspace/
+	for project in $ALL; do
+		checkOutBranch $project
+	done
+}
+
+checkOutBranch() {
+	local project=$1
+	if [[ $skipProjects != *$project* ]]; then
+		tryToCheckOutBranchForProject $project
+	fi
+}
+
+tryToCheckOutBranchForProject() {
+	local project=$1
+#	echo $project
+	cd ~/workspace/$project
+	git fetch origin $branch 2> /dev/null
+	local fetchOk=$?
+	if [ $fetchOk -eq 0 ]; then
+		echo
+		echo checking out ${branch} for ${project}
+		git checkout ${branch}
+	fi
+}
+
+
+start
