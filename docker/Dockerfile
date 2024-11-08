@@ -65,8 +65,8 @@ RUN touch /home/$user/.gitconfig
 
 RUN chown $user:$user /home/$user -R
 
-#RUN wget -O - https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.31/bin/apache-tomcat-10.1.31.tar.gz  | tar zxf - -C /opt/
-RUN wget -O - https://archive.apache.org/dist/tomcat/tomcat-10/v10.1.31/bin/apache-tomcat-10.1.31.tar.gz  | tar zxf - -C /opt/
+#RUN wget -O - https://dlcdn.apache.org/tomcat/tomcat-10/v11.0.0/bin/apache-tomcat-11.0.0.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - https://archive.apache.org/dist/tomcat/tomcat-10/v11.0.0/bin/apache-tomcat-11.0.0.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
