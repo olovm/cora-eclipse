@@ -49,8 +49,8 @@ start the eclipse installer (oomph). </br>
  1. You need to use the advanced mode 
  
  1. Browse for setup files for eclipse, /home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup (use the plussign to add)
- 2. Java 21+ VM, set it to: /usr/lib/jvm/**java-21-openjdk**
- 3. Use release 202406
+ 2. Java 21+ VM, set it to: /usr/lib/jvm/**java-23-openjdk**
+ 3. Use release 202409
  
  next step
  
@@ -64,7 +64,7 @@ start the eclipse installer (oomph). </br>
  6. Fill in path for "Installation location": set it to /home/yourUserName/eclipse
  5. Choose Workspace location rule: "Located in the absolute folder location"
  6. Fill in path for "Workspace location": /home/yourUserName/workspace
- 7. Fill in path for "JRE 21 Location": /usr/lib/jvm/**java-21-openjdk**
+ 7. Fill in path for "JRE 21 Location": /usr/lib/jvm/**java-23-openjdk**
  
  next step
  
@@ -86,7 +86,7 @@ Saros not working on later java > 11 </br>
 https://github.com/saros-project/saros/issues/1142</br>
 https://newbedev.com/how-to-run-eclipse-in-clean-mode-what-happens-if-we-do-so</br>
 
- docker exec  -it eclipse202406forcora2 bash</br>
+ docker exec  -it eclipse202409forcora1 bash</br>
  copy saros.core_0.2.0.jar (fixed one) from </br>
  cp /home/olov/workspace/cora-eclipse/docker/saros.core_0.2.0.jar /home/olov/.p2/pool/plugins/</br>
  nano /home/olov/eclipse/eclipseforcora/eclipse.ini</br>
@@ -199,7 +199,7 @@ Given a Marketplace install URL (https://marketplace.eclipse.org/marketplace-cli
 ### exporting data from connected databases
 connect to shell in devEnvironment:
 
-docker exec -it eclipse202406forcora2 bash 
+docker exec -it eclipse202409forcora1 bash 
 
 to export data from running DiVA db run:
 pg_dump -U diva -h diva-cora-docker-postgresql -p 5432 -t organisation diva > ~/workspace/diva-cora-docker-postgresql/docker/data/exported.sql
@@ -209,7 +209,7 @@ Add the following to the top of the page, then use remoteDebugging such as DivaF
 
 ```
 !path {java.class.path}
-!define COMMAND_PATTERN {/usr/lib/jvm/java-21-openjdk/bin/java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -cp %p %m}
+!define COMMAND_PATTERN {/usr/lib/jvm/java-23-openjdk/bin/java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -cp %p %m}
 ```
 
 ### Archive 
