@@ -104,8 +104,8 @@ startDockerForConverterUsingQueueName() {
         --mount type=bind,source=/mnt/depot/cora/sharedArchive/diva,target=/tmp/sharedArchiveReadable/diva,readonly \
         --mount type=bind,source=/mnt/depot/cora/sharedFileStorage/diva,target=/tmp/sharedFileStorage/diva \
         --network=$NETWORK \
-        -e coraBaseUrl="http://eclipse:8081/diva/rest/" \
-        -e apptokenVerifierUrl="http://eclipse:8181/login/rest/" \
+        -e coraBaseUrl="http://eclipse:8082/diva/rest/" \
+        -e apptokenVerifierUrl="http://eclipse:8182/login/rest/" \
         -e loginId="systemoneAdmin@system.cora.uu.se" \
         -e appToken="5d3f3ed4-4931-4924-9faa-8eaf5ac6457e" \
         -e rabbitMqHostName="diva-rabbitmq" \
