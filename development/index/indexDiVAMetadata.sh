@@ -22,9 +22,9 @@ start(){
 	indexMetadata 'guiElement';
 	indexMetadata 'system';
 	
-	indexMetadata 'person';
-	indexMetadata 'organisation';
-	indexMetadata 'divaOutput';
+	indexMetadata 'diva-person';
+	indexMetadata 'diva-organisation';
+	indexMetadata 'diva-output';
 	indexMetadata 'nationalSubjectCategory';
 	
 	logoutFromCora;
