@@ -25,6 +25,7 @@ RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -
 
 RUN dnf clean all && \
   dnf install \
+  gdk-pixbuf2 gdk-pixbuf2-devel gdk-pixbuf2-modules gtk2 gtk3 \
   glibc-langpack-en \
   google-noto-sans-runic* \
   google-noto-sans-math-fonts \
@@ -56,7 +57,7 @@ RUN dnf clean all && \
   npm -y && \
   dnf clean all
   
-RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2024-09/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
+RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2024-12/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
@@ -65,7 +66,7 @@ RUN touch /home/$user/.gitconfig
 
 RUN chown $user:$user /home/$user -R
 
-RUN wget -O - https://archive.apache.org/dist/tomcat/tomcat-11/v11.0.0/bin/apache-tomcat-11.0.0.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - https://archive.apache.org/dist/tomcat/tomcat-11/v11.0.2/bin/apache-tomcat-11.0.2.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli

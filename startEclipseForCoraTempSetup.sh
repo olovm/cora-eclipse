@@ -23,7 +23,7 @@ echo "Container runtime will be "${CONTAINERRUNTIME}
 if [ ! $USER ]; then
   	echo "You must specify the userName used when starting eclipse202103forcora3TempSetup"
 else
-cd eclipse202409forcora2
+cd eclipse202412forcora1
 ${CONTAINERRUNTIME} run --rm -ti --privileged --ipc=host\
  --env="QT_X11_NO_MITSHM=1"\
  --env="NO_AT_BRIDGE=1"\
@@ -31,6 +31,7 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged --ipc=host\
  -e XDG_RUNTIME_DIR=/tmp\
  -e WAYLAND_DISPLAY=$WAYLAND_DISPLAY\
  -v $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:/tmp/$WAYLAND_DISPLAY\
+ -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket \
  -v /var/run/docker.sock:/var/run/docker.sock\
  -v /usr/lib64/dri:/usr/lib64/dri\
  -v /tmp/.X11-unix:/tmp/.X11-unix\
@@ -49,6 +50,6 @@ ${CONTAINERRUNTIME} run --rm -ti --privileged --ipc=host\
  --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
  --network=eclipseForCoraNet\
  --name eclipse202103forcora3TempSetup\
- eclipse202409forcora2
+ eclipse202412forcora1
  cd ../
 fi
