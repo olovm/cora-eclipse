@@ -1,6 +1,3 @@
-There is currently a problem with testng, run on branch testng740 as described under the heading 
-"Updating with a new non master version of eclipse dev environment" (can be run when doing a new install)
-
 # cora-eclipse
 Cora-eclipse is a project to enable easy setup of an Eclipse install for Cora development, using Eclipse and Docker.</br>
 I am running this on linux so, change as needed for other platforms.
@@ -8,10 +5,12 @@ I am running this on linux so, change as needed for other platforms.
 ## Before you begin
 1. Make sure you have git and docker set up on your local machine
 2. Make a directory where you want everything installed /x/y/z/cora (/mnt/depot/cora)
-3. cd to your new directory
+3. `cd` to your new directory
 4. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
 5. (if problem with poping subwindows run "xhost +" on the host machine
 
+if you need a different version of the dev environment than master, look under the heading:<br>
+Starting dev environement cora-eclipse with different version than master
 
 ## Installing, runAll
 The runAll script will take you through the entire process of setting up a docker based development environment for Cora. It will go through all needed steps. </br>
@@ -27,75 +26,62 @@ This option will do a pull of the base image, and not use the cache so that you 
 This scrip will, run the following headers automatically
 
 ### Build docker image
-Automatically run by runAll<br>
-this will take some time as it downloads quite a few things, eclipse, tomcat, etc
+(Automatically run by runAll)<br>
+This will take some time as it downloads quite a few things, eclipse, tomcat, etc
 
 ### Create directories on host 
-Automatically run by runAll<br>
+(Automatically run by runAll)<br>
 1. workspace (for your eclipse workspace)
 2. eclipse (for your eclipse installation)
 3. eclipseP2 (for files shared between multiple installations of eclipse)
 4. m2 (for maven files)
 
 ### Docker first run installing eclipse
-Automatically run by runAll<br>
-
-#### Eclipse installation
+(Automatically run by runAll)<br>
 When the container starts for the first time will it run the installation part of entrypoint.sh. This will
 clone all Cora repositories, add other remotes to all of them, install needed npm karma in cora-jsclient and
 start the eclipse installer (oomph). </br>
-**There are a few things that needs to be choosen in the installer:**
 
- 1. You need to use the advanced mode 
- 
- 1. Browse for setup files for eclipse, /home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup (use the plussign to add)
+#### Cloning projects for Cora
+You need to choose the remote you want to use as origin for cloning the Cora projects<br>
+If you are uncertain use option **1. https://github.com/lsu-ub-uu/**
+
+#### Eclipse installation
+There are a few things that needs to be choosen in the installer<br>
+First of all switch to **advanced mode** in the installer
+ 1. Browse for setup files for eclipse, **/home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup** (use the plussign to add)
  2. Java 21+ VM, set it to: /usr/lib/jvm/**java-23-openjdk**
- 3. Use release 202409
+ 3. Use release **202412**
  
- next step
+next step
  
- 1. In next step browse for setup for projects, /home/yourUserName/workspace/cora-eclipse/oomph/CoraProjects.setup (use the plussign to add)
- 2. Make sure "Cora projects" are marked
+ 1. In next step browse for setup for projects, **/home/yourUserName/workspace/cora-eclipse/oomph/CoraProjects.setup** (use the plussign to add)
+ 2. Make sure **Cora projects** are marked
 
- next step
+next step
  
- 1. Choose installation location: "Installed in the specified absolute folder location"
- 2. Fill in path for "Root install folder": set it to /home/yourUserName/eclipse
- 6. Fill in path for "Installation location": set it to /home/yourUserName/eclipse
- 5. Choose Workspace location rule: "Located in the absolute folder location"
- 6. Fill in path for "Workspace location": /home/yourUserName/workspace
- 7. Fill in path for "JRE 21 Location": /usr/lib/jvm/**java-23-openjdk**
+ 1. Choose installation location: **Installed in the specified absolute folder location**
+ 2. Fill in path for "Root install folder": set it to **/home/yourUserName/eclipse**
+ 3. Fill in path for "Installation location": set it to **/home/yourUserName/eclipse**
+ 4. Choose Workspace location rule: **Located in the absolute folder location**
+ 5. Fill in path for "Workspace location": **/home/yourUserName/workspace**
+ 6. Fill in path for "JRE 21 Location": **/usr/lib/jvm/java-23-openjdk**
  
- next step
+next step<br>
+
+finnish
  
- finnish
- 
- saros might not allow you to log in, if so, skipp that step and do it later
+Saros might not allow you to log in, if so, skipp that step and do it later
 <br>
 This should get you through the installer and will eventually start eclipse and do a first run to setup eclipse. 
 You can click on the spinning arrows, in the bottom of the screen to see what the setup does.
 <br>
-Once the setuptask are finnished, no more spinning arrows, close eclipse, and then close the installer window. 
+**Wait** for the setuptasks to finnish, no more spinning arrows, close eclipse, and then close the installer window. 
 <br>
 You are now ready to do a first startup of the environment. 
 
 
 ## Finishing up, your first startup of the environment
-</br>
-Saros not working on later java > 11 </br>
-https://github.com/saros-project/saros/issues/1142</br>
-https://newbedev.com/how-to-run-eclipse-in-clean-mode-what-happens-if-we-do-so</br>
-
- docker exec  -it eclipse202412forcora1 bash</br>
- copy saros.core_0.2.0.jar (fixed one) from </br>
- cp /home/olov/workspace/cora-eclipse/docker/saros.core_0.2.0.jar /home/olov/.p2/pool/plugins/</br>
- nano /home/olov/eclipse/eclipseforcora/eclipse.ini</br>
-  
-add </br>
- -clean</br>
-to first row</br>
-restart eclipse</br>
-
 Start the environment by running:</br>
 `./eclipseForCora/startEclipseForCora.sh`
 <br>
@@ -110,15 +96,16 @@ Start the environment by running:</br>
  
 
 ### Start systemOne
-1. Go under External Tools Configurations (play icon with toolbox) and start the docker containers for development by running systemoneStartDevDockers 
-2. Start fitnesse, Go under Run Configurations (play icon) and start fitnesse
-2. Start the tomcat servers for systemOne
+1. Go under External Tools Configurations (play icon with toolbox) and start the docker containers for development by running **systemoneStartDevDockers**
+2. Start fitnesse, Go under Run Configurations (play icon) and start **systemOne-fitnesse**
+3. Find the server tab and **start the tomcat servers for systemOne**
+4. Go under External Tools Configurations (play icon with toolbox) and run **indexSystemOneMetadata**
 3. See links section below to find the running system
 
-(or similar for Alvin or DiVA)
+(or similar to run Alvin or DiVA)
 
 ## Links
-After starting the appropriate servers and containers from inside eclipse, the following will be exposed:
+After starting the appropriate servers and containers from inside eclipse, the following will be exposed on your host system:
 
 ### SystemOne
 [SystemOne web:http://localhost:38080/jsclient/theClient.html](http://localhost:38080/jsclient/theClient.html)<br>
@@ -145,8 +132,8 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [RabbitMQ:http://localhost:15674/](http://localhost:15674/)guest/guest<br>
 [Fedora Commons:http://localhost:38089/fedora/](http://localhost:38089/fedora/)<br>
 
-# Commiting to github using token
-## generate a github token
+## Commiting to github using token
+### generate a github token
 as described here:
 
 https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token
@@ -155,78 +142,94 @@ https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-
 username: your normal username
 password: your token
 
-# Updating
+## Starting dev environement of cora-eclipse with different version than master
+1. cd to your eclipse install directory cd /x/y/z/cora/cora-eclipse
+2. do a git pull: `git pull`
+3. list remote branches: git ls-remote
+4. checkout latest branch: `git checkout 201903_2`
+5. cd up to cora directory: `cd ..`
+6. run: `./cora-eclipse/runAll.sh 1001 201903_2`
+7. continue with installation as normal
 
-## Updating to a newer version of developed systems
-1. Set your username in .gitconfig found in the root catalog where you installed the system, do this
+## Development
+
+### Set your git info
+Set your username in .gitconfig found in the root catalog where you installed the system, do this
 from the host system as there currently seems to be some issue with setting information in the
 file from the docker side of things.<br>
-[user]<br>
-        name = yourusername<br>
-        email = user@organisation.org<br>
-2. Go under External Tools Configurations (play icon with toolbox), run fetchAllFromLSU
-3. Go under External Tools Configurations (play icon with toolbox), run mergeProjectsFromLSUMaster (confirm in console)
+```bash
+[user]
+    name = yourusername<br>
+    email = user@organisation.org
+```
+
+### Updating to latest code from lsu repository
+If you are working on in your own repository and want to update it with updates from lsu do the following<br>
+1. Go under External Tools Configurations (play icon with toolbox), run fetchAllFromLSU
+2. Go under External Tools Configurations (play icon with toolbox), run mergeProjectsFromLSUMaster (confirm in console)
 3. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallAllButDocker
 4. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallDevDocker
 5. Rightclick any project, and choose, maven / update project... (or F5) select all projects and run
 6. Stop and start containers and tomcat servers.
 
-### Updating with a new non master version of eclipse dev environment
-1. cd to your eclipse install directory cd /x/y/z/cora/cora-eclipse
-2. do a git pull: git pull
-3. list remote branches: git ls-remote
-4. checkout latest branch: git checkout 201903_2
-5. cd up to cora directory: cd ..
-6. run: ./cora-eclipse/runAll.sh 1001 201903_2
-7. continue with installation
-
-# Other
-
-### Adding cert information for connection to Fedora Commons
-For alvin server go into the launch configuration / arguments under VM arguments  add<br>
--Djavax.net.ssl.trustStore="/home/olov/workspace/cora-docker-fedora/files/fedoraKeystore.jks" -Djavax.net.ssl.trustStorePassword="changeit"
-
-
 ### Build all tags
-1. Go under External Tools Configurations (play icon with toolbox) and run checkOutLatestTagOfAllProjects
-2. Go under External Tools Configurations (play icon with toolbox) and run mvnPomCleanInstallAllButDocker 
-3. Go under External Tools Configurations (play icon with toolbox) and run checkOutMasterOfAllProjects
+1. Go under External Tools Configurations (play icon with toolbox) and run **checkOutLatestTagOfAllProjects**
+2. Go under External Tools Configurations (play icon with toolbox) and run **mvnPomCleanInstallAllButDocker**
+3. Go under External Tools Configurations (play icon with toolbox) and run **checkOutMasterOfAllProjects**
 
-### For adding marketplace to oomph installer (note to self)
-https://stackoverflow.com/questions/47582157/eclipse-marketplace-plug-ins-silent-install
-Given a Marketplace install URL (https://marketplace.eclipse.org/marketplace-client-intro?mpc_install={ID}), construct the API URL as https://marketplace.eclipse.org/node/{ID}/api/p. Retrieve the XML file from that URL and look for the repository URL in the updateURL tag, and the available features in the ius tag. You'll need to append .feature.group to each IU feature listed
+### Change all projects to a specific branch
+1. Go under External Tools Configurations (play icon with toolbox) and run **checkOutAllProjectsThatHasBranch**<br>
+2. Enter your desired branch such as: `issues/CORA-274`<br>
+if you want to switch bach all projects to master:<br>
+Go under External Tools Configurations (play icon with toolbox) and run **checkOutMasterOfAllProjects**
 
-### exporting data from connected databases
-connect to shell in devEnvironment:
-
-docker exec -it eclipse202412forcora1 bash 
-
-to export data from running DiVA db run:
-pg_dump -U diva -h diva-cora-docker-postgresql -p 5432 -t organisation diva > ~/workspace/diva-cora-docker-postgresql/docker/data/exported.sql
+### Change several projects to a specific branch
+1. Go under External Tools Configurations (play icon with toolbox) and run **checkOutBranchForProjects**<br>
+2. Enter your desired branch such as: `issues/CORA-274`
+3. Enter a list of projects to switch: `"cora-gatekeeperserver cora-gatekeepertokenprovider"`<br>
+if you want to switch back all projects to master:<br>
+Go under External Tools Configurations (play icon with toolbox) and run **checkOutMasterOfAllProjects**
 
 ### Debugging FitNesse
 Add the following to the top of the page, then use remoteDebugging such as DivaFitnesseDebug to connect to it when testing.
-
 ```
 !path {java.class.path}
 !define COMMAND_PATTERN {/usr/lib/jvm/java-23-openjdk/bin/java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -cp %p %m}
 ```
 
-### Archive 
+## Other
+### For adding marketplace to oomph installer (note to self)
+https://stackoverflow.com/questions/47582157/eclipse-marketplace-plug-ins-silent-install
+Given a Marketplace install URL (https://marketplace.eclipse.org/marketplace-client-intro?mpc_install={ID}), construct the API URL as https://marketplace.eclipse.org/node/{ID}/api/p. Retrieve the XML file from that URL and look for the repository URL in the updateURL tag, and the available features in the ius tag. You'll need to append .feature.group to each IU feature listed
+
+### Adding cert information for connection to Fedora Commons
+For alvin server go into the launch configuration / arguments under VM arguments  add<br>
+-Djavax.net.ssl.trustStore="/home/olov/workspace/cora-docker-fedora/files/fedoraKeystore.jks" -Djavax.net.ssl.trustStorePassword="changeit"
+
+### exporting data from connected databases
+connect to shell in devEnvironment:
+
+`docker exec -it eclipse202412forcora2 bash `
+
+to export data from running DiVA db run:
+`pg_dump -U diva -h diva-cora-docker-postgresql -p 5432 -t organisation diva > ~/workspace/diva-cora-docker-postgresql/docker/data/exported.sql`
+
+
+### Archive problem 
 If problems with archive test for path not found:
 enter docker:
 
-docker exec -it eclipse202212forcora4 bash
+`docker exec -it eclipse202412forcora2 bash`
 
 go to your home dir:
 
-cd /home/yourUserName
+`cd /home/yourUserName`
 
 create needed dir in temp:
 
-mkdir /tmp/sharedArchiveReadable
+`mkdir /tmp/sharedArchiveReadable`
 
 run archive readable:
 
-./archiveReadable.sh
+`./archiveReadable.sh`
 

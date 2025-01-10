@@ -16,11 +16,11 @@ fi
 echo "Container runtime will be "${CONTAINERRUNTIME}
 
 if [ ! $USER ]; then
-  	echo you must specify the userName to be used when building eclipse202412forcora1
+  	echo you must specify the userName to be used when building eclipse202412forcora2
 elif [ ! $USERID ]; then
-	echo you must specify the userid to be used when building eclipse202412forcora1, use: id -u youruserid 
+	echo you must specify the userid to be used when building eclipse202412forcora2, use: id -u youruserid 
 elif [ ! $DOCKERGROUPID ]; then
-	echo you must specify the dockergroupid to be used when building eclipse202412forcora1, use: getent group docker 
+	echo you must specify the dockergroupid to be used when building eclipse202412forcora2, use: getent group docker 
 else
 	#for possibly newer version of from: X
 	#docker build --pull --no-cache --build-arg user=$USER --build-arg dockergroupid=$DOCKERGROUPID -t eclipseforcoraoxygen2 cora-eclipse/docker/
@@ -30,16 +30,12 @@ else
 		 --build-arg user=$USER \
 		 --build-arg userid=$USERID \
 		 --build-arg dockergroupid=$DOCKERGROUPID \
-		 -t eclipse202412forcora1 cora-eclipse/docker/
+		 -t eclipse202412forcora2 cora-eclipse/docker/
 	else
 		${CONTAINERRUNTIME} build --no-cache --pull \
 		 --build-arg user=$USER \
 		 --build-arg userid=$USERID \
 		 --build-arg dockergroupid=$DOCKERGROUPID \
-		 -t eclipse202412forcora1 cora-eclipse/docker/
+		 -t eclipse202412forcora2 cora-eclipse/docker/
 	fi
-	#${CONTAINERRUNTIME} build --build-arg user=$USER -t eclipseforcoraoxygen2 cora-eclipse/docker/
-	#cd cora-eclipse/docker/
-	#docker-compose build --build-arg user=$USER eclipseforcoraoxygen2
-	#docker-compose build --no-cache --build-arg user=$USER eclipseforcoraoxygen2
 fi
