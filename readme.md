@@ -5,7 +5,7 @@ I am running this on linux so, change as needed for other platforms.
 ## Before you begin
 1. Make sure you have git and docker set up on your local machine
 2. Make a directory where you want everything installed /x/y/z/cora (/mnt/depot/cora)
-3. `cd` to your new directory
+3. `cd /x/y/z/cora` to your new directory
 4. Clone this repository: `git clone https://github.com/olovm/cora-eclipse.git`
 5. (if problem with poping subwindows run "xhost +" on the host machine
 
@@ -50,8 +50,8 @@ If you are uncertain use option **1. https://github.com/lsu-ub-uu/**
 There are a few things that needs to be choosen in the installer<br>
 First of all switch to **advanced mode** in the installer
  1. Browse for setup files for eclipse, **/home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup** (use the plussign to add)
- 2. Java 21+ VM, set it to: /usr/lib/jvm/**java-23-openjdk**
- 3. Use release **202412**
+ 2. Product version, set it to: **202412**
+ 3. Java 21+ VM, set it to: /usr/lib/jvm/**java-23-openjdk**
  
 next step
  
@@ -138,7 +138,7 @@ as described here:
 
 https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token
 
-## push to git with token
+### push to git with token
 username: your normal username
 password: your token
 
@@ -159,16 +159,16 @@ from the host system as there currently seems to be some issue with setting info
 file from the docker side of things.<br>
 ```bash
 [user]
-    name = yourusername<br>
+    name = yourusername
     email = user@organisation.org
 ```
 
 ### Updating to latest code from lsu repository
 If you are working on in your own repository and want to update it with updates from lsu do the following<br>
-1. Go under External Tools Configurations (play icon with toolbox), run fetchAllFromLSU
-2. Go under External Tools Configurations (play icon with toolbox), run mergeProjectsFromLSUMaster (confirm in console)
-3. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallAllButDocker
-4. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallDevDocker
+1. Go under External Tools Configurations (play icon with toolbox), run **fetchAllFromLSU**
+2. Go under External Tools Configurations (play icon with toolbox), run **mergeProjectsFromLSUMaster** (confirm in console)
+3. Go under External Tools Configurations (play icon with toolbox), run **mvnPomCleanInstallAllButDocker**
+4. Go under External Tools Configurations (play icon with toolbox), run **mvnPomCleanInstallDevDocker**
 5. Rightclick any project, and choose, maven / update project... (or F5) select all projects and run
 6. Stop and start containers and tomcat servers.
 
@@ -180,7 +180,7 @@ If you are working on in your own repository and want to update it with updates 
 ### Change all projects to a specific branch
 1. Go under External Tools Configurations (play icon with toolbox) and run **checkOutAllProjectsThatHasBranch**<br>
 2. Enter your desired branch such as: `issues/CORA-274`<br>
-if you want to switch bach all projects to master:<br>
+if you want to switch back all projects to master:<br>
 Go under External Tools Configurations (play icon with toolbox) and run **checkOutMasterOfAllProjects**
 
 ### Change several projects to a specific branch
