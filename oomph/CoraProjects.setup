@@ -2820,7 +2820,7 @@
         name="cora-jenkins">
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.corajenkins"
+          id="git.clone.cora.jenkins"
           location="${workspace.location}/cora-jenkins"
           remoteURI="https://github.com/lsu-ub-uu/cora-jenkins"
           pushURI="">
@@ -2844,7 +2844,39 @@
       <setupTask
           xsi:type="projects:ProjectsImportTask">
         <sourceLocator
-            rootFolder="${git.clone.corajenkins.location}"/>
+            rootFolder="${git.clone.cora.jenkins.location}"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-deployment">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.deployment"
+          location="${workspace.location}/cora-deployment"
+          remoteURI="https://github.com/lsu-ub-uu/cora-deployment"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-deployment</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-deployment</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${workspace.location}/cora-deployment"/>
       </setupTask>
     </setupTask>
     <setupTask
