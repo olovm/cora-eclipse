@@ -14,7 +14,7 @@ Starting dev environement cora-eclipse with different version than master
 
 ## Installing, runAll
 The runAll script will take you through the entire process of setting up a docker based development environment for Cora. It will go through all needed steps. </br>
-You can get your docker group id by running;
+You can get your docker group id by running:
 `getent group docker`
 
 Run:</br>
@@ -69,7 +69,7 @@ next step
  
 next step<br>
 
-finnish
+finish
  
 Saros might not allow you to log in, if so, skipp that step and do it later
 <br>
@@ -83,7 +83,7 @@ You are now ready to do a first startup of the environment.
 
 ## Finishing up, your first startup of the environment
 Start the environment by running:</br>
-`./eclipseForCora/startEclipseForCora.sh`
+`./eclipse202412forcora2/startEclipseForCora.sh`
 <br>
  **Do the following in the listed order to avoid problems!**
  1. Go in under preferences and make sure the latest java is choosen as default jre
@@ -92,8 +92,6 @@ Start the environment by running:</br>
  4. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallAllButDocker
  5. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallDevDocker
  6. Rightclick any project, and choose, maven / update project... (or F5) select all projects and run
- 7. Stop and start containers and tomcat servers.
- 
 
 ### Start systemOne
 1. Go under External Tools Configurations (play icon with toolbox) and start the docker containers for development by running **systemoneStartDevDockers**
@@ -111,26 +109,35 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [SystemOne web:http://localhost:38080/jsclient/theClient.html](http://localhost:38080/jsclient/theClient.html)<br>
 [Fitnesse:http://localhost:38090/fitnesse/FrontPage](http://localhost:38090/fitnesse/FrontPage)<br>
 [SystemOne REST:http://localhost:38080/systemone/rest/](http://localhost:38080/systemone/rest/)<br>
+[SystemOne Login:http://localhost:38180/login/rest/](http://localhost:38180/login/rest/)<br>
+[SystemOne IdpLogin:http://localhost:38380/systemone/idplogin/login](http://localhost:38380/systemone/idplogin/login)<br>
 [Solr:http://localhost:38983/solr/](http://localhost:38983/solr/)<br>
 [RabbitMQ:http://localhost:15672/](http://localhost:15672/)guest/guest<br>
 [Karma:http://localhost:39876/](http://localhost:39876/)<br>
 [Fedora Commons:http://localhost:38087/fcrepo/](http://localhost:38087/fcrepo/)<br>
+[IIF:http://localhost:38080/iif/](http://localhost:38080/iif/)<br>
 
 ### Alvin
 [Alvin web:http://localhost:38081/jsclient/theClient.html](http://localhost:38081/jsclient/theClient.html)<br>
 [Fitnesse:http://localhost:38091/fitnesse/FrontPage](http://localhost:38091/fitnesse/FrontPage)<br>
 [Alvin REST:http://localhost:38081/alvin/rest/](http://localhost:38081/alvin/rest/)<br>
+[Alvin Login:http://localhost:38181/systemone/rest/](http://localhost:38181/systemone/rest/)<br>
+[Alvin IdpLogin:http://localhost:38381/alvin/idplogin/login](http://localhost:38381/alvin/idplogin/login)<br>
 [Solr:http://localhost:38984/solr/](http://localhost:38984/solr/)<br>
 [RabbitMQ:http://localhost:15673/](http://localhost:15673/)guest/guest<br>
 [Fedora Commons:http://localhost:38088/fedora/](http://localhost:38088/fedora/)<br>
+[IIF:http://localhost:38081/iif/](http://localhost:38081/iif/)<br>
 
 ### DiVA
 [DiVA web:http://localhost:38082/jsclient/theClient.html](http://localhost:38082/jsclient/theClient.html)<br>
 [Fitnesse:http://localhost:38092/fitnesse/FrontPage](http://localhost:38092/fitnesse/FrontPage)<br>
 [DiVA REST:http://localhost:38082/diva/rest/](http://localhost:38082/diva/rest/)<br>
+[DiVA Login:http://localhost:38182/systemone/rest/](http://localhost:38182/systemone/rest/)<br>
+[DiVA IdpLogin:http://localhost:38382/diva/idplogin/login](http://localhost:38382/diva/idplogin/login)<br>
 [Solr:http://localhost:38985/solr/](http://localhost:38985/solr/)<br>
 [RabbitMQ:http://localhost:15674/](http://localhost:15674/)guest/guest<br>
 [Fedora Commons:http://localhost:38089/fedora/](http://localhost:38089/fedora/)<br>
+[IIF:http://localhost:38082/iif/](http://localhost:38082/iif/)<br>
 
 ## Commiting to github using token
 ### generate a github token
