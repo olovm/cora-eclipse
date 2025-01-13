@@ -7,7 +7,7 @@
         <listEntry value="4"/>
     </listAttribute>
     <mapAttribute key="org.eclipse.debug.core.environmentVariables">
-        <mapEntry key="JAVA_HOME" value="/usr/lib/jvm/java-21-openjdk/"/>
+        <mapEntry key="JAVA_HOME" value="/usr/lib/jvm/java-23-openjdk/"/>
     </mapAttribute>
     <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
         <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
