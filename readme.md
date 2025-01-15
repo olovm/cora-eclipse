@@ -121,7 +121,7 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [Alvin web:http://localhost:38081/jsclient/theClient.html](http://localhost:38081/jsclient/theClient.html)<br>
 [Fitnesse:http://localhost:38091/fitnesse/FrontPage](http://localhost:38091/fitnesse/FrontPage)<br>
 [Alvin REST:http://localhost:38081/alvin/rest/](http://localhost:38081/alvin/rest/)<br>
-[Alvin Login:http://localhost:38181/systemone/rest/](http://localhost:38181/systemone/rest/)<br>
+[Alvin Login:http://localhost:38181/login/rest/](http://localhost:38181/login/rest/)<br>
 [Alvin IdpLogin:http://localhost:38381/alvin/idplogin/login](http://localhost:38381/alvin/idplogin/login)<br>
 [Solr:http://localhost:38984/solr/](http://localhost:38984/solr/)<br>
 [RabbitMQ:http://localhost:15673/](http://localhost:15673/)guest/guest<br>
@@ -132,7 +132,7 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [DiVA web:http://localhost:38082/jsclient/theClient.html](http://localhost:38082/jsclient/theClient.html)<br>
 [Fitnesse:http://localhost:38092/fitnesse/FrontPage](http://localhost:38092/fitnesse/FrontPage)<br>
 [DiVA REST:http://localhost:38082/diva/rest/](http://localhost:38082/diva/rest/)<br>
-[DiVA Login:http://localhost:38182/systemone/rest/](http://localhost:38182/systemone/rest/)<br>
+[DiVA Login:http://localhost:38182/login/rest/](http://localhost:38182/login/rest/)<br>
 [DiVA IdpLogin:http://localhost:38382/diva/idplogin/login](http://localhost:38382/diva/idplogin/login)<br>
 [Solr:http://localhost:38985/solr/](http://localhost:38985/solr/)<br>
 [RabbitMQ:http://localhost:15674/](http://localhost:15674/)guest/guest<br>
