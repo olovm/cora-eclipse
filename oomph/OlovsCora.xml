@@ -145,8 +145,7 @@
 						<tags>categoryTag:General</tags>
 					</children>
 					<children xsi:type="advanced:Placeholder" xmi:id="_zeslydN8Ee-XCr1UngdQgQ"
-						elementId="org.eclipse.ui.views.minimap.MinimapView" toBeRendered="
-false" closeable="true">
+						elementId="org.eclipse.ui.views.minimap.MinimapView" toBeRendered="false" closeable="true">
 						<tags>View</tags>
 						<tags>categoryTag:General</tags>
 					</children>
