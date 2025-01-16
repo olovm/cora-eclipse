@@ -59,7 +59,7 @@ chooseRepo(){
 }
 
 importProjectListing() {
-	.  $BASEDIR/projectListing.sh
+	.  $BASEDIR/development/projectListing.sh
 }
 
 preventGitAskingForUsernameAndPasswordIfRepoIsMissing() {

@@ -50,7 +50,7 @@ If you are uncertain use option **1. https://github.com/lsu-ub-uu/**
 There are a few things that needs to be choosen in the installer<br>
 First of all switch to **advanced mode** in the installer
  1. Browse for setup files for eclipse, **/home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup** (use the plussign to add)
- 2. Product version, set it to: **202412**
+ 2. Product version, set it to: **2024-12 Eclipse environment for Cora**
  3. Java 21+ VM, set it to: /usr/lib/jvm/**java-23-openjdk**
  
 next step
@@ -65,7 +65,7 @@ next step
  3. Fill in path for "Installation location": set it to **/home/yourUserName/eclipse**
  4. Choose Workspace location rule: **Located in the absolute folder location**
  5. Fill in path for "Workspace location": **/home/yourUserName/workspace**
- 6. Fill in path for "JRE 21 Location": **/usr/lib/jvm/java-23-openjdk**
+ 6. Fill in path for "JRE 23 Location": **/usr/lib/jvm/java-23-openjdk**
  
 next step<br>
 
