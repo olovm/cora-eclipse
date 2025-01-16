@@ -46,7 +46,7 @@ changeAndCopyScripts(){
 	sed -i "s|INSTALLDIR|$INSTALLDIR|g" $INSTALLDIR/startEclipseForCoraNoPorts.sh
 	sed -i "s|PARENTDIR|$PARENTDIR|g" $INSTALLDIR/startEclipseForCoraNoPorts.sh
 	
-	cp $BASEDIR/development/projectListing.sh $INSTALLDIR/projectListing.sh
+	cp $BASEDIR/development/projectListing.sh $INSTALLDIR/development/projectListing.sh
 	cp $BASEDIR/docker/setupProjects.sh $INSTALLDIR/setupProjects.sh
 	
 	cp $BASEDIR/docker/Dockerfile $INSTALLDIR/
