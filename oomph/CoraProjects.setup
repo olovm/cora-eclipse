@@ -2777,12 +2777,28 @@
         </annotation>
         <description>${scope.project.label}</description>
       </setupTask>
-      <setupTask
+      <setupTask xsi:type="setup:ResourceCreationTask" targetURL="${workspace.location}/friday-monitoring/.project">
+        <description>Add project file to make import of project into eclipse work</description>
+        <content>
+          &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+          &lt;projectDescription>
+          	&lt;name>friday-monitoring&lt;/name>
+          	&lt;comment>&lt;/comment>
+          	&lt;projects>
+          	&lt;/projects>
+          	&lt;buildSpec>
+          	&lt;/buildSpec>
+          	&lt;natures>
+          	&lt;/natures>
+          &lt;/projectDescription>
+        </content>
+      </setupTask><setupTask
           xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${git.clone.fridaymonitoring.location}"
             locateNestedProjects="true"/>
       </setupTask>
+      
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -2841,11 +2857,27 @@
         </annotation>
         <description>${scope.project.label}</description>
       </setupTask>
-      <setupTask
+      <setupTask xsi:type="setup:ResourceCreationTask" targetURL="${workspace.location}/cora-jenkins/.project">
+        <description>Add project file to make import of project into eclipse work</description>
+        <content>
+          &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+          &lt;projectDescription>
+          	&lt;name>cora-jenkins&lt;/name>
+          	&lt;comment>&lt;/comment>
+          	&lt;projects>
+          	&lt;/projects>
+          	&lt;buildSpec>
+          	&lt;/buildSpec>
+          	&lt;natures>
+          	&lt;/natures>
+          &lt;/projectDescription>
+        </content>
+      </setupTask><setupTask
           xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${git.clone.cora.jenkins.location}"/>
       </setupTask>
+      
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
@@ -2873,11 +2905,27 @@
         </annotation>
         <description>${scope.project.label}</description>
       </setupTask>
-      <setupTask
+      <setupTask xsi:type="setup:ResourceCreationTask" targetURL="${workspace.location}/cora-deployment/.project">
+        <description>Add project file to make import of project into eclipse work</description>
+        <content>
+          &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+          &lt;projectDescription>
+          	&lt;name>cora-deployment&lt;/name>
+          	&lt;comment>&lt;/comment>
+          	&lt;projects>
+          	&lt;/projects>
+          	&lt;buildSpec>
+          	&lt;/buildSpec>
+          	&lt;natures>
+          	&lt;/natures>
+          &lt;/projectDescription>
+        </content>
+      </setupTask><setupTask
           xsi:type="projects:ProjectsImportTask">
         <sourceLocator
             rootFolder="${workspace.location}/cora-deployment"/>
       </setupTask>
+      
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
