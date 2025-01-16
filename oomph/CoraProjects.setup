@@ -2757,7 +2757,7 @@
         name="friday-monitoring">
       <setupTask
           xsi:type="git:GitCloneTask"
-          id="git.clone.fridaymonitoring"
+          id="git.clone.friday.monitoring"
           location="${workspace.location}/friday-monitoring"
           remoteURI="https://github.com/lsu-ub-uu/friday-monitoring">
         <annotation
@@ -2779,7 +2779,7 @@
       </setupTask>
       <setupTask
           xsi:type="setup:ResourceCreationTask"
-          targetURL="${git.clone.diva.metadata.location}/.project">
+          targetURL="${git.clone.friday.monitoring.location}/.project">
         <description>Add project file to make import of project into eclipse work</description>
         <content>
           &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
@@ -2798,7 +2798,7 @@
       <setupTask
           xsi:type="projects:ProjectsImportTask">
         <sourceLocator
-            rootFolder="${git.clone.fridaymonitoring.location}"
+            rootFolder="${git.clone.friday.monitoring.location}"
             locateNestedProjects="true"/>
       </setupTask>
     </setupTask>
