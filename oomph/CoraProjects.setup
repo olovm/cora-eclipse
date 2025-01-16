@@ -2779,7 +2779,7 @@
       </setupTask>
       <setupTask
           xsi:type="setup:ResourceCreationTask"
-          targetURL="${workspace.location}/friday-monitoring/.project">
+          targetURL="${git.clone.diva.metadata.location}/.project">
         <description>Add project file to make import of project into eclipse work</description>
         <content>
           &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
@@ -2861,7 +2861,7 @@
       </setupTask>
       <setupTask
           xsi:type="setup:ResourceCreationTask"
-          targetURL="${workspace.location}/cora-jenkins/.project">
+          targetURL="${git.clone.cora.jenkins.location}/.project">
         <description>Add project file to make import of project into eclipse work</description>
         <content>
           &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
@@ -2911,7 +2911,7 @@
       </setupTask>
       <setupTask
           xsi:type="setup:ResourceCreationTask"
-          targetURL="${workspace.location}/cora-deployment/.project">
+          targetURL="${git.clone.cora.deployment.location}/.project">
         <description>Add project file to make import of project into eclipse work</description>
         <content>
           &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
@@ -2930,7 +2930,7 @@
       <setupTask
           xsi:type="projects:ProjectsImportTask">
         <sourceLocator
-            rootFolder="${workspace.location}/cora-deployment"/>
+            rootFolder="${git.clone.cora.deployment.location}"/>
       </setupTask>
     </setupTask>
     <setupTask
