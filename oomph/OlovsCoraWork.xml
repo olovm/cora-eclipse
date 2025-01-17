@@ -228,7 +228,7 @@
 					<tags>categoryTag:Java</tags>
 				</children>
 				<children xsi:type="advanced:Placeholder" xmi:id="_TvZgsNPcEe-CHpzHQZC9zQ"
-					elementId="org.eclipse.ui.console.ConsoleView:Console View \#2" toBeRendered="false"
+					elementId="org.eclipse.ui.console.ConsoleView:Console View #2" toBeRendered="false"
 					closeable="true">
 					<tags>View</tags>
 					<tags>categoryTag:General</tags>
@@ -327,7 +327,7 @@
 		<children xsi:type="basic:PartStack" xmi:id="_TvZgyNPcEe-CHpzHQZC9zQ"
 			elementId="PartStack@7486fa3f" toBeRendered="false">
 			<children xsi:type="advanced:Placeholder" xmi:id="_TvZgydPcEe-CHpzHQZC9zQ"
-				elementId="org.eclipse.ui.console.ConsoleView:Console View \#1" toBeRendered="false"
+				elementId="org.eclipse.ui.console.ConsoleView:Console View #1" toBeRendered="false"
 				closeable="true">
 				<tags>View</tags>
 				<tags>categoryTag:General</tags>
