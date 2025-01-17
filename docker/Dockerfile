@@ -26,6 +26,7 @@ RUN groupadd -r docker -g$dockergroupid && useradd -d "/home/$user" -u $userid -
 RUN dnf clean all && \
   dnf install \
   gdk-pixbuf2 gdk-pixbuf2-devel gdk-pixbuf2-modules gtk2 gtk3 \
+  dbus-x11 \
   glibc-langpack-en \
   google-noto-sans-runic* \
   google-noto-sans-math-fonts \
