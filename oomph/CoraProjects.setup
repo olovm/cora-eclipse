@@ -3949,6 +3949,14 @@
           key="/instance/org.eclipse.wst.xml.core/lineWidth"
           value="100"/>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.ui.console">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.console/ANSI_support_show_escapes"
+          value="false"/>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
