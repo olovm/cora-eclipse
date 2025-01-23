@@ -7,6 +7,7 @@ start() {
 	importProjectListing
 	preventGitFromAskingForPassword
 	checkOutBranchForAllProjects
+	echoOverwriteLastLine
 }
 
 printStartInfo() {
@@ -27,17 +28,35 @@ preventGitFromAskingForPassword() {
 }
 
 checkOutBranchForAllProjects() {
+	local numberOfProjects=$(echo $ALL | wc -w)
+	local numberOfChecked=0
 	cd ~/workspace/
 	for project in $ALL; do
-		checkOutBranch $project
+		((numberOfChecked++))
+		checkOutBranch $project $numberOfProjects $numberOfChecked
 	done
 }
 
 checkOutBranch() {
 	local project=$1
+	local numberOfProjects=$2 
+	local numberOfChecked=$3
 	if [[ $skipProjects != *$project* ]]; then
+		echoOverwriteLastLine "($numberOfChecked/$numberOfProjects) $project" 
 		tryToCheckOutBranchForProject $project
 	fi
+}
+
+echoOverwriteLastLine() { 
+	echo -n -e "\r$@                                                       ";
+
+#	echo -n -e "\r\033[1A\033[0K$@";
+#	echo -n -e "\r\e[1A\e[0K$@";
+#	echo -n -e "\r\033[43$@                                                       ";
+#	echo -n -e "\r\e[43$@                                                       ";
+#	echo -n -e "\r\x1b[43$@                                                       ";
+
+#	echo -n -e "\r\u001B[32m$@                                                       ";
 }
 
 tryToCheckOutBranchForProject() {
@@ -47,7 +66,9 @@ tryToCheckOutBranchForProject() {
 	git fetch origin $branch 2> /dev/null
 	local fetchOk=$?
 	if [ $fetchOk -eq 0 ]; then
+		echoOverwriteLastLine
 		echo
+		echo $project
 		echo checking out ${branch} for ${project}
 		git checkout ${branch}
 	fi
