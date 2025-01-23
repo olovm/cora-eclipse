@@ -3957,6 +3957,18 @@
           key="/instance/org.eclipse.ui.console/ANSI_support_show_escapes"
           value="false"/>
     </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.debug.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.debug.ui/Console.highWaterMark"
+          value="88000"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.debug.ui/Console.interpret_control_characters"
+          value="true"/>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
