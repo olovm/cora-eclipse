@@ -51,9 +51,7 @@
 	<tags>persp.perspSC:org.eclipse.wst.web.ui.webDevPerspective</tags>
 	<tags>persp.newWizSC:org.eclipse.jst.j2ee.ui.project.facet.EarProjectWizard</tags>
 	<tags>persp.newWizSC:org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard</tags>
-	<tags>persp.
-		newWizSC:org.eclipse.jst.ejb.ui.project.facet.EjbProjectWizard
-	</tags>
+	<tags>persp.newWizSC:org.eclipse.jst.ejb.ui.project.facet.EjbProjectWizard</tags>
 	<tags>persp.newWizSC:org.eclipse.jst.j2ee.jca.ui.internal.wizard.ConnectorProjectWizard</tags>
 	<tags>persp.newWizSC:org.eclipse.jst.j2ee.ui.project.facet.appclient.AppClientProjectWizard</tags>
 	<tags>persp.newWizSC:org.eclipse.wst.web.ui.internal.wizards.SimpleWebProjectWizard</tags>
