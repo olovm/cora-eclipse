@@ -15,6 +15,7 @@ start(){
 
 	indexMetadata 'recordType';
 	indexMetadata 'validationType';
+	indexMetadata 'permissionUnit';
 	indexMetadata 'metadata';
 	indexMetadata 'text';
 	indexMetadata 'collectTerm';
