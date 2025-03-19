@@ -62,4 +62,5 @@
 	<Parameter name="rabbitMqImageExchange" value="imageConverterExchange" override="false" />
 	<Parameter name="rabbitMqPdfExchange" value="pdfConverterExchange" override="false" />
 	<Parameter name="rabbitMqRoutingKey" value="" override="false" />
+	<Parameter name="rabbitMqDataExchange" value="dataChangedExchange" override="false"/>
 </Context>
