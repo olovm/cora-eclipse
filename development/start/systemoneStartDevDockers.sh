@@ -19,7 +19,7 @@ startRabbitMq() {
 	--network=$NETWORK \
 	-p 15670:15672 \
 	--hostname systemone-rabbitmq \
-	cora-docker-rabbitmq:1.0-SNAPSHOT
+	cora-docker-rabbitmq:1.1-SNAPSHOT
 }
 
 echoStartingWithMarkers() {
