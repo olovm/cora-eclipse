@@ -36,7 +36,7 @@
 		username="alvin" password="alvin" maxTotal="20" maxIdle="10" maxWaitMillis="-1" />
 	<Parameter name="doNotCache" value="true" override="false" />
 	
-	<Parameter name="rabbitMqHostname" value="systemone-rabbitmq" override="false" />
+	<Parameter name="rabbitMqHostname" value="alvin-rabbitmq" override="false" />
 	<Parameter name="rabbitMqPort" value="5672" override="false" />
 	<Parameter name="rabbitMqVirtualHost" value="/" override="false" />
 	<Parameter name="rabbitMqDataExchange" value="dataChangedExchange" override="false" />
