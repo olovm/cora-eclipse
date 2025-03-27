@@ -6,7 +6,7 @@ cleanInstall() {
 	local name=$1
 	echo "################### cleaning and installing $name  ###################"
 	cd ~/workspace/$name/
-	mvn clean install
+	mvn clean install -Pdocker-build
 	
 	if [ $? -eq 0 ]
 	then

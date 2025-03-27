@@ -2,7 +2,7 @@
 
 ECLIPSE="cora-eclipse "
 
-PARENT0="cora-parent "
+PARENT0="cora-parent cora-parent-docker"
 
 #PARENT
 COMMON1="cora-testutils cora-testutils-spies cora-logger cora-logger-spies cora-initialize cora-initialize-spies "
