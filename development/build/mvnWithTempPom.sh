@@ -49,7 +49,7 @@ buildParentSeparatelyFirstAsMavenNeedsItForBuilding(){
 }
 
 cleanInstallAllUsingTempPomFile(){
-	mvn -T 1.5C -f ~/workspace/tempPom.xml clean install
+	mvn -T 1.5C -f ~/workspace/tempPom.xml clean install -Pdocker-build
 }	
 
 # ################# calls start here #######################################
