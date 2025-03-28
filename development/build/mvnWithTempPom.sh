@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 userChoosenGroup=$1;
+profile=$2;
 
 start(){
 	importProjectListing;
@@ -49,7 +50,7 @@ buildParentSeparatelyFirstAsMavenNeedsItForBuilding(){
 }
 
 cleanInstallAllUsingTempPomFile(){
-	mvn -T 1.5C -f ~/workspace/tempPom.xml clean install -Pdocker-build
+	mvn -T 1.5C -f ~/workspace/tempPom.xml clean install ${profile}
 }	
 
 # ################# calls start here #######################################
