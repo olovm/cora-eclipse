@@ -128,7 +128,7 @@ SERVER_CONTAINER=$JS_CONTAINER" "
 SERVER_CONTAINER+=$COMMON_PURE_CONTAINER" "$INDEX_CONTAINER" "$BINARYCONVERTER_CONTAINER" "
 SERVER_CONTAINER+=$LOGIN_CONTAINER" "$SYSTEMONE_CONTAINER" "$ALVIN_CONTAINER" "$DIVA_CONTAINER
 
-OTHER="friday-monitoring cora-utils cora-jenkins cora-deployment"
+OTHER="friday-monitoring cora-utils cora-jenkins cora-deployment cora-datadevelopment"
 #ARCHIVED="cora-indexloader
 
 ALL=$ECLIPSE" "$ALL_JAVA" "$ALL_JS" "$DEV_CONTAINER" "$SERVER_CONTAINER" "$OTHER
