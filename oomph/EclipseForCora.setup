@@ -278,8 +278,6 @@
       <repository
           url="https://testng.org/testng-eclipse-update-site"/>
       <repository
-          url="https://download.eclipse.org/webtools/CI/latest/"/>
-      <repository
           url="http://www.pydev.org/updates"/>
     </setupTask>
     <description>2025-03 Eclipse docker based development environment for Cora built on Eclipse IDE for Enterprise Java and Web Developers</description>

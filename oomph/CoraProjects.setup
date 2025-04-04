@@ -67,8 +67,8 @@
   <setupTask
       xsi:type="setup:VariableTask"
       name="eclipse.target.platform"
-      value="2024-09"
-      defaultValue="2024-09"
+      value="2025-03"
+      defaultValue="2025-03"
       storageURI="scope://Workspace"/>
   <setupTask
       xsi:type="setup.p2:P2Task">
