@@ -44,6 +44,9 @@ RUN dnf clean all && \
   java-21-openjdk java-21-openjdk-devel \
   java-21-openjdk-javadoc java-21-openjdk-javadoc-zip \
   java-21-openjdk-src \
+  java-23-openjdk java-23-openjdk-devel \
+  java-23-openjdk-javadoc java-23-openjdk-javadoc-zip \
+  java-23-openjdk-src \
   java-latest-openjdk java-latest-openjdk-devel \ 
   java-latest-openjdk-javadoc java-latest-openjdk-javadoc-zip \
   java-latest-openjdk-src \
