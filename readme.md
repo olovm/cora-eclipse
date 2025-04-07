@@ -80,6 +80,10 @@ You can click on the spinning arrows, in the bottom of the screen to see what th
 <br>
 You are now ready to do a first startup of the environment. 
 
+## if docker explorer do not show dockers
+update the docker plugin through the marketplace<br>
+(search for docker)
+
 
 ## Finishing up, your first startup of the environment
 Start the environment by running:</br>
