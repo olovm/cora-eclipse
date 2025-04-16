@@ -26,7 +26,15 @@ start(){
 	indexMetadata 'diva-person';
 	indexMetadata 'diva-organisation';
 	indexMetadata 'diva-output';
-	indexMetadata 'nationalSubjectCategory';
+	indexMetadata 'diva-funder';
+	indexMetadata 'diva-publisher';
+	indexMetadata 'diva-subject';
+	indexMetadata 'diva-course';
+	indexMetadata 'diva-project';
+	indexMetadata 'diva-journal';
+	indexMetadata 'diva-programme';
+	indexMetadata 'diva-series';
+	indexMetadata 'diva-localgenericmarkup';
 	
 	logoutFromCora;
 }

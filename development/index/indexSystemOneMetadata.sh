@@ -21,6 +21,10 @@ start(){
 	indexMetadata 'presentation';
 	indexMetadata 'guiElement';
 	indexMetadata 'system';
+	
+	indexMetadata 'demo';
+	indexMetadata 'example';
+	
 	logoutFromCora;
 }
 

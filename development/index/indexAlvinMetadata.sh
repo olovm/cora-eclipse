@@ -25,8 +25,12 @@ start(){
 	indexMetadata 'presentation';
 	indexMetadata 'guiElement';
 	indexMetadata 'system';
-#	indexMetadata 'alvin-place';
-#	indexMetadata 'alvin-person';
+	indexMetadata 'alvin-record';
+	indexMetadata 'alvin-place';
+	indexMetadata 'alvin-person';
+	indexMetadata 'alvin-organisation';
+	indexMetadata 'alvin-location';
+	indexMetadata 'alvin-work';
 	logoutFromCora;
 }
 
