@@ -1,6 +1,6 @@
 #! /bin/bash
-APP_TOKEN_CONTENT_TYPE='application/vnd.uub.login'
-INDEX_ACCEPT_TYPE='application/vnd.uub.record+json'
+APP_TOKEN_CONTENT_TYPE='application/vnd.cora.login'
+INDEX_ACCEPT_TYPE='application/vnd.cora.record+json'
 
 login(){
 	local loginAnswer=$(curl -s -X POST -H "Content-Type: "$APP_TOKEN_CONTENT_TYPE -k -i ${LOGIN_URL} --data-binary ${LOGIN_ID}$'\n'${APP_TOKEN});

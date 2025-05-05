@@ -34,7 +34,7 @@ startSolr() {
     docker run -d --name diva-solr \
         --network=$NETWORK \
         -p 38985:8983 \
-        cora-solr:1.0-SNAPSHOT \
+        cora-docker-solr:1.0-SNAPSHOT \
         solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore
 }
 
