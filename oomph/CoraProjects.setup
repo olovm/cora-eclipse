@@ -3017,6 +3017,56 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="alvin-client">
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.alvin.client"
+          location="${workspace.location}/alvin-client"
+          remoteURI="https://github.com/lsu-ub-uu/alvin-client.git"
+          pushURI="">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>alvin-client</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/alvin-client</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:ResourceCreationTask"
+          targetURL="${workspace.location|uri}/alvin-client/.project">
+        <description>Add project file to make import of project into eclipse work</description>
+        <content>
+          &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+          &lt;projectDescription>
+          	&lt;name>alvin-client&lt;/name>
+          	&lt;comment>&lt;/comment>
+          	&lt;projects>
+          	&lt;/projects>
+          	&lt;buildSpec>
+          	&lt;/buildSpec>
+          	&lt;natures>
+          	&lt;/natures>
+          &lt;/projectDescription>
+        </content>
+      </setupTask>
+      <setupTask
+          xsi:type="projects:ProjectsImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.alvin.client.location}"/>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-login-war">
       <setupTask
           xsi:type="maven:MavenImportTask">

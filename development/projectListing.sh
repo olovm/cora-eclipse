@@ -91,7 +91,7 @@ ALL_SYSTEMONE=$SYSTEMONE0" "$SYSTEMONE_DEPLOYMENT" "$SYSTEMONE_VALIDATION
 #PARENT, COMMON, CORA, CORE, STORAGE
 ALVIN0="alvin-metadata "
 #ARCHIVED="alvin-mixedstorage alvin-tocorautils "
-ALVIN_DEPLOYMENT="alvin-cora alvin-gatekeeper-war "
+ALVIN_DEPLOYMENT="alvin-cora alvin-gatekeeper-war alvin-client "
 #ARCHIVED="alvin-indexmessenger "
 ALVIN_VALIDATION="alvin-cora-fitnesse "
 ALVIN_DEV_CONTAINER="alvin-docker-postgresql "
