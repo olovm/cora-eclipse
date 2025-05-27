@@ -91,7 +91,7 @@ ALL_SYSTEMONE=$SYSTEMONE0" "$SYSTEMONE_DEPLOYMENT" "$SYSTEMONE_VALIDATION
 #PARENT, COMMON, CORA, CORE, STORAGE
 ALVIN0="alvin-metadata "
 #ARCHIVED="alvin-mixedstorage alvin-tocorautils "
-ALVIN_DEPLOYMENT="alvin-cora alvin-gatekeeper-war alvin-client "
+ALVIN_DEPLOYMENT="alvin-cora alvin-gatekeeper-war "
 #ARCHIVED="alvin-indexmessenger "
 ALVIN_VALIDATION="alvin-cora-fitnesse "
 ALVIN_DEV_CONTAINER="alvin-docker-postgresql "
@@ -128,7 +128,7 @@ SERVER_CONTAINER=$JS_CONTAINER" "
 SERVER_CONTAINER+=$COMMON_PURE_CONTAINER" "$INDEX_CONTAINER" "$BINARYCONVERTER_CONTAINER" "
 SERVER_CONTAINER+=$LOGIN_CONTAINER" "$SYSTEMONE_CONTAINER" "$ALVIN_CONTAINER" "$DIVA_CONTAINER
 
-OTHER="friday-monitoring cora-utils cora-jenkins cora-deployment cora-datadevelopment"
+OTHER="friday-monitoring cora-utils cora-jenkins cora-deployment cora-datadevelopment alvin-client "
 #ARCHIVED="cora-indexloader
 
 ALL=$ECLIPSE" "$ALL_JAVA" "$ALL_JS" "$DEV_CONTAINER" "$SERVER_CONTAINER" "$OTHER
