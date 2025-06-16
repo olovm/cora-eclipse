@@ -1,5 +1,11 @@
 #! /bin/bash
 NETWORK=eclipseForCoraNet
+cora_docker_rabbitmq=cora-docker-rabbitmq:1.3-SNAPSHOT
+cora_docker_solr=cora-docker-solr:1.2-SNAPSHOT
+cora_docker_fedora=cora-docker-fedora:1.0-SNAPSHOT
+systemone_docker_postgresql=systemone-docker-postgresql:1.0-SNAPSHOT
+cora_docker_iipimageserver=cora-docker-iipimageserver:1.0-SNAPSHOT
+cora_docker_binaryconverter=cora-docker-binaryconverter:1.0-SNAPSHOT
 
 start(){
 	startRabbitMq
@@ -19,7 +25,7 @@ startRabbitMq() {
 	--network=$NETWORK \
 	-p 15670:15672 \
 	--hostname systemone-rabbitmq \
-	cora-docker-rabbitmq:1.1-SNAPSHOT
+	$cora_docker_rabbit
 }
 
 echoStartingWithMarkers() {
@@ -33,7 +39,7 @@ startSolr(){
 	docker run -d --name systemone-solr \
 	--network=$NETWORK \
 	-p 38983:8983 \
-	cora-docker-solr:1.0-SNAPSHOT \
+	$cora_docker_solr \
 	solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore
 }
 
@@ -48,7 +54,7 @@ startFedora() {
 	--network=$NETWORK \
 	--mount type=bind,source=$sharedArchive/systemOne,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
 	-e CATALINA_OPTS="-Dfcrepo.config.file=/usr/local/tomcat/fcrepo.properties" \
-	cora-docker-fedora:1.0-SNAPSHOT
+	$cora_docker_fedora
 }
 
 startPostgresql(){
@@ -63,7 +69,7 @@ startPostgresql(){
 	-e POSTGRES_USER=systemone \
 	-e POSTGRES_PASSWORD=systemone \
 	-e DATA_DIVIDERS="cora jsClient systemOne testSystem" \
-	systemone-docker-postgresql:1.0-SNAPSHOT
+	$systemone_docker_postgresql
 }
 #--mount type=bind,source=/mnt/depot/cora/sharedArchive,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
 
@@ -85,7 +91,7 @@ startIIP() {
 	 -e OMP_NUM_THREADS=10 \
 	 -e CORS=* \
 	 --mount type=bind,source=/mnt/depot/cora/sharedFileStorage/systemOne,target=/tmp/sharedFileStorage/systemOne,readonly \
-	 cora-docker-iipimageserver:1.0-SNAPSHOT
+	 $cora_docker_iipimageserver
 }
 
 startBinaryConverters() {
@@ -112,7 +118,7 @@ startDockerForConverterUsingQueueName(){
 	-e rabbitMqQueueName=$queueName \
 	-e fedoraOcflHome="/tmp/sharedArchiveReadable/systemOne" \
 	-e fileStorageBasePath="/tmp/sharedFileStorage/systemOne/" \
-	cora-docker-binaryconverter:1.0-SNAPSHOT
+	$cora_docker_binaryconverter
 }
 
 sleepAndWait(){
