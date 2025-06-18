@@ -15,7 +15,8 @@ start() {
     startPostgresql
     startIIP
 
-    sleepAndWait 15
+    waitForServiceUsingNameAndPort diva-rabbitmq 5672
+	waitForServiceUsingNameAndPort diva-postgresql 5432
 
     startBinaryConverters
 }
@@ -123,11 +124,15 @@ startDockerForConverterUsingQueueName() {
         $cora_docker_binaryconverter
 }
 
-sleepAndWait() {
-    local timeToSleep=$1
-    echo ""
-    echo "Waiting $timeToSleep seconds before to continue"
-    sleep $timeToSleep
+waitForServiceUsingNameAndPort(){
+	local name=$1
+	local port=$2
+	echo ""
+	echo "------------ Check for service $name running on $port ------------"
+	until nc -z -v -w1 $name $port >/dev/null 2>&1; do
+		echo "Waiting for $name..";
+		sleep 1;
+	done
 }
 
 start

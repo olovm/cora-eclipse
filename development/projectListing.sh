@@ -13,6 +13,7 @@ ALL_COMMON=$COMMON1" "$COMMON2" "$COMMON_IMPLEMENTATION
 #PARENT
 COMMON_PURE_CONTAINER="cora-docker-tomcat cora-docker-java cora-docker-solr cora-docker-postgresql "
 COMMON_PURE_CONTAINER+="cora-docker-fedora cora-docker-rabbitmq cora-docker-iipimageserver "
+COMMON_PURE_CONTAINER+="cora-docker-console cora-docker-apache cora-docker-varnish "
 #ARCHIVED="cora-docker-fedora32 cora-docker-fedora32-client cora-docker-fedora38 "
 #PARENT, COMMON
 CORA0="cora-metadata cora-data cora-data-spies "
@@ -89,18 +90,18 @@ SYSTEMONE_CONTAINER="cora-docker-gatekeeper systemone-docker systemone-docker-fi
 ALL_SYSTEMONE=$SYSTEMONE0" "$SYSTEMONE_DEPLOYMENT" "$SYSTEMONE_VALIDATION
 
 #PARENT, COMMON, CORA, CORE, STORAGE
-ALVIN0="alvin-metadata "
+ALVIN0="alvin-metadata alvin-client"
 #ARCHIVED="alvin-mixedstorage alvin-tocorautils "
 ALVIN_DEPLOYMENT="alvin-cora alvin-gatekeeper-war "
 #ARCHIVED="alvin-indexmessenger "
 ALVIN_VALIDATION="alvin-cora-fitnesse "
 ALVIN_DEV_CONTAINER="alvin-docker-postgresql "
 #ARCHIVED="alvin-cora-docker-fedora alvin-cora-docker-postgresql alvin-docker-index "
-ALVIN_CONTAINER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse "
+ALVIN_CONTAINER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse alvin-docker-alvinclient "
 ALL_ALVIN=$ALVIN0" "$ALVIN_DEPLOYMENT" "$ALVIN_VALIDATION
 
 #PARENT, COMMON, CORA, CORE, STORAGE
-DIVA0="diva-metadata "
+DIVA0="diva-metadata diva-client "
 #ARCHIVED="diva-mixedstorage 
 DIVA_DEPLOYMENT="diva-cora diva-gatekeeper-war "
 #ARCHIVED="diva-indexmessenger "
@@ -109,7 +110,7 @@ DIVA_VALIDATION="diva-cora-fitnesse "
 #ARCHIVED="DIVA_DEV_CONTAINER1="diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
 DIVA_DEV_CONTAINER1="diva-docker-postgresql "
 #ARCHIVED="diva-docker-classicfedorasynchronizer "
-DIVA_CONTAINER="diva-cora-docker-fitnesse diva-docker-cora diva-docker-gatekeeper "
+DIVA_CONTAINER="diva-cora-docker-fitnesse diva-docker-cora diva-docker-gatekeeper diva-docker-divaclient"
 #ARCHIVED="diva-docker-index 
 DIVA_DEV_CONTAINER=$DIVA_DEV_CONTAINER1
 ALL_DIVA=$DIVA0" "$DIVA_DEPLOYMENT" "$DIVA_VALIDATION
@@ -128,7 +129,7 @@ SERVER_CONTAINER=$JS_CONTAINER" "
 SERVER_CONTAINER+=$COMMON_PURE_CONTAINER" "$INDEX_CONTAINER" "$BINARYCONVERTER_CONTAINER" "
 SERVER_CONTAINER+=$LOGIN_CONTAINER" "$SYSTEMONE_CONTAINER" "$ALVIN_CONTAINER" "$DIVA_CONTAINER
 
-OTHER="friday-monitoring cora-utils cora-jenkins cora-deployment cora-datadevelopment alvin-client "
+OTHER="friday-monitoring cora-utils cora-jenkins cora-deployment cora-datadevelopment "
 #ARCHIVED="cora-indexloader
 
 ALL=$ECLIPSE" "$ALL_JAVA" "$ALL_JS" "$DEV_CONTAINER" "$SERVER_CONTAINER" "$OTHER

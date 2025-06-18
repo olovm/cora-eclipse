@@ -14,7 +14,8 @@ start(){
 	startPostgresql
 	startIIP
 
- 	sleepAndWait 10
+ 	waitForServiceUsingNameAndPort systemone-rabbitmq 5672
+	waitForServiceUsingNameAndPort systemone-postgresql 5432
  	
 	startBinaryConverters
 }
@@ -25,7 +26,7 @@ startRabbitMq() {
 	--network=$NETWORK \
 	-p 15670:15672 \
 	--hostname systemone-rabbitmq \
-	$cora_docker_rabbit
+	$cora_docker_rabbitmq
 }
 
 echoStartingWithMarkers() {
@@ -121,11 +122,15 @@ startDockerForConverterUsingQueueName(){
 	$cora_docker_binaryconverter
 }
 
-sleepAndWait(){
-	local timeToSleep=$1
+waitForServiceUsingNameAndPort(){
+	local name=$1
+	local port=$2
 	echo ""
-	echo "Waiting $timeToSleep seconds before to continue"
-	sleep $timeToSleep
+	echo "------------ Check for service $name running on $port ------------"
+	until nc -z -w1 $name $port; do
+		echo "Waiting for $name..";
+		sleep 1;
+	done
 }
 
 start

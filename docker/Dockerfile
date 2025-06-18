@@ -1,4 +1,4 @@
-FROM fedora:41
+FROM fedora:42
 # Set a useful default locale
 RUN echo "export LANG=en_US.UTF-8" > /opt/export_LANG.sh
 RUN echo "export LANGUAGE=en_US.UTF-8" >> /opt/export_LANG.sh
@@ -40,6 +40,7 @@ RUN dnf clean all && \
   tar \
   less \
   htop \
+  nc \
   docker \
   java-21-openjdk java-21-openjdk-devel \
   java-21-openjdk-javadoc java-21-openjdk-javadoc-zip \
