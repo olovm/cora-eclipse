@@ -3,7 +3,7 @@ NETWORK=eclipseForCoraNet
 cora_docker_rabbitmq=cora-docker-rabbitmq:1.4-SNAPSHOT
 cora_docker_solr=cora-docker-solr:1.3-SNAPSHOT
 cora_docker_fedora=cora-docker-fedora:1.3-SNAPSHOT
-systemone_docker_postgresql=systemone-docker-postgresql:1.13SNAPSHOT
+systemone_docker_postgresql=systemone-docker-postgresql:1.13-SNAPSHOT
 cora_docker_iipimageserver=cora-docker-iipimageserver:1.3-SNAPSHOT
 cora_docker_binaryconverter=cora-docker-binaryconverter:1.5-SNAPSHOT
 
