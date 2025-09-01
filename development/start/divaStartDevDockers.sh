@@ -1,12 +1,12 @@
 #! /bin/bash
 
 NETWORK=eclipseForCoraNet
-cora_docker_rabbitmq=cora-docker-rabbitmq:1.3-SNAPSHOT
-cora_docker_solr=cora-docker-solr:1.2-SNAPSHOT
-cora_docker_fedora=cora-docker-fedora:1.0-SNAPSHOT
-diva_docker_postgresql=diva-docker-postgresql:1.9-SNAPSHOT
-cora_docker_iipimageserver=cora-docker-iipimageserver:1.0-SNAPSHOT
-cora_docker_binaryconverter=cora-docker-binaryconverter:1.0-SNAPSHOT
+cora_docker_rabbitmq=cora-docker-rabbitmq:1.4-SNAPSHOT
+cora_docker_solr=cora-docker-solr:1.3-SNAPSHOT
+cora_docker_fedora=cora-docker-fedora:1.3-SNAPSHOT
+diva_docker_postgresql=diva-docker-postgresql:1.29-SNAPSHOT
+cora_docker_iipimageserver=cora-docker-iipimageserver:1.3-SNAPSHOT
+cora_docker_binaryconverter=cora-docker-binaryconverter:1.5-SNAPSHOT
 
 start() {
     startRabbitMq
