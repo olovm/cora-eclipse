@@ -87,8 +87,6 @@ startIIP() {
         -e JPEG_QUALITY=100 \
         -e PNG_QUALITY=9 \
         -e WEBP_QUALITY=100 \
-        -e FILESYSTEM_PREFIX=/tmp/sharedFileStorage/diva/streams/ \
-        -e FILESYSTEM_SUFFIX=-jp2 \
         -e MAX_IMAGE_CACHE_SIZE=1000 \
         -e ALLOW_UPSCALING=0 \
         -e OMP_NUM_THREADS=10 \
