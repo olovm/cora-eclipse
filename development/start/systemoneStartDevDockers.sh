@@ -1,13 +1,8 @@
 #! /bin/bash
 NETWORK=eclipseForCoraNet
-cora_docker_rabbitmq=cora-docker-rabbitmq:1.4-SNAPSHOT
-cora_docker_solr=cora-docker-solr:1.3-SNAPSHOT
-cora_docker_fedora=cora-docker-fedora:1.3-SNAPSHOT
-systemone_docker_postgresql=systemone-docker-postgresql:1.13-SNAPSHOT
-cora_docker_iipimageserver=cora-docker-iipimageserver:1.3-SNAPSHOT
-cora_docker_binaryconverter=cora-docker-binaryconverter:1.5-SNAPSHOT
 
 start(){
+	findCurrentDockerVersions
 	startRabbitMq
 	startSolr
 	startFedora
@@ -18,6 +13,32 @@ start(){
 	waitForServiceUsingNameAndPort systemone-postgresql 5432
  	
 	startBinaryConverters
+}
+
+findCurrentDockerVersions() {
+	echo "Finding current local docker versions...."
+
+	cora_docker_rabbitmq="cora-docker-rabbitmq:"$(getMvnVersion cora-docker-rabbitmq)
+	echo $cora_docker_rabbitmq
+
+	cora_docker_solr="cora-docker-solr:"$(getMvnVersion cora-docker-solr)
+	echo $cora_docker_solr
+
+	cora_docker_fedora="cora-docker-fedora:"$(getMvnVersion cora-docker-fedora)
+	echo $cora_docker_fedora
+
+	systemone_docker_postgresql="systemone-docker-postgresql:"$(getMvnVersion systemone-docker-postgresql)
+	echo $systemone_docker_postgresql
+	
+	cora_docker_iipimageserver="cora-docker-iipimageserver:"$(getMvnVersion cora-docker-iipimageserver)
+	echo $cora_docker_iipimageserver
+	
+	cora_docker_binaryconverter="cora-docker-binaryconverter:"$(getMvnVersion /cora-docker-binaryconverter)
+	echo $cora_docker_binaryconverter
+}
+
+getMvnVersion() {
+    mvn -f "$HOME/workspace/$1/pom.xml" help:evaluate -Dexpression=project.version -q -DforceStdout
 }
 
 startRabbitMq() {

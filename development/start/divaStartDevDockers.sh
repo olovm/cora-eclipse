@@ -9,7 +9,8 @@ cora_docker_iipimageserver=cora-docker-iipimageserver:1.3-SNAPSHOT
 cora_docker_binaryconverter=cora-docker-binaryconverter:1.5-SNAPSHOT
 
 start() {
-    startRabbitMq
+    findCurrentDockerVersions
+	startRabbitMq
     startSolr
     startFedora
     startPostgresql
@@ -20,7 +21,31 @@ start() {
 
     startBinaryConverters
 }
+findCurrentDockerVersions() {
+	echo "Finding current local docker versions...."
 
+	cora_docker_rabbitmq="cora-docker-rabbitmq:"$(getMvnVersion cora-docker-rabbitmq)
+	echo $cora_docker_rabbitmq
+
+	cora_docker_solr="cora-docker-solr:"$(getMvnVersion cora-docker-solr)
+	echo $cora_docker_solr
+
+	cora_docker_fedora="cora-docker-fedora:"$(getMvnVersion cora-docker-fedora)
+	echo $cora_docker_fedora
+
+	diva_docker_postgresql="diva-docker-postgresql:"$(getMvnVersion diva-docker-postgresql)
+	echo $diva_docker_postgresql
+	
+	cora_docker_iipimageserver="cora-docker-iipimageserver:"$(getMvnVersion cora-docker-iipimageserver)
+	echo $cora_docker_iipimageserver
+	
+	cora_docker_binaryconverter="cora-docker-binaryconverter:"$(getMvnVersion /cora-docker-binaryconverter)
+	echo $cora_docker_binaryconverter
+}
+
+getMvnVersion() {
+    mvn -f "$HOME/workspace/$1/pom.xml" help:evaluate -Dexpression=project.version -q -DforceStdout
+}
 startRabbitMq() {
     echoStartingWithMarkers "rabbitmq"
     docker run -d --name diva-rabbitmq \
