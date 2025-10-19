@@ -1,4 +1,4 @@
-FROM fedora:41
+FROM fedora:42
 # Set a useful default locale
 RUN echo "export LANG=en_US.UTF-8" > /opt/export_LANG.sh
 RUN echo "export LANGUAGE=en_US.UTF-8" >> /opt/export_LANG.sh
@@ -42,12 +42,12 @@ RUN dnf clean all && \
   htop \
   nc \
   docker \
-  java-21-openjdk java-21-openjdk-devel \
-  java-21-openjdk-javadoc java-21-openjdk-javadoc-zip \
-  java-21-openjdk-src \
   java-23-openjdk java-23-openjdk-devel \
   java-23-openjdk-javadoc java-23-openjdk-javadoc-zip \
   java-23-openjdk-src \
+  java-25-openjdk java-25-openjdk-devel \
+  java-25-openjdk-javadoc java-25-openjdk-javadoc-zip \
+  java-25-openjdk-src \
   java-latest-openjdk java-latest-openjdk-devel \ 
   java-latest-openjdk-javadoc java-latest-openjdk-javadoc-zip \
   java-latest-openjdk-src \
@@ -62,7 +62,7 @@ RUN dnf clean all && \
   npm -y && \
   dnf clean all
   
-RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2024-12/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
+RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2025-09/R/eclipse-inst-linux64.tar.gz | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
@@ -71,7 +71,7 @@ RUN touch /home/$user/.gitconfig
 
 RUN chown $user:$user /home/$user -R
 
-RUN wget -O - https://archive.apache.org/dist/tomcat/tomcat-11/v11.0.2/bin/apache-tomcat-11.0.2.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - https://archive.apache.org/dist/tomcat/tomcat-11/v11.0.13/bin/apache-tomcat-11.0.13.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli

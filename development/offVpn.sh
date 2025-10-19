@@ -1,7 +1,7 @@
 #! /bin/bash
 
-docker network disconnect tempvpn eclipse202503forcora2
+docker network disconnect tempvpn eclipse202509forcora1
 
 docker network rm tempvpn
 
-docker network connect eclipseForCoraNet eclipse202503forcora2
+docker network connect eclipseForCoraNet eclipse202509forcora1
