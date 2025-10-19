@@ -23,5 +23,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-p 8090"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="cora-fitnesse"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-DsystemUnderTestUrl=&quot;http://localhost:8080/systemone/&quot; -DappTokenVerifierUrl=&quot;http://localhost:8180/login/&quot; -DidpLoginUrl=&quot;http://localhost:8380/idplogin/&quot; -DgatekeeperServerUrl=&quot;http://localhost:8280/gatekeeperserver/&quot; -Djava.security.manager=allow -Dslim.port=9000"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-DsystemUnderTestUrl=&quot;http://localhost:8080/systemone/&quot; -DappTokenVerifierUrl=&quot;http://localhost:8180/login/&quot; -DidpLoginUrl=&quot;http://localhost:8380/idplogin/&quot; -DgatekeeperServerUrl=&quot;http://localhost:8280/gatekeeperserver/&quot; -Dslim.port=9000"/>
 </launchConfiguration>
