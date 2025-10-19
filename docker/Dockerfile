@@ -42,9 +42,6 @@ RUN dnf clean all && \
   htop \
   nc \
   docker \
-  java-23-openjdk java-23-openjdk-devel \
-  java-23-openjdk-javadoc java-23-openjdk-javadoc-zip \
-  java-23-openjdk-src \
   java-25-openjdk java-25-openjdk-devel \
   java-25-openjdk-javadoc java-25-openjdk-javadoc-zip \
   java-25-openjdk-src \
