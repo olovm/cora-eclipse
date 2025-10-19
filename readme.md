@@ -205,7 +205,7 @@ Go under External Tools Configurations (play icon with toolbox) and run **checkO
 Add the following to the top of the page, then use remoteDebugging such as DivaFitnesseDebug to connect to it when testing.
 ```
 !path {java.class.path}
-!define COMMAND_PATTERN {/usr/lib/jvm/java-23-openjdk/bin/java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -cp %p %m}
+!define COMMAND_PATTERN {/usr/lib/jvm/java-25-openjdk/bin/java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -cp %p %m}
 ```
 
 ## Other
