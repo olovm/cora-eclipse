@@ -2,6 +2,13 @@
 Cora-eclipse is a project to enable easy setup of an Eclipse install for Cora development, using Eclipse and Docker.</br>
 I am running this on linux so, change as needed for other platforms.
 
+##Temporary work around for m2e-wtp not supporting java 25
+The problem manifests itself by maven update projects does not find java 25 support, and deployment does not work as expected. To fix add the following to your m2/settings.xml file (in your active profile if you have one)
+```xml
+<properties>
+	<java.release.version>24</java.release.version>
+</properties>
+```
 ## Before you begin
 1. Make sure you have git and docker set up on your local machine
 2. Make a directory where you want everything installed /x/y/z/cora (/mnt/depot/cora)
