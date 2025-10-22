@@ -12,7 +12,7 @@ start() {
 
 waitingForListOfSystemToEnsureSystemIsRunning(){
   echo "Waiting for application to start ..."
-  until curl -s --fail "${RECORDTYPE_URL}" > /dev/null 2>&1; do
+  until curl -s --fail "${RUNNING_URL}" > /dev/null 2>&1; do
     sleep 5
   done
 

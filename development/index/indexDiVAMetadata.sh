@@ -1,5 +1,6 @@
 #! /bin/bash
 
+RUNNING_URL='http://localhost:8082/diva/rest/record/system'
 LOGIN_URL='http://localhost:8182/login/rest/apptoken/'
 RECORDTYPE_URL='http://localhost:8082/diva/rest/record/recordType'
 LOGINID='systemoneAdmin@system.cora.uu.se'
