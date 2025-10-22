@@ -1,5 +1,6 @@
 #! /bin/bash
 
+declare dataDividers=$1
 NETWORK=eclipseForCoraNet
 cora_docker_rabbitmq=cora-docker-rabbitmq:1.4-SNAPSHOT
 cora_docker_solr=cora-docker-solr:1.3-SNAPSHOT
@@ -13,7 +14,7 @@ start() {
 	startRabbitMq
     startSolr
     startFedora
-    startPostgresql
+    startPostgresql "$dataDividers"
     startIIP
 
     waitForServiceUsingNameAndPort alvin-rabbitmq 5672
@@ -97,7 +98,7 @@ startPostgresql() {
         -e POSTGRES_DB=alvin \
         -e POSTGRES_USER=alvin \
         -e POSTGRES_PASSWORD=alvin \
-        -e DATA_DIVIDERS="cora jsClient alvin alvinPreview alvinTestSystem alvinProduction alvinData" \
+        -e DATA_DIVIDERS="$1" \
         $alvin_docker_postgresql
 }
 

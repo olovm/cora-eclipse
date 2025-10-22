@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.ui.externaltools.ProgramLaunchConfigurationType">
     <stringAttribute key="bad_container_name" value="/cora-eclipse/eclipse/alvinDockerRun.launch"/>
+    <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
     <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
         <listEntry value="org.eclipse.ui.externaltools.launchGroup"/>
     </listAttribute>
     <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${workspace_loc:/cora-eclipse/development/start/alvinStartDevDockers.sh}"/>
+    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="${string_prompt:dataDividers:&quot;cora jsClient alvin alvinPreview alvinTestSystem alvinProduction alvinData&quot;}"/>
+    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${workspace_loc}"/>
 </launchConfiguration>

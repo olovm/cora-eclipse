@@ -1,4 +1,6 @@
 #! /bin/bash
+
+declare dataDividers=$1
 NETWORK=eclipseForCoraNet
 
 start(){
@@ -6,8 +8,8 @@ start(){
 	startRabbitMq
 	startSolr
 	startFedora
-	startPostgresql
-	startIIP
+    startPostgresql "$dataDividers"
+    startIIP
 
  	waitForServiceUsingNameAndPort systemone-rabbitmq 5672
 	waitForServiceUsingNameAndPort systemone-postgresql 5432
@@ -90,7 +92,7 @@ startPostgresql(){
 	-e POSTGRES_DB=systemone \
 	-e POSTGRES_USER=systemone \
 	-e POSTGRES_PASSWORD=systemone \
-	-e DATA_DIVIDERS="cora jsClient systemOne testSystem" \
+	-e DATA_DIVIDERS="$1" \
 	$systemone_docker_postgresql
 }
 #--mount type=bind,source=/mnt/depot/cora/sharedArchive,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \

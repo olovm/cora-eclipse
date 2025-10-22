@@ -6,4 +6,6 @@
         <listEntry value="org.eclipse.ui.externaltools.launchGroup"/>
     </listAttribute>
     <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${workspace_loc:/cora-eclipse/development/start/divaStartDevDockers.sh}"/>
+    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="${string_prompt:dataDividers:&quot;cora jsClient diva divaPreview divaPre divaProduction divaClient&quot;}"/>
+    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY" value="${workspace_loc}"/>
 </launchConfiguration>
