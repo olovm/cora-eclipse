@@ -22,6 +22,10 @@ APP_TOKEN='5d3f3ed4-4931-4924-9faa-8eaf5ac6457e'
 #RUNNING_URL='http://192.168.49.2:30981/rest/record/system'
 #RECORDLIST_URL='http://192.168.49.2:30981/rest/record/indexBatchJob'
 
+#pre k8s alvin https://alvin.pre.test.ub.uu.se
+#RUNNING_URL='https://alvin.pre.test.ub.uu.se/rest/record/system'
+#LOGIN_URL='https://alvin.pre.test.ub.uu.se/login/rest/apptoken'
+#RECORDLIST_URL='https://alvin.pre.test.ub.uu.se/rest/record/indexBatchJob'
 
 start(){
 	importDeleteScript;
