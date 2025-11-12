@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
         <listEntry value="/alvin-cora-fitnesse"/>
     </listAttribute>
@@ -22,5 +23,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-p 8091"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="alvin-cora-fitnesse"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-DsystemUnderTestUrl=&quot;http://localhost:8081/alvin/&quot; -DappTokenVerifierUrl=&quot;http://localhost:8181/login/&quot; -DidpLoginUrl=&quot;http://localhost:8381/idplogin/&quot; -DgatekeeperServerUrl=&quot;http://localhost:8281/gatekeeperserver/&quot;"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-DsystemUnderTestUrl=&quot;http://localhost:8081/alvin/&quot; -DappTokenVerifierUrl=&quot;http://localhost:8181/login/&quot; -DidpLoginUrl=&quot;http://localhost:8381/idplogin/&quot; -DgatekeeperServerUrl=&quot;http://localhost:8281/gatekeeperserver/&quot; -DfitnesseAdminLoginId=&quot;fitnesseAdmin@system.cora.uu.se&quot; -DfitnesseAdminAppToken=&quot;29c30232-d514-4559-b60b-6de47175c1df&quot; -DfitnesseUserLoginId=&quot;fitnesseUser@system.cora.uu.se&quot; -DfitnesseUserAppToken=&quot;bd699488-f9d1-419d-a79d-9fa8a0f3bb9d&quot;"/>
 </launchConfiguration>
