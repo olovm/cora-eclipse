@@ -97,7 +97,7 @@ ALVIN_DEPLOYMENT="alvin-cora alvin-gatekeeper-war "
 ALVIN_VALIDATION="alvin-cora-fitnesse "
 ALVIN_DEV_CONTAINER="alvin-docker-postgresql "
 #ARCHIVED="alvin-cora-docker-fedora alvin-cora-docker-postgresql alvin-docker-index "
-ALVIN_CONTAINER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse alvin-docker-alvinclient "
+ALVIN_CONTAINER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse alvin-docker-client "
 ALL_ALVIN=$ALVIN0" "$ALVIN_DEPLOYMENT" "$ALVIN_VALIDATION
 
 #PARENT, COMMON, CORA, CORE, STORAGE
