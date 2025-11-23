@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/cora-fitnesseintegration/src/main/java/se/uu/ub/cora/fitnesseintegration/automator/DefinitionAutomatorRunner.java"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+        <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_ATTR_USE_ARGFILE" value="false"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_SHOW_CODEDETAILS_IN_EXCEPTION_MESSAGES" value="true"/>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
+    <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="se.uu.ub.cora.fitnesseintegration.automator.DefinitionAutomatorRunner"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="se.uu.ub.cora.fitnesseintegration"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="${string_prompt:recordType(s):recordType collectTerm}"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="cora-fitnesseintegration"/>
+    <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-DsystemUnderTestUrl=&quot;http://localhost:8081/alvin/&quot; -DappTokenVerifierUrl=&quot;http://localhost:8181/login/&quot; -DfitnesseAdminLoginId=&quot;fitnesseAdmin@system.cora.uu.se&quot; -DfitnesseAdminAppToken=&quot;29c30232-d514-4559-b60b-6de47175c1df&quot;"/>
+</launchConfiguration>
