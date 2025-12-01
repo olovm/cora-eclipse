@@ -6,7 +6,7 @@ start() {
   waitingForListOfSystemToEnsureSystemIsRunning
   echo "Starting indexing process..."
   login
-  index
+#  index
   logoutFromCora
 }
 
@@ -22,11 +22,19 @@ waitingForListOfSystemToEnsureSystemIsRunning(){
 login() {
   echo "Logging in.."
   local loginAnswer
-  loginAnswer=$(curl -s -X POST -H "Content-Type: application/vnd.cora.login" -k -i "${LOGIN_URL}" --data "${LOGINID}"$'\n'"${APP_TOKEN}")
+#  loginAnswer=$(curl -s -X POST -H "Content-Type: application/vnd.cora.login" -k -i "${LOGIN_URL}" --data "${LOGINID}"$'\n'"${APP_TOKEN}")
+#  loginAnswer=$(curl -s -X GET -H "Content-Type: application/vnd.cora.login" \
+  loginAnswer=$(curl -s -X GET \
+  -H "eppn: ${EPPN}" \
+  -k -i "${LOGIN_URL}login")
 
+  echo $loginAnswer
   AUTH_TOKEN=$(echo "${loginAnswer}" | grep -oP '(?<={"name":"token","value":")[^"]+')
   AUTH_TOKEN_DELETE_URL=$(echo "${loginAnswer}" | grep -oP '(?<="url":")[^"]+')
   echo "Logged in... "
+  echo $AUTH_TOKEN
+  echo $AUTH_TOKEN_DELETE_URL
+  
 }
 
 index() {
