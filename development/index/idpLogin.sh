@@ -22,9 +22,8 @@ waitingForListOfSystemToEnsureSystemIsRunning(){
 login() {
   echo "Logging in.."
   local loginAnswer
-#  loginAnswer=$(curl -s -X POST -H "Content-Type: application/vnd.cora.login" -k -i "${LOGIN_URL}" --data "${LOGINID}"$'\n'"${APP_TOKEN}")
-#  loginAnswer=$(curl -s -X GET -H "Content-Type: application/vnd.cora.login" \
   loginAnswer=$(curl -s -X GET \
+  -H "accept: application/vnd.cora.authentication+json" \
   -H "eppn: ${EPPN}" \
   -k -i "${LOGIN_URL}login")
 
