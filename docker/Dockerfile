@@ -56,6 +56,7 @@ RUN dnf clean all && \
   fuse \
   libglvnd-gles \
   ImageMagick \
+  xmlstarlet \
   npm -y && \
   dnf clean all
   
