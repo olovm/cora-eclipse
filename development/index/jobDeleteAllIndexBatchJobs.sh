@@ -3,11 +3,16 @@
 set -uo pipefail
 
 start() {
-  waitingForListOfSystemToEnsureSystemIsRunning
-  echo "Starting delete all batch jobs process..."
-  login
-  delete
-  logoutFromCora
+ 	importLogin
+	waitingForListOfSystemToEnsureSystemIsRunning
+	echo "Starting delete all batch jobs process..."
+	loginUsingIdpLogin
+	delete
+	logoutFromCora
+}
+
+importLogin(){
+	source "$(dirname "$0")/login.sh"
 }
 
 waitingForListOfSystemToEnsureSystemIsRunning(){
@@ -18,16 +23,6 @@ waitingForListOfSystemToEnsureSystemIsRunning(){
   done
 
   echo "Application is ready. Running delete script..."
-}
-
-login() {
-  echo "Logging in.."
-  local loginAnswer
-  loginAnswer=$(curl -s -X POST -H "Content-Type: application/vnd.cora.login" -k -i "${LOGIN_URL}" --data "${LOGINID}"$'\n'"${APP_TOKEN}")
-
-  AUTH_TOKEN=$(echo "${loginAnswer}" | grep -oP '(?<={"name":"token","value":")[^"]+')
-  AUTH_TOKEN_DELETE_URL=$(echo "${loginAnswer}" | grep -oP '(?<="url":")[^"]+')
-  echo "Logged in... "
 }
 
 delete() {
@@ -92,13 +87,6 @@ deleteData() {
   else
     echo "⚠️  Skipping due to missing required fields"
   fi
-}
-
-logoutFromCora() {
-  echo
-  echo "Logging out from ${AUTH_TOKEN_DELETE_URL}"
-  curl -s -X DELETE -k -H "authToken: ${AUTH_TOKEN}" -i "${AUTH_TOKEN_DELETE_URL}"
-  echo "Logged out"
 }
 
 start

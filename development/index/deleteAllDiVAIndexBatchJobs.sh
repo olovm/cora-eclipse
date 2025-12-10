@@ -1,10 +1,11 @@
 #! /bin/bash
 
 RUNNING_URL='http://localhost:8082/diva/rest/record/system'
-LOGIN_URL='http://localhost:8182/login/rest/apptoken/'
+#LOGIN_URL='http://localhost:8182/login/rest/apptoken/'
+IDP_LOGIN_URL=http://localhost:8382/idplogin/
 RECORDLIST_URL='http://localhost:8082/diva/rest/record/indexBatchJob'
 LOGINID='systemoneAdmin@system.cora.uu.se'
-APP_TOKEN='5d3f3ed4-4931-4924-9faa-8eaf5ac6457e'
+#APP_TOKEN='5d3f3ed4-4931-4924-9faa-8eaf5ac6457e'
 
 #index def from outside
 #RUNNING_URL='http://130.238.171.238:38082/diva/rest/record/system'
