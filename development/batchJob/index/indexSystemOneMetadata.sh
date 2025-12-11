@@ -17,7 +17,7 @@ start(){
 }
 
 importIndexScript() {
-	.  ~/workspace/cora-eclipse/development/index/jobIndex.sh
+	source "$(dirname "$0")/jobIndex.sh"
 }
 
 ################## calls start here #######################################

@@ -17,7 +17,6 @@ start(){
 }
 
 importDeleteScript() {
-#	.  ~/workspace/cora-eclipse/development/index/jobDeleteAllIndexBatchJobs.sh
 	source "$(dirname "$0")/jobDeleteAllIndexBatchJobs.sh"
 }
 
