@@ -36,8 +36,13 @@
 		override="false" />-->
 	<Parameter name="storageOnDiskBasePath" value="/tmp/sharedFileStorage/diva/" override="false" />
 	
-	<Parameter name="theRestPublicPathToSystem" value="/diva/rest/" override="false" />
-	<Parameter name="iiifPublicPathToSystem" value="/diva/iiif/" override="false" />
+<!-- 	<Parameter name="theRestPublicPathToSystem" value="/diva/rest/" override="false" /> -->
+<!-- 	<Parameter name="iiifPublicPathToSystem" value="/diva/iiif/" override="false" /> -->
+	<Parameter name="deploymentInfoApplicationName" value="diva" override="false" />
+	<Parameter name="deploymentInfoDeploymentName" value="DiVA - utveckling" override="false" />
+	<Parameter name="deploymentInfoCoraVersion" value="0.1.0" override="false" />
+	<Parameter name="deploymentInfoApplicationVersion" value="0.1.0" override="false" />
+	<Parameter name="deploymentInfoLoginRestUrl" value="http://localhost:38182/login/rest/" override="false" />
 	
 	<Parameter name="gatekeeperURL" value="http://localhost:8282/gatekeeperserver/"
 		override="false" />

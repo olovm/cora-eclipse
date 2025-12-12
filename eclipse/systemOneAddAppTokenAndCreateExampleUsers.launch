@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.ui.externaltools.ProgramLaunchConfigurationType">
+    <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
+    <mapAttribute key="org.eclipse.debug.core.environmentVariables">
+        <mapEntry key="IDP_LOGIN_URL" value="http://localhost:8380/idplogin/"/>
+        <mapEntry key="LOGINID" value="systemoneAdmin@system.cora.uu.se"/>
+        <mapEntry key="RECORD_URL" value="http://localhost:8080/systemone/rest/record"/>
+        <mapEntry key="RUNNING_URL" value="http://localhost:8080/systemone/rest/record/system"/>
+    </mapAttribute>
+    <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+        <listEntry value="org.eclipse.ui.externaltools.launchGroup"/>
+    </listAttribute>
+    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${workspace_loc}/cora-eclipse/development/batchJob/user/jobAddAppTokenAndCreateExampleUsers.sh"/>
+    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="&quot;141414&quot;"/>
+</launchConfiguration>

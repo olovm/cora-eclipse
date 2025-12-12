@@ -36,8 +36,14 @@
 <!-- 		override="false" /> -->
 	<Parameter name="storageOnDiskBasePath" value="/tmp/sharedFileStorage/systemOne/" override="false" />
 
-	<Parameter name="theRestPublicPathToSystem" value="/systemone/rest/" override="false" />
-	<Parameter name="iiifPublicPathToSystem" value="/systemone/iiif/" override="false" />
+	<!-- <Parameter name="theRestPublicPathToSystem" value="/systemone/rest/" override="false" /> -->
+	<!-- <Parameter name="iiifPublicPathToSystem" value="/systemone/iiif/" override="false" /> -->
+	<Parameter name="deploymentInfoApplicationName" value="systemOne" override="false" />
+	<Parameter name="deploymentInfoDeploymentName" value="SystemOne - utveckling" override="false" />
+	<Parameter name="deploymentInfoCoraVersion" value="0.1.0" override="false" />
+	<Parameter name="deploymentInfoApplicationVersion" value="0.1.0" override="false" />
+	<Parameter name="deploymentInfoLoginRestUrl" value="http://localhost:38180/login/rest/" override="false" />
+
 
 	<Parameter name="gatekeeperURL" value="http://localhost:8280/gatekeeperserver/"	override="false" />
 

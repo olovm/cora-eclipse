@@ -36,8 +36,13 @@
 		override="false" />-->
 	<Parameter name="storageOnDiskBasePath" value="/tmp/sharedFileStorage/alvin/" override="false" />
 	
-	<Parameter name="theRestPublicPathToSystem" value="/alvin/rest/" override="false" />
-	<Parameter name="iiifPublicPathToSystem" value="/alvin/iiif/" override="false" />
+<!-- 	<Parameter name="theRestPublicPathToSystem" value="/alvin/rest/" override="false" /> -->
+<!-- 	<Parameter name="iiifPublicPathToSystem" value="/alvin/iiif/" override="false" /> -->
+	<Parameter name="deploymentInfoApplicationName" value="alvin" override="false" />
+	<Parameter name="deploymentInfoDeploymentName" value="Alvin - utveckling" override="false" />
+	<Parameter name="deploymentInfoCoraVersion" value="0.1.0" override="false" />
+	<Parameter name="deploymentInfoApplicationVersion" value="0.1.0" override="false" />
+	<Parameter name="deploymentInfoLoginRestUrl" value="http://localhost:38181/login/rest/" override="false" />
 	
 	<Parameter name="gatekeeperURL" value="http://localhost:8281/gatekeeperserver/"
 		override="false" />
