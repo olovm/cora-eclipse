@@ -43,7 +43,7 @@ addAndStoreAppTokenToUser() {
 	local readRecord=$(readRecordFromUrl "${AUTH_TOKEN}" "$url")
 	local updateLink=$(getActionLinkFromDataRecord "$readRecord" "update")
  	local userNoActionLinks=$(getUserPartWithoutActionLinksFromRecord "$readRecord")
- 	local userWithNewTokenNote=$(addTokenNoteToUser "$userNoActionLinks" \ "$note")
+ 	local userWithNewTokenNote=$(addTokenNoteToUser "$userNoActionLinks" "$note")
 	local updateAnswer=$(sendDataToServer "${AUTH_TOKEN}" "${updateLink}" "${userWithNewTokenNote}")
 	echo "$updateAnswer"
 }

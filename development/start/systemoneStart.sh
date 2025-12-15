@@ -27,8 +27,7 @@ start(){
 	waitForServiceUsingNameAndPort localhost 8080
 	waitForServiceUsingNameAndPort localhost 8280
 	waitForServiceUsingNameAndPort localhost 8380
- 	
- 	
+ 	 	
  	loginUsingIdpLogin
 	local binaryConverterAppToken=$(addAppTokenToUser binaryConverter \
 		"AppToken used by internal binary converter processes, do not remove")

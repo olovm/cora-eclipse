@@ -11,5 +11,5 @@
         <listEntry value="org.eclipse.ui.externaltools.launchGroup"/>
     </listAttribute>
     <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="${workspace_loc}/cora-eclipse/development/batchJob/user/jobAddAppTokenAndCreateExampleUsers.sh"/>
-    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="&quot;151515&quot; &quot;coraUser:4412566252284358&quot;"/>
+    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS" value="&quot;141414&quot; &quot;151515&quot; &quot;coraUser:4412566252284358&quot;"/>
 </launchConfiguration>
