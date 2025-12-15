@@ -4,7 +4,7 @@
     <mapAttribute key="org.eclipse.debug.core.environmentVariables">
         <mapEntry key="IDP_LOGIN_URL" value="http://localhost:8382/idplogin/"/>
         <mapEntry key="LOGINID" value="systemoneAdmin@system.cora.uu.se"/>
-        <mapEntry key="RECORD_URL" value="http://localhost:8082/diva/rest/record"/>
+        <mapEntry key="RECORD_URL" value="http://localhost:8082/diva/rest/record/"/>
         <mapEntry key="RUNNING_URL" value="http://localhost:8082/diva/rest/record/system"/>
     </mapAttribute>
     <listAttribute key="org.eclipse.debug.ui.favoriteGroups">

@@ -13,9 +13,10 @@ start() {
 }
 
 importDependencies(){
-	source "$(dirname "$0")/../login.sh"
-	source "$(dirname "$0")/../waitForSystemToBeRunning.sh"
-	source "$(dirname "$0")/appTokenForUser.sh"
+	SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+	source "$SCRIPT_DIR/../login.sh"
+	source "$SCRIPT_DIR/../waitForSystemToBeRunning.sh"
+	source "$SCRIPT_DIR/appTokenForUser.sh"
 }
 
 start "$@"

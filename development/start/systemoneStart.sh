@@ -3,7 +3,14 @@
 declare dataDividers=$1
 NETWORK=eclipseForCoraNet
 
+RUNNING_URL="http://localhost:8080/systemone/rest/record/system"
+RECORD_URL="http://localhost:8080/systemone/rest/record/"
+RECORDTYPE_URL='http://localhost:8080/systemone/rest/record/recordType'
+IDP_LOGIN_URL="http://localhost:8380/idplogin/"
+LOGINID="systemoneAdmin@system.cora.uu.se"
+
 start(){
+	importDependencies
 	findCurrentDockerVersions
 	startRabbitMq
 	startSolr
@@ -13,8 +20,31 @@ start(){
 
  	waitForServiceUsingNameAndPort systemone-rabbitmq 5672
 	waitForServiceUsingNameAndPort systemone-postgresql 5432
+	
+	echo "********************************************"
+	echo "*****Start your local tomcat servers...*****"
+	echo "********************************************"
+	waitForServiceUsingNameAndPort localhost 8080
+	waitForServiceUsingNameAndPort localhost 8280
+	waitForServiceUsingNameAndPort localhost 8380
  	
-	startBinaryConverters
+ 	
+ 	loginUsingIdpLogin
+	local binaryConverterAppToken=$(addAppTokenToUser binaryConverter \
+		"AppToken used by internal binary converter processes, do not remove")
+	echo "Created appToken for binaryConverters: $binaryConverterAppToken"
+	addAppTokenAndCreateExampleUsers "141414"
+ 	index
+	logoutFromCora
+	
+	startBinaryConverters "$binaryConverterAppToken"
+}
+
+importDependencies(){
+	SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+	source "$SCRIPT_DIR/../batchJob/login.sh"
+	source "$SCRIPT_DIR/../batchJob/user/appTokenForUser.sh"
+	source "$SCRIPT_DIR/../batchJob/index/index.sh"
 }
 
 findCurrentDockerVersions() {
@@ -117,14 +147,16 @@ startIIP() {
 }
 
 startBinaryConverters() {
+	local binaryConverterAppToken=$1
 	echoStartingWithMarkers "binary converters"
-	startDockerForConverterUsingQueueName "smallImageConverterQueue"
-	startDockerForConverterUsingQueueName "pdfConverterQueue"
-	startDockerForConverterUsingQueueName "jp2ConverterQueue"
+	startDockerForConverterUsingQueueName "smallImageConverterQueue" "$binaryConverterAppToken"
+	startDockerForConverterUsingQueueName "pdfConverterQueue" "$binaryConverterAppToken"
+	startDockerForConverterUsingQueueName "jp2ConverterQueue" "$binaryConverterAppToken"
 }
 
 startDockerForConverterUsingQueueName(){
 	local queueName=$1
+	local binaryConverterAppToken=$2
 	echo "starting binaryConverter for $queueName"
 	docker run -it -d --name systemone-$queueName \
 	--mount type=bind,source=/mnt/depot/cora/sharedArchive/systemOne,target=/tmp/sharedArchiveReadable/systemOne,readonly \
@@ -132,8 +164,8 @@ startDockerForConverterUsingQueueName(){
 	--network=$NETWORK \
 	-e coraBaseUrl="http://eclipse:8080/systemone/rest/" \
 	-e apptokenVerifierUrl="http://eclipse:8180/login/rest/" \
-	-e loginId="systemoneAdmin@system.cora.uu.se" \
-	-e appToken="5d3f3ed4-4931-4924-9faa-8eaf5ac6457e" \
+	-e loginId="binaryConverter@system.cora.uu.se" \
+	-e appToken="$binaryConverterAppToken" \
 	-e rabbitMqHostName="systemone-rabbitmq" \
 	-e rabbitMqPort="5672" \
 	-e rabbitMqVirtualHost="/" \

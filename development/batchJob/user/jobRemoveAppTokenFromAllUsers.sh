@@ -11,14 +11,15 @@ start() {
 }
 
 importDependencies(){
-	source "$(dirname "$0")/../login.sh"
-	source "$(dirname "$0")/../waitForSystemToBeRunning.sh"
-	source "$(dirname "$0")/appTokenForUser.sh"
+	SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+	source "$SCRIPT_DIR/../login.sh"
+	source "$SCRIPT_DIR/../waitForSystemToBeRunning.sh"
+	source "$SCRIPT_DIR/appTokenForUser.sh"
 }
 
 removeAppTokenFromAllUsers() {
 	importDependencies
-	local readUsers=$(readRecordListFromUrl "${AUTH_TOKEN}" "${RECORD_URL}/user")
+	local readUsers=$(readRecordListFromUrl "${AUTH_TOKEN}" "${RECORD_URL}user")
 	local users=()
 	while IFS= read -r block; do
 		[[ -n "$block" ]] && users+=("$block")
