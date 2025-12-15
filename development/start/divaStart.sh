@@ -2,15 +2,16 @@
 
 declare dataDividers=$1
 NETWORK=eclipseForCoraNet
-cora_docker_rabbitmq=cora-docker-rabbitmq:1.4-SNAPSHOT
-cora_docker_solr=cora-docker-solr:1.3-SNAPSHOT
-cora_docker_fedora=cora-docker-fedora:1.3-SNAPSHOT
-diva_docker_postgresql=diva-docker-postgresql:1.29-SNAPSHOT
-cora_docker_iipimageserver=cora-docker-iipimageserver:1.3-SNAPSHOT
-cora_docker_binaryconverter=cora-docker-binaryconverter:1.5-SNAPSHOT
+
+RUNNING_URL="http://localhost:8082/diva/rest/record/system"
+RECORD_URL="http://localhost:8082/diva/rest/record/"
+RECORDTYPE_URL='http://localhost:8082/diva/rest/record/recordType'
+IDP_LOGIN_URL="http://localhost:8382/idplogin/"
+LOGINID="systemoneAdmin@system.cora.uu.se"
 
 start() {
-    findCurrentDockerVersions
+    importDependencies
+	findCurrentDockerVersions
 	startRabbitMq
     startSolr
     startFedora
@@ -19,9 +20,33 @@ start() {
 
     waitForServiceUsingNameAndPort diva-rabbitmq 5672
 	waitForServiceUsingNameAndPort diva-postgresql 5432
-
-    startBinaryConverters
+	
+	echo "********************************************"
+	echo "*****Start your local tomcat servers...*****"
+	echo "********************************************"
+	waitForServiceUsingNameAndPort localhost 8082
+	waitForServiceUsingNameAndPort localhost 8282
+	waitForServiceUsingNameAndPort localhost 8382
+ 	 	
+ 	loginUsingIdpLogin
+	local binaryConverterAppToken=$(addAppTokenToUser binaryConverter \
+		"AppToken used by internal binary converter processes, do not remove")
+	echo "Created appToken for binaryConverters: $binaryConverterAppToken"
+	addAppTokenAndCreateExampleUsers "141414" "161616" "coraUser:491144693381458" \
+		"user:182924359788077" "user:8985188367779791" "coraUser:491201365536105"
+ 	index
+	logoutFromCora
+	
+	startBinaryConverters "$binaryConverterAppToken"
 }
+
+importDependencies(){
+	SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+	source "$SCRIPT_DIR/../batchJob/login.sh"
+	source "$SCRIPT_DIR/../batchJob/user/appTokenForUser.sh"
+	source "$SCRIPT_DIR/../batchJob/index/index.sh"
+}
+
 findCurrentDockerVersions() {
 	echo "Finding current local docker versions...."
 
@@ -122,24 +147,27 @@ startIIP() {
 }
 
 startBinaryConverters() {
-    echoStartingWithMarkers "binary converters"
-    startDockerForConverterUsingQueueName "smallImageConverterQueue"
-    startDockerForConverterUsingQueueName "pdfConverterQueue"
-    startDockerForConverterUsingQueueName "jp2ConverterQueue"
+	local binaryConverterAppToken=$1
+	echoStartingWithMarkers "binary converters"
+	startDockerForConverterUsingQueueName "smallImageConverterQueue" "$binaryConverterAppToken"
+	startDockerForConverterUsingQueueName "pdfConverterQueue" "$binaryConverterAppToken"
+	startDockerForConverterUsingQueueName "jp2ConverterQueue" "$binaryConverterAppToken"
 }
+
 
 startDockerForConverterUsingQueueName() {
     local queueName=$1
-    echo "starting binaryConverter for $queueName"
+   	local binaryConverterAppToken=$2
+	echo "starting binaryConverter for $queueName"
     docker run -it -d --name diva-$queueName \
         --mount type=bind,source=/mnt/depot/cora/sharedArchive/diva,target=/tmp/sharedArchiveReadable/diva,readonly \
         --mount type=bind,source=/mnt/depot/cora/sharedFileStorage/diva,target=/tmp/sharedFileStorage/diva \
         --network=$NETWORK \
         -e coraBaseUrl="http://eclipse:8082/diva/rest/" \
         -e apptokenVerifierUrl="http://eclipse:8182/login/rest/" \
-        -e loginId="systemoneAdmin@system.cora.uu.se" \
-        -e appToken="5d3f3ed4-4931-4924-9faa-8eaf5ac6457e" \
-        -e rabbitMqHostName="diva-rabbitmq" \
+        -e loginId="binaryConverter@system.cora.uu.se" \
+		-e appToken="$binaryConverterAppToken" \
+		-e rabbitMqHostName="diva-rabbitmq" \
         -e rabbitMqPort="5672" \
         -e rabbitMqVirtualHost="/" \
         -e rabbitMqQueueName=$queueName \

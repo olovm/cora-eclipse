@@ -25,7 +25,7 @@ index() {
 getIndexActionLinks() {
   local url="$1"
   local xml
-  echo "Fetching record list XML from $url" >&2
+#  echo "Fetching record list XML from $url" >&2
   xml=$(curl -s -X GET -k -H "authToken: ${AUTH_TOKEN}" \
     -H "Accept: application/vnd.cora.recordList+xml" "$url")
 
