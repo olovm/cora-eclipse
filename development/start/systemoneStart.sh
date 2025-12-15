@@ -25,6 +25,7 @@ start(){
 	echo "*****Start your local tomcat servers...*****"
 	echo "********************************************"
 	waitForServiceUsingNameAndPort localhost 8080
+	waitForServiceUsingNameAndPort localhost 8180
 	waitForServiceUsingNameAndPort localhost 8280
 	waitForServiceUsingNameAndPort localhost 8380
  	 	
