@@ -43,6 +43,7 @@ start() {
 
 importDependencies(){
 	SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+	source "$SCRIPT_DIR/../batchJob/waitForSystemToBeRunning.sh"
 	source "$SCRIPT_DIR/../batchJob/login.sh"
 	source "$SCRIPT_DIR/../batchJob/user/appTokenForUser.sh"
 	source "$SCRIPT_DIR/../batchJob/index/index.sh"
@@ -175,17 +176,6 @@ startDockerForConverterUsingQueueName() {
         -e fedoraOcflHome="/tmp/sharedArchiveReadable/diva" \
         -e fileStorageBasePath="/tmp/sharedFileStorage/diva/" \
         $cora_docker_binaryconverter
-}
-
-waitForServiceUsingNameAndPort(){
-	local name=$1
-	local port=$2
-	echo ""
-	echo "------------ Check for service $name running on $port ------------"
-	until nc -z -v -w1 $name $port >/dev/null 2>&1; do
-		echo "Waiting for $name..";
-		sleep 1;
-	done
 }
 
 start
