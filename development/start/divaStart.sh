@@ -31,7 +31,7 @@ start() {
  	 	
  	loginUsingIdpLogin
 	local binaryConverterAppToken=$(addAppTokenToUser binaryConverter \
-		"AppToken used by internal binary converter processes, do not remove")
+		"AppToken used by internal binary converter processes, do not remove!")
 	echo "Created appToken for binaryConverters: $binaryConverterAppToken"
 	addAppTokenAndCreateExampleUsers "141414" "161616" "coraUser:491144693381458" \
 		"user:182924359788077" "user:8985188367779791" "coraUser:491201365536105"
