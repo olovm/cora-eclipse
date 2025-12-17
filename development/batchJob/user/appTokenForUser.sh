@@ -20,13 +20,14 @@ addAppTokenToUser() {
     echo "${token}"
 }
 
-removeAppTokensFromUserRecord(){
+removeAppTokensAndPasswordFromUserRecord(){
 	local readRecord="$1"
 	local updateLink=$(getActionLinkFromDataRecord "$readRecord" "update")
  	local userNoActionLinks=$(getUserPartWithoutActionLinksFromRecord "$readRecord")
  	local userWithoutAppTokens=$(removeAppTokensFromUser "$userNoActionLinks")
-	if [[ "$userNoActionLinks" != "$userWithoutAppTokens" ]]; then
-		local updateAnswer=$(sendDataToServer "${AUTH_TOKEN}" "${updateLink}" "${userWithoutAppTokens}")
+ 	local userWithoutAppTokensOrPassword=$(removePasswordFromUser "$userWithoutAppTokens")
+	if [[ "$userNoActionLinks" != "$userWithoutAppTokensOrPassword" ]]; then
+		local updateAnswer=$(sendDataToServer "${AUTH_TOKEN}" "${updateLink}" "${userWithoutAppTokensOrPassword}")
 		echo "$updateAnswer"
 	fi
 }
@@ -74,6 +75,14 @@ removeAppTokensFromUser(){
 	local userNoAppToken=$(printf '%s\n' "$user" \
     	| xmlstarlet ed --omit-decl -d "//appTokens" 2>/dev/null)
 	echo "$userNoAppToken"
+}
+
+removePasswordFromUser(){
+	local user="$1"	
+	local userNoPassword=$(xmlstarlet ed --omit-decl \
+		-u "/user/usePassword" -v "false" \
+		<<< "$user")
+	echo "$userNoPassword"
 }
 
 addTokenNoteToUser(){

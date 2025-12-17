@@ -5,16 +5,17 @@ set -uo pipefail
 start() {
  	importDependencies
 	waitingForListOfSystemToEnsureSystemIsRunning "${RUNNING_URL}"
-	echo "Starting delete all batch jobs process..."
+	echo "Starting delete all process..."
 	loginUsingIdpLogin
 	deleteAllRecordsForUrl "${RECORDLIST_URL}"
 	logoutFromCora
 }
 
 importDependencies(){
-	source "$(dirname "$0")/../login.sh"
-	source "$(dirname "$0")/../waitForSystemToBeRunning.sh"
-	source "$(dirname "$0")/../deleteAllRecordsForUrl.sh"
+	SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+	source "$SCRIPT_DIR/login.sh"
+	source "$SCRIPT_DIR//waitForSystemToBeRunning.sh"
+	source "$SCRIPT_DIR//deleteAllRecordsForUrl.sh"
 }
 
 start

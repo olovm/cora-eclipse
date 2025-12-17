@@ -17,7 +17,8 @@ start(){
 }
 
 importDeleteScript() {
-	source "$(dirname "$0")/jobDeleteAllIndexBatchJobs.sh"
+	SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+	source "$SCRIPT_DIR/../jobDeleteAll.sh"
 }
 
 ################## calls start here #######################################
