@@ -30,14 +30,46 @@ start(){
 	waitForServiceUsingNameAndPort localhost 8380
  	 	
  	loginUsingIdpLogin
-	local binaryConverterAppToken=$(addAppTokenToUser binaryConverter \
+	local binaryConverterAppToken=$(addAppTokenToUser "binaryConverter" \
 		"AppToken used by internal binary converter processes, do not remove!")
 	echo "Created appToken for binaryConverters: $binaryConverterAppToken"
+	
 	addAppTokenAndCreateExampleUsers "141414"
  	index
 	logoutFromCora
 	
 	startBinaryConverters "$binaryConverterAppToken"
+	
+	startFitNesse
+}
+
+startFitNesse(){
+	local fitnesseAdminAppToken=$(addAppTokenToUser "131313" \
+		"AppToken used by internal binary converter processes, do not remove!")
+	local fitnessUserAppToken=$(addAppTokenToUser "121212" \
+		"AppToken used by internal binary converter processes, do not remove!")
+		
+	export JAVA_HOME=/usr/lib/jvm/java-25-openjdk
+	export PATH="$JAVA_HOME/bin:$PATH"
+	SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+	cd ~/workspace/cora-fitnesse
+	mvn dependency:build-classpath -Dmdep.outputFile=cp.txt
+	export JAVA_HOME=/usr/lib/jvm/java-25-openjdk
+	CP=$(cat cp.txt):target/classes
+	
+	java \
+	  -DsystemUnderTestUrl=http://localhost:8080/systemone/ \
+	  -DappTokenVerifierUrl=http://localhost:8180/login/ \
+	  -DidpLoginUrl=http://localhost:8380/idplogin/ \
+	  -DgatekeeperServerUrl=http://localhost:8280/gatekeeperserver/ \
+	  -Dslim.port=9000 \
+	  -DfitnesseAdminLoginId=fitnesseAdmin@system.cora.uu.se \
+	  -DfitnesseAdminAppToken="$fitnesseAdminAppToken" \
+	  -DfitnesseUserLoginId=fitnesseUser@system.cora.uu.se \
+	  -DfitnesseUserAppToken="$fitnessUserAppToken" \
+	  -cp "$CP" \
+	  fitnesseMain.FitNesseMain \
+	  -p 8091
 }
 
 importDependencies(){
