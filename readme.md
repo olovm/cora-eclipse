@@ -94,7 +94,7 @@ update the docker plugin through the marketplace<br>
 
 ## Finishing up, your first startup of the environment
 Start the environment by running:</br>
-`./eclipse202509forcora1/startEclipseForCora.sh`
+`./eclipse202512forcora1/startEclipseForCora.sh`
 <br>
  **Do the following in the listed order to avoid problems!**
  1. Go in under preferences and make sure the latest java is choosen as default jre
@@ -227,7 +227,7 @@ For alvin server go into the launch configuration / arguments under VM arguments
 ### exporting data from connected databases
 connect to shell in devEnvironment:
 
-`docker exec -it eclipse202509forcora1 bash `
+`docker exec -it eclipse202512forcora1 bash `
 
 to export data from running DiVA db run:
 `pg_dump -U diva -h diva-cora-docker-postgresql -p 5432 -t organisation diva > ~/workspace/diva-cora-docker-postgresql/docker/data/exported.sql`
@@ -237,7 +237,7 @@ to export data from running DiVA db run:
 If problems with archive test for path not found:
 enter docker:
 
-`docker exec -it eclipse202509forcora1 bash`
+`docker exec -it eclipse202512forcora1 bash`
 
 go to your home dir:
 

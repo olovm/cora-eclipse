@@ -1,4 +1,4 @@
-FROM fedora:42
+FROM fedora:43
 # Set a useful default locale
 RUN echo "export LANG=en_US.UTF-8" > /opt/export_LANG.sh
 RUN echo "export LANGUAGE=en_US.UTF-8" >> /opt/export_LANG.sh
@@ -60,7 +60,7 @@ RUN dnf clean all && \
   npm -y && \
   dnf clean all
   
-RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2025-09/R/eclipse-inst-jre-linux64.tar.gz | tar zxf - -C /home/$user
+RUN wget -O - https://ftp.acc.umu.se/mirror/eclipse.org/oomph/epp/2025-12/R/eclipse-inst-jre-linux64.tar.gz | tar zxf - -C /home/$user
 
 COPY ./entrypoint.sh /home/$user/
 RUN chmod a+x /home/$user/entrypoint.sh
@@ -69,7 +69,7 @@ RUN touch /home/$user/.gitconfig
 
 RUN chown $user:$user /home/$user -R
 
-RUN wget -O - https://archive.apache.org/dist/tomcat/tomcat-11/v11.0.13/bin/apache-tomcat-11.0.13.tar.gz  | tar zxf - -C /opt/
+RUN wget -O - https://archive.apache.org/dist/tomcat/tomcat-11/v11.0.15/bin/apache-tomcat-11.0.15.tar.gz  | tar zxf - -C /opt/
 RUN chown $user:$user /opt/ -R
 
 RUN npm install -g karma-cli
