@@ -4459,15 +4459,15 @@
         &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>
         &lt;servers>
           &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v11.0 systemOne-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v11.0 systemOne&quot; name=&quot;Tomcat v11.0 systemOne&quot; runtime-id=&quot;Apache Tomcat v11.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.110&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.110&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;15&quot;>
-            &lt;attribute name=&quot;vmArguments&quot; value=&quot;-DserverRestUrl=http://localhost:38080/systemone/rest/&quot; />
+            &lt;attribute name=&quot;org.eclipse.jst.server.tomcat.vmArgs&quot; value=&quot;-DserverRestUrl=http://localhost:38080/systemone/rest/&quot; />
             &lt;list key=&quot;modules&quot; value0=&quot;systemone::org.eclipse.jst.jee.server:systemone::jst.web::3.0&quot;/>
           &lt;/server>
           &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v11.0 alvin-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v11.0 alvin&quot; name=&quot;Tomcat v11.0 alvin&quot; runtime-id=&quot;Apache Tomcat v11.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.110&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.110&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;29&quot;>
-            &lt;attribute name=&quot;vmArguments&quot; value=&quot;-DserverRestUrl=http://localhost:38081/alvin/rest/&quot; />
+            &lt;attribute name=&quot;org.eclipse.jst.server.tomcat.vmArgs&quot; value=&quot;-DserverRestUrl=http://localhost:38081/alvin/rest/&quot; />
             &lt;list key=&quot;modules&quot; value0=&quot;alvin-cora::org.eclipse.jst.jee.server:alvin-cora::jst.web::3.0&quot;/>
           &lt;/server>
           &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v11.0 diva-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v11.0 diva&quot; name=&quot;Tomcat v11.0 diva&quot; runtime-id=&quot;Apache Tomcat v11.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.110&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.110&quot; start-timeout=&quot;145&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;23&quot;>
-            &lt;attribute name=&quot;vmArguments&quot; value=&quot;-DserverRestUrl=http://localhost:38082/diva/rest/&quot; />
+            &lt;attribute name=&quot;org.eclipse.jst.server.tomcat.vmArgs&quot; value=&quot;-DserverRestUrl=http://localhost:38082/diva/rest/&quot; />
             &lt;list key=&quot;modules&quot; value0=&quot;diva-cora::org.eclipse.jst.jee.server:diva-cora::jst.web::3.0&quot;/>
           &lt;/server>
           &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v11.0 systemOne gatekeeper-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v11.0 systemOne gatekeeper&quot; name=&quot;Tomcat v11.0 systemOne gatekeeper&quot; runtime-id=&quot;Apache Tomcat v11.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.110&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.110&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;6&quot;>
@@ -4498,6 +4498,7 @@
             &lt;list key=&quot;modules&quot; value0=&quot;cora-idplogin::org.eclipse.jst.jee.server:cora-idplogin::jst.web::3.0&quot;/>
           &lt;/server>
         &lt;/servers>
+
       </content>
     </setupTask>
     <setupTask
