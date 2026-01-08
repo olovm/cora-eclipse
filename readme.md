@@ -57,8 +57,8 @@ If you are uncertain use option **1. https://github.com/lsu-ub-uu/**
 There are a few things that needs to be choosen in the installer<br>
 First of all switch to **advanced mode** in the installer
  1. Browse for setup files for eclipse, **/home/yourUserName/workspace/cora-eclipse/oomph/EclipseForCora.setup** (use the plussign to add)
- 2. Product version, set it to: **2025-09 Eclipse environment for Cora**
- 3. Java 23+ VM, set it to: /usr/lib/jvm/**java-25-openjdk**
+ 2. Product version, set it to: **2025-12 Eclipse environment for Cora**
+ 3. Java 25+ VM, set it to: /usr/lib/jvm/**java-25-openjdk**
  
 next step
  
