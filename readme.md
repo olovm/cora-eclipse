@@ -2,7 +2,11 @@
 Cora-eclipse is a project to enable easy setup of an Eclipse install for Cora development, using Eclipse and Docker.</br>
 I am running this on linux so, change as needed for other platforms.
 
-## Temporary work around for m2e-wtp not supporting java 25
+## Please note add serverRestUrl
+The info is found under Finishing up, your first startup of the environment / point 7, in this document
+
+## Temporary workaround for m2e-wtp not supporting java 25
+**If you have used this workaround before can you remove it now**
 The problem manifests itself by maven update projects does not find java 25 support, and deployment does not work as expected. To fix add the following to your m2/settings.xml file (in your active profile if you have one)
 ```xml
 <properties>
@@ -103,12 +107,15 @@ Start the environment by running:</br>
  4. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallAllButDocker
  5. Go under External Tools Configurations (play icon with toolbox), run mvnPomCleanInstallDevDocker
  6. Rightclick any project, and choose, maven / update project... (or F5) select all projects and run
+ 7. For the main servers, systemone, alvin, diva open the server and under launch configuration / arguments / VM Arguments add the following:
+ 	**-DserverRestUrl=http://localhost:38080/systemone/rest/**
+ 	**-DserverRestUrl=http://localhost:38081/alvin/rest/**
+ 	**-DserverRestUrl=http://localhost:38082/diva/rest/**
+
 
 ### Start systemOne
-1. Go under External Tools Configurations (play icon with toolbox) and start the docker containers for development by running **systemoneStartDevDockers**
-2. Start fitnesse, Go under Run Configurations (play icon) and start **systemOne-fitnesse**
-3. Find the server tab and **start the tomcat servers for systemOne**
-4. Go under External Tools Configurations (play icon with toolbox) and run **indexSystemOneMetadata**
+1. Go under External Tools Configurations (play icon with toolbox) and start the development environment by running **systemoneStart**
+2. When the script says waiting for local host, find the server tab and **start the tomcat servers for systemOne**
 3. See links section below to find the running system
 
 (or similar to run Alvin or DiVA)
