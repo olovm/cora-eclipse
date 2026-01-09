@@ -45,9 +45,9 @@ start(){
 
 startFitNesse(){
 	local fitnesseAdminAppToken=$(addAppTokenToUser "131313" \
-		"AppToken used by internal binary converter processes, do not remove!")
+		"AppToken used by FitNesse, do not remove!")
 	local fitnessUserAppToken=$(addAppTokenToUser "121212" \
-		"AppToken used by internal binary converter processes, do not remove!")
+		"AppToken used by FitNesse, do not remove!")
 		
 	export JAVA_HOME=/usr/lib/jvm/java-25-openjdk
 	export PATH="$JAVA_HOME/bin:$PATH"
@@ -69,7 +69,7 @@ startFitNesse(){
 	  -DfitnesseUserAppToken="$fitnessUserAppToken" \
 	  -cp "$CP" \
 	  fitnesseMain.FitNesseMain \
-	  -p 8091
+	  -p 8090
 }
 
 importDependencies(){
