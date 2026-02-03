@@ -35,6 +35,7 @@ start() {
 	echo "Created appToken for binaryConverters: $binaryConverterAppToken"
 	addAppTokenAndCreateExampleUsers "141414" "161616" "coraUser:491144693381458" \
 		"user:182924359788077" "user:8985188367779791" "coraUser:491201365536105"
+ 	listAllSequencesToTriggerCreationIfMissingInDb
  	index
 	logoutFromCora
 	
@@ -47,6 +48,7 @@ importDependencies(){
 	source "$SCRIPT_DIR/../batchJob/login.sh"
 	source "$SCRIPT_DIR/../batchJob/user/appTokenForUser.sh"
 	source "$SCRIPT_DIR/../batchJob/index/index.sh"
+	source "$SCRIPT_DIR/../batchJob/listAllSequencesToTriggerCreationIfMissingInDb.sh"
 }
 
 findCurrentDockerVersions() {
