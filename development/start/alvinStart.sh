@@ -39,6 +39,37 @@ start() {
 	logoutFromCora
 	
 	startBinaryConverters "$binaryConverterAppToken"
+	
+	startFitNesse
+}
+
+startFitNesse(){
+	local fitnesseAdminAppToken=$(addAppTokenToUser "131313" \
+		"AppToken used by FitNesse, do not remove!")
+	local fitnessUserAppToken=$(addAppTokenToUser "121212" \
+		"AppToken used by FitNesse, do not remove!")
+		
+	export JAVA_HOME=/usr/lib/jvm/java-25-openjdk
+	export PATH="$JAVA_HOME/bin:$PATH"
+	SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+	cd ~/workspace/alvin-cora-fitnesse
+	mvn dependency:build-classpath -Dmdep.outputFile=cp.txt
+	export JAVA_HOME=/usr/lib/jvm/java-25-openjdk
+	CP=$(cat cp.txt):target/classes
+	
+	java \
+	  -DsystemUnderTestUrl=http://localhost:8081/alvin/ \
+	  -DappTokenVerifierUrl=http://localhost:8181/login/ \
+	  -DidpLoginUrl=http://localhost:8381/idplogin/ \
+	  -DgatekeeperServerUrl=http://localhost:8281/gatekeeperserver/ \
+	  -Dslim.port=9001 \
+	  -DfitnesseAdminLoginId=fitnesseAdmin@system.cora.uu.se \
+	  -DfitnesseAdminAppToken="$fitnesseAdminAppToken" \
+	  -DfitnesseUserLoginId=fitnesseUser@system.cora.uu.se \
+	  -DfitnesseUserAppToken="$fitnessUserAppToken" \
+	  -cp "$CP" \
+	  fitnesseMain.FitNesseMain \
+	  -p 8091
 }
 
 importDependencies(){
