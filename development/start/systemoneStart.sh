@@ -47,6 +47,7 @@ start(){
 startFitNesse(){
 	local fitnesseAdminAppToken=$(addAppTokenToUser "131313" \
 		"AppToken used by FitNesse, do not remove!")
+	echo "Created appToken for fitnesseAdmin (131313): $fitnesseAdminAppToken"
 	local fitnessUserAppToken=$(addAppTokenToUser "121212" \
 		"AppToken used by FitNesse, do not remove!")
 		

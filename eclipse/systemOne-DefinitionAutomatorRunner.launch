@@ -20,5 +20,5 @@
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="${string_prompt:recordType(s):recordType collectTerm}"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="cora-fitnesseintegration"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-DsystemUnderTestUrl=&quot;http://localhost:8080/systemone/&quot; -DappTokenVerifierUrl=&quot;http://localhost:8180/login/&quot; -DfitnesseAdminLoginId=&quot;fitnesseAdmin@system.cora.uu.se&quot; -DfitnesseAdminAppToken=&quot;29c30232-d514-4559-b60b-6de47175c1df&quot;"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-DsystemUnderTestUrl=&quot;http://localhost:8080/systemone/&quot; -DappTokenVerifierUrl=&quot;http://localhost:8180/login/&quot; -DfitnesseAdminLoginId=&quot;fitnesseAdmin@system.cora.uu.se&quot; -DfitnesseAdminAppToken=${string_prompt:fitNesse admin appToken:someToken}"/>
 </launchConfiguration>
