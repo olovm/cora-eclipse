@@ -57,6 +57,7 @@ RUN dnf clean all && \
   libglvnd-gles \
   ImageMagick \
   xmlstarlet \
+  gcc libxslt-devel python3-devel \
   npm -y && \
   dnf clean all
   
