@@ -12,7 +12,7 @@ ALL_COMMON=$COMMON1" "$COMMON2" "$COMMON_IMPLEMENTATION
 
 #PARENT
 COMMON_PURE_CONTAINER="cora-docker-tomcat cora-docker-java cora-docker-solr cora-docker-postgresql "
-COMMON_PURE_CONTAINER+="cora-docker-fedora cora-docker-rabbitmq cora-docker-iipimageserver "
+COMMON_PURE_CONTAINER+="cora-docker-nfs cora-docker-fedora cora-docker-rabbitmq cora-docker-iipimageserver "
 COMMON_PURE_CONTAINER+="cora-docker-console cora-docker-apache cora-docker-varnish "
 #ARCHIVED="cora-docker-fedora32 cora-docker-fedora32-client cora-docker-fedora38 "
 #PARENT, COMMON
@@ -97,7 +97,7 @@ ALVIN0="alvin-metadata alvin-client"
 ALVIN_DEPLOYMENT="alvin-cora alvin-gatekeeper-war "
 #ARCHIVED="alvin-indexmessenger "
 ALVIN_VALIDATION="alvin-cora-fitnesse "
-ALVIN_DEV_CONTAINER="alvin-docker-postgresql "
+ALVIN_DEV_CONTAINER="alvin-docker-postgresql alvin-docker-solr "
 #ARCHIVED="alvin-cora-docker-fedora alvin-cora-docker-postgresql alvin-docker-index "
 ALVIN_CONTAINER="alvin-docker-cora alvin-docker-gatekeeper alvin-cora-docker-fitnesse alvin-docker-client alvin-docker-apache "
 ALL_ALVIN=$ALVIN0" "$ALVIN_DEPLOYMENT" "$ALVIN_VALIDATION
@@ -110,7 +110,7 @@ DIVA_DEPLOYMENT="diva-cora diva-gatekeeper-war "
 DIVA_VALIDATION="diva-cora-fitnesse "
 #ARCHIVED="DIVA_DEV_CONTAINER0="diva-cora-docker-fedora diva-docker-mock-classic-postgresql "
 #ARCHIVED="DIVA_DEV_CONTAINER1="diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
-DIVA_DEV_CONTAINER1="diva-docker-postgresql "
+DIVA_DEV_CONTAINER1="diva-docker-postgresql diva-docker-solr"
 #ARCHIVED="diva-docker-classicfedorasynchronizer "
 DIVA_CONTAINER="diva-cora-docker-fitnesse diva-docker-cora diva-docker-gatekeeper diva-docker-divaclient diva-docker-apache "
 #ARCHIVED="diva-docker-index 
