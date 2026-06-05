@@ -14,8 +14,8 @@ start() {
 	findCurrentDockerVersions
 	startRabbitMq
     startSolr
-    startFedora
     startPostgresql "$dataDividers"
+    startFedora
     startIIP
 
     waitForServiceUsingNameAndPort diva-rabbitmq 5672
@@ -141,12 +141,15 @@ startFedora() {
 	echo "using path /tmp/sharedArchive/diva."
 	#docker run -d --name diva-docker-fedora --rm \
 
-    echoStartingWithMarkers "fedora"
-    docker run -d --name diva-fedora \
-        -p 38089:8080 \
-        --network=$NETWORK \
-        --mount type=bind,source=$sharedArchive/diva,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
-        $cora_docker_fedora
+	echoStartingWithMarkers "fedora"
+	docker run -d --name diva-fedora \
+	-p 38089:8080 \
+	--network=$NETWORK \
+	--mount type=bind,source=$sharedArchive/diva,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
+	-e POSTGRES_HOST=diva-postgresql \
+	-e POSTGRES_USER=diva \
+	-e POSTGRES_PASSWORD=diva \
+	$cora_docker_fedora
 }
 
 startPostgresql() {

@@ -14,11 +14,11 @@ start(){
 	findCurrentDockerVersions
 	startRabbitMq
 	startSolr
+	startPostgresql "$dataDividers"
 	startFedora
-    startPostgresql "$dataDividers"
-    startIIP
+	startIIP
 
- 	waitForServiceUsingNameAndPort systemone-rabbitmq 5672
+	waitForServiceUsingNameAndPort systemone-rabbitmq 5672
 	waitForServiceUsingNameAndPort systemone-postgresql 5432
 	
 	echo "********************************************"
@@ -133,20 +133,6 @@ startSolr(){
 	solr-precreate coracore /opt/solr/server/solr/configsets/coradefaultcore
 }
 
-startFedora() {
-	echoStartingWithMarkers "fedora"
-	#$sharedArchive is set when starting eclipse docker
-	echo "using host location $sharedArchive/systemOne in the eclipse docker mounted on"
-	echo "/tmp/sharedArchive to store the files for the archive to be able to read it from fitnesse "
-	echo "using path /tmp/sharedArchive/systemOne."
-	docker run -d --name systemone-fedora \
-	-p 38087:8080 \
-	--network=$NETWORK \
-	--mount type=bind,source=$sharedArchive/systemOne,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
-	-e CATALINA_OPTS="-Dfcrepo.config.file=/usr/local/tomcat/fcrepo.properties" \
-	$cora_docker_fedora
-}
-
 startPostgresql(){
 	echoStartingWithMarkers "postgresql"
 	echo "removing previous postgresql with cora data"
@@ -162,6 +148,23 @@ startPostgresql(){
 	$systemone_docker_postgresql
 }
 #--mount type=bind,source=/mnt/depot/cora/sharedArchive,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
+
+startFedora() {
+	echoStartingWithMarkers "fedora"
+	#$sharedArchive is set when starting eclipse docker
+	echo "using host location $sharedArchive/systemOne in the eclipse docker mounted on"
+	echo "/tmp/sharedArchive to store the files for the archive to be able to read it from fitnesse "
+	echo "using path /tmp/sharedArchive/systemOne."
+	docker run -d --name systemone-fedora \
+	-p 38087:8080 \
+	--network=$NETWORK \
+	--mount type=bind,source=$sharedArchive/systemOne,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
+	-e CATALINA_OPTS="-Dfcrepo.config.file=/usr/local/tomcat/fcrepo.properties" \
+	-e POSTGRES_HOST=systemone-postgresql \
+	-e POSTGRES_USER=systemone \
+	-e POSTGRES_PASSWORD=systemone \
+	$cora_docker_fedora
+}
 
 startIIP() {
 	echoStartingWithMarkers "IIPImageServer"
