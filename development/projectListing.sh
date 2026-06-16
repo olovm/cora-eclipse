@@ -28,7 +28,7 @@ CORE2="cora-spider cora-spider-spies cora-metadatastorage "
 CORE3="cora-metacreator cora-gatekeeperclient cora-fedora cora-tikacontentanalyzer"
 #ARCHIVED="cora-fedora3x "
 
-CORE4="cora-therest "
+CORE4="cora-therest cora-urnnbn"
 ALL_CORE=$CORE0" "$CORE1" "$CORE2" "$CORE3" "$CORE4
 
 #PARENT, COMMON, CORA
