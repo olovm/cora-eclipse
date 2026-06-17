@@ -16,6 +16,7 @@ start() {
     startSolr
     startPostgresql "$dataDividers"
     startFedora
+    startUrnNbn
     startIIP
 
     waitForServiceUsingNameAndPort diva-rabbitmq 5672
@@ -103,6 +104,9 @@ findCurrentDockerVersions() {
 	
 	cora_docker_binaryconverter="cora-docker-binaryconverter:"$(getMvnVersion /cora-docker-binaryconverter)
 	echo $cora_docker_binaryconverter
+	
+	diva_docker_urnnbn="diva-docker-urnnbn:"$(getMvnVersion diva-docker-urnnbn)
+	echo $diva_docker_urnnbn
 }
 
 getMvnVersion() {
@@ -165,6 +169,16 @@ startPostgresql() {
         -e POSTGRES_PASSWORD=diva \
         -e DATA_DIVIDERS="$1" \
         $diva_docker_postgresql
+}
+
+startUrnNbn() {
+	echoStartingWithMarkers "urnbn service"
+	echo "removing previous "urnbn service"
+	docker rm diva-postgresql
+	echo "starting "urnbn service"
+	docker run -d --name diva-urnnbn --restart always \
+		-p 38482:8080 \
+		$diva_docker_urnnbn
 }
 
 startIIP() {
