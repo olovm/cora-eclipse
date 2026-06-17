@@ -89,7 +89,7 @@ findCurrentDockerVersions() {
 	cora_docker_rabbitmq="cora-docker-rabbitmq:"$(getMvnVersion cora-docker-rabbitmq)
 	echo $cora_docker_rabbitmq
 
-	cora_docker_solr="cora-docker-solr:"$(getMvnVersion cora-docker-solr)
+	cora_docker_solr="diva-docker-solr:"$(getMvnVersion diva-docker-solr)
 	echo $cora_docker_solr
 
 	cora_docker_fedora="cora-docker-fedora:"$(getMvnVersion cora-docker-fedora)
