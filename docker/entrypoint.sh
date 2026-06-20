@@ -45,6 +45,9 @@ runKarmaInstall(){
 runInstaller(){
 	cd ~/workspace/cora-eclipse/oomph
 	#SWT_GTK3=0  ~/eclipse-installer/eclipse-inst
+	export QT_QPA_PLATFORM=wayland
+	export SWT_GTK3=1
+ 	export GDK_SCALE=1
 	~/eclipse-installer/eclipse-inst
 }
 
@@ -59,6 +62,9 @@ elif [ ! -d ~/eclipse/eclipseforcora ]; then
 	runInstaller
 else
 	#SWT_GTK3=0 ~/eclipse/eclipseforcora/eclipse
+	export QT_QPA_PLATFORM=wayland
+	export SWT_GTK3=1
+ 	export GDK_SCALE=1
 	~/archiveReadable.sh
 	~/eclipse/eclipseforcora/eclipse
 fi
