@@ -14,8 +14,9 @@ start() {
 	findCurrentDockerVersions
 	startRabbitMq
     startSolr
-    startFedora
     startPostgresql "$dataDividers"
+    startFedora
+    startUrnNbn
     startIIP
 
     waitForServiceUsingNameAndPort diva-rabbitmq 5672
@@ -103,6 +104,9 @@ findCurrentDockerVersions() {
 	
 	cora_docker_binaryconverter="cora-docker-binaryconverter:"$(getMvnVersion /cora-docker-binaryconverter)
 	echo $cora_docker_binaryconverter
+	
+	diva_docker_urnnbn="diva-docker-urnnbn:"$(getMvnVersion diva-docker-urnnbn)
+	echo $diva_docker_urnnbn
 }
 
 getMvnVersion() {
@@ -141,12 +145,15 @@ startFedora() {
 	echo "using path /tmp/sharedArchive/diva."
 	#docker run -d --name diva-docker-fedora --rm \
 
-    echoStartingWithMarkers "fedora"
-    docker run -d --name diva-fedora \
-        -p 38089:8080 \
-        --network=$NETWORK \
-        --mount type=bind,source=$sharedArchive/diva,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
-        $cora_docker_fedora
+	echoStartingWithMarkers "fedora"
+	docker run -d --name diva-fedora \
+	-p 38089:8080 \
+	--network=$NETWORK \
+	--mount type=bind,source=$sharedArchive/diva,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
+	-e POSTGRES_HOST=diva-postgresql \
+	-e POSTGRES_USER=diva \
+	-e POSTGRES_PASSWORD=diva \
+	$cora_docker_fedora
 }
 
 startPostgresql() {
@@ -162,6 +169,16 @@ startPostgresql() {
         -e POSTGRES_PASSWORD=diva \
         -e DATA_DIVIDERS="$1" \
         $diva_docker_postgresql
+}
+
+startUrnNbn() {
+	echoStartingWithMarkers "urnbn service"
+	echo "removing previous "urnbn service"
+	docker rm diva-postgresql
+	echo "starting "urnbn service"
+	docker run -d --name diva-urnnbn --restart always \
+		-p 38482:8080 \
+		$diva_docker_urnnbn
 }
 
 startIIP() {
