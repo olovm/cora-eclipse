@@ -14,12 +14,12 @@ start(){
 	findCurrentDockerVersions
 	startRabbitMq
 	startSolr
-	startFedora
     startPostgresql "$dataDividers"
+	waitForServiceUsingNameAndPort systemone-postgresql 5432
+	startFedora
     startIIP
 
  	waitForServiceUsingNameAndPort systemone-rabbitmq 5672
-	waitForServiceUsingNameAndPort systemone-postgresql 5432
 	
 	echo "********************************************"
 	echo "*****Start your local tomcat servers...*****"
@@ -144,6 +144,9 @@ startFedora() {
 	--network=$NETWORK \
 	--mount type=bind,source=$sharedArchive/systemOne,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
 	-e CATALINA_OPTS="-Dfcrepo.config.file=/usr/local/tomcat/fcrepo.properties" \
+	-e POSTGRES_HOST=systemone-postgresql \
+	-e POSTGRES_USER=systemone \
+	-e POSTGRES_PASSWORD=systemone \
 	$cora_docker_fedora
 }
 

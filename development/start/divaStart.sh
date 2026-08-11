@@ -14,12 +14,12 @@ start() {
 	findCurrentDockerVersions
 	startRabbitMq
     startSolr
-    startFedora
     startPostgresql "$dataDividers"
+	waitForServiceUsingNameAndPort diva-postgresql 5432
+    startFedora
     startIIP
 
     waitForServiceUsingNameAndPort diva-rabbitmq 5672
-	waitForServiceUsingNameAndPort diva-postgresql 5432
 	
 	echo "********************************************"
 	echo "*****Start your local tomcat servers...*****"
@@ -146,6 +146,10 @@ startFedora() {
         -p 38089:8080 \
         --network=$NETWORK \
         --mount type=bind,source=$sharedArchive/diva,target=/usr/local/tomcat/fcrepo-home/data/ocfl-root,bind-propagation=shared \
+        -e CATALINA_OPTS="-Dfcrepo.config.file=/usr/local/tomcat/fcrepo.properties" \
+  	    -e POSTGRES_HOST=diva-postgresql \
+	    -e POSTGRES_USER=diva \
+	    -e POSTGRES_PASSWORD=diva \
         $cora_docker_fedora
 }
 
