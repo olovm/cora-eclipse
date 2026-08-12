@@ -1400,6 +1400,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-load-tests">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.load.tests.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.load.tests"
+          location="${workspace.location}/cora-load-tests"
+          remoteURI="https://github.com/lsu-ub-uu/cora-load-tests">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-load-tests</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-load-tests</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-fitnesseintegration">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -2745,11 +2777,11 @@
           </detail>
           <detail
               key="label">
-            <value>alvin-docker-postgresql</value>
+            <value>alvin-docker-client</value>
           </detail>
           <detail
               key="target">
-            <value>https://github.com/lsu-ub-uu/alvin-docker-postgresql</value>
+            <value>https://github.com/lsu-ub-uu/alvin-docker-client</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
