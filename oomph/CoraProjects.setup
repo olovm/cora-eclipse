@@ -1592,38 +1592,6 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="cora-docker-shibboleth">
-      <setupTask
-          xsi:type="maven:MavenImportTask">
-        <sourceLocator
-            rootFolder="${git.clone.cora.docker.shibboleth.location}"
-            locateNestedProjects="true"/>
-      </setupTask>
-      <setupTask
-          xsi:type="git:GitCloneTask"
-          id="git.clone.cora.docker.shibboleth"
-          location="${workspace.location}/cora-docker-shibboleth"
-          remoteURI="https://github.com/lsu-ub-uu/cora-docker-shibboleth">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/InducedChoices">
-          <detail
-              key="inherit">
-            <value>https://github.com/lsu-ub-uu/</value>
-          </detail>
-          <detail
-              key="label">
-            <value>cora-docker-shibboleth</value>
-          </detail>
-          <detail
-              key="target">
-            <value>https://github.com/lsu-ub-uu/cora-docker-shibboleth</value>
-          </detail>
-        </annotation>
-        <description>${scope.project.label}</description>
-      </setupTask>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
         name="cora-docker-varnish">
       <setupTask
           xsi:type="maven:MavenImportTask">
