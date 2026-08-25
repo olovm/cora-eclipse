@@ -33,6 +33,7 @@
 	<Parameter name="deploymentInfoApplicationName" value="systemOne" override="false" />
 	<Parameter name="deploymentInfoDeploymentName" value="SystemOne - utveckling" override="false" />
 	<Parameter name="deploymentInfoCoraVersion" value="0.1.0" override="false" />
+	<Parameter name="deploymentInfoHelmChartVersion" value="0.1.1" override="false" />
 	<Parameter name="deploymentInfoApplicationVersion" value="0.1.0" override="false" />
 	<Parameter name="deploymentInfoLoginRestUrl" value="http://localhost:38180/login/rest/" override="false" />
 
