@@ -18,6 +18,7 @@ start() {
 	waitForServiceUsingNameAndPort diva-postgresql 5432
     startFedora
     startIIP
+	startUrnNbn
 
     waitForServiceUsingNameAndPort diva-rabbitmq 5672
 	
@@ -103,6 +104,9 @@ findCurrentDockerVersions() {
 	
 	cora_docker_binaryconverter="cora-docker-binaryconverter:"$(getMvnVersion /cora-docker-binaryconverter)
 	echo $cora_docker_binaryconverter
+	
+	diva_docker_urnnbn="diva-docker-urnnbn:"$(getMvnVersion /diva-docker-urnnbn)
+	echo $diva_docker_urnnbn
 }
 
 getMvnVersion() {
@@ -184,6 +188,14 @@ startIIP() {
         -e CORS=* \
         --mount type=bind,source=/mnt/depot/cora/sharedFileStorage/diva,target=/tmp/sharedFileStorage/diva,readonly \
         $cora_docker_iipimageserver
+}
+
+startUrnNbn() {
+    echoStartingWithMarkers "urnNbn"
+    docker run -d --name diva-urnnbn \
+        --network=$NETWORK \
+        -p 38090:8080 \
+        $diva_docker_urnnbn
 }
 
 startBinaryConverters() {
