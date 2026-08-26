@@ -111,9 +111,9 @@ DIVA_DEPLOYMENT="diva-cora diva-gatekeeper-war "
 DIVA_VALIDATION="diva-cora-fitnesse "
 #ARCHIVED="DIVA_DEV_CONTAINER0="diva-cora-docker-fedora diva-docker-mock-classic-postgresql "
 #ARCHIVED="DIVA_DEV_CONTAINER1="diva-cora-docker-postgresql diva-cora-docker-fcrepo-postgresql "
-DIVA_DEV_CONTAINER1="diva-docker-postgresql diva-docker-solr"
+DIVA_DEV_CONTAINER1="diva-docker-postgresql diva-docker-solr diva-docker-urnnbn"
 #ARCHIVED="diva-docker-classicfedorasynchronizer "
-DIVA_CONTAINER="diva-cora-docker-fitnesse diva-docker-cora diva-docker-gatekeeper diva-docker-divaclient diva-docker-apache diva-docker-urnnbn"
+DIVA_CONTAINER="diva-cora-docker-fitnesse diva-docker-cora diva-docker-gatekeeper diva-docker-divaclient diva-docker-apache "
 #ARCHIVED="diva-docker-index 
 DIVA_DEV_CONTAINER=$DIVA_DEV_CONTAINER1
 ALL_DIVA=$DIVA0" "$DIVA_DEPLOYMENT" "$DIVA_VALIDATION
