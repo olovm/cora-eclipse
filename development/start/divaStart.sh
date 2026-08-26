@@ -194,7 +194,7 @@ startUrnNbn() {
     echoStartingWithMarkers "urnNbn"
     docker run -d --name diva-urnnbn \
         --network=$NETWORK \
-        -p 38090:8080 \
+        -p 38482:8080 \
         $diva_docker_urnnbn
 }
 

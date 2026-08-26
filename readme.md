@@ -152,6 +152,7 @@ After starting the appropriate servers and containers from inside eclipse, the f
 [DiVA REST:http://localhost:38082/diva/rest/](http://localhost:38082/diva/rest/)<br>
 [DiVA Login:http://localhost:38182/login/rest/](http://localhost:38182/login/rest/)<br>
 [DiVA IdpLogin:http://localhost:38382/diva/idplogin/login](http://localhost:38382/diva/idplogin/login)<br>
+[DiVA UrnNbn:http://localhost:38482/urn-nbn/diva](http://localhost:38482/urn-nbn/diva)<br>
 [Solr:http://localhost:38985/solr/](http://localhost:38985/solr/)<br>
 [RabbitMQ:http://localhost:15674/](http://localhost:15674/)guest/guest<br>
 [Fedora Commons:http://localhost:38089/fedora/](http://localhost:38089/fedora/)<br>
