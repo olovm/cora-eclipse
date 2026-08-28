@@ -65,6 +65,7 @@ startFitNesse(){
 	  -DappTokenVerifierUrl=http://localhost:8182/login/ \
 	  -DidpLoginUrl=http://localhost:8382/idplogin/ \
 	  -DgatekeeperServerUrl=http://localhost:8282/gatekeeperserver/ \
+	  -DurnNbnUrl=http://localhost:38482/urn-nbn/ \
 	  -Dslim.port=9002 \
 	  -DfitnesseAdminLoginId=fitnesseAdmin@system.cora.uu.se \
 	  -DfitnesseAdminAppToken="$fitnesseAdminAppToken" \
