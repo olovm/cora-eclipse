@@ -13,7 +13,7 @@ ALL_COMMON=$COMMON1" "$COMMON2" "$COMMON_IMPLEMENTATION
 #PARENT
 COMMON_PURE_CONTAINER="cora-docker-tomcat cora-docker-java cora-docker-solr cora-docker-postgresql "
 COMMON_PURE_CONTAINER+="cora-docker-nfs cora-docker-fedora cora-docker-rabbitmq cora-docker-iipimageserver "
-COMMON_PURE_CONTAINER+="cora-docker-console cora-docker-apache cora-docker-varnish "
+COMMON_PURE_CONTAINER+="cora-docker-console cora-docker-apache cora-docker-varnish cora-docker-urnnbn "
 #ARCHIVED="cora-docker-fedora32 cora-docker-fedora32-client cora-docker-fedora38 "
 #PARENT, COMMON
 CORA0="cora-metadata cora-data cora-data-spies "

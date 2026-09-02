@@ -18,6 +18,7 @@ start() {
 	waitForServiceUsingNameAndPort alvin-postgresql 5432
     startFedora
     startIIP
+    startUrnNbn
 
     waitForServiceUsingNameAndPort alvin-rabbitmq 5672
 
@@ -102,6 +103,9 @@ findCurrentDockerVersions() {
 	
 	cora_docker_binaryconverter="cora-docker-binaryconverter:"$(getMvnVersion /cora-docker-binaryconverter)
 	echo $cora_docker_binaryconverter
+	
+	cora_docker_urnnbn="cora-docker-urnnbn:"$(getMvnVersion /cora-docker-urnnbn)
+	echo $cora_docker_urnnbn
 }
 
 getMvnVersion() {
@@ -182,6 +186,14 @@ startIIP() {
         -e CORS=* \
         --mount type=bind,source=/mnt/depot/cora/sharedFileStorage/alvin,target=/tmp/sharedFileStorage/alvin,readonly \
         $cora_docker_iipimageserver
+}
+startUrnNbn() {
+    echoStartingWithMarkers "urnNbn"
+    docker run -d --name alvin-urnnbn \
+        --network=$NETWORK \
+        -p 38481:8080 \
+        -e 'JAVA_OPTS=-Ddatabase.url=jdbc:postgresql://alvin-postgresql:5432/alvin -Ddatabase.user=alvin -Ddatabase.password=alvin -DurlPatternForUrnNbn=/alvin/alvin-record/%id%' \
+        $cora_docker_urnnbn
 }
 
 startBinaryConverters() {
