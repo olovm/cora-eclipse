@@ -69,6 +69,7 @@ startFitNesse(){
 	  -DfitnesseAdminAppToken="$fitnesseAdminAppToken" \
 	  -DfitnesseUserLoginId=fitnesseUser@system.cora.uu.se \
 	  -DfitnesseUserAppToken="$fitnessUserAppToken" \
+	  -DurnNbnUrl=http://alvin-urnnbn:8080/urn-nbn/ \
 	  -cp "$CP" \
 	  fitnesseMain.FitNesseMain \
 	  -p 8091
