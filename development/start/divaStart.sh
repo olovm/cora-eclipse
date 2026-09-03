@@ -71,6 +71,7 @@ startFitNesse(){
 	  -DfitnesseAdminAppToken="$fitnesseAdminAppToken" \
 	  -DfitnesseUserLoginId=fitnesseUser@system.cora.uu.se \
 	  -DfitnesseUserAppToken="$fitnessUserAppToken" \
+	  -DurnNbnUrl=http://diva-urnnbn:8080/urn-nbn/ \
 	  -cp "$CP" \
 	  fitnesseMain.FitNesseMain \
 	  -p 8092
@@ -196,7 +197,8 @@ startUrnNbn() {
     docker run -d --name diva-urnnbn \
         --network=$NETWORK \
         -p 38482:8080 \
-        $diva_docker_urnnbn
+        -e 'JAVA_OPTS=-Ddatabase.url=jdbc:postgresql://diva-postgresql:5432/diva -Ddatabase.user=diva -Ddatabase.password=diva -DurlPatternForUrnNbn=/divaclient/diva-output/%id%' \
+        $cora_docker_urnnbn
 }
 
 startBinaryConverters() {
