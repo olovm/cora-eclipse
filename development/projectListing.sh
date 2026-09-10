@@ -51,8 +51,8 @@ CLIENT1="cora-javaclient cora-change"
 ALL_CLIENT=$CLIENT0" "$CLIENT1
 
 #PARENT
-JS="cora-jsclient "
-JS_CONTAINER="cora-docker-jsclient "
+JS="cora-jsclient cora-api-helper "
+JS_CONTAINER="cora-docker-jsclient cora-docker-api-helper"
 ALL_JS=$JS" "$JS_CONTAINER
 
 #PARENT, COMMON, CORA, CORE

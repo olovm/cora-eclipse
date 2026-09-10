@@ -1304,6 +1304,38 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="cora-api-helper">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.apihelper.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.apihelper"
+          location="${workspace.location}/cora-api-helper"
+          remoteURI="https://github.com/lsu-ub-uu/cora-api-helper">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-api-helper</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="cora-javaclient">
       <setupTask
           xsi:type="maven:MavenImportTask">
@@ -1489,6 +1521,38 @@
           <detail
               key="target">
             <value>https://github.com/lsu-ub-uu/cora-parent</value>
+          </detail>
+        </annotation>
+        <description>${scope.project.label}</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="cora-docker-api-helper">
+      <setupTask
+          xsi:type="maven:MavenImportTask">
+        <sourceLocator
+            rootFolder="${git.clone.cora.docker.apihelper.location}"
+            locateNestedProjects="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="git:GitCloneTask"
+          id="git.clone.cora.docker.apihelper"
+          location="${workspace.location}/cora-docker-api-helper"
+          remoteURI="https://github.com/lsu-ub-uu/cora-docker-jsclient">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/InducedChoices">
+          <detail
+              key="inherit">
+            <value>https://github.com/lsu-ub-uu/</value>
+          </detail>
+          <detail
+              key="label">
+            <value>cora-docker-api-helper</value>
+          </detail>
+          <detail
+              key="target">
+            <value>https://github.com/lsu-ub-uu/cora-docker-api-helper</value>
           </detail>
         </annotation>
         <description>${scope.project.label}</description>
