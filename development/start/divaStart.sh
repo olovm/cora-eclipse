@@ -198,7 +198,7 @@ startUrnNbn() {
         --network=$NETWORK \
         -p 38482:8080 \
         -e 'JAVA_OPTS=-Ddatabase.url=jdbc:postgresql://diva-postgresql:5432/diva -Ddatabase.user=diva -Ddatabase.password=diva -DurlPatternForUrnNbn=/divaclient/diva-output/%id%' \
-        $cora_docker_urnnbn
+        $diva_docker_urnnbn
 }
 
 startBinaryConverters() {
