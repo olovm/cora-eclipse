@@ -59,7 +59,7 @@ ALL_JS=$JS" "$JS_CONTAINER
 STORAGE0="cora-sqldatabase cora-basicstorage cora-sqlstorage cora-fedoraarchive "
 ALL_STORAGE=$STORAGE0
 
-PLUGIN0="cora-idsource "
+PLUGIN0="cora-idsource cora-recordlock "
 
 #PARENT, COMMON, CORA, STORAGE
 BINARYCONVERTER0="cora-binaryconverter "
